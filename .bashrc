@@ -1,8 +1,12 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-export $EDITOR=nano
-export $SHELL=zsh
+export EDITOR=micro
+export SHELL=bash
+export TERM=xterm-256color
+export BROWSER=wslview
+export DWWW_BROWSER=lynx
+export PAGER=less
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -11,14 +15,14 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-#HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1500
-HISTFILESIZE=2000
+HISTFILESIZE=1500
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -92,6 +96,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias gitjour='cd ~/documents/gitstuff/git-journal'
+alias lista='ls -d .*'
+alias gitst='git status'
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -102,8 +110,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.dotfiles/bash_aliases ]; then
+    . ~/.dotfiles/bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -121,4 +129,16 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 # Enable next line for x11 setup for x410
 [ -z $DISPLAY ] && export DISPLAY=127.0.0.1:0.0
+# powerline script
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/share/powerline/bindings/bash/powerline.sh
+# tmux bash completion script
+source /home/carlc/sh-files/tmux_bash_completion.sh 
 
+# gh bash completion script
+source /home/carlc/sh-files/gh_completion.sh
+source /usr/share/doc/fzf/examples/completion.bash
+source /usr/share/doc/fzf/examples/key-bindings.bash
+alias lg='lazygit'
