@@ -190,3 +190,5 @@ antigen apply
 alias zhelp='cd /usr/share/zsh/help'
 #alias powerlinedoc = 'cd /usr/share/doc/powerline'
 alias zshth='ls ~/.oh-my-zsh/themes'
+# Easier git status
+alias gitst='git status'
