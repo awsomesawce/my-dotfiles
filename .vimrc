@@ -46,10 +46,12 @@ set showmatch		" Show matching brackets.
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
+"set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+
+source /usr/share/doc/fzf/examples/fzf.vim

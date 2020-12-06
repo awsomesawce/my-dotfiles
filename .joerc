@@ -1,0 +1,4 @@
+:include /etc/joe/joerc
+-mouse
+-icase
+-regex
