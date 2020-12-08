@@ -96,9 +96,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias gitjour='cd ~/documents/gitstuff/git-journal'
-alias lista='ls -d .*'
-alias gitst='git status'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -110,8 +107,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.dotfiles/bash_aliases ]; then
-    . ~/.dotfiles/bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -141,4 +138,11 @@ source /home/carlc/sh-files/tmux_bash_completion.sh
 source /home/carlc/sh-files/gh_completion.sh
 source /usr/share/doc/fzf/examples/completion.bash
 source /usr/share/doc/fzf/examples/key-bindings.bash
-alias lg='lazygit'
+# nvm installed variables and scripts
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+### Deactivated this because it's already sourced from earlier
+## Use bash-completion, if available - from bash-completion docs
+#[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+#	    . /usr/share/bash-completion/bash_completion
