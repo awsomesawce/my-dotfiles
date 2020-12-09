@@ -1,5 +1,8 @@
 # My Dotfiles from WSL/Ubuntu
 
+> Got error when pushing
+> `setsockopt IPV6_TCLASS 8: Operation not permitted:`
+
 This is a repository created to keep track of the changes I make to my rc config files.
 
 ## Why keep dotfiles here
