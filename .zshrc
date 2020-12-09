@@ -195,3 +195,6 @@ alias zhelp='cd /usr/share/zsh/help'
 alias zshth='ls ~/.oh-my-zsh/themes'
 # Easier git status
 alias gitst='git status'
+# Added by apt's version of thefuck
+# Next time uninstall thefuck from pip3 before installing thru apt
+eval $(thefuck --alias)
