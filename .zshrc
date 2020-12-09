@@ -8,8 +8,12 @@
 HISTFILE=~/.zsh_history
 # Path to your oh-my-zsh installation. - changed to .antigen - 11/11/2020
 export ZSH="~/.antigen"
-export EDITOR=micro
+# Some extra variables
+export EDITOR=vim
 export TERM=xterm-256color
+export BROWSER=wslview
+export PAGER=less
+export SHELL=zsh
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
