@@ -8,3 +8,9 @@ alias gitjour='cd ~/documents/gitstuff/git-journal'
 alias lista='ls -d .*'
 # shorter git status
 alias gitst='git status'
+
+## Current projects
+# node-school
+alias node-school='cd ~/documents/gitstuff/node-school'
+alias gitstuff='cd ~/documents/gitstuff'
+alias dotfiles='cd ~/.dotfiles/'
