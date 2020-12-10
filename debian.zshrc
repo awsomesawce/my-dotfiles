@@ -12,8 +12,9 @@ export ZSH="/home/carlc/.oh-my-zsh"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="alanpeabody"
 #ZSH_THEME="bira"
-ZSH_THEME="fino-time"
+#ZSH_THEME="fino-time"
 #ZSH_THEME="half-life"
+ZSH_THEME="rkj-repos"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -72,7 +73,7 @@ ZSH_THEME="fino-time"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ssh-agent node npm python pip fzf git tmux colored-man-pages web-search)
+plugins=(command-not-found ssh-agent node npm python pip fzf git tmux colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
