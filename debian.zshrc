@@ -102,5 +102,7 @@ export ARCHFLAGS="-arch x86_64"
 alias zshconfig="mate ~/.zshrc"
 alias wslnotes='cd ~/documents/wsl-notes'
 alias gitst='git status'
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias zshhelpdir='cd /usr/share/doc/zsh'
+alias hlp='bash -c help'
+ alias ohmyzsh="mate ~/.oh-my-zsh"
 . ~/bin/gh_completion.zsh
