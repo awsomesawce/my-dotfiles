@@ -22,7 +22,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1500
-HISTFILESIZE=1500
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -146,3 +146,4 @@ export NVM_DIR="$HOME/.nvm"
 ## Use bash-completion, if available - from bash-completion docs
 #[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 #	    . /usr/share/bash-completion/bash_completion
+source ~/.dotfiles/completion/node.bash_completion
