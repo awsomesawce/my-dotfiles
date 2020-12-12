@@ -80,12 +80,15 @@ export PATH="$HOME/gems/bin:$PATH"
 #POWERLINE_BASH_SELECT=1
 #. /usr/share/powerline/bindings/bash/powerline.sh
 # tmux bash completion script
-source /home/carlc/sh-files/tmux_bash_completion.sh 
+#source /home/carlc/sh-files/tmux_bash_completion.sh 
+
+# Load Bash It
+source "$BASH_IT"/bash_it.sh
 
 # gh bash completion script
 source /home/carlc/sh-files/gh_completion.sh
 source /usr/share/doc/fzf/examples/completion.bash
-source /usr/share/doc/fzf/examples/key-bindings.bash
+#source /usr/share/doc/fzf/examples/key-bindings.bash
 # nvm installed variables and scripts
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -95,5 +98,3 @@ export NVM_DIR="$HOME/.nvm"
 #[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 #	    . /usr/share/bash-completion/bash_completion
 source ~/.dotfiles/completion/node.bash_completion
-# Load Bash It
-source "$BASH_IT"/bash_it.sh
