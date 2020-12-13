@@ -1,3 +1,4 @@
 cp ~/.zshrc ~/.dotfiles/debian.zshrc
 cd ~/.dotfiles/
-git add . && git commit -m 'update debian.zshrc'
+git add ~/.dotfiles/debian.zshrc && git commit -m 'update debian.zshrc'
+
