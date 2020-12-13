@@ -111,7 +111,21 @@ export ARCHFLAGS="-arch x86_64"
 alias zshconfig="mate ~/.zshrc"
 alias wslnotes='cd ~/documents/wsl-notes'
 alias gitst='git status'
-#alias zshhelpdir='cd /usr/share/doc/zsh'
+alias zshhelpdir='cd /usr/share/doc/zsh'
 alias hlp='bash -c help'
- alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gitstuff='cd ~/documents/gitstuff'
+alias dotfiles='cd ~/.dotfiles/'
+alias gaddc='~/.dotfiles/bin/gaddc.sh'
+alias npm_loc='cd /home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm'
+alias abs-guide='cd /usr/share/doc/abs-guide/'
+alias absguide='cd /usr/share/doc/abs-guide/'
+alias dotbin='cd ~/.dotfiles/bin'
+alias typea='type -a'
+# check /usr/share/doc/bash-* for more examples, scripts, and completions
+
+alias lzyg='lazygit'
+alias gitjour='cd ~/documents/gitstuff/git-journal'
+# list all files starting with a dot
+alias lista='ls -dF .*'
 . ~/bin/gh_completion.zsh
