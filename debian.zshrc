@@ -1,20 +1,28 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/carlc/.oh-my-zsh"
 
+# Separate zsh history file
+HISTFILE=~/.zsh_history
+# Some extra variables
+export EDITOR=vim
+export TERM=xterm-256color
+export BROWSER=wslview
+export PAGER=less
+export SHELL=zsh
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="alanpeabody"
 #ZSH_THEME="bira"
 #ZSH_THEME="fino-time"
 #ZSH_THEME="half-life"
-ZSH_THEME="rkj-repos"
+#ZSH_THEME="rkj-repos"
+ZSH_THEME="skaro"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -73,7 +81,7 @@ ZSH_THEME="rkj-repos"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(command-not-found ssh-agent node npm python pip fzf git tmux colored-man-pages web-search)
+plugins=(command-not-found ssh-agent node npm fzf git tmux colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
