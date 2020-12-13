@@ -128,3 +128,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # Enable next line for x11 setup for x410
 [ -z $DISPLAY ] && export DISPLAY=127.0.0.1:0.0
+
+source ~/.dotfiles/completion/node.bash_completion
+
+# powerline script
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/share/powerline/bindings/bash/powerline.sh
