@@ -108,12 +108,13 @@ export ARCHFLAGS="-arch x86_64"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh"
+### Personal aliases start here!
 alias wslnotes='cd ~/documents/wsl-notes'
 alias gitst='git status'
 alias zshhelpdir='cd /usr/share/doc/zsh'
 alias hlp='bash -c help'
-alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gitstuff='cd ~/documents/gitstuff'
 alias dotfiles='cd ~/.dotfiles/'
 alias gaddc='~/.dotfiles/bin/gaddc.sh'
