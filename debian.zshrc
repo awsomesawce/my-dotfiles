@@ -115,6 +115,7 @@ alias wslnotes='cd ~/documents/wsl-notes'
 alias gitst='git status'
 alias zshhelpdir='cd /usr/share/doc/zsh'
 alias hlp='bash -c help'
+alias zhelp='cd /usr/share/doc/zsh-common'
 alias gitstuff='cd ~/documents/gitstuff'
 alias dotfiles='cd ~/.dotfiles/'
 alias gaddc='~/.dotfiles/bin/gaddc.sh'
@@ -124,7 +125,6 @@ alias absguide='cd /usr/share/doc/abs-guide/'
 alias dotbin='cd ~/.dotfiles/bin'
 alias typea='type -a'
 # check /usr/share/doc/bash-* for more examples, scripts, and completions
-
 alias lzyg='lazygit'
 alias gitjour='cd ~/documents/gitstuff/git-journal'
 # list all files starting with a dot
