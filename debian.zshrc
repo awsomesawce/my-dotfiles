@@ -119,7 +119,7 @@ alias hlp='bash -c help'
 alias zhelp='cd /usr/share/doc/zsh-common'
 alias gitstuff='cd ~/documents/gitstuff'
 alias dotfiles='cd ~/.dotfiles/'
-alias gaddc='~/.dotfiles/bin/gaddc.sh'
+alias gaddc='~/.dotfiles/bin/gaddc.sh' # git add . and git commit in one command.
 alias npm_loc='cd /home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm'
 alias abs-guide='cd /usr/share/doc/abs-guide/'
 alias absguide='cd /usr/share/doc/abs-guide/'
@@ -128,7 +128,9 @@ alias typea='type -a'
 # check /usr/share/doc/bash-* for more examples, scripts, and completions
 alias lzyg='lazygit'
 alias gitjour='cd ~/documents/gitstuff/git-journal'
+alias vzrc='vim ~/.zshrc' # open ~/.zshrc using vim.
+alias ezrc='emacs -nw ~/.zshrc' # open ~/.zshrc using emacs.
 
 # list all files starting with a dot
-alias lista='ls -dF .*'
-. ~/bin/gh_completion.zsh
+alias lista='ls -dF .*' # list all dotfiles
+. ~/bin/gh_completion.zsh # gh completion script for zsh
