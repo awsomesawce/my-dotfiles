@@ -12,6 +12,7 @@ alias gitjour='cd ~/documents/gitstuff/git-journal'
 alias lista='ls -dF .*'
 # shorter git status
 alias gitst='git status'
+alias tododir='cd ~/documents/wsl-notes/TODO'
 
 ## Current projects
 # node-school
