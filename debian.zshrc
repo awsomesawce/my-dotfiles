@@ -112,6 +112,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 ### Personal aliases start here!
 alias wslnotes='cd ~/documents/wsl-notes'
+alias tododir='cd ~/documents/wsl-notes/TODO'
 alias gitst='git status'
 alias zshhelpdir='cd /usr/share/doc/zsh'
 alias hlp='bash -c help'
@@ -127,6 +128,7 @@ alias typea='type -a'
 # check /usr/share/doc/bash-* for more examples, scripts, and completions
 alias lzyg='lazygit'
 alias gitjour='cd ~/documents/gitstuff/git-journal'
+
 # list all files starting with a dot
 alias lista='ls -dF .*'
 . ~/bin/gh_completion.zsh
