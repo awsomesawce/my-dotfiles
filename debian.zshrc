@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/carlc/.oh-my-zsh"
@@ -81,7 +81,7 @@ ZSH_THEME="skaro"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(command-not-found ssh-agent node npm fzf git tmux colored-man-pages web-search)
+plugins=(gitignore command-not-found ssh-agent node npm fzf nvm git colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -135,3 +135,5 @@ alias ezrc='emacs -nw ~/.zshrc' # open ~/.zshrc using emacs.
 alias lista='ls -dF .*' # list all dotfiles
 . ~/bin/gh_completion.zsh # gh completion script for zsh
 alias gitpp='git pull && git push'
+alias gpush='git push'
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
