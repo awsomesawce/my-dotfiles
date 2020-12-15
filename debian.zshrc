@@ -9,7 +9,8 @@ HISTFILE=~/.zsh_history
 # Some extra variables
 export EDITOR=vim
 export TERM=xterm-256color
-export BROWSER=wslview
+export WWWBROWSER=/usr/bin/wslview
+export BROWSER=lynx
 export PAGER=less
 export SHELL=zsh
 # Set name of the theme to load --- if set to "random", it will
@@ -20,9 +21,9 @@ export SHELL=zsh
 #ZSH_THEME="alanpeabody"
 #ZSH_THEME="bira"
 #ZSH_THEME="fino-time"
-#ZSH_THEME="half-life"
+ZSH_THEME="half-life"
 #ZSH_THEME="rkj-repos"
-ZSH_THEME="skaro"
+#ZSH_THEME="skaro"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -111,6 +112,7 @@ export ARCHFLAGS="-arch x86_64"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 ### Personal aliases start here!
+alias downloads='cd ~/downloads'
 alias wslnotes='cd ~/documents/wsl-notes'
 alias tododir='cd ~/documents/wsl-notes/TODO'
 alias gitst='git status'
