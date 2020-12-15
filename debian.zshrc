@@ -81,7 +81,7 @@ ZSH_THEME="skaro"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitignore command-not-found ssh-agent node npm fzf nvm git colored-man-pages web-search)
+plugins=(gitignore command-not-found ssh-agent node npm fzf nvm git debian zsh_reload colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,11 +116,12 @@ alias tododir='cd ~/documents/wsl-notes/TODO'
 alias gitst='git status'
 alias zshhelpdir='cd /usr/share/doc/zsh'
 alias hlp='bash -c help'
-alias zhelp='cd /usr/share/doc/zsh-common'
+alias zdocdir='cd /usr/share/doc/zsh-common'
+alias zhelpdir='cd /usr/share/zsh/help'
 alias gitstuff='cd ~/documents/gitstuff'
 alias dotfiles='cd ~/.dotfiles/'
 alias gaddc='~/.dotfiles/bin/gaddc.sh' # git add . and git commit in one command.
-alias npm_loc='cd /home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm'
+alias npm_location='cd /home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm'
 alias abs-guide='cd /usr/share/doc/abs-guide/'
 alias absguide='cd /usr/share/doc/abs-guide/'
 alias dotbin='cd ~/.dotfiles/bin'
