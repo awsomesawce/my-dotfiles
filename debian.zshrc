@@ -137,4 +137,5 @@ alias lista='ls -dF .*' # list all dotfiles
 . ~/bin/gh_completion.zsh # gh completion script for zsh
 alias gitpp='git pull && git push'
 alias gpush='git push'
+alias zi='zipinfo'
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
