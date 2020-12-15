@@ -136,8 +136,8 @@ alias ezrc='emacs -nw ~/.zshrc' # open ~/.zshrc using emacs.
 
 # list all files starting with a dot
 alias lista='ls -dF .*' # list all dotfiles
-. ~/bin/gh_completion.zsh # gh completion script for zsh
 alias gitpp='git pull && git push'
 alias gpush='git push'
 alias zi='zipinfo'
+# addons
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
