@@ -23,7 +23,6 @@ alias gaddc='~/.dotfiles/bin/gaddc.sh'
 alias npm_loc='cd /home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm'
 alias abs-guide='cd /usr/share/doc/abs-guide/'
 alias absguide='cd /usr/share/doc/abs-guide/'
-#function cp_bashrc {cp ~/.bashrc ~/.dotfiles/ubuntu.bashrc}
 
 # List of project export variables
-export dotbin='~/.dotfiles/bin'
+export DOTBIN='/home/carlc/.dotfiles/bin'
