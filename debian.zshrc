@@ -111,33 +111,44 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
+## Bash completion script for node
+autoload bashcompinit
+bashcompinit
+source ~/documents/gitstuff/node-school/node.bash_completion
+source /home/carlc/bin/complete/pandoc_bash_completion.sh
+source /home/carlc/bin/complete/gh_completion.sh
+
 ### Personal aliases start here!
+## Check zsh debian plugin for more debian based aliases
+# aliases to common dir locations and projects
 alias downloads='cd ~/downloads'
 alias wslnotes='cd ~/documents/wsl-notes'
 alias tododir='cd ~/documents/wsl-notes/TODO'
-alias gitst='git status'
-alias zshhelpdir='cd /usr/share/doc/zsh'
-alias hlp='bash -c help'
+alias zshdocdir='cd /usr/share/doc/zsh'
 alias zdocdir='cd /usr/share/doc/zsh-common'
-alias zhelpdir='cd /usr/share/zsh/help'
+alias zhelp='cd /usr/share/zsh/help'
 alias gitstuff='cd ~/documents/gitstuff'
+alias nodeschool='cd ~/documents/gitstuff/node-school'
 alias dotfiles='cd ~/.dotfiles/'
 alias gaddc='~/.dotfiles/bin/gaddc.sh' # git add . and git commit in one command.
 alias npm_location='cd /home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm'
 alias abs-guide='cd /usr/share/doc/abs-guide/'
 alias absguide='cd /usr/share/doc/abs-guide/'
 alias dotbin='cd ~/.dotfiles/bin'
-alias typea='type -a'
 # check /usr/share/doc/bash-* for more examples, scripts, and completions
-alias lzyg='lazygit'
+#alias lzyg='lazygit'
 alias gitjour='cd ~/documents/gitstuff/git-journal'
 alias vzrc='vim ~/.zshrc' # open ~/.zshrc using vim.
 alias ezrc='emacs -nw ~/.zshrc' # open ~/.zshrc using emacs.
-
+## common command aliases
 # list all files starting with a dot
 alias lista='ls -dF .*' # list all dotfiles
+alias typea='type -a'
+# git aliases
+alias gitst='git status'
 alias gitpp='git pull && git push'
 alias gpush='git push'
 alias zi='zipinfo'
-# addons
+## addons
+# source zsh-syntax-highlighting at end of file
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
