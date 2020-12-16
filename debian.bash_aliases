@@ -1,6 +1,8 @@
 # List of bash aliases
 alias ..='cd ..'
 alias ...='cd ...'
+# cp interactive by default
+alias cp='cp -i'
 alias gitst='git status'
 alias dotbin='cd ~/.dotfiles/bin'
 alias typea='type -a'
