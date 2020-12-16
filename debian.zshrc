@@ -84,11 +84,18 @@ ZSH_THEME="half-life"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(gitignore command-not-found ssh-agent node npm fzf nvm git debian zsh_reload colored-man-pages web-search)
 
+# Source gh completion script before oh-my-zsh.sh is called.  IT'S WORKING!!
+if [[ ! -d "$ZSH/completions" || ! -f "$ZSH/completions/_gh" ]]; then
+	mkdir -pv $ZSH/completions
+	gh completion --shell zsh > $ZSH/completions/_gh
+	echo "gh added completions: gh completion --shell zsh > $ZSH/completions/_gh"
+fi
+# Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -116,7 +123,6 @@ autoload bashcompinit
 bashcompinit
 source ~/documents/gitstuff/node-school/node.bash_completion
 source /home/carlc/bin/complete/pandoc_bash_completion.sh
-source /home/carlc/bin/complete/gh_completion.sh
 
 ### Personal aliases start here!
 ## Check zsh debian plugin for more debian based aliases
