@@ -25,3 +25,5 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+[ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin"
+eval "$(gh completion -s bash)"
