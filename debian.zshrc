@@ -82,7 +82,7 @@ ZSH_THEME="half-life"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitignore command-not-found ssh-agent node npm fzf nvm git debian zsh_reload colored-man-pages web-search)
+plugins=(gitignore alias-finder command-not-found ssh-agent node npm fzf nvm git debian zsh_reload colored-man-pages colorize web-search)
 
 # Source gh completion script before oh-my-zsh.sh is called.  IT'S WORKING!!
 if [[ ! -d "$ZSH/completions" || ! -f "$ZSH/completions/_gh" ]]; then
@@ -118,9 +118,10 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
-## Bash completion script for node
+## Bash completion mode for zsh
 autoload bashcompinit
 bashcompinit
+## Bash completion scripts used for zsh
 source ~/documents/gitstuff/node-school/node.bash_completion
 source /home/carlc/bin/complete/pandoc_bash_completion.sh
 
