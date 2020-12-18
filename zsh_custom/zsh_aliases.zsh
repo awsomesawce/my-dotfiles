@@ -4,3 +4,4 @@
 # big changes are made!
 alias wsl-notes='cd ~/documents/wsl-notes'
 alias cp='cp -i'
+alias rm='rm -i'
