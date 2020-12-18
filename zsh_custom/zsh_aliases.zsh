@@ -5,3 +5,4 @@
 alias wsl-notes='cd ~/documents/wsl-notes'
 alias cp='cp -i'
 alias rm='rm -i'
+alias tldrf='tldr find'
