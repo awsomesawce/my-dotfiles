@@ -7,10 +7,10 @@ export ZSH="/home/carlc/.oh-my-zsh"
 # Separate zsh history file
 HISTFILE=~/.zsh_history
 # Some extra variables
-export EDITOR=vim
+export EDITOR=/usr/bin/vim
 export TERM=xterm-256color
 export WWWBROWSER=/usr/bin/wslview
-export BROWSER=lynx
+export BROWSER=wslview
 export PAGER=less
 export SHELL=zsh
 # Set name of the theme to load --- if set to "random", it will
@@ -82,7 +82,7 @@ ZSH_THEME="half-life"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitignore alias-finder command-not-found ssh-agent node npm fzf nvm git debian zsh_reload colored-man-pages colorize web-search)
+plugins=(gitignore alias-finder zsh-completions command-not-found ssh-agent node npm fzf nvm git debian zsh_reload colored-man-pages colorize web-search)
 
 # Source gh completion script before oh-my-zsh.sh is called.  IT'S WORKING!!
 if [[ ! -d "$ZSH/completions" || ! -f "$ZSH/completions/_gh" ]]; then
@@ -159,3 +159,4 @@ alias zi='zipinfo'
 ## addons
 # source zsh-syntax-highlighting at end of file
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+local HELPDIR=/usr/share/zsh/help # Fix for run-help to find correct help dir
