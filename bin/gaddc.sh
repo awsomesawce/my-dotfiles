@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
-# This is a test script
-echo "this is a test script"
-echo "this will do both git add and git commit in one command"
+#!/bin/sh
+# Simple script to combine git add . and git commit
+echo "This script will add all files to index and commits"
 git add .
 git commit
 echo "Done!"
+echo "Thanks for using this script and have a great day!"
