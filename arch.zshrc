@@ -26,7 +26,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 
 # Some aliases to start with
-alias l='ls -hAF'
 alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
 alias ls='ls --color=auto --group-directories-first'
