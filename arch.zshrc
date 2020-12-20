@@ -21,9 +21,12 @@ prompt bigfade # prompt theme
 echo "Welcome to zsh!"
 export EDITOR=vim
 export PAGER=less
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export SHELL=zsh
 
 # Some aliases to start with
 alias l='ls -hAF'
+alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
 alias ls='ls --color=auto --group-directories-first'
 alias rm-'rm -i'
@@ -36,5 +39,7 @@ alias -s zsh=vim
 alias vzrc='vim ~/.zshrc'
 alias gitst='git status'
 alias wsl-notes='cd ~/Documents/wsl-notes'
+alias dotbin='cd ~/.dotfiles/bin'
 alias gitpp='git pull && git push'
-
+alias gp='git push'
+alias help='run-help'
