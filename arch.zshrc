@@ -17,7 +17,8 @@ compinit
 
 autoload -Uz promptinit # init prompt engine
 promptinit # init prompt engine
-prompt bigfade # prompt theme
+#prompt bigfade # prompt theme
+prompt elite2 green
 echo "Welcome to zsh!"
 export EDITOR=vim
 export PAGER=less
