@@ -28,7 +28,13 @@ alias cp='cp -i'
 alias ls='ls --color=auto --group-directories-first'
 alias rm-'rm -i'
 alias zhelp='cd /usr/share/zsh/'
+# Suffix aliases
 alias -s txt=vim
-alias -s md=emacs
+alias -s md=bat
+alias -s zsh=vim
+# Other aliases
 alias vzrc='vim ~/.zshrc'
 alias gitst='git status'
+alias wsl-notes='cd ~/Documents/wsl-notes'
+alias gitpp='git pull && git push'
+
