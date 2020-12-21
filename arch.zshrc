@@ -18,13 +18,14 @@ compinit
 autoload -Uz promptinit # init prompt engine
 promptinit # init prompt engine
 #prompt bigfade # prompt theme
-prompt elite2 green
+prompt fade blue
 echo "Welcome to zsh!"
 export EDITOR=vim
 export PAGER=less
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
-
+export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
+alias vimtodo='vim $TODOFILE'
 # Some aliases to start with
 alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
