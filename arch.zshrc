@@ -37,12 +37,20 @@ alias zhelp='cd /usr/share/zsh/'
 alias -s txt=vim
 alias -s md=bat
 alias -s zsh=vim
+alias -s html=w3m
 # Other aliases
-alias vzrc='vim ~/.zshrc'
-alias gitst='git status'
+alias vzrc='vim ~/.zshrc' # quick edit to .zshrc
+alias gs='git status' # changed from gitst
 alias wsl-notes='cd ~/Documents/wsl-notes'
-alias dotbin='cd ~/.dotfiles/bin'
+# working with ~/.dotfiles
+export DOTDIR=~/.dotfiles
+export DOTBIN=~/.dotfiles/bin
+alias cddb="cd $DOTBIN"
+# Other nice aliases
 alias gitpp='git pull && git push'
 alias gp='git push'
 alias help='run-help'
+# shortcut aliases for web pages
 alias ducks='w3m www.duckduckgo.com'
+alias ducksl='lynx www.duckduckgo.com'
+alias ghsite="w3m www.github.com"
