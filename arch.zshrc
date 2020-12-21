@@ -50,6 +50,10 @@ alias cddb="cd $DOTBIN"
 alias gitpp='git pull && git push'
 alias gp='git push'
 alias help='run-help'
+# cht.sh alias
+# usage: type "chtsh {{something}}" and the word "something" will go where the 
+# $1 is located.
+alias chtsh="curl cht.sh/$1" # it works!!
 # shortcut aliases for web pages
 alias ducks='w3m www.duckduckgo.com'
 alias ducksl='lynx www.duckduckgo.com'
