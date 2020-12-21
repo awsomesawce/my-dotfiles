@@ -156,6 +156,7 @@ alias gitst='git status'
 alias gitpp='git pull && git push'
 alias gpush='git push'
 alias zi='zipinfo'
+setopt nobeep # don't beep anymore
 ## addons
 # source zsh-syntax-highlighting at end of file
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
