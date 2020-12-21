@@ -25,7 +25,8 @@ export PAGER=less
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
-alias vimtodo='vim $TODOFILE'
+alias vimtodo="vim $TODOFILE"
+alias showtodo="bat $TODOFILE"
 # Some aliases to start with
 alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
@@ -44,3 +45,4 @@ alias dotbin='cd ~/.dotfiles/bin'
 alias gitpp='git pull && git push'
 alias gp='git push'
 alias help='run-help'
+alias ducks='w3m www.duckduckgo.com'
