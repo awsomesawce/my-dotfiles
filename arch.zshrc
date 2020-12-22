@@ -24,14 +24,16 @@ export EDITOR=vim
 export PAGER=less
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
+# Todo file easiness
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
 alias vimtodo="vim $TODOFILE"
+alias emacstodo="vim $TODOFILE"
 alias showtodo="bat $TODOFILE"
 # Some aliases to start with
 alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
 alias ls='ls --color=auto --group-directories-first'
-alias rm-'rm -i'
+alias rm='rm -i'
 alias zhelp='cd /usr/share/zsh/'
 # Suffix aliases
 alias -s txt=vim
@@ -39,7 +41,8 @@ alias -s md=bat
 alias -s zsh=vim
 alias -s html=w3m
 # Other aliases
-alias vzrc='vim ~/.zshrc' # quick edit to .zshrc
+alias vzrc='vim ~/.zshrc' # quick edit to .zshrc.
+alias ezrc='emacs ~/.zshrc' # edit with emacs instead.
 alias gs='git status' # changed from gitst
 alias wsl-notes='cd ~/Documents/wsl-notes'
 # working with ~/.dotfiles
