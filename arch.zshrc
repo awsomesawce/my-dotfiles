@@ -37,12 +37,14 @@ alias ls='ls --color=auto --group-directories-first'
 alias rm='rm -i'
 alias zhelp='cd /usr/share/zsh/5.8/help'
 # Suffix aliases
-alias -s txt=vim
+alias -s txt=nvim
 alias -s md=bat
-alias -s zsh=vim
+alias -s adoc=bat
+alias -s zsh=nvim
 alias -s html=w3m
 # Other aliases
 alias vzrc='vim ~/.zshrc' # quick edit to .zshrc.
+alias nvzrc='nvim ~/.zshrc' # edit with nvim
 alias ezrc='emacs ~/.zshrc' # edit with emacs instead.
 alias gs='git status' # changed from gitst
 alias gitst='git status' # added back for my sake
@@ -52,8 +54,10 @@ alias node-school='cd ~/Documents/gitstuff/node-school'
 alias wsl-notes='cd ~/Documents/wsl-notes'
 # working with ~/.dotfiles
 export DOTDIR=~/.dotfiles
+alias dotfiles="cd $DOTDIR"
 export DOTBIN=~/.dotfiles/bin
 alias cddb="cd $DOTBIN"
+alias update_dotfiles='cd ~/.dotfiles && git add . && git commit && git push' # This will update all changes in dotfiles dir.
 # Other nice aliases
 alias gitpp='git pull && git push'
 alias gp='git push'
