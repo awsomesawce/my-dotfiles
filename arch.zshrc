@@ -24,6 +24,7 @@ export EDITOR=vim
 export PAGER=less
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
+export CDUMP=/mnt/c/Users/Carl/dump
 # Todo file easiness
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
 alias vimtodo="vim $TODOFILE"
@@ -56,6 +57,8 @@ alias cddb="cd $DOTBIN"
 # Other nice aliases
 alias gitpp='git pull && git push'
 alias gp='git push'
+alias convad='asciidoctor -b html5 -d book -D html/'
+alias cp2c="cp $1 $CDUMP" # This doesn't work currently
 alias help='run-help'
 ## Pacman aliases
 alias pmii='pacman -Sii'
