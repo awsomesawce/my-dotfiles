@@ -34,7 +34,7 @@ alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
 alias ls='ls --color=auto --group-directories-first'
 alias rm='rm -i'
-alias zhelp='cd /usr/share/zsh/'
+alias zhelp='cd /usr/share/zsh/5.8/help'
 # Suffix aliases
 alias -s txt=vim
 alias -s md=bat
@@ -44,6 +44,10 @@ alias -s html=w3m
 alias vzrc='vim ~/.zshrc' # quick edit to .zshrc.
 alias ezrc='emacs ~/.zshrc' # edit with emacs instead.
 alias gs='git status' # changed from gitst
+alias gitst='git status' # added back for my sake
+# Project aliases
+alias gitstuff='cd ~/Documents/gitstuff'
+alias node-school='cd ~/Documents/gitstuff/node-school'
 alias wsl-notes='cd ~/Documents/wsl-notes'
 # working with ~/.dotfiles
 export DOTDIR=~/.dotfiles
@@ -53,6 +57,9 @@ alias cddb="cd $DOTBIN"
 alias gitpp='git pull && git push'
 alias gp='git push'
 alias help='run-help'
+## Pacman aliases
+alias pmii='pacman -Sii'
+alias pms="pacman -Ss"
 # cht.sh alias
 # usage: type "chtsh {{something}}" and the word "something" will go where the 
 # $1 is located.
