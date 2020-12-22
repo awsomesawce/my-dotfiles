@@ -68,6 +68,8 @@ alias chtsh="curl cht.sh/$1" # it works!!
 alias ducks='w3m www.duckduckgo.com'
 alias ducksl='lynx www.duckduckgo.com'
 alias ghsite="w3m www.github.com"
+## sourcing external scripts
+#[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # source the z shell script for tracking directories
 # source zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # if debian, source this one
