@@ -22,7 +22,7 @@ prompt fade blue
 echo "Welcome to zsh!"
 export EDITOR=vim
 export PAGER=less
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/carlc/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 export CDUMP=/mnt/c/Users/Carl/dump
 # Todo file easiness
@@ -30,6 +30,7 @@ export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
 alias vimtodo="vim $TODOFILE"
 alias emacstodo="vim $TODOFILE"
 alias showtodo="bat $TODOFILE"
+alias nvimtodo="nvim $TODOFILE"
 # Some aliases to start with
 alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
@@ -52,6 +53,8 @@ alias gitst='git status' # added back for my sake
 alias gitstuff='cd ~/Documents/gitstuff'
 alias node-school='cd ~/Documents/gitstuff/node-school'
 alias wsl-notes='cd ~/Documents/wsl-notes'
+alias labsnode="cd /home/carlc/Downloads/labs-node-school"
+alias cdownloads="cd /mnt/c/Users/Carl/Downloads"
 # working with ~/.dotfiles
 export DOTDIR=~/.dotfiles
 alias dotfiles="cd $DOTDIR"
@@ -59,6 +62,7 @@ export DOTBIN=~/.dotfiles/bin
 alias cddb="cd $DOTBIN"
 alias update_dotfiles='cd ~/.dotfiles && git add . && git commit && git push' # This will update all changes in dotfiles dir.
 # Other nice aliases
+alias gdiffremote='git diff --color=auto origin/master'
 alias gitpp='git pull && git push'
 alias gp='git push'
 alias convad='asciidoctor -b html5 -d book -D html/'
