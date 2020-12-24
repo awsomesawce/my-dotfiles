@@ -18,9 +18,10 @@ compinit
 autoload -Uz promptinit # init prompt engine
 promptinit # init prompt engine
 #prompt bigfade # prompt theme
-prompt fade blue
+prompt fade cyan
 echo "Welcome to zsh!"
-export EDITOR=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export PAGER=less
 export PATH=/home/carlc/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
@@ -55,6 +56,7 @@ alias node-school='cd ~/Documents/gitstuff/node-school'
 alias wsl-notes='cd ~/Documents/wsl-notes'
 alias labsnode="cd /home/carlc/Downloads/labs-node-school"
 alias cdownloads="cd /mnt/c/Users/Carl/Downloads"
+alias abs-guide='cd ~/Downloads/abs-guide/'
 # working with ~/.dotfiles
 export DOTDIR=~/.dotfiles
 alias dotfiles="cd $DOTDIR"
@@ -85,3 +87,7 @@ alias ghsite="w3m www.github.com"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # if debian, source this one
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Node Version Manager stuff
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
