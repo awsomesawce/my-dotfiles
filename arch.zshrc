@@ -75,10 +75,7 @@ alias help='run-help'
 ## Pacman aliases
 alias pmii='pacman -Sii'
 alias pms="pacman -Ss"
-# cht.sh alias
-# usage: type "chtsh {{something}}" and the word "something" will go where the 
-# $1 is located.
-alias chtsh="curl cht.sh/$1" # it works!!
+# cht.sh script installed in ~/bin
 # shortcut aliases for web pages
 alias ducks='w3m www.duckduckgo.com'
 alias ducksl='lynx www.duckduckgo.com'
