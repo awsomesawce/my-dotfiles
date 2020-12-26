@@ -29,15 +29,17 @@ export CDUMP=/mnt/c/Users/Carl/dump
 # Todo file easiness
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
 alias vimtodo="vim $TODOFILE"
-alias emacstodo="vim $TODOFILE"
+alias emacstodo="emacs $TODOFILE"
 alias showtodo="bat $TODOFILE"
 alias nvimtodo="nvim $TODOFILE"
 # Some aliases to start with
 alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
 alias ls='ls --color=auto --group-directories-first'
+alias vdir='vdir --color=auto'
 alias rm='rm -i'
 alias zhelp='cd /usr/share/zsh/5.8/help'
+alias edit="nvim"
 # Suffix aliases
 alias -s txt=nvim
 alias -s md=bat
