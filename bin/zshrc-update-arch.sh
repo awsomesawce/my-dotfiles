@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script updates cp's current .zshrc file into dotfiles folder, adds, and does git commit.
 cp ~/.zshrc ~/.dotfiles/arch.zshrc
 cd ~/.dotfiles/
