@@ -15,13 +15,13 @@ compinit
 #
 # Here is my personal configuration for Arch
 
-autoload -Uz promptinit # init prompt engine
-promptinit # init prompt engine
+#autoload -Uz promptinit # init prompt engine
+#promptinit # init prompt engine
 #prompt bigfade # prompt theme
-prompt fade cyan
+#prompt fade cyan
 #prompt grml # too slow for me
 echo "Welcome to zsh!"
-export LS_COLORS="$(vivid generate molokai)"
+export LS_COLORS="$(vivid generate solarized-dark)"
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
@@ -93,11 +93,11 @@ alias sass=/home/carlc/.nvm/versions/node/v14.15.3/bin/sass
 ## sourcing external scripts
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # source the z shell script for tracking directories
 # source zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # if debian, source this one
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh-autocomplete
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bash completion for chtsh
 #. ~/.bash.d/cht.sh
 # zsh completion for chtsh
@@ -107,4 +107,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # fasd init
-eval "$(fasd --init auto)"
+#eval "$(fasd --init auto)"
