@@ -19,7 +19,9 @@ autoload -Uz promptinit # init prompt engine
 promptinit # init prompt engine
 #prompt bigfade # prompt theme
 prompt fade cyan
+#prompt grml # too slow for me
 echo "Welcome to zsh!"
+export LS_COLORS="$(vivid generate molokai)"
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
