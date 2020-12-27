@@ -99,7 +99,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bash completion for chtsh
 #. ~/.bash.d/cht.sh
 # zsh completion for chtsh
-. ~/.dotfiles/completion/chtsh_zsh_completion
+# . ~/.dotfiles/completion/chtsh_zsh_completion # Not working
 # Node Version Manager stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
