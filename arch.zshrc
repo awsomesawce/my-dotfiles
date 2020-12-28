@@ -21,7 +21,7 @@ compinit
 #prompt fade cyan
 #prompt grml # too slow for me
 echo "Welcome to zsh!"
-export LS_COLORS="$(vivid generate solarized-dark)"
+export LS_COLORS="$(vivid generate molokai)"
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
@@ -62,21 +62,25 @@ alias gitst='git status' # added back for my sake
 alias gitstuff='cd ~/Documents/gitstuff'
 alias node-school='cd ~/Documents/gitstuff/node-school'
 alias webpack-demo='cd ~/webpack-demo'
+alias webpackdemo=webpack-demo
 alias wsl-notes='cd ~/Documents/wsl-notes'
+alias wslnotes=wsl-notes
 alias labsnode="cd /home/carlc/Downloads/labs-node-school/Labs-2020-10-06/"
 alias cdownloads="cd /mnt/c/Users/Carl/Downloads"
 alias abs-guide='cd ~/Downloads/abs-guide/'
+alias absguide=abs-guide
 # working with ~/.dotfiles
 export DOTDIR=~/.dotfiles
 alias dotfiles="cd $DOTDIR"
 export DOTBIN=~/.dotfiles/bin
 alias cddb="cd $DOTBIN"
-alias update_dotfiles='cd ~/.dotfiles && git add . && git commit && git push' # This will update all changes in dotfiles dir.
+#alias update_dotfiles='cd ~/.dotfiles && git add . && git commit && git push' # This will update all changes in dotfiles dir.
 # Other nice aliases
 alias gdiffremote='git diff --color=auto origin/master'
 alias gitpp='git pull && git push'
 alias gp='git push'
-alias convad='asciidoctor -b html5 -d book -D html/'
+alias reload='source ~/.zshrc'
+alias convad='asciidoctor -b html5 -d book'
 alias cp2c="cp $1 $CDUMP" # This doesn't work currently
 alias help='run-help'
 ## Pacman aliases
@@ -93,7 +97,7 @@ alias sass=/home/carlc/.nvm/versions/node/v14.15.3/bin/sass
 ## sourcing external scripts
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # source the z shell script for tracking directories
 # source zsh-syntax-highlighting
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # if debian, source this one
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh-autocomplete
