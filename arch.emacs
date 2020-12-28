@@ -5,15 +5,19 @@
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
-;; Enable evil - must b a way to do this in a different way.
+;; Enable custom packages
 (require 'evil)
 (evil-mode 1)
-(require 'company)
-(company-mode)
-(require 'helm)
-(helm-mode)
-(require 'which-key)
+(helm-mode 1)
+;;(require 'which-key)
 (which-key-mode)
+(require 'powerline)
+(require 'powerline-evil)
+(powerline-evil-center-color-theme)
+(add-to-list 'company-backends 'company-web-html)
+(add-to-list 'company-backends 'company-web-jade)
+(add-to-list 'company-backends 'company-web-slim)
+(setq user-mail-address "awsomesawce@outlook.com")
 ;; End copy
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -22,9 +26,9 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
- '(custom-enabled-themes '(tsdh-dark))
+ '(custom-enabled-themes '(tango-dark))
  '(package-selected-packages
-   '(helm-ag helm-emmet http humanoid-themes json-mode posix-manual powerline powerline-evil powershell prettier prism adoc-mode coffee-mode company company-emoji company-fuzzy company-nginx company-org-roam company-quickhelp company-web counsel counsel-css counsel-jq counsel-web css-autoprefixer dired-git easy-jekyll helm-company helm-css-scss helm-themes info-colors ivy-explorer ivy-file-preview js2-mode key-assist mmm-mode nord-theme org-roam ox-asciidoc ox-jekyll-md deadgrep dired-k editorconfig evil-easymotion evil-magit evil-mc evil-org github-review gitignore-templates helm helm-evil-markers helm-ls-git helm-org helm-rg htmlize ivy ivy-todo web-mode which-key evil-collection evil evil-ediff fzf magit markdown-mode markdown-toc)))
+   '(web-server websocket evil-nerd-commenter flycheck gitconfig-mode go-mode haml-mode jq-mode key-chord lsp-mode lua-mode monokai-pro-theme monokai-theme flymake-css helm-ag helm-emmet http humanoid-themes json-mode posix-manual powerline powerline-evil powershell prettier prism adoc-mode coffee-mode company company-emoji company-fuzzy company-nginx company-org-roam company-quickhelp company-web counsel counsel-css counsel-jq counsel-web css-autoprefixer dired-git easy-jekyll helm-company helm-css-scss helm-themes info-colors ivy-explorer ivy-file-preview js2-mode key-assist mmm-mode nord-theme org-roam ox-asciidoc ox-jekyll-md deadgrep dired-k editorconfig evil-easymotion evil-magit evil-mc github-review gitignore-templates helm-evil-markers helm-ls-git helm-org helm-rg htmlize ivy ivy-todo web-mode which-key evil evil-ediff fzf markdown-mode markdown-toc)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
