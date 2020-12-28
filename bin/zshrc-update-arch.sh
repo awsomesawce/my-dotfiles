@@ -7,3 +7,4 @@ echo "copied .zshrc to ~/.dotfiles git repo as arch.zshrc."
 echo "Use git push to push to server!"
 echo "Have a great day!"
 
+return 0
