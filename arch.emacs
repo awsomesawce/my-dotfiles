@@ -7,10 +7,13 @@
 (package-initialize)
 ;; Enable evil - must b a way to do this in a different way.
 (require 'evil)
-(require 'company)
-(require 'helm-company)
-(require 'which-key)
 (evil-mode 1)
+(require 'company)
+(company-mode)
+(require 'helm)
+(helm-mode)
+(require 'which-key)
+(which-key-mode)
 ;; End copy
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
