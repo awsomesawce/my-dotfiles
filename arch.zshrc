@@ -36,7 +36,7 @@ alias vimtodo="vim $TODOFILE"
 alias emacstodo="emacs $TODOFILE"
 alias showtodo="bat $TODOFILE"
 alias nvimtodo="nvim $TODOFILE"
-
+alias emacsconfig='emacs ~/.emacs'
 # Some aliases to start with
 alias lista='ls -dF .*' # list all dotfiles
 alias cp='cp -i'
@@ -55,6 +55,7 @@ alias -s html=w3m
 alias vzrc='vim ~/.zshrc' # quick edit to .zshrc.
 alias nvzrc='nvim ~/.zshrc' # edit with nvim
 alias ezrc='emacs ~/.zshrc' # edit with emacs instead.
+alias g='git' # simply g for git
 alias gs='git status' # changed from gitst
 alias gc='git commit'
 alias gitst='git status' # added back for my sake
