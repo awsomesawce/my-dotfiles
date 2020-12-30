@@ -1,7 +1,5 @@
 # My Dotfiles from WSL/Ubuntu
 
-> Got error when pushing
-> `setsockopt IPV6_TCLASS 8: Operation not permitted:`
 
 This is a repository created to keep track of the changes I make to my rc config files.
 
@@ -17,6 +15,12 @@ Currently, rc files from ubuntu are named `ubuntu.*`.  I'm debating whether to c
 
 Example dotfiles from various `docs` folders shall be located in `./docs/` folder.
 
-## Scripts?
+## Dirs
 
-No.  Homemade scripts will be better off in a different git repo.  This one's just for my personal dotfiles and config files.
+- `/bin`: Homemade shell scripts.
+- `/completion`: completion scripts.
+- `/zsh_custom`: oh-my-zsh framework custom scripts and aliases.
+- `/windows`: windows config files for Powershell and/or unix-style tools.
+
+> Got error when pushing
+> `setsockopt IPV6_TCLASS 8: Operation not permitted:`
