@@ -21,6 +21,8 @@ Example dotfiles from various `docs` folders shall be located in `./docs/` folde
 - `/completion`: completion scripts.
 - `/zsh_custom`: oh-my-zsh framework custom scripts and aliases.
 - `/windows`: windows config files for Powershell and/or unix-style tools.
+- `/debian`: debian config files.
+- `/ubuntu`: ubuntu config files.
 
 > Got error when pushing
 > `setsockopt IPV6_TCLASS 8: Operation not permitted:`
