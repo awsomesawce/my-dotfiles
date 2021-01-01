@@ -4,4 +4,4 @@ set ignorecase
 set background=dark
 "" Hopefully this works
 ""colorscheme desert
-colorscheme murphy
+colorscheme molokai
