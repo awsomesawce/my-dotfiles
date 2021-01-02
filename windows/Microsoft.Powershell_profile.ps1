@@ -26,6 +26,10 @@ Set-Theme zash
 
 ## Open Powershell profile from anywhere
 Function psconfig {kate $psDir\Microsoft.Powershell_profile.ps1}
+## Nvim config shortcut
+Function nvimconfig {nvim ~/AppData/Local/nvim/init.vim}
+## Nvim 2 window shortcut
+Function nvim2 {nvim -O2}
 ## Shortcut for duckduckgo
 function ducks {Start-Process https://duckduckgo.com}
 
@@ -75,6 +79,7 @@ Function helpless {Get-Help $1 | less}
 Function psProfileEdit {ii D:\Carl\Documents\Powershell\Microsoft.Powershell_profile.ps1}
 Set-Alias -Name dotdir -Value dotfiles_backup
 Set-Alias -Name archl -Value 'D:/Arch/arch.exe'
+Set-Alias -Name lg -Value 'lazygit'
 Set-Alias -name localad -Value localappdata
 Set-Alias -Name gitbash -Value 'D:\Program Files\Git\bin\bash.exe'
 Set-Alias -Name ... -Value D:\Carl\Documents\PowerShell\Scripts\backwards_cd.ps1
