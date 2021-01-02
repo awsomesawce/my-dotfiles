@@ -25,12 +25,18 @@ alias emacstodo="emacs $TODOFILE"
 alias showtodo="bat $TODOFILE"
 alias nvimtodo="nvim $TODOFILE"
 alias emacsconfig='emacs ~/.emacs'
-alias nvimrcconfig='nvim -O2 ~/.bashrc ~/.zshrc'
+
+## Config Aliases
+alias nvimshellconfig='nvim -O2 ~/.bashrc ~/.zshrc'
 alias nvimbashconfig='nvim ~/.bashrc'
 
 ## Common Aliases
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
+alias lsa='ls -a'
+
+alias rm='rm -i'
+alias cp='cp -i'
 
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # source z shell script
 ## Project aliases
