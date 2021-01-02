@@ -20,12 +20,12 @@ compinit
 #prompt bigfade # prompt theme
 #prompt fade cyan
 #prompt grml # too slow for me
-echo "Welcome to zsh!"
+#echo "Welcome to zsh!"
 export LS_COLORS="$(vivid generate molokai)"
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
-export PATH=/home/carlc/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 export CDUMP=/mnt/c/Users/Carl/dump
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
@@ -36,6 +36,9 @@ alias vimtodo="vim $TODOFILE"
 alias emacstodo="emacs $TODOFILE"
 alias showtodo="bat $TODOFILE"
 alias nvimtodo="nvim $TODOFILE"
+## Config Aliases
+alias nvimshellconfig='nvim -O2 ~/.bashrc ~/.zshrc'
+alias nvimbashconfig='nvim ~/.bashrc'
 alias emacsconfig='emacs ~/.emacs'
 # Some aliases to start with
 alias lista='ls -dF .*' # list all dotfiles
@@ -62,6 +65,7 @@ alias gitst='git status' # added back for my sake
 # Project aliases
 alias gitstuff='cd ~/Documents/gitstuff'
 alias node-school='cd ~/Documents/gitstuff/node-school'
+alias nodeschool=node-school
 alias webpack-demo='cd ~/webpack-demo'
 alias webpackdemo=webpack-demo
 alias wsl-notes='cd ~/Documents/wsl-notes'
@@ -90,6 +94,7 @@ alias pms="pacman -Ss"
 # cht.sh script installed in ~/bin
 alias chtsh='cht.sh'
 # shortcut aliases for web pages
+alias open='xdg-open'
 alias ducks='w3m www.duckduckgo.com'
 alias ducksl='lynx www.duckduckgo.com'
 alias ghsite="w3m www.github.com"
