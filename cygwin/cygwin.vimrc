@@ -1,3 +1,7 @@
+"" Cygwin Vimrc File
+"" This is the file to use when opening vim from Cygwin
+"" Otherwise, you will run into errors at startup
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
