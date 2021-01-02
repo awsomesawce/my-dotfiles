@@ -40,12 +40,14 @@ alias nvimtodo="nvim $TODOFILE"
 alias nvimshellconfig='nvim -O2 ~/.bashrc ~/.zshrc'
 alias nvimbashconfig='nvim ~/.bashrc'
 alias emacsconfig='emacs ~/.emacs'
+alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
 # Some aliases to start with
-alias lista='ls -dF .*' # list all dotfiles
-alias cp='cp -i'
+alias lista='command ls -dF .*' # list all dotfiles
+alias rm='command rm -i'
+alias cp='command cp -i'
 alias ls='ls --color=auto --group-directories-first'
 alias vdir='vdir --color=auto'
-alias rm='rm -i'
 alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
 # Suffix aliases

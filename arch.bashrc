@@ -24,11 +24,13 @@ alias vimtodo="vim $TODOFILE"
 alias emacstodo="emacs $TODOFILE"
 alias showtodo="bat $TODOFILE"
 alias nvimtodo="nvim $TODOFILE"
-alias emacsconfig='emacs ~/.emacs'
 
 ## Config Aliases
+alias emacsconfig='emacs ~/.emacs'
+alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias nvimshellconfig='nvim -O2 ~/.bashrc ~/.zshrc'
 alias nvimbashconfig='nvim ~/.bashrc'
+alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
 
 ## Common Aliases
 alias ls='ls --color=auto'
