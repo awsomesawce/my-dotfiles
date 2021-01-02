@@ -1,4 +1,4 @@
-"" My nvim init.vim file
+"" My nvim init.vim file for Arch Linux
 set shiftwidth=4
 set ignorecase
 set background=dark
@@ -8,7 +8,10 @@ set background=dark
 colorscheme peachpuff
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf'
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 call plug#end()
+
 "" Use :PlugInstall to initiate the installation of the plugins.
 "" Use :CoCInstall to initiate installation of coc-nvim language servers.
 
