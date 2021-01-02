@@ -13,13 +13,15 @@ set background=dark
 colorscheme peachpuff
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
 "" Begin Windows only plugin list
 "" These plugins are already installed by the Linux package manager.
 Plug 'preservim/nerdtree', {'branch': 'master'}
 Plug 'vim-airline/vim-airline', {'branch': 'master'}
 Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/tpope/vim-fugitive.git'
 "" End Windows only plugin list.
 call plug#end()
 
