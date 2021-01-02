@@ -6,3 +6,8 @@ set background=dark
 ""colorscheme desert
 ""colorscheme molokai
 colorscheme peachpuff
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+"" Use :PlugInstall to initiate the installation of the plugins.
+"" Use :CoCInstall to initiate installation of coc-nvim language servers.
