@@ -28,6 +28,8 @@ export PAGER=less
 export PATH=$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 export CDUMP=/mnt/c/Users/Carl/dump
+LOG_HOME_DIR='~/log/'
+export LOG_HOME_DIR
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
 alias npmbin="cd $NPM_BIN"
 # Todo file easiness
@@ -50,6 +52,37 @@ alias ls='ls --color=auto --group-directories-first'
 alias vdir='vdir --color=auto'
 alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
+
+## Aliases copied from oh-my-zsh plugins
+# Common Aliases plugin ~/.oh-my-zsh/plugins/common-aliases
+
+# Advanced Aliases.
+# Use with caution
+#
+
+# ls, the common ones I use a lot shortened for rapid fire usage
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias ll='ls -l'      #long list
+alias ldot='ls -ld .*'
+alias lS='ls -1FSsh'
+alias lart='ls -1Fcart'
+alias lrt='ls -1Fcrt'
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+alias ff='find . -type f -name'
+
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias p='ps -f'
+alias sortnr='sort -n -r'
+alias unexport='unset'
+
+## End from oh-my-zsh
+
 # Suffix aliases
 alias -s txt=nvim
 alias -s md=bat
@@ -76,6 +109,7 @@ alias labsnode="cd /home/carlc/Downloads/labs-node-school/Labs-2020-10-06/"
 alias cdownloads="cd /mnt/c/Users/Carl/Downloads"
 alias abs-guide='cd ~/Downloads/abs-guide/'
 alias absguide=abs-guide
+alias onedrive='cd /mnt/d/Carl/OneDrive'
 # working with ~/.dotfiles
 export DOTDIR=~/.dotfiles
 alias dotfiles="cd $DOTDIR"
