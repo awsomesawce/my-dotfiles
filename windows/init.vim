@@ -13,5 +13,10 @@ set background=dark
 colorscheme peachpuff
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" Begin Windows only plugin list
+"" These plugins are already installed by the Linux package manager.
 Plug 'preservim/nerdtree', {'branch': 'master'}
+Plug 'vim-airline/vim-airline', {'branch': 'master'}
+Plug 'vim-airline/vim-airline-themes'
+"" End Windows only plugin list.
 call plug#end()
