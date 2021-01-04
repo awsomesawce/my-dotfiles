@@ -40,22 +40,29 @@ alias emacstodo="emacs $TODOFILE"
 alias showtodo="bat $TODOFILE"
 alias nvimtodo="nvim $TODOFILE"
 ## Config Aliases
+alias vzrc='vim ~/.zshrc' # quick edit to .zshrc.
+alias nvzrc='nvim ~/.zshrc' # edit with nvim
+alias ezrc='emacs ~/.zshrc' # edit with emacs instead.
 alias nvimshellconfig='nvim -O2 ~/.bashrc ~/.zshrc'
 alias nvbrc='nvim ~/.bashrc'
+alias vbrc='vim ~/.bashrc'
 alias emacsconfig='emacs ~/.emacs'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
 # Some aliases to start with
 alias lista='command ls -dF .*' # list all dotfiles
-alias rm='command rm -i'
-alias cp='command cp -i'
-alias ls='ls --color=auto --group-directories-first'
-alias vdir='vdir --color=auto'
+#alias rm='command rm -i'
+#alias cp='command cp -i'
+#alias ls='ls --color=auto --group-directories-first'
+#alias vdir='vdir --color=auto'
 alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
 alias nvimdiff="nvim -d"
 alias nvim2="nvim -O2"
 alias nvim22='nvim -O2 -p2'
+alias ....='cd ../../..'
+# Set basic readme viewer for bat
+alias brm='bat README.md'
 
 ## Aliases copied from oh-my-zsh plugins
 # Common Aliases plugin ~/.oh-my-zsh/plugins/common-aliases
@@ -94,9 +101,6 @@ alias -s adoc=bat
 alias -s zsh=nvim
 alias -s html=w3m
 # Other aliases
-alias vzrc='vim ~/.zshrc' # quick edit to .zshrc.
-alias nvzrc='nvim ~/.zshrc' # edit with nvim
-alias ezrc='emacs ~/.zshrc' # edit with emacs instead.
 alias g='git' # simply g for git
 alias gs='git status' # changed from gitst
 alias gc='git commit'
