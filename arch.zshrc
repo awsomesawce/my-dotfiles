@@ -51,9 +51,9 @@ alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
 # Some aliases to start with
 alias lista='command ls -dF .*' # list all dotfiles
-#alias rm='command rm -i'
-#alias cp='command cp -i'
-#alias ls='ls --color=auto --group-directories-first'
+alias rm='command rm -i'
+alias cp='command cp -i'
+alias lsdir='ls --color=auto --group-directories-first'
 alias vdir='vdir --color=auto'
 alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
@@ -166,3 +166,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # fasd init
 #eval "$(fasd --init auto)"
+## Experimental alias for simple zshrc diff script
+alias zshrcdiff='bash -e /home/carlc/.dotfile/bin/zshrc_diff'
