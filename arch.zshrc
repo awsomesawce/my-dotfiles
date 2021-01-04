@@ -167,4 +167,4 @@ export NVM_DIR="$HOME/.nvm"
 # fasd init
 #eval "$(fasd --init auto)"
 ## Experimental alias for simple zshrc diff script
-alias zshrcdiff='bash -e /home/carlc/.dotfile/bin/zshrc_diff'
+alias zshrcdiff='bash -e /home/carlc/.dotfiles/bin/zshrc_diff'
