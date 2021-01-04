@@ -25,6 +25,7 @@ Example dotfiles from various `docs` folders shall be located in `./docs/` folde
 - `/debian`: debian config files.
 - `/ubuntu`: ubuntu config files.
 - `/cygwin`: cygwin config files taken from `/etc/skel`, `/home/Carl`, and `/etc` inside **Cygwin.bat**'s shell.
+- `/etc`: rc files copied from various `/etc` directories.
 
 > Got error when pushing
 > `setsockopt IPV6_TCLASS 8: Operation not permitted:`
