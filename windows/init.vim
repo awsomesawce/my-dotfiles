@@ -15,9 +15,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'https://github.com/plasticboy/vim-markdown/'
+Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'mileszs/ack.vim'
 
 "" Begin Windows only plugin list
-"" These plugins are already installed by the Linux package manager.
+"" These plugins are already installed by the Arch Linux package manager.
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree', {'branch': 'master'}
 Plug 'vim-airline/vim-airline', {'branch': 'master'}
 Plug 'vim-airline/vim-airline-themes'
