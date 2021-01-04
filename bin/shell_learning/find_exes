@@ -1,0 +1,17 @@
+#!/bin/bash
+# From home/carlc/Downloads/abs-guide/special-chars.html
+
+for file in /{,usr/}bin/*calc
+#             ^    Find all executable files ending in "calc"
+#+                 in /bin and /usr/bin directories.
+do
+        if [ -x "$file" ]
+        then
+          echo $file
+        fi
+done
+
+# /bin/ipcalc
+# /usr/bin/kcalc
+# /usr/bin/oidcalc
+# /usr/bin/oocalc
