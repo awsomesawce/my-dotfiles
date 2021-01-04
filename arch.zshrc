@@ -54,7 +54,7 @@ alias lista='command ls -dF .*' # list all dotfiles
 #alias rm='command rm -i'
 #alias cp='command cp -i'
 #alias ls='ls --color=auto --group-directories-first'
-#alias vdir='vdir --color=auto'
+alias vdir='vdir --color=auto'
 alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
 alias nvimdiff="nvim -d"
@@ -128,6 +128,7 @@ alias cddb="cd $DOTBIN"
 alias gdiffremote='git diff --color=auto origin/master'
 alias gitpp='git pull && git push'
 alias gp='git push'
+alias lshome='ls ~/'
 alias reload='source ~/.zshrc'
 alias convad='asciidoctor -b html5 -d book'
 alias cp2c="cp $1 $CDUMP" # This doesn't work currently
@@ -135,6 +136,9 @@ alias help='run-help'
 ## Pacman aliases
 alias pmii='pacman -Sii'
 alias pms="pacman -Ss"
+alias pminstall='sudo pacman -S'
+alias pmupdate='sudo pacman -Syu'
+alias pm='pacman'
 # cht.sh script installed in ~/bin
 alias chtsh='cht.sh'
 # shortcut aliases for web pages

@@ -18,8 +18,9 @@ Example dotfiles from various `docs` folders shall be located in `./docs/` folde
 ## Dirs
 
 - `/bin`: Homemade shell scripts.
+- `/templates`: general dotfile templates.
 - `/completion`: completion scripts.
-- `/zsh_custom`: oh-my-zsh framework custom scripts and aliases.
+- `/zsh\_custom`: oh-my-zsh framework custom scripts and aliases.
 - `/windows`: windows config files for Powershell and/or unix-style tools.
 - `/debian`: debian config files.
 - `/ubuntu`: ubuntu config files.
