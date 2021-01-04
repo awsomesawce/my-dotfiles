@@ -3,13 +3,16 @@ set shiftwidth=4
 set ignorecase
 set background=dark
 "" Hopefully this works
-""colorscheme desert
+colorscheme desert
 ""colorscheme molokai
-colorscheme peachpuff
+""colorscheme peachpuff
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'https://github.com/plasticboy/vim-markdown/'
+Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'mileszs/ack.vim'
+""Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 call plug#end()
 
 "" Use :PlugInstall to initiate the installation of the plugins.
