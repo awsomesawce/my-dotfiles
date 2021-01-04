@@ -22,6 +22,7 @@ compinit
 #prompt grml # too slow for me
 #echo "Welcome to zsh!"
 export LS_COLORS="$(vivid generate molokai)"
+export BROWSER=w3m
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
@@ -40,7 +41,7 @@ alias showtodo="bat $TODOFILE"
 alias nvimtodo="nvim $TODOFILE"
 ## Config Aliases
 alias nvimshellconfig='nvim -O2 ~/.bashrc ~/.zshrc'
-alias nvimbashconfig='nvim ~/.bashrc'
+alias nvbrc='nvim ~/.bashrc'
 alias emacsconfig='emacs ~/.emacs'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
@@ -52,6 +53,9 @@ alias ls='ls --color=auto --group-directories-first'
 alias vdir='vdir --color=auto'
 alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
+alias nvimdiff="nvim -d"
+alias nvim2="nvim -O2"
+alias nvim22='nvim -O2 -p2'
 
 ## Aliases copied from oh-my-zsh plugins
 # Common Aliases plugin ~/.oh-my-zsh/plugins/common-aliases
