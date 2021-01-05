@@ -26,6 +26,8 @@ Plug 'preservim/nerdtree', {'branch': 'master'}
 Plug 'vim-airline/vim-airline', {'branch': 'master'}
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/PProvost/vim-ps1'
+Plug 'https://github.com/vifm/vifm.vim'
 "" End Windows only plugin list.
 call plug#end()
 
