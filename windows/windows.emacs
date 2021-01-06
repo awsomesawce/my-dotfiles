@@ -9,10 +9,10 @@
 ;;      (evil-mode 1)
 ;;(add-hook 'org-mode-hook 'evil-org-mode)
 (add-hook 'org-mode-hook 'org-indent-mode)
-(helm-mode 1)
-;;(counsel-mode 1)
-;;(ivy-mode 1)
-(global-company-mode 1)
+;;(helm-mode 1)
+(counsel-mode 1)
+(ivy-mode 1)
+;;(global-company-mode 1)
 ;;(require 'which-key)
 (which-key-mode 1)
 ;; Enable powerline, powerline-evil, and powerline-evil theme.
@@ -33,7 +33,8 @@
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(custom-enabled-themes '(tango-dark))
  '(custom-safe-themes '(default) nil nil "Erased all customizations for themes.")
- '(epg-gpg-home-directory "c:/Users/Carl/.emacs.d.bak/elpa/gnupg/")
+ '(epg-gpg-home-directory nil)
+ '(epg-gpg-program "gpg")
  '(hl-todo-keyword-faces
    '(("TODO" . "#dc752f")
      ("NEXT" . "#dc752f")
@@ -52,9 +53,10 @@
      ("\\?\\?\\?+" . "#dc752f")))
  '(inhibit-startup-screen nil)
  '(org-agenda-files
-   '("~/CFA_test/my-addon-list.org" "d:/Carl/OneDrive/org_dir/emacs_problems.org"))
+   '("d:/Carl/OneDrive/TODO/TODO.org" "~/CFA_test/my-addon-list.org" "d:/Carl/OneDrive/org_dir/emacs_problems.org"))
+ '(package-gnupghome-dir nil)
  '(package-selected-packages
-   '(web-server yaml-mode yasnippet yasnippet-snippets ivy-posframe magit-todos notmuch treemacs-magit treemacs-projectile helm-ag paper-theme posix-manual powerline powerline-evil prettier prism pydoc tldr treemacs-evil websocket dracula-theme evil-collection evil-test-helpers helm-emmet which-key flycheck evil-traces company-shell evil-org ac-emoji ac-helm ac-html evil-goggles evil-mc evil-mc powershell evil-tabs evil-tutor spacemacs-theme terminal-here toc-org vdiff company-nginx company-org-roam company-web counsel-css counsel-projectile css-autoprefixer dashboard didyoumean dired-recent evil helm-org helm-projectile company coffee-mode auto-complete emmet-mode helm magit markdown-mode ox-jekyll-md python-mode speed-type stylus-mode sublime-themes vs-dark-theme w3m web-mode-edit-element web-mode wgrep org-index org-journal counsel ivy docbook gnu-elpa-keyring-update))
+   '(airline-themes bash-completion company-fuzzy company-posframe company-quickhelp ox-gfm web-server yaml-mode yasnippet yasnippet-snippets ivy-posframe magit-todos notmuch treemacs-magit treemacs-projectile helm-ag paper-theme posix-manual powerline powerline-evil prettier prism pydoc tldr treemacs-evil websocket dracula-theme evil-collection evil-test-helpers helm-emmet which-key flycheck evil-traces company-shell evil-org ac-emoji ac-helm ac-html evil-goggles evil-mc evil-mc powershell evil-tabs evil-tutor spacemacs-theme terminal-here toc-org vdiff company-nginx company-org-roam company-web counsel-css counsel-projectile css-autoprefixer dashboard didyoumean dired-recent evil helm-org helm-projectile company coffee-mode auto-complete emmet-mode helm magit markdown-mode ox-jekyll-md python-mode speed-type stylus-mode sublime-themes vs-dark-theme w3m web-mode-edit-element web-mode wgrep org-index org-journal counsel ivy docbook gnu-elpa-keyring-update))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(user-full-name "Carl C")
  '(user-mail-address "awsomesawce@outlook.com"))
@@ -63,4 +65,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit Courier\ Prime :extend nil :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 139 :width normal :foundry "outline" :family "Source Code Variable")))))
+ '(default ((t (:background nil)))))
