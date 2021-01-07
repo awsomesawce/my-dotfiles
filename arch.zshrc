@@ -21,12 +21,13 @@ compinit
 #prompt fade cyan
 #prompt grml # too slow for me
 #echo "Welcome to zsh!"
-export LS_COLORS="$(vivid generate molokai)"
+LS_COLORS="$(vivid generate molokai)"
+export LS_COLORS
 export BROWSER=w3m
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
-export PATH=$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 export CDUMP=/mnt/c/Users/Carl/dump
 LOG_HOME_DIR='~/log/'
