@@ -24,11 +24,11 @@ Plug 'junegunn/fzf'
 Plug 'https://github.com/plasticboy/vim-markdown/'
 Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'mileszs/ack.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim'
 Plug 'https://github.com/deoplete-plugins/deoplete-zsh'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+""Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 call plug#end()
-let g:deoplete#enable_at_startup = 1
+""let g:deoplete#enable_at_startup = 1
 "" Source this config when using Coc.
 "" When turning off Coc, Comment this out!
 ""source ~/.config/nvim/coc_config.vim
