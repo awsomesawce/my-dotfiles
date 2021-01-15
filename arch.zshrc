@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -6,6 +13,7 @@ setopt autocd extendedglob notify
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
+fpath+=~/.zfunc
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/carlc/.zshrc'
 
@@ -20,11 +28,13 @@ compinit
 #prompt bigfade # prompt theme
 #prompt fade cyan
 #prompt grml # too slow for me
-#echo "Welcome to zsh!"
+echo "Welcome to zsh!"
 LS_COLORS="$(vivid generate molokai)"
 export LS_COLORS
+export ZSH_CONFIG="~/.zshrc"
+export ZSH_ALIASES_FILE="$HOME/.zsh_aliases"
 export BROWSER=w3m
-export EDITOR=nvim
+export EDITOR=nano
 export VISUAL=nvim
 export PAGER=less
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
@@ -46,6 +56,7 @@ alias nvzrc='nvim ~/.zshrc' # edit with nvim
 alias ezrc='emacs ~/.zshrc' # edit with emacs instead.
 alias nvimshellconfig='nvim -O2 ~/.bashrc ~/.zshrc'
 alias nvbrc='nvim ~/.bashrc'
+alias nzrc='nano ~/.zshrc'
 alias vbrc='vim ~/.bashrc'
 alias emacsconfig='emacs ~/.emacs'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
@@ -130,6 +141,7 @@ alias gdiffremote='git diff --color=auto origin/master'
 alias gitpp='git pull && git push'
 alias gp='git push'
 alias lshome='ls ~/'
+alias lsd=/usr/bin/lsd
 alias reload='source ~/.zshrc'
 alias convad='asciidoctor -b html5 -d book'
 alias cp2c="cp $1 $CDUMP" # This doesn't work currently
@@ -147,8 +159,10 @@ alias open='xdg-open'
 alias ducks='w3m www.duckduckgo.com'
 alias ducksl='lynx www.duckduckgo.com'
 alias ghsite="w3m www.github.com"
-# override when using windows path so sass defaults to linux sass
+alias linksgh="links www.github.com/awsomesawce"
+# overrides when using windows path 
 alias sass=/home/carlc/.nvm/versions/node/v14.15.3/bin/sass
+alias ack='/usr/bin/vendor_perl/ack'
 ## sourcing external scripts
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # source the z shell script for tracking directories
 # source zsh-syntax-highlighting
@@ -169,3 +183,8 @@ export NVM_DIR="$HOME/.nvm"
 #eval "$(fasd --init auto)"
 ## Experimental alias for simple zshrc diff script
 alias zshrcdiff='bash -e /home/carlc/.dotfiles/bin/zshrc_diff'
+### Turned off zsh-theme-powerlevel10k for now because it's slow to start on wsl
+#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
