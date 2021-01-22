@@ -16,6 +16,7 @@ export PAGER=less
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=/bin/bash
 export CDUMP=/mnt/c/Users/Carl/dump
+export REMEMBER="$HOME/remember.md"
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
 alias npmbin="cd \$NPM_BIN"
 
@@ -53,3 +54,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . /home/carlc/.bash.d/cht.sh
 
+source "$HOME/.cargo/env"
+alias l='ls -alhF'
+alias wsl-notes='cd ~/Documents/wsl-notes'
+alias gst='git status'
