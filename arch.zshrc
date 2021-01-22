@@ -4,7 +4,7 @@
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
-
+LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -40,6 +40,8 @@ export PAGER=less
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 export CDUMP=/mnt/c/Users/Carl/dump
+# 
+export REMEMBER="$HOME/remember.md"
 LOG_HOME_DIR='~/log/'
 export LOG_HOME_DIR
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
@@ -110,7 +112,7 @@ alias unexport='unset'
 alias -s txt=nvim
 alias -s md=bat
 alias -s adoc=bat
-alias -s zsh=nvim
+#alias -s zsh=nvim # turned off because it prevents scripts from running.
 alias -s html=w3m
 # Other aliases
 alias g='git' # simply g for git
@@ -169,7 +171,7 @@ alias ack='/usr/bin/vendor_perl/ack'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # if debian, source this one
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# zsh-autocomplete
+# zsh-autosuggestions
 #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bash completion for chtsh
 #. ~/.bash.d/cht.sh
@@ -182,9 +184,11 @@ export NVM_DIR="$HOME/.nvm"
 # fasd init
 #eval "$(fasd --init auto)"
 ## Experimental alias for simple zshrc diff script
-alias zshrcdiff='bash -e /home/carlc/.dotfiles/bin/zshrc_diff'
+#alias zshrcdiff='bash -e /home/carlc/.dotfiles/bin/zshrc_diff'
 ### Turned off zsh-theme-powerlevel10k for now because it's slow to start on wsl
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias winsnippets='cd /mnt/d/Carl/OneDrive/snippets'
+alias notable='cd /mnt/d/Carl/OneDrive/Notable'
