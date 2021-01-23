@@ -18,6 +18,7 @@ Example dotfiles from various `docs` folders shall be located in `./docs/` folde
 ## Dirs
 
 - `/bin`: Homemade shell scripts.
+- `/Arch`: contains all of Arch Linux's dotfiles.
 - `/templates`: general dotfile templates.
 - `/completion`: completion scripts.
 - `/zsh\_custom`: oh-my-zsh framework custom scripts and aliases.
