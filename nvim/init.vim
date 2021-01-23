@@ -3,8 +3,9 @@ set shiftwidth=4
 set ignorecase
 set background=dark
 set encoding=utf-8
-""colorscheme desert
-colorscheme molokai
+colorscheme desert
+set omnifunc=ale#completion#OmniFunc
+""colorscheme molokai
 ""colorscheme peachpuff
 call plug#begin('~/.vim/plugged')
 """ Disabled coc.nvim because it was slowing down too much.
@@ -20,12 +21,15 @@ call plug#begin('~/.vim/plugged')
 ""    \ 'branch': 'next',
 ""    \ 'do': 'bash install.sh',
 ""    \ }
+Plug 'vim-latex/vim-latex'
 Plug 'junegunn/fzf'
 Plug 'https://github.com/plasticboy/vim-markdown/'
 Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'mileszs/ack.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'https://github.com/deoplete-plugins/deoplete-zsh'
+"" Removed deoplete 1/22/2021
+""Plug 'Shougo/deoplete.nvim'
+""Plug 'https://github.com/deoplete-plugins/deoplete-zsh'
+"" End Deoplete
 ""Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 call plug#end()
 ""let g:deoplete#enable_at_startup = 1
