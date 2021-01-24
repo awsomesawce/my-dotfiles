@@ -12,3 +12,4 @@ This directory contains most of my hand-written shell scripts.
 - `/installers`: installer scripts go here.
 - `/random_scripts`: miscellanious scripts go here.
 - `/update`: update scripts go here.
+Make sure scripts don't convert to CRLF when trying to execute them in unix environments
