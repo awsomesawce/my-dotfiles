@@ -1,0 +1,4 @@
+# Inputrc for bash readline
+#
+set completion-ignore-case on
+set bell-style none
