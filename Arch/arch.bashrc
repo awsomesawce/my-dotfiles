@@ -19,6 +19,19 @@ export CDUMP=/mnt/c/Users/Carl/dump
 export REMEMBER="$HOME/remember.md"
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
 alias npmbin="cd \$NPM_BIN"
+export NVIMCONFIG=~/.config/nvim/init.vim # Added for ease of use
+# tilde isn't expanded when in single quotes!
+
+# fff file manager favorites
+export FFF_FAV1=~/Documents
+export FFF_FAV2=~/.bashrc
+export FFF_FAV3=~/Documents/wsl-notes
+export FFF_FAV4=/usr/share
+export FFF_FAV5=~/.dotfiles
+export FFF_FAV6=~/.config
+export FFF_FAV7=~/.config/nvim
+export FFF_FAV8=
+export FFF_FAV9=
 
 ## Todofile aliases
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
