@@ -1,0 +1,3 @@
+############# Zsh aliases file ##############
+# See bottom of ~/.zshrc to see how I sourced this file from there.
+alias open_zsh_aliases='vim ~/.zsh_aliases'
