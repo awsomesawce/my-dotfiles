@@ -1,5 +1,10 @@
 "" My nvim init.vim file for Arch Linux
 set shiftwidth=4
+filetype plugin on
+set omnifunc=ale#completion#OmniFunc
+""set omnifunc=syntaxcomplete#Complete
+""set makeprg=shellcheck\ -f\ gcc\ % "" Use shellcheck for shell scripts when using make inside nvim
+set wildmenu
 set ignorecase
 set background=dark
 set encoding=utf-8

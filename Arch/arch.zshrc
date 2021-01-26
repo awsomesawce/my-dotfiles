@@ -31,8 +31,9 @@ compinit
 echo "Welcome to zsh!"
 LS_COLORS="$(vivid generate molokai)"
 export LS_COLORS
-export ZSH_CONFIG="~/.zshrc"
-export ZSH_ALIASES_FILE="$HOME/.zsh_aliases"
+export ZSH_CONFIG=~/.zshrc
+export NVIMCONFIG=~/.config/nvim/init.vim # Sets variable for nvimconfig for ease of use
+export ZSH_ALIASES_FILE="$HOME/.zsh_aliases" # Start using that file as zsh aliases file
 export BROWSER=w3m
 export EDITOR=nano
 export VISUAL=nvim
@@ -45,6 +46,16 @@ export REMEMBER="$HOME/remember.md"
 LOG_HOME_DIR='~/log/'
 export LOG_HOME_DIR
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
+# fff file manager favorites
+export FFF_FAV1=~/Documents
+export FFF_FAV2=~/.bashrc
+export FFF_FAV3=~/Documents/wsl-notes
+export FFF_FAV4=/usr/share
+export FFF_FAV5=~/.dotfiles
+export FFF_FAV6=~/.config
+export FFF_FAV7=~/.config/nvim
+export FFF_FAV8=
+export FFF_FAV9=
 alias npmbin="cd $NPM_BIN"
 # Todo file easiness
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
@@ -62,6 +73,8 @@ alias nzrc='nano ~/.zshrc'
 alias vbrc='vim ~/.bashrc'
 alias emacsconfig='emacs ~/.emacs'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias vimconfig='vim ~/.vimrc'
+alias emacsconfig='emacs ~/.emacs'
 alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
 # Some aliases to start with
 alias lista='command ls -dF .*' # list all dotfiles
@@ -73,6 +86,7 @@ alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
 alias nvimdiff="nvim -d"
 alias nvim2="nvim -O2"
+alias vim2="vim -O2"
 alias nvim22='nvim -O2 -p2'
 alias ....='cd ../../..'
 # Set basic readme viewer for bat
@@ -192,3 +206,4 @@ export NVM_DIR="$HOME/.nvm"
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias winsnippets='cd /mnt/d/Carl/OneDrive/snippets'
 alias notable='cd /mnt/d/Carl/OneDrive/Notable'
+alias pmfl='pacman -Fl'
