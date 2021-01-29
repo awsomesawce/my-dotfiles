@@ -3,7 +3,7 @@
 Tools and utility scripts to help automate.
 
 zshrcupdate.sh will update zshrc into dotfiles directory and label it `distro.zshrc` where `distro` is the 
-linux distrobution I'm currently in.
+linux distribution I'm currently in.
 
 This directory contains most of my hand-written shell scripts.
 
