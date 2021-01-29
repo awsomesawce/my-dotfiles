@@ -7,7 +7,7 @@ Set-PoshPrompt -Theme powerlevel10k_classic
 $psDir="D:/Carl/Documents/Powershell"
 $gitDir="D:/Carl/Documents/GitHub"
 $oneDrive="D:/Carl/OneDrive"
-$localAppData="C:/Users/Carl/AppData/Local/"
+$localAppData="C:/Users/Carl/AppData/Local"
 $globalAppData="D:/Carl/Appdata"
 ## IMPORTANT: Profile is already set to $PROFILE and $profile
 #$psProfileFile='D:/Carl/Documents/Powershell/Microsoft.Powershell_profile.ps1'
@@ -73,7 +73,7 @@ Function NotesDir {Set-Location -Path $oneDrive\Notable\Notes}
 # Set-Alias to make notes dir even more easily accessible
 Set-Alias -Name ndir -Value NotesDir
 # Function for invoking ubuntu wsl with carlc user and zsh shell
-Function wslubu {wsl -d Ubuntu-20.04 -u carlc -e zsh}
+Function wslubuntu {wsl -d Ubuntu-20.04 -u carlc -e zsh}
 Function kak {wsl -d Arch -u carlc -e kak}
 # Function to get to standard parent git directory
 Function gitdir {Set-Location -Path $gitDir}
@@ -84,19 +84,19 @@ Function org_dir {Set-Location -Path $oneDrive\org_dir}
 Function gitst {git status}
 Function gpgmee {gpg -se -r Carl}
 Function localAppData {Set-Location -Path C:\Users\Carl\AppData\Local}
-Function globalAppData {Set-Location -Path D:\Carl\AppData}
+Function chdirGAppData {Set-Location -Path $globalAppData}
 Function gcift {Get-ChildItem | Format-Table}
 Function npmDoc {Set-Location -Path 'C:\Program Files\nodejs\node_modules\npm\docs'}
 # Backup folder for dotfiles in both Windows and Ubuntu
 Function dotfiles_backup {Set-Location -Path $oneDrive\dotfiles_backup}
 # Easily page thru long ls lists
-Function lspage {ls | less}
+Function lspage {Get-ChildItem | less}
 Set-Alias -name lsless -Value lspage
 Set-Alias -Name lsl -Value lspage
 # Easily page thru get-help output
 Function helpless {Get-Help $1 | less}
 # Easily open powershell profile in fvim
-Function psProfileEdit {ii D:\Carl\Documents\Powershell\Microsoft.Powershell_profile.ps1}
+Function psProfileEdit {Invoke-Item D:\Carl\Documents\Powershell\Microsoft.Powershell_profile.ps1}
 Set-Alias -Name dotdir -Value dotfiles_backup
 Set-Alias -Name archl -Value 'D:/Arch/arch.exe'
 Set-Alias -Name lg -Value 'lazygit'
@@ -119,8 +119,11 @@ Set-Alias -Name rename -Value Rename-Item -Description "A smart rename alias"
 # Source the gh completion script for pwsh.  12/06/2020 does not work currently but loads just fine with no errors.
 . $psDir\Scripts\gh_compPowershell.ps1
 Set-Variable -Name CYGBIN -Value 'D:/Cygwin/bin' -Description 'Location for cygwin binaries'
-echo "Welcome to Powershell!"
 Set-Variable -Name msysbin -Value D:\MSYS2\usr\bin
 Set-Variable -Name cygwinbin -Value D:\Cygwin\bin
 Set-Alias -Name ghelp -Value Get-Help
 Set-Variable -Name rememberfile -Value D:\Carl\OneDrive\TODO\quicktodo.md
+Write-Output "Welcome to Powershell!"
+Set-Alias -Name shmd -Value Show-Markdown -Description "Alias for Show-Markdown"
+# TODO: Organize aliases and functions.
+# TODO: Put all aliases in separate script and source the script.
