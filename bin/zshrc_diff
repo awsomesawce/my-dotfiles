@@ -1,3 +1,10 @@
-#!/bin/bash
-
-nvim -d ~/.zshrc ~/.dotfiles/arch.zshrc
+#!/usr/bin/env bash
+# Maybe change script so that it works on zsh instead of bash
+# Bash does not have "print" command
+if [ -f ~/.zshrc ] && [ -f ~/.dotfiles/Arch/arch.zshrc ]; then
+    echo "loading"
+    
+    nvim -d ~/.zshrc ~/.dotfiles/Arch/arch.zshrc
+else
+    echo "Files are not there.  Not loading."
+fi

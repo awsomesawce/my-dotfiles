@@ -56,6 +56,7 @@ export FFF_FAV6=~/.config
 export FFF_FAV7=~/.config/nvim
 export FFF_FAV8=
 export FFF_FAV9=
+alias ls="lsd" # makes lsd the default ls of the system
 alias npmbin="cd $NPM_BIN"
 # Todo file easiness
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
@@ -207,3 +208,9 @@ export NVM_DIR="$HOME/.nvm"
 alias winsnippets='cd /mnt/d/Carl/OneDrive/snippets'
 alias notable='cd /mnt/d/Carl/OneDrive/Notable'
 alias pmfl='pacman -Fl'
+
+# my attempt at a zsh_aliases test
+if [[ -f ~/.zsh_aliases ]]; then
+    . ~/.zsh_aliases
+fi
+export TEMPLATES=~/.dotfiles/templates
