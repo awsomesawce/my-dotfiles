@@ -9,3 +9,4 @@ This is where I shall keep all my learning bash/sh scripts.
 The path to the symlink is `~/bin/shell_learning/README.md`
 
 > It worked!
+added a few files from linuxhint dot com

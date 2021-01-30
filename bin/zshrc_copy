@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+if [ -f ~/.zshrc ] && [ -f ~/.dotfiles/Arch/arch.zshrc ]; then
+    print "Files are there.  Would you like to copy to dotfiles? "
+    read answer
+    if [ $answer="yes" ]; then
+	cp -i ~/.zshrc ~/.dotfiles/Arch/arch.zshrc
+    else
+	print "you chose not to do this"
+    fi
+else
+    echo "Files are not there.  Not loading."
+fi
+exit 0

@@ -16,8 +16,22 @@ export PAGER=less
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=/bin/bash
 export CDUMP=/mnt/c/Users/Carl/dump
+export REMEMBER="$HOME/remember.md"
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
 alias npmbin="cd \$NPM_BIN"
+export NVIMCONFIG=~/.config/nvim/init.vim # Added for ease of use
+# tilde isn't expanded when in single quotes!
+
+# fff file manager favorites
+export FFF_FAV1=~/Documents
+export FFF_FAV2=~/.bashrc
+export FFF_FAV3=~/Documents/wsl-notes
+export FFF_FAV4=/usr/share
+export FFF_FAV5=~/.dotfiles
+export FFF_FAV6=~/.config
+export FFF_FAV7=~/.config/nvim
+export FFF_FAV8=
+export FFF_FAV9=
 
 ## Todofile aliases
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
@@ -53,3 +67,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . /home/carlc/.bash.d/cht.sh
 
+source "$HOME/.cargo/env"
+alias l='ls -alhF'
+alias wsl-notes='cd ~/Documents/wsl-notes'
+alias gst='git status'

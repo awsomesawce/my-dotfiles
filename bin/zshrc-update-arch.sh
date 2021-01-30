@@ -7,9 +7,4 @@ git commit
 echo "copied .zshrc to ~/.dotfiles git repo as arch.zshrc."
 echo "Use git push to push to server!"
 echo "Have a great day!"
-<<<<<<< HEAD
-
-return 0
-=======
 exit 0
->>>>>>> c6581552e471c7411cbf10b9b0ea9a21df0492b6

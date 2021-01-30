@@ -15,6 +15,8 @@
 (evil-mode 1)
 ;; Add hook for evil-org
 (add-hook 'org-mode-hook 'evil-org-mode)
+(setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 ;;(counsel-mode 1)
 ;;(ivy-mode 1)
 ;;(company-mode)
@@ -22,7 +24,7 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (company-quickhelp-mode)
-(which-key-mode)
+(which-key-mode 1)
 (require 'helm)
 (helm-mode)
 ;; Enable powerline, powerline-evil, and powerline-evil theme.
@@ -45,10 +47,12 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(company-quickhelp-color-background "#e8e8e8")
+ '(company-quickhelp-color-foreground "#444444")
  '(compilation-message-face 'default)
  '(custom-enabled-themes '(tango-dark))
  '(custom-safe-themes
-   '("2ed177de0dfc32a6a32d6109ddfd1782a61bcc23916b7b967fa212666d1aa95c" "8ca8fbaeaeff06ac803d7c42de1430b9765d22a439efc45b5ac572c2d9d09b16" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
+   '("5846b39f2171d620c45ee31409350c1ccaddebd3f88ac19894ae15db9ef23035" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "c2e1201bb538b68c0c1fdcf31771de3360263bd0e497d9ca8b7a32d5019f2fae" "2ed177de0dfc32a6a32d6109ddfd1782a61bcc23916b7b967fa212666d1aa95c" "8ca8fbaeaeff06ac803d7c42de1430b9765d22a439efc45b5ac572c2d9d09b16" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(fci-rule-color "#3C3D37")
  '(highlight-changes-colors '("#FD5FF0" "#AE81FF"))
  '(highlight-tail-colors
@@ -80,9 +84,12 @@
      ("XXXX" . "magenta1")
      ("\\?\\?\\?+" . "magenta1")))
  '(magit-diff-use-overlays nil)
- '(org-agenda-files '("~/Documents/wsl-notes/editor_info/magit_kbings.org"))
+ '(nrepl-message-colors
+   '("#8f4e8b" "#8f684e" "#c3a043" "#397460" "#54ab8e" "#20a6ab" "#3573b1" "#DC8CC3"))
+ '(org-agenda-files
+   '("~/Documents/wsl-notes/TODO/DONE.org" "~/Documents/wsl-notes/editor_info/magit_kbings.org"))
  '(package-selected-packages
-   '(lsp-ivy airline-themes company-ctags company-php counsel-gtags counsel-projectile company-posframe dired-posframe flycheck-posframe helm-posframe ivy-posframe dired-launch doneburn-theme evil-collection evil-snipe org-journal org-super-agenda ox-hugo ox-json ox-ssh projectile spacemacs-theme ssh-config-mode treemacs-evil treemacs-projectile org-evil evil-org web-server websocket evil-nerd-commenter flycheck gitconfig-mode go-mode haml-mode jq-mode key-chord lsp-mode lua-mode monokai-pro-theme monokai-theme flymake-css helm-ag helm-emmet http humanoid-themes json-mode posix-manual powerline powerline-evil powershell prettier prism adoc-mode coffee-mode company company-emoji company-fuzzy company-nginx company-org-roam company-quickhelp company-web counsel counsel-css counsel-jq counsel-web css-autoprefixer dired-git easy-jekyll helm-company helm-css-scss helm-themes info-colors ivy-explorer ivy-file-preview js2-mode key-assist mmm-mode nord-theme org-roam ox-asciidoc ox-jekyll-md deadgrep dired-k editorconfig evil-easymotion evil-magit evil-mc github-review gitignore-templates helm-evil-markers helm-ls-git helm-org helm-rg htmlize ivy ivy-todo web-mode which-key evil evil-ediff fzf markdown-mode markdown-toc))
+   '(realgud auctex soap-client vdiff evil-surround multiple-cursors ack yasnippet yasnippet-snippets el-search elisp-def seml-mode shelisp slime slime-company ox-hugo markdown-mode eldoc ox-twbs pass passmm lsp-ivy airline-themes company-ctags company-php counsel-gtags counsel-projectile company-posframe dired-posframe flycheck-posframe helm-posframe ivy-posframe dired-launch doneburn-theme evil-collection evil-snipe org-journal org-super-agenda ox-json ox-ssh projectile spacemacs-theme ssh-config-mode treemacs-evil treemacs-projectile org-evil evil-org web-server websocket evil-nerd-commenter flycheck gitconfig-mode go-mode haml-mode jq-mode key-chord lsp-mode lua-mode monokai-pro-theme monokai-theme flymake-css helm-ag helm-emmet http humanoid-themes json-mode posix-manual powerline powerline-evil powershell prettier prism adoc-mode coffee-mode company company-emoji company-fuzzy company-nginx company-org-roam company-quickhelp company-web counsel counsel-css counsel-web css-autoprefixer dired-git easy-jekyll helm-company helm-css-scss helm-themes info-colors ivy-explorer ivy-file-preview js2-mode key-assist mmm-mode nord-theme org-roam ox-asciidoc ox-jekyll-md deadgrep dired-k editorconfig evil-easymotion evil-magit evil-mc github-review gitignore-templates helm-evil-markers helm-ls-git helm-org helm-rg htmlize ivy ivy-todo web-mode which-key evil-ediff fzf markdown-toc))
  '(pdf-view-midnight-colors '("WhiteSmoke" . "gray18"))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -114,4 +121,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 136 :width normal)))))

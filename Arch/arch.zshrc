@@ -4,7 +4,7 @@
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
-
+LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -31,8 +31,9 @@ compinit
 echo "Welcome to zsh!"
 LS_COLORS="$(vivid generate molokai)"
 export LS_COLORS
-export ZSH_CONFIG="~/.zshrc"
-export ZSH_ALIASES_FILE="$HOME/.zsh_aliases"
+export ZSH_CONFIG=~/.zshrc
+export NVIMCONFIG=~/.config/nvim/init.vim # Sets variable for nvimconfig for ease of use
+export ZSH_ALIASES_FILE="$HOME/.zsh_aliases" # Start using that file as zsh aliases file
 export BROWSER=w3m
 export EDITOR=nano
 export VISUAL=nvim
@@ -40,9 +41,22 @@ export PAGER=less
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 export CDUMP=/mnt/c/Users/Carl/dump
+# 
+export REMEMBER="$HOME/remember.md"
 LOG_HOME_DIR='~/log/'
 export LOG_HOME_DIR
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
+# fff file manager favorites
+export FFF_FAV1=~/Documents
+export FFF_FAV2=~/.bashrc
+export FFF_FAV3=~/Documents/wsl-notes
+export FFF_FAV4=/usr/share
+export FFF_FAV5=~/.dotfiles
+export FFF_FAV6=~/.config
+export FFF_FAV7=~/.config/nvim
+export FFF_FAV8=
+export FFF_FAV9=
+alias ls="lsd" # makes lsd the default ls of the system
 alias npmbin="cd $NPM_BIN"
 # Todo file easiness
 export TODOFILE=/home/carlc/Documents/wsl-notes/TODO/remember.md
@@ -60,6 +74,8 @@ alias nzrc='nano ~/.zshrc'
 alias vbrc='vim ~/.bashrc'
 alias emacsconfig='emacs ~/.emacs'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias vimconfig='vim ~/.vimrc'
+alias emacsconfig='emacs ~/.emacs'
 alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
 # Some aliases to start with
 alias lista='command ls -dF .*' # list all dotfiles
@@ -71,6 +87,7 @@ alias zhelp='cd /usr/share/zsh/5.8/help'
 alias edit="nvim"
 alias nvimdiff="nvim -d"
 alias nvim2="nvim -O2"
+alias vim2="vim -O2"
 alias nvim22='nvim -O2 -p2'
 alias ....='cd ../../..'
 # Set basic readme viewer for bat
@@ -110,7 +127,7 @@ alias unexport='unset'
 alias -s txt=nvim
 alias -s md=bat
 alias -s adoc=bat
-alias -s zsh=nvim
+#alias -s zsh=nvim # turned off because it prevents scripts from running.
 alias -s html=w3m
 # Other aliases
 alias g='git' # simply g for git
@@ -169,7 +186,7 @@ alias ack='/usr/bin/vendor_perl/ack'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # if debian, source this one
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# zsh-autocomplete
+# zsh-autosuggestions
 #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bash completion for chtsh
 #. ~/.bash.d/cht.sh
@@ -182,9 +199,18 @@ export NVM_DIR="$HOME/.nvm"
 # fasd init
 #eval "$(fasd --init auto)"
 ## Experimental alias for simple zshrc diff script
-alias zshrcdiff='bash -e /home/carlc/.dotfiles/bin/zshrc_diff'
+#alias zshrcdiff='bash -e /home/carlc/.dotfiles/bin/zshrc_diff'
 ### Turned off zsh-theme-powerlevel10k for now because it's slow to start on wsl
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias winsnippets='cd /mnt/d/Carl/OneDrive/snippets'
+alias notable='cd /mnt/d/Carl/OneDrive/Notable'
+alias pmfl='pacman -Fl'
+
+# my attempt at a zsh_aliases test
+if [[ -f ~/.zsh_aliases ]]; then
+    . ~/.zsh_aliases
+fi
+export TEMPLATES=~/.dotfiles/templates

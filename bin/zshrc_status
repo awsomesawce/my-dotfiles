@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+# program to get status of zshrc diff from git
+#
+if [ -f ~/.zshrc ] && [ -f ~/.dotfiles/Arch/arch.zshrc ]; then
+    cd ~/.dotfiles || exit 0
+    git status
+else
+    echo "Files are not there.  Not loading."
+fi
