@@ -1,4 +1,6 @@
 ############# Zsh aliases file ##############
+# By Carl C.
+# Last updated 1/30/2021
 # See bottom of ~/.zshrc to see how I sourced this file from there.
 alias open_zsh_aliases='vim ~/.zsh_aliases'
 alias pmpackagelist='pacman -Qe'
@@ -6,3 +8,8 @@ alias pmpackagelist='pacman -Qe'
 export yarn_two_cache=~/code/yarn_test/.yarn/cache
 alias cdyarn='cd ~/code/yarn_test'
 alias cdyarncache="cd $yarn_two_cache"
+alias tvf='tar -tvf'
+alias cvf='tar -cvf'
+alias pmupgrade='sudo pacman -Syu'
+alias acvf="tar -acvf" # Alias for autocompress tar
+alias aliasedit="nvim ~/.zsh_aliases"
