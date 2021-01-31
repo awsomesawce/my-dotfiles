@@ -120,10 +120,14 @@ Set-Alias -Name rename -Value Rename-Item -Description "A smart rename alias"
 . $psDir\Scripts\gh_compPowershell.ps1
 Set-Variable -Name CYGBIN -Value 'D:/Cygwin/bin' -Description 'Location for cygwin binaries'
 Set-Variable -Name msysbin -Value D:\MSYS2\usr\bin
-Set-Variable -Name cygwinbin -Value D:\Cygwin\bin
 Set-Alias -Name ghelp -Value Get-Help
 Set-Variable -Name rememberfile -Value D:\Carl\OneDrive\TODO\quicktodo.md
+Set-Variable -Name DESKTOP -Value D:\Carl\OneDrive\Desktop\ -Description "Shortcut to the Desktop folder"
 Write-Output "Welcome to Powershell!"
 Set-Alias -Name shmd -Value Show-Markdown -Description "Alias for Show-Markdown"
+Function shmdall {
+    shmd -Path *.md
+}
+Function chtsh {curl https://cht.sh/$@}
 # TODO: Organize aliases and functions.
 # TODO: Put all aliases in separate script and source the script.
