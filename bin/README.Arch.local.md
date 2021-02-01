@@ -18,8 +18,9 @@ lrwxrwxrwx carlc carlc  34 B  Sun Dec 20 16:07:04 2020 gaddc@ ⇒ /home/carlc/.d
 lrwxrwxrwx carlc carlc  37 B  Mon Dec 21 17:27:33 2020 gitstall.sh@ ⇒ /home/carlc/.dotfiles/bin/gitstall.sh
 lrwxrwxrwx carlc carlc  40 B  Fri Jan 29 02:10:19 2021 shell_learning@ ⇒ /home/carlc/.dotfiles/bin/shell_learning
 ```
+
 ## TODO
 
-- [ ] Make this entire directory a symlink to ~/.dotfiles/bin.
+- [ ] Make ~/bin directory in Arch Linux a symlink to ~/.dotfiles/bin.
 
-Also, you could mkdir `~/.dotfiles/bin/Arch` and just keep this folder in sync with that folder.
+Also, did a `mkdir Arch_specific` for Arch-specific scripts and such!

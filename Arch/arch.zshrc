@@ -159,9 +159,9 @@ alias gitpp='git pull && git push'
 alias gp='git push'
 alias lshome='ls ~/'
 alias lsd=/usr/bin/lsd
+alias lpage='ls | less'
 alias reload='source ~/.zshrc'
-alias convad='asciidoctor -b html5 -d book'
-alias cp2c="cp $1 $CDUMP" # This doesn't work currently
+#alias convad='asciidoctor -b html5 -d book'
 alias help='run-help'
 ## Pacman aliases
 alias pmii='pacman -Sii'
