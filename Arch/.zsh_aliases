@@ -5,11 +5,13 @@
 alias open_zsh_aliases='vim ~/.zsh_aliases'
 alias pmpackagelist='pacman -Qe'
 # DONE: Add yarn cache location as an env var.
-export yarn_two_cache=~/code/yarn_test/.yarn/cache
 alias cdyarn='cd ~/code/yarn_test'
-alias cdyarncache="cd $yarn_two_cache"
+alias gotocode="cd ~/code"
 alias tvf='tar -tvf'
 alias cvf='tar -cvf'
 alias pmupgrade='sudo pacman -Syu'
 alias acvf="tar -acvf" # Alias for autocompress tar
-alias aliasedit="nvim ~/.zsh_aliases"
+#alias aliasedit="nvim ~/.zsh_aliases"
+alias editaliases="nvim $ZSH_ALIASES_FILE"
+alias pmc='pacmatic'
+alias lsf="ls -F"

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# From home/carlc/Downloads/abs-guide/special-chars.html
+# Finds all exes in home bin
+
+for file in ~/bin/*
+#                  Find all executable files 
+#		   in home bin
+do
+        if [ -x "$file" ]
+        then
+          echo "$file"
+	  command file "$file"
+        fi
+done
