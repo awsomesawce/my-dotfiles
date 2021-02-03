@@ -1,0 +1,17 @@
+#!/bin/bash
+# From home/carlc/Downloads/abs-guide/special-chars.html
+
+echo "Which directory would you want to check?"
+read dirfind
+
+for file in "$dirfind"/*
+#             ^    Find all executable files ending in "calc"
+#+                 in /bin and /usr/bin directories.
+do
+        if [ -x "$file" ]
+        then
+          echo "$file"
+	  command file "$file"
+        fi
+done
+exit 0
