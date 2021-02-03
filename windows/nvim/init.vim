@@ -10,20 +10,24 @@ filetype plugin on
 "" set fileformat to dos to avoid stupid ^M symbols.
 ""set fileformat=dos
 "" disable annoying markdown auto-folding
-let g:vim_markdown_folding_disabled = 1
-set guifont=Cascadia\ Code:h22
+let g:vim_markdown_folding_disabled = 0
+set guifont=Cascadia\ Code:h18
 set ignorecase
 set background=dark
-"" Hopefully this works
-""colorscheme desert
+set autochdir "" automatically change to the directory of the file opened.
+              "" Not sure why that isn't default behavior
+colorscheme desert
 ""colorscheme molokai
-colorscheme peachpuff
+""colorscheme peachpuff
 call plug#begin('~/.vim/plugged')
+"" TODO: pick either coc.nvim _or_ ALE
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" INFO: This might be bulk because fzf is installed elsewhere in the system!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'https://github.com/plasticboy/vim-markdown/'
 Plug 'https://github.com/pangloss/vim-javascript.git'
+"" INFO: Might be bulk since ack is installed elsewhere in the system!
 Plug 'mileszs/ack.vim'
 Plug 'https://github.com/PProvost/vim-ps1'
 "" deoplete is causing a fuss when used with coc-nvim
@@ -36,12 +40,14 @@ Plug 'https://github.com/PProvost/vim-ps1'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'vim-latex/vim-latex'
 Plug 'tpope/vim-surround'
+"" TODO: Ale shouldn't be installed as-well-as Coc.nvim.  Pick one!
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree', {'branch': 'master'}
 Plug 'vim-airline/vim-airline', {'branch': 'master'}
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/vifm/vifm.vim'
+Plug 'https://github.com/z0mbix/vim-shfmt'
 """" Install next plugin as an alternative to coc.nvim
 ""Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}.
 "" End Windows only plugin list.
@@ -88,11 +94,11 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
