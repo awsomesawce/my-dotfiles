@@ -1,11 +1,12 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+# simple script to copy zshrc file
 if [ -f ~/.zshrc ] && [ -f ~/.dotfiles/Arch/arch.zshrc ]; then
-    print "Files are there.  Would you like to copy to dotfiles? "
+    echo "Files are there.  Would you like to copy to dotfiles? "
     read answer
-    if [ $answer="yes" ]; then
+    if [ "$answer" = "yes" ]; then
 	cp -i ~/.zshrc ~/.dotfiles/Arch/arch.zshrc
     else
-	print "you chose not to do this"
+	echo "you chose not to do this"
     fi
 else
     echo "Files are not there.  Not loading."
