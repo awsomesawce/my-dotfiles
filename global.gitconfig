@@ -1,0 +1,11 @@
+[user]
+	email = awsomesawce@outlook.com
+	name = Carl C
+[core]
+	editor = nvim
+	pager = bat
+	autocrlf = input
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
