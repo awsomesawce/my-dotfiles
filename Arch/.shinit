@@ -1,0 +1,11 @@
+# Dash init file
+#
+# Dash is the POSIX-flavored shell
+# Dash stands for Debian Almquist Shell
+# It is meant to be fast, small, and portable
+# Nothing that is non-POSIX will be supported or usable
+# This means any "bashisms" that might be present in shell-scripts will not be supported or won't work correctly.
+########
+# The following statement should be included before `dash' is invoked or in `$HOME/.profile'
+#ENV=$HOME/.shinit; export ENV
+

@@ -8,7 +8,6 @@ for file in ~/bin/*
 do
         if [ -x "$file" ]
         then
-          echo "$file"
 	  command file "$file"
         fi
 done

@@ -1,0 +1,4 @@
+#!/bin/sh
+# will gzip all tar files that are not zipped.
+
+gzip ./*.tar
