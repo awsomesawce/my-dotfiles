@@ -15,3 +15,9 @@ alias acvf="tar -acvf" # Alias for autocompress tar
 alias editaliases="nvim $ZSH_ALIASES_FILE"
 alias pmc='pacmatic'
 alias lsf="ls -F"
+alias mdbooksrc="cd ~/code/mdbook_test/src"
+alias -g html=w3m
+## Only zsh can do global aliases
+alias diffaliases="diff ~/.zsh_aliases ~/.dotfiles/Arch/.zsh_aliases"
+alias updatealiases="cp -i ~/.zsh_aliases ~/.dotfiles/Arch/.zsh_aliases"
+alias dotgitdiff="cd ~/.dotfiles && git diff"
