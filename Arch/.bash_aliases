@@ -23,3 +23,7 @@ alias pms="pacman -Ss"
 alias pmii='pacman -Sii'
 alias pmc='pacmatic' # pacmatic is a weird wrapper to pacman
 alias lsf="ls -F"
+alias ducks='w3m duckduckgo.com'
+alias pminstall='sudo pacman -S'
+alias edit='kak'
+alias ..='cd ..'

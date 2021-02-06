@@ -3,7 +3,7 @@
 #
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+[[ $- != *i* ]] && return # Not defined in posix sh (won't work when bash is invoked as sh)
 PS1='[\u@\h \W]\$ '
 ## End of base bashrc config
 
@@ -14,6 +14,7 @@ export LS_COLORS
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
+export WWW_HOME=https://duckduckgo.com
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=/bin/bash
 # set location variables
@@ -22,7 +23,12 @@ export REMEMBER="$HOME/remember.md"
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
 alias npmbin="cd \$NPM_BIN"
 export NVIMCONFIG=~/.config/nvim/init.vim # Added for ease of use
+export TEMPLATES=~/.dotfiles/templates
+export BASH_ALIASES_FILE=/home/carlc/.bash_aliases
 # tilde isn't expanded when in single quotes!
+
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases # source bash aliases
+
 # export FFF favorites, etc.
 # fff file manager favorites
 export FFF_FAV1=~/Documents
@@ -53,7 +59,7 @@ alias onedrive_dotfiles='cd /mnt/d/Carl/OneDrive/dotfiles_backup'
 alias ls='ls --color=auto --group-directories-first'
 alias dir='dir --color=auto'
 alias lsa='ls -a'
-alias lsd="ls" # Use modern ls program
+alias ls="lsd" # Use modern ls program
 alias rm='rm -i'
 alias cp='cp -i'
 
@@ -74,4 +80,3 @@ alias l='ls -alhF'
 alias wsl-notes='cd ~/Documents/wsl-notes'
 alias gst='git status'
 alias pmpackagelist='pacman -Qe'
-export TEMPLATES=~/.dotfiles/templates
