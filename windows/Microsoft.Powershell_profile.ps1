@@ -131,3 +131,10 @@ Function shmdall {
 Function chtsh {curl https://cht.sh/$@}
 # TODO: Organize aliases and functions.
 # TODO: Put all aliases in separate script and source the script.
+# Hello from embedded nvim!
+# Use `K' to see a docstring for the cmdlet at point in `nvim'
+Set-Alias -Name l -Value Get-ChildItem -Description "Super small ls command"
+Set-Variable -Name NVIMINITVIM -Value C:\Users\Carl\AppData\Local\nvim\init.vim -Description "Main config file for neovim"
+Set-Alias -Name w3mducks -Value "w3m duckduckgo.com" -Description "w3m for ducks"
+Function dotgitdiff {Set-Location -Path C:\Users\Carl\gitstuff\my-dotfiles\ && git diff && cd -}
+Function dotgitstatus {Set-Location -Path "$HOME/gitstuff/my-dotfiles" && git status && cd -}
