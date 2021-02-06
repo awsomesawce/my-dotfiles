@@ -18,6 +18,10 @@ alias lsf="ls -F"
 alias mdbooksrc="cd ~/code/mdbook_test/src"
 alias -g html=w3m
 ## Only zsh can do global aliases
-alias diffaliases="diff ~/.zsh_aliases ~/.dotfiles/Arch/.zsh_aliases"
-alias updatealiases="cp -i ~/.zsh_aliases ~/.dotfiles/Arch/.zsh_aliases"
+## Dotfiles related aliases
+distroname=Arch
+alias diffaliases="diff ~/.zsh_aliases/$DOTDIR/$distroname/.zsh_aliases"
+alias updatealiases="cp -i ~/.zsh_aliases ~/$DOTDIR/$distroname/.zsh_aliases"
 alias dotgitdiff="cd ~/.dotfiles && git diff"
+alias dotgitcommit="cd ~/.dotfiles && git commit"
+alias dotgitstatus="cd ~/.dotfiles && git status"
