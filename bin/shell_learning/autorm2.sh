@@ -16,6 +16,9 @@ elif [ -r README.markdown ]; then
 elif [ -r README.mkd ]; then
     echo "Reading README.mkd"
     bat README.mkd
+elif [ -r Readme.md ]; then
+    echo "Reading Readme.md"
+    bat Readme.md
 else
     echo "No readmes in directory"
 fi
