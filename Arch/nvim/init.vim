@@ -11,19 +11,24 @@ set background=dark
 set encoding=utf-8
 "" Colorscheme options: molokai, seti, peachpuff, desert, default, darkblue
 colorscheme desert
+"" Vim-Markdown options
 let g:vim_markdown_folding_disabled = 1
+"" ALE options TODO: test this out!
+let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
-
+"" Sun 07 Feb 2021 04:22:21 PM EST
 "" Custom keybinds
 noremap <F2> a<C-R>=strftime("%c")<CR><Esc>
 " ^ inserts the date and time into the buffer
+"
+" INFO: Use :let @/ = "the" to put a string of text into the "/" buffer.
 
 "" From awesome.vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+""syntax enable "" already enabled
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -78,7 +83,7 @@ call plug#begin('~/.vim/plugged')
 ""    \ 'branch': 'next',
 ""    \ 'do': 'bash install.sh',
 ""    \ }
-Plug 'dbeniamine/cheat.sh-vim'
+""Plug 'dbeniamine/cheat.sh-vim' "" removed because it slowed down nvim
 Plug 'https://github.com/fatih/vim-go'
 Plug 'vim-latex/vim-latex'
 Plug 'https://github.com/tpope/vim-commentary'
