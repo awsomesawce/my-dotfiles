@@ -5,8 +5,13 @@ set omnifunc=ale#completion#OmniFunc
 ""set omnifunc=syntaxcomplete#Complete
 set makeprg=shellcheck\ -f\ gcc\ % "" Use shellcheck for shell scripts when using make inside nvim
 set wildmenu
+"" Automatically change the directory when loading a file in a different
+"" directory
+set autochdir
+"" Set 24bit colors
 set termguicolors
 set ignorecase
+"" Use light for light backgrounds
 set background=dark
 set encoding=utf-8
 "" Colorscheme options: molokai, seti, peachpuff, desert, default, darkblue
