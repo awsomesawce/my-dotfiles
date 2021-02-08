@@ -1,5 +1,7 @@
 "" My nvim init.vim file for Arch Linux
+"" See ":set all?" to see all options
 set shiftwidth=4
+set fileformat=unix
 ""filetype plugin on "" Not needed because it's already set.
 set omnifunc=ale#completion#OmniFunc
 ""set omnifunc=syntaxcomplete#Complete
@@ -10,23 +12,30 @@ set wildmenu
 set autochdir
 "" Set 24bit colors
 set termguicolors
-set ignorecase
 "" Use light for light backgrounds
 set background=dark
 set encoding=utf-8
 "" Colorscheme options: molokai, seti, peachpuff, desert, default, darkblue
-colorscheme desert
+try
+    colorscheme desert
+catch
+endtry
 "" Vim-Markdown options
 let g:vim_markdown_folding_disabled = 1
+"" Keybinding remaps
+noremap <F2> a<C-R>=strftime("%c")<CR><Esc>
+" ^ inserts the date and time into the buffer
+
+" INFO: Use :let @/ = "the" to put a string of text into the "/" buffer.
+" TODO: experimental options begin
+" TODO: find out what the difference is between \
+" "fileignorecase" and "ignorecase"
+set fileignorecase
+set ignorecase
 "" ALE options TODO: test this out!
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
-"" Sun 07 Feb 2021 04:22:21 PM EST
-"" Custom keybinds
-noremap <F2> a<C-R>=strftime("%c")<CR><Esc>
-" ^ inserts the date and time into the buffer
-"
-" INFO: Use :let @/ = "the" to put a string of text into the "/" buffer.
+" experimental options end
 
 "" From awesome.vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,10 +49,6 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
 
 
 " Ignore compiled files
