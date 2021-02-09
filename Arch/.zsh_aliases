@@ -16,7 +16,6 @@ alias editaliases="nvim $ZSH_ALIASES_FILE"
 alias pmc='pacmatic'
 alias lsf="ls -F"
 alias mdbooksrc="cd ~/code/mdbook_test/src"
-alias -g html=w3m
 ## Only zsh can do global aliases
 ## Dotfiles related aliases
 distroname=Arch
@@ -28,3 +27,4 @@ alias dotgitstatus="cd ~/.dotfiles && git status"
 alias wsleditorinfo='cd /home/carlc/Documents/wsl-notes/editor_info'
 alias winnotes="cd /home/carlc/onedrive/Notable/notes"
 alias arm=/home/carlc/bin/shell_learning/autorm2.sh
+alias pmi='pacman -Si'
