@@ -16,7 +16,8 @@ alias editaliases="nvim $ZSH_ALIASES_FILE"
 alias pmc='pacmatic'
 alias lsf="ls -F"
 alias mdbooksrc="cd ~/code/mdbook_test/src"
-## Only zsh can do global aliases
+## Only zsh can do global aliases and suffix aliases
+alias -s html=w3m # makes w3m open the html file
 ## Dotfiles related aliases
 distroname=Arch
 alias diffaliases="diff ~/.zsh_aliases $DOTDIR/$distroname/.zsh_aliases"
