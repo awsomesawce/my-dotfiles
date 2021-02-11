@@ -28,7 +28,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -72,13 +72,18 @@ export SHELL=/bin/bash
 export CDUMP=/mnt/c/Users/Carl/dump
 export REMEMBER="$HOME/remember.md"
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
-alias npmbin="cd \$NPM_BIN"
+alias npmbin='cd $(npm -g bin)'
 export NVIMCONFIG=~/.config/nvim/init.vim # Added for ease of use
 export TEMPLATES=~/.dotfiles/templates
+export DOTDIR=~/.dotfiles
+ARCHDOTDIR="$DOTDIR/Arch"; export ARCHDOTDIR
 export BASH_ALIASES_FILE=/home/carlc/.bash_aliases
 # tilde isn't expanded when in single quotes!
 
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases # source bash aliases
+[[ -r ~/.bash_aliases ]] && . /home/carlc/.bash_aliases # source bash aliases
+[[ -r ~/.bash_extra_variables ]] \
+    && . /home/carlc/.bash_extra_variables \
+    || echo "extra variables not found"
 
 # export FFF favorites, etc.
 # fff file manager favorites

@@ -2,7 +2,7 @@
 # By Carl C.
 # Last updated 1/30/2021
 # See bottom of ~/.zshrc to see how I sourced this file from there.
-alias open_zsh_aliases='vim ~/.zsh_aliases'
+alias edit_zsh_aliases='vim ~/.zsh_aliases'
 alias pmpackagelist='pacman -Qe'
 # DONE: Add yarn cache location as an env var.
 alias cdyarn='cd ~/code/yarn_test'
@@ -21,7 +21,20 @@ alias -s html=w3m # makes w3m open the html file
 ## Dotfiles related aliases
 distroname=Arch
 alias diffaliases="diff ~/.zsh_aliases $DOTDIR/$distroname/.zsh_aliases"
-alias updatealiases="cp -i ~/.zsh_aliases $DOTDIR/$distroname/.zsh_aliases"
+updatezshaliases() {
+    local DOTDIRARCH="$HOME/.dotfiles/Arch"
+    if [ -r $DOTDIRARCH/.zsh_aliases ]; then
+	echo "zsh_aliases is already there.  Copy it? (y or n)"
+	read
+	if [ "$REPLY" = "y" ]; then
+	    command cp -i "$HOME/.zsh_aliases" "$DOTDIRARCH/.zsh_aliases"
+	else
+	    echo "Not copying"
+	fi
+    else
+	return 0
+    fi
+}
 alias dotgitdiff="cd ~/.dotfiles && git diff"
 alias dotgitcommit="cd ~/.dotfiles && git commit"
 alias dotgitstatus="cd ~/.dotfiles && git status"

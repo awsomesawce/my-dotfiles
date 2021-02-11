@@ -22,7 +22,7 @@ compinit
 # End of lines added by compinstall
 #
 # Here is my personal configuration for Arch
-
+# TODO: create function for zshcopyaliases and zshcopydotfiles
 #autoload -Uz promptinit # init prompt engine
 #promptinit # init prompt engine
 #prompt bigfade # prompt theme
@@ -31,26 +31,31 @@ compinit
 echo "Welcome to zsh!"
 LS_COLORS="$(vivid generate molokai)"
 export LS_COLORS
-export ZSH_CONFIG=~/.zshrc
-export NVIM_CONFIG=~/.config/nvim/init.vim # Sets variable for nvimconfig for ease of use
-export ZSH_ALIASES_FILE="$HOME/.zsh_aliases" # Start using that file as zsh aliases file
-export ARCHDOTFILES="$HOME/.dotfiles/Arch"
 export BROWSER=w3m
 export EDITOR=nano
 export VISUAL=nvim
 export PAGER=less
+export WWW_HOME=https://duckduckgo.com
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.7.0/bin/:$HOME/bin:/usr/local/bin:$PATH
 export SHELL=zsh
 # Extra variables
 # TODO: 2/4/2021 Source extra variables from another file in the future
-export CDUMP=/mnt/c/Users/Carl/dump
-export TEMPLATES_DOTDIR=~/.dotfiles/templates
+export cdump=/mnt/c/Users/Carl/dump
+export TEMPLATES=~/.dotfiles/templates
 export WWW_HOME=https://duckduckgo.com
-# 
+# Project variables
 export REMEMBER="$HOME/remember.md"
 LOG_HOME_DIR='~/log/'
 export LOG_HOME_DIR
 export NPM_BIN=/home/carlc/.nvm/versions/node/v14.15.3/bin
+export ZSH_CONFIG=~/.zshrc
+export NVIM_CONFIG=~/.config/nvim/init.vim # Sets variable for nvimconfig for ease of use
+export ZSH_ALIASES_FILE="$HOME/.zsh_aliases" # Start using that file as zsh aliases file
+export ARCHDOTFILES="$HOME/.dotfiles/Arch"
+export WSLNOTESDIR="$HOME/Documents/wsl-notes"
+
+# Zshrc copy function is in ~/.zsh_aliases
+
 # fff file manager favorites
 export FFF_FAV1=~/Documents
 export FFF_FAV2=~/.bashrc
@@ -59,8 +64,8 @@ export FFF_FAV4=/usr/share
 export FFF_FAV5=~/.dotfiles
 export FFF_FAV6=~/.config
 export FFF_FAV7=~/.config/nvim
-export FFF_FAV8=
-export FFF_FAV9=
+export FFF_FAV8=~/Downloads
+export FFF_FAV9=~/code/mdbook_test
 alias ls="lsd" # makes lsd the default ls of the system
 alias npmbin="cd $NPM_BIN"
 # Todo file easiness
@@ -186,7 +191,7 @@ alias linksgh="links www.github.com/awsomesawce"
 alias sass=/home/carlc/.nvm/versions/node/v14.15.3/bin/sass
 alias ack='/usr/bin/vendor_perl/ack'
 ## sourcing external scripts
-#[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # source the z shell script for tracking directories
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh # source the z shell script for tracking directories
 # source zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # if debian, source this one
