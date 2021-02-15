@@ -8,5 +8,6 @@ echo "Current \$EDITOR is $EDITOR"
 echo "Current WWWbrowser is $WWWBROWSER"
 echo "---"
 echo "Other variables: "
+echo "TODO:"
 # TODO
 exit 0

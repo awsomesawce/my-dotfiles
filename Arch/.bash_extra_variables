@@ -1,0 +1,5 @@
+export mdbooksrc="/home/carlc/code/mdbook_test/src"
+# This is a file that contains extra variables for bash and zsh
+export shelllearning="/home/carlc/bin/shell_learning"
+export WWW_HOME=https://duckduckgo.com
+export vimdir=/usr/share/vim/vimfiles
