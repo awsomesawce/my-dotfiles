@@ -96,3 +96,5 @@ I am _not_ an expert on Linux or Windows system admin.  I am merely a student of
 I am not responsible for your computer blowing up if you choose to delve into the unknown.
 
 This config is constantly being updated.
+
+See `./LICENSE` for license information
