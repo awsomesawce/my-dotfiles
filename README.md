@@ -7,9 +7,13 @@ TODO: See below.
 
 ## UPDATE
 
-Each separate distro has it's own directory.
+**ArchWSL**'s newest update has rendered ArchWSL inoperable with a FATAL error.
+`FATAL: kernel too old`.  
+The problem seems to be that `glibc` has some interoperability issues with WSL's kernel.
 
-This is a repository created to keep track of the changes I make to my rc config files.
+I will be looking into this.  
+TODO:  
+- [ ] Will test if a full reinstall will correct the error.
 
 ## Git vs Cloud Backup
 
