@@ -10,7 +10,7 @@ filetype plugin on
 "" set fileformat to dos to avoid stupid ^M symbols.
 ""set fileformat=dos
 "" disable annoying markdown auto-folding
-let g:vim_markdown_folding_disabled = 0
+let g:vim_markdown_folding_disabled = 1
 set guifont=Cascadia\ Code:h18
 set ignorecase
 set background=dark
@@ -30,16 +30,14 @@ Plug 'https://github.com/pangloss/vim-javascript.git'
 "" INFO: Might be bulk since ack is installed elsewhere in the system!
 Plug 'mileszs/ack.vim'
 Plug 'https://github.com/PProvost/vim-ps1'
-"" deoplete is causing a fuss when used with coc-nvim
 ""Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "" Begin Windows only plugin list
 "" These plugins are already installed by the Arch Linux package manager.
 "" IMPORTANT: Make sure to only use one language client at a time.
-"" ALE is a language client and therefore unnecessary if Coc.nvim is
-"" installed.
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'vim-latex/vim-latex'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 "" TODO: Ale shouldn't be installed as-well-as Coc.nvim.  Pick one!
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree', {'branch': 'master'}
@@ -55,7 +53,7 @@ call plug#end()
 
 "" Use :PlugInstall to initiate the installation of the plugins.
 "" Use :CoCInstall to initiate installation of coc-nvim language servers.
-let g:deoplete#enable_at_startup = 1
+""let g:deoplete#enable_at_startup = 1
 
 "" Begin coc config
 "" Taken from https://github.com/neoclide/coc.nvim
@@ -94,11 +92,11 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-"inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? "\<C-n>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1

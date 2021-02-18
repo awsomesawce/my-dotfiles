@@ -1,0 +1,19 @@
+Updated. Elapsed time: 5.455006 sec.
+[==============]
+
+- Finishing ... Done!
+- Post-update hook for deoplete.nvim ... OK
+- vim-javascript: Already installed
+- deoplete.nvim: Cloning into 'C:\Users\Carl\.vim\plugged\deoplete.nvim'...
+- vim-github-dashboard: Already installed
+- ctrlp.vim: Already installed
+- vifm.vim: Already installed
+- ack.vim: Already installed
+- vim-airline-themes: Already installed
+- vim-airline: Already installed
+- fzf: Already installed
+- nerdtree: Already installed
+- vim-fugitive: Already installed
+- vim-ps1: Already installed
+- coc.nvim: Already installed
+- vim-markdown: Already installed

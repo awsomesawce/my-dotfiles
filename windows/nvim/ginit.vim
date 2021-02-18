@@ -1,6 +1,6 @@
 if exists('g:fvim_loaded')
     " good old 'set guifont' compatibility
-    set guifont=mononoki\ NF:h20
+    set guifont=CodeNewRoman\ NF:h20
     " Ctrl-ScrollWheel for zooming in/out
     nnoremap <silent> <C-ScrollWheelUp> :set guifont=+<CR>
     nnoremap <silent> <C-ScrollWheelDown> :set guifont=-<CR>
