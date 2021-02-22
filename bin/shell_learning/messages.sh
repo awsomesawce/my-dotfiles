@@ -31,7 +31,7 @@ else
 	help) printf '%s\n' "$thishelp" || exit 1; exit;;
 	dotstatus) dotstat || exit 1; exit;;
 	bashcht) command curl cht.sh/bash || exit 1; exit;;
-	*) echo "That was not a command, try again." || exit 1; exit;;
+	*) echo "That was not a command, try again. or type usage for more info." || exit 1; exit;;
     esac
 fi
 exit 0

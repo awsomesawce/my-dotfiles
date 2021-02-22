@@ -1,0 +1,7 @@
+# A list of useful aliases for cygwin
+
+alias ducks='cygstart https://duckduckgo.com'
+alias ls='ls --color=auto'
+alias rm='rm -i'
+alias winhome="cd /cygdrive/c/Users/Carl"
+alias nvimconfig="nvim /cygdrive/c/Users/Carl/AppData/Local/nvim/init.vim"
