@@ -1,0 +1,8 @@
+## These are aliases personalized for me
+# I'm getting errors when trying to source this document from ~/.zshrc
+# So until I figure it out, all aliases will be at the end of that file.
+#
+
+alias powerlinedoc="cd /usr/share/doc/powerline"
+alias listzshtthemes='ls ~/.oh-my-zsh/themes'
+alias gotoetc="cd /etc"
