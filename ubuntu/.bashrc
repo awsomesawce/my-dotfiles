@@ -19,8 +19,8 @@ export PAGER=less
 # location /.bash_it/themes/
 #export BASH_IT_THEME='bobby'
 #export BASH_IT_THEME='doubletime'
-export BASH_IT_THEME='candy'
-#export BASH_IT_THEME='agnoster'
+#export BASH_IT_THEME='candy'
+export BASH_IT_THEME='agnoster'
 #export BASH_IT_THEME='powerline'
 
 # (Advanced): Change this to the name of your remote repo if you
@@ -86,8 +86,6 @@ eval $(lesspipe)
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-# Enable next line for x11 setup for x410
-[ -z "$DISPLAY" ] && export DISPLAY=127.0.0.1:0.0
 ## powerline script
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
@@ -103,13 +101,13 @@ source "$BASH_IT"/bash_it.sh
 source /home/carlc/sh-files/gh_completion.sh
 source /usr/share/doc/fzf/examples/completion.bash
 #source /usr/share/doc/fzf/examples/key-bindings.bash
+
 # nvm installed variables and scripts
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-### Deactivated this because it's already sourced from earlier
+
 ## Use bash-completion, if available - from bash-completion docs
 #[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 #	    . /usr/share/bash-completion/bash_completion
 source ~/.dotfiles/completion/node.bash_completion
-alias pip='pip3'

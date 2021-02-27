@@ -26,4 +26,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export DISPLAY=127.0.0.1:0.0
+# Enable next line for x11 setup for x410
+[ -z "$DISPLAY" ] && export DISPLAY=127.0.0.1:0.0
