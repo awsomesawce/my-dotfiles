@@ -4,24 +4,33 @@ let &packpath = &runtimepath
 source ~/_vimrc
 
 "" My nvim init.vim file
-set shiftwidth=4
+
+set shiftwidth=4 expandtab
+"set shellslash " Makes forward-slash paths instead of Windows' back-slashes
+"set shell=pwsh.exe " Shellslash does not work when cmd.exe is shell.
+
 set wildmenu
-filetype plugin on
+filetype plugin indent on
 "" set fileformat to dos to avoid stupid ^M symbols.
 ""set fileformat=dos
 "" disable annoying markdown auto-folding
 let g:vim_markdown_folding_disabled = 1
 set guifont=Cascadia\ Code:h18
 set ignorecase
+set smartcase
 set background=dark
 set autochdir "" automatically change to the directory of the file opened.
               "" Not sure why that isn't default behavior
+              "" NOTE: might have ramifications since "shellslash" is set.
+
 colorscheme desert
 ""colorscheme molokai
 ""colorscheme peachpuff
 call plug#begin('~/.vim/plugged')
 "" TODO: pick either coc.nvim _or_ ALE
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" INFO: coc extensions are installed in localAppData on Windows.
+""       Location is: ~/AppData/Local/coc/extensions
 "" INFO: This might be bulk because fzf is installed elsewhere in the system!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -39,13 +48,17 @@ Plug 'vim-latex/vim-latex'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 "" TODO: Ale shouldn't be installed as-well-as Coc.nvim.  Pick one!
-Plug 'dense-analysis/ale'
+"" DONE: Ale has been uninstalled by :PlugClean
+""Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree', {'branch': 'master'}
 Plug 'vim-airline/vim-airline', {'branch': 'master'}
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/vifm/vifm.vim'
 Plug 'https://github.com/z0mbix/vim-shfmt'
+" Add jedi-vim 2/26/2021
+Plug 'davidhalter/jedi-vim'
+Plug 'honza/vim-snippets'
 """" Install next plugin as an alternative to coc.nvim
 ""Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}.
 "" End Windows only plugin list.
