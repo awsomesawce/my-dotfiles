@@ -28,3 +28,7 @@ fi
 
 # Enable next line for x11 setup for x410
 [ -z "$DISPLAY" ] && export DISPLAY=127.0.0.1:0.0
+
+# completion evals and execignore
+eval $(gh completion -s zsh)
+export EXECIGNORE="*.dll"
