@@ -17,10 +17,10 @@ export PAGER=less
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-#export BASH_IT_THEME='bobby'
+export BASH_IT_THEME='bobby'
 #export BASH_IT_THEME='doubletime'
 #export BASH_IT_THEME='candy'
-export BASH_IT_THEME='agnoster'
+#export BASH_IT_THEME='agnoster'
 #export BASH_IT_THEME='powerline'
 
 # (Advanced): Change this to the name of your remote repo if you
@@ -110,4 +110,4 @@ export NVM_DIR="$HOME/.nvm"
 ## Use bash-completion, if available - from bash-completion docs
 #[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 #	    . /usr/share/bash-completion/bash_completion
-source ~/.dotfiles/completion/node.bash_completion
+source "$HOME/.dotfiles/completion/node.bash_completion"
