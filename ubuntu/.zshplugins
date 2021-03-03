@@ -1,0 +1,24 @@
+cat <<EOBUNDLES
+ gitfast
+ ssh-agent
+ z
+ tmux
+ npm
+ node
+ npx
+ copydir
+ colored-man-pages
+ jsontools          
+ ubuntu            
+ colorize          
+                   
+ command-not-found 
+                   
+ sudo             
+                   
+ ruby              
+ web-search       
+ python            
+                   
+ common-aliases   
+EOBUNDLES

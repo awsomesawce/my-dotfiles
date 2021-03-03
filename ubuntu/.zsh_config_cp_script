@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Copies config files given by arguments into their 
+# respective config backup directories
+
+argfirst="$1"
+argsecond="$2"
+nameofscript=$(basename $0)
+#argsall="$*"
+#argsarray="$@"
+
+if [ -n "$1" ]; then
+    command cp -i "$1" ~/.dotfiles/ubuntu
+    command cp -i "$1" ~/onedrivemnt/dotfiles_backup/ubuntu
+else 
+    cat <<EOF
+    $0
+    usage: $nameofscript ~/.rcfile.
+    Will copy the file into all the config backup repos on this machine.
+EOF
+fi
