@@ -1,0 +1,6 @@
+#!/bin/bash
+# This is a demonstration on how to create a shell script
+# and alias it to a command.
+
+export PATH=/usr/bin:$PATH
+[[  $# -ne 0  ]] && exec gzip -9 "$@" || echo "enter in a file to max compress as the script argument"

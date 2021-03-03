@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # script for automatically opening a README file
 # no matter what extension
+
+## TODO: function goes here.
+function batreadme {
+    }
+
+
 if [ -r README ]; then
     echo "Reading README"
     bat README

@@ -1,8 +1,26 @@
-## These are aliases personalized for me
-# I'm getting errors when trying to source this document from ~/.zshrc
-# So until I figure it out, all aliases will be at the end of that file.
-#
+## Ubuntu Zsh Aliases File ##
+# Export a few useful variables
+export zshrcfile="$HOME/.zshrc"
+zshaliasesfile="$HOME/.zsh_aliases"; export zshaliasesfile
 
 alias powerlinedoc="cd /usr/share/doc/powerline"
 alias listzshtthemes='ls ~/.oh-my-zsh/themes'
-alias gotoetc="cd /etc"
+# Important commands
+alias rm='nocorrect rm -i'
+alias cp='nocorrect cp -i'
+alias mkdir='nocorrect mkdir'
+alias fd=fdfind # Debian adjustment: fd is named fdfind in Debian
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias bat='bat.exe' # This works when windows path is on
+alias suapi='sudo aptitude install'
+alias vzrc="vim $HOME/.zshrc"
+alias vbrc="vim ~/.bashrc"
+alias vzalias="vim $HOME/.zsh_aliases"
+alias deno=/home/carlc/.deno/bin/deno
+alias afshow='apt-file show'
+alias wslnotes='cd /home/carlc/documents/gitstuff/wsl-notes/ubuntu'
+
+# External script aliases
+
+alias cpzshconf="~/.zsh_config_cp_script"

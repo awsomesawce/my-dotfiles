@@ -7,7 +7,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Set separate history for zsh
 HISTFILE=~/.zsh_history
 # Path to your oh-my-zsh installation. - changed to .antigen - 11/11/2020
-export ZSH="~/.antigen"
+export ZSH="$HOME/.antigen"
 # Some extra variables
 export EDITOR=vim
 export TERM=xterm-256color
@@ -103,15 +103,29 @@ antigen use oh-my-zsh
 
 # antigen bundle <<EOBUNDLES
     # Bundles from the default repo (robbyrussell's oh-my-zsh)
-antigen bundle git
-
+antigen bundle gitfast
+antigen bundle ssh-agent
 # z readme is in plugins/z directory
 antigen bundle z
 #antigen bundle tmux
 antigen bundle npm
 antigen bundle node
-#antigen bundle npx
+antigen bundle npx
 antigen bundle colored-man-pages
+antigen bundle copydir
+antigen bundle jsontools
+antigen bundle ubuntu
+antigen bundle colorize
+
+antigen bundle command-not-found
+
+#antigen bundle sudo
+
+antigen bundle ruby
+#antigen bundle web-search
+antigen bundle python
+
+#antigen bundle common-aliases
 
     # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -122,24 +136,12 @@ antigen bundle zsh-users/zsh-autosuggestions
     # Extra zsh completions
 antigen bundle zsh-users/zsh-completions
 
-#antigen bundle colorize
-
-antigen bundle command-not-found
-
-#antigen bundle sudo
-
-#antigen bundle ruby
-antigen bundle web-search
-#antigen bundle python
-
-#antigen bundle common-aliases
 # Load the theme
-antigen theme fino-time
+#antigen theme fino-time
 #antigen theme candy-kingdom
-#antigen theme candy
+antigen theme candy
 #antigen theme bira
 #antigen theme mortalscumbag
-#antigen theme candy
 #antigen theme jispwoso
 #antigen theme duellj
 #antigen theme agnoster
@@ -149,7 +151,7 @@ antigen apply
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+ export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
  export LANG=en_US.UTF-8
@@ -186,20 +188,6 @@ fi
  alias h=history
  alias gitjour='cd ~/documents/gitstuff/git-journal'
 
-### Below is a part of the zgen package, unused atm
-# load zsh
-#source "${HOME}/.zgen/zgen.zsh"
-
-# if the init script doesn't exist
-#if ! zgen saved; then
-
-  # specify plugins here
-#  zgen oh-my-zsh
-
-  # generate the init script from plugins above
- # zgen save
-#fi
-## This is where my echos go.
 alias zhelp='cd /usr/share/zsh/help'
 #alias powerlinedoc = 'cd /usr/share/doc/powerline'
 alias listzshthemes='ls ~/.oh-my-zsh/themes'
@@ -208,3 +196,8 @@ alias gitst='git status'
 # Added by apt's version of thefuck
 # Next time uninstall thefuck from pip3 before installing thru apt
 eval $(thefuck --alias)
+eval "$(lesspipe)"
+antigen bundle copyfile
+#antigen bundle pipenv
+antigen bundle pip
+antigen bundle pylint
