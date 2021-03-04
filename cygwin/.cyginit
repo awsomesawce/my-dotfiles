@@ -1,0 +1,21 @@
+# Cygwin init script
+# This will get user customization from Cygwin's /home directory.
+# Source this file using "source .cyginit" or ". .cyginit".  `.' is a synonym to `source'.
+# This file was originally symlinked from "/cygdrive/d/Carl/Documents/GitHub/node-school"
+
+oneDrive="/cygdrive/d/Carl/OneDrive"
+snippetsdir="$oneDrive/snippets"
+cygdotback="$oneDrive/dotfiles_backup/cygwin"
+cyghome='/home/Carl'
+export oneDrive snippetsdir cygdotback cyghome
+
+bashrc="$cyghome/.bashrc"
+bashaliases="$cyghome/.bash_aliases"
+
+
+[[ -r "$bashrc" ]] && . "$bashrc" || echo "$bashrc not found or is not readable"
+[[ -r "$bashaliases" ]] && . "$bashaliases" || echo "$bashaliases not found or is not readable"
+[[ -r "/home/Carl/.inputrc" ]] && . /home/Carl/.inputrc || echo "/home/Carl/.inputrc not found"
+
+export nodeschooldir="/cygdrive/d/Carl/Documents/GitHub/node-school"
+alias cyginstaller='cygstart /cygdrive/c/Users/Carl/Downloads/Cygwin\ Package\ Installer/setup-x86_64.exe'
