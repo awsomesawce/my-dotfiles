@@ -17,6 +17,8 @@ filetype plugin indent on
 let g:vim_markdown_folding_disabled = 1
 set guifont=Cascadia\ Code:h18
 set ignorecase
+set incsearch
+set inccommand=split " This allows you to see what you're substituting as you type
 set smartcase
 set background=dark
 set autochdir "" automatically change to the directory of the file opened.
@@ -43,10 +45,12 @@ Plug 'https://github.com/PProvost/vim-ps1'
 "" Begin Windows only plugin list
 "" These plugins are already installed by the Arch Linux package manager.
 "" IMPORTANT: Make sure to only use one language client at a time.
+Plug 'editorconfig/editorconfig-vim'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'vim-latex/vim-latex'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
 "" TODO: Ale shouldn't be installed as-well-as Coc.nvim.  Pick one!
 "" DONE: Ale has been uninstalled by :PlugClean
 ""Plug 'dense-analysis/ale'
@@ -58,6 +62,7 @@ Plug 'https://github.com/vifm/vifm.vim'
 Plug 'https://github.com/z0mbix/vim-shfmt'
 " Add jedi-vim 2/26/2021
 Plug 'davidhalter/jedi-vim'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 """" Install next plugin as an alternative to coc.nvim
 ""Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}.
@@ -67,6 +72,9 @@ call plug#end()
 "" Use :PlugInstall to initiate the installation of the plugins.
 "" Use :CoCInstall to initiate installation of coc-nvim language servers.
 ""let g:deoplete#enable_at_startup = 1
+
+" editorconfig config
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 "" Begin coc config
 "" Taken from https://github.com/neoclide/coc.nvim
@@ -238,3 +246,19 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "" End coc config
+
+"" Airline stuff
+let g:airline_filetype_overrides = {
+      \ 'coc-explorer':  [ 'CoC Explorer', '' ],
+      \ 'defx':  ['defx', '%{b:defx.paths[0]}'],
+      \ 'fugitive': ['fugitive', '%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'],
+      \ 'gundo': [ 'Gundo', '' ],
+      \ 'help':  [ 'Help', '%f' ],
+      \ 'minibufexpl': [ 'MiniBufExplorer', '' ],
+      \ 'nerdtree': [ get(g:, 'NERDTreeStatusline', 'NERD'), '' ],
+      \ 'startify': [ 'startify', '' ],
+      \ 'vim-plug': [ 'Plugins', '' ],
+      \ 'vimfiler': [ 'vimfiler', '%{vimfiler#get_status_string()}' ],
+      \ 'vimshell': ['vimshell','%{vimshell#get_status_string()}'],
+      \ 'vaffle' : [ 'Vaffle', '%{b:vaffle.dir}' ],
+      \ }
