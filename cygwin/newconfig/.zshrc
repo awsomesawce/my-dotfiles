@@ -3,6 +3,12 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+# Path to your home directory in Cygwin
+export CYGHOME=/home/Carl
+export CYGZSHRC="$CYGHOME/.zshrc"
+export CYGZSHALIASES="$CYGHOME/.zsh_aliases"
+# source CYGZSHALIASES at bottom
+
 ## User input
 unalias run-help
 autoload -Uz run-help
@@ -74,7 +80,7 @@ ZSH_THEME="half-life"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm colored-man-pages web-search)
+plugins=(jsontools fd colorize git node npm colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,7 +99,7 @@ export LANG=en_US.UTF-8
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+ export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -102,10 +108,11 @@ export LANG=en_US.UTF-8
 #
 # My aliases
 #
-[[ -r "$HOME/.zsh_aliases_cyg" ]] && . "$HOME/.zsh_aliases_cyg" || echo ".zsh_aliases_cyg does not exist.  touch $HOME/.zsh_aliases_cyg to get rid of this message."
-[[ -r "$HOME/.zsh_exports" ]] && . "$HOME/.zsh_exports" || echo ".zsh_exports does not exist. touch $HOME/.zsh_exports to get rid of this message."
+#[[ -r "$CYGHOME/.zsh_aliases_cyg" ]] && . "$CYGHOME/.zsh_aliases_cyg" || echo ".zsh_aliases_cyg does not exist.  touch $CYGHOME/.zsh_aliases_cyg to get rid of this message."
+#[[ -r "$CYGHOME/.zsh_exports" ]] && . "$CYGHOME/.zsh_exports" || echo ".zsh_exports does not exist. touch $CYGHOME/.zsh_exports to get rid of this message."
 
 alias vzrc='vim ~/.zshrc'
+alias editzshrc=vzrc
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias gitdir="cd /cygdrive/d/Carl/Documents/GitHub"
 alias gitst='git status'
@@ -113,9 +120,9 @@ alias gst='git status'
 
 # More aliases (from /usr/share/doc/zsh-5.8 in Cygwin)
 
-alias mv='nocorrect mv'       # no spelling correction on mv
-alias cp='nocorrect cp'       # no spelling correction on cp
-alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
+alias mv='nocorrect command mv -i'       # no spelling correction on mv
+alias cp='nocorrect command cp -i'       # no spelling correction on cp
+alias mkdir='nocorrect command mkdir' # no spelling correction on mkdir
 alias j=jobs
 alias pu=pushd
 alias po=popd
@@ -131,4 +138,8 @@ alias l='ls -lhF'
 alias lsd='ls -ld *(-/DN)'
 
 # List only file beginning with "."
-alias lsa='ls -ld .*'
+alias lsdot='ls -ld .*'
+
+# source zsh_aliases file
+# This is the one that is based inside cygwin's home directory.
+[[ -r "$CYGZSHALIASES" ]] && source "$CYGZSHALIASES" || echo "$CYGZSHALIASES not found. touch $CYGZSHALIASES to get rid of this message."

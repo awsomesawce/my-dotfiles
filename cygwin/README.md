@@ -1,5 +1,11 @@
 # Cygwin dotfiles
 
+**Important**: This directory is symlinked to `/home/Carl/dotfiles`.
+
+## TODO
+
+- [ ] Create cp script to load into dotfiles directory.
+
 This is a collection of dotfiles that are meant to be used with **Cygwin**.
 
 These files are tailored to work in a combined **Windows** and **Unix** environment.
