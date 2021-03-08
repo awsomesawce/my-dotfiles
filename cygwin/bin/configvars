@@ -1,0 +1,19 @@
+oneDrive="/cygdrive/d/Carl/OneDrive"
+cygdotbackup="$oneDrive/dotfiles_backup/cygwin"
+cyghome='/home/Carl'
+winhome='/cygdrive/c/Users/Carl'
+# config file variable definitions
+bashrc="$cyghome/.bashrc"
+bashaliases="$cyghome/.bash_aliases"
+bashprofile="$cyghome/.bash_profile"
+exports="$cyghome/.exports"
+cygprofile="$cyghome/.profile"
+cyginit="$cyghome/.cyginit"
+winzshrc="$winhome/.zshrc"
+
+bashconfig=("$bashrc" "$bashaliases" "$bashprofile")
+zshconfig=("$winzshrc" "$cyghome/.zsh_aliases" "$cyghome/.zshenv")
+
+# Unset everything except directory variables and the full config arrays.
+unset winzshrc cyginit cygprofile exports bashprofile bashaliases bashrc
+

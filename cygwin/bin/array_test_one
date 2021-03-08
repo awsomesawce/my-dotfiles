@@ -1,0 +1,14 @@
+#!/bin/bash
+# Demonstration on how arrays work in bash
+array=("this" "that")
+arrayfirst="${array[0]}"
+arraysecond="${array[1]}"
+
+# referencing indexed arrays work differently in bash and zsh
+echo $array # In zsh this will expand to include both values
+	    # In bash this will only expand to first value
+echo "${array[*]}" # use this to access all values at once in both zsh and bash
+echo "${array[@]}" # expands values as _separate_ words.
+# in zsh, set KSH_ARRAYS to 1 to have them evaluate the same as bash arrays, indexed starting with 0 instead of 1
+# Demo of array for config variables
+zshconfig=("$winzshrc" "$cyghome/.zsh_aliases" "$cyghome/.zshenv")
