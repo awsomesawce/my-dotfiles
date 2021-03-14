@@ -53,7 +53,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 "" TODO: Ale shouldn't be installed as-well-as Coc.nvim.  Pick one!
 "" DONE: Ale has been uninstalled by :PlugClean
-""Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree', {'branch': 'master'}
 Plug 'vim-airline/vim-airline', {'branch': 'master'}
 Plug 'vim-airline/vim-airline-themes'
@@ -64,7 +64,7 @@ Plug 'https://github.com/z0mbix/vim-shfmt'
 Plug 'davidhalter/jedi-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'https://github.com/vim-syntastic/syntastic'
+" Plug 'https://github.com/vim-syntastic/syntastic'
 """" Install next plugin as an alternative to coc.nvim
 ""Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}.
 "" End Windows only plugin list.
@@ -264,14 +264,14 @@ let g:airline_filetype_overrides = {
       \ 'vaffle' : [ 'Vaffle', '%{b:vaffle.dir}' ],
       \ }
 
-"" Start Syntastic Recommended Config
+" "" Start Syntastic Recommended Config
 
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+"     set statusline+=%#warningmsg#
+"     set statusline+=%{SyntasticStatuslineFlag()}
+"     set statusline+=%*
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-"" End Syntastic Recommended Settings
+"     let g:syntastic_always_populate_loc_list = 1
+"     let g:syntastic_auto_loc_list = 1
+"     let g:syntastic_check_on_open = 1
+"     let g:syntastic_check_on_wq = 0
+" "" End Syntastic Recommended Settings
