@@ -1,1 +1,9 @@
-alias vim='vim -u ~/.vimrc.cygwin'
+# Cygwin's zsh aliases
+# Original location is $CYGHOME/.zsh_aliases
+# copy to my-dotfiles directory and $oneDrive/dotfiles_backup/cygwin/newconfig
+
+gitDir=/cygdrive/d/Carl/Documents/GitHub
+alias vim='/usr/bin/vim -u ~/.vimrc.cygwin'
+alias nodeschool="$gitDir/node-school"
+function cheatsheet { curl cht.sh/$* }
+alias chtsh=cheatsheet
