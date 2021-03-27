@@ -1,9 +1,12 @@
 # Cygwin's zsh aliases
 # Original location is $CYGHOME/.zsh_aliases
 # copy to my-dotfiles directory and $oneDrive/dotfiles_backup/cygwin/newconfig
+# Author: Carl C. (awsomesawce@outlook.com)
+# Update: Sat, Mar 27, 2021 10:43:22 AM
 
 gitDir=/cygdrive/d/Carl/Documents/GitHub
+local nodeSchoolDir=$gitDir/node-school
 alias vim='/usr/bin/vim -u ~/.vimrc.cygwin'
-alias nodeschool="$gitDir/node-school"
+alias nodeschool="cd $nodeSchoolDir"
 function cheatsheet { curl cht.sh/$* }
 alias chtsh=cheatsheet
