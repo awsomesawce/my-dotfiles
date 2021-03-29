@@ -2,7 +2,7 @@
 # Backup .dotfiles into $OneDrive/dotfiles_backup
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
+export PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
 # Set separate history for zsh
 HISTFILE=~/.zsh_history
@@ -184,11 +184,16 @@ antigen apply
 # For a full list of active aliases, run `alias`.
 # . /usr/share/powerline/bindings/zsh/powerline.zsh
 
-if [[ -f "$HOME/.zsh_aliases" ]]; then
+if [ -r "$HOME/.zsh_aliases" ]; then
 	source ~/.zsh_aliases
 else
 	echo "~/.zsh_aliases not available"
 fi
+
+# Source functions script from ~/.dotfiles/ubuntu
+dotfilesubuntu=$HOME/.dotfiles/ubuntu
+shellfunctionScript="$dotfilesubuntu/shell_functions.sh"
+[[ -r "$shellfunctionScript" ]] && source "$shellfunctionScript" || echo "\$shellfunctionScript script not found at $shellfunctionScript"
 
 # Example aliases
  alias zshconf="vim ~/.zshrc"

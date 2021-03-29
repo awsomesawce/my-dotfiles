@@ -17,8 +17,10 @@ export PAGER=less
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='bobby'
+#export BASH_IT_THEME='bobby'
 #export BASH_IT_THEME='doubletime'
+export BASH_IT_THEME='metal'
+#export BASH_IT_THEME='mbriggs'
 #export BASH_IT_THEME='candy'
 #export BASH_IT_THEME='agnoster'
 #export BASH_IT_THEME='powerline'
@@ -75,17 +77,43 @@ export TODO="t"
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
 
-if [ -f ~/.bash_aliases ]; then
+if [ -r ~/.bash_aliases ]; then
     . ~/.bash_aliases
+    echo "$HOME/.bash_aliases has been found and has been loaded."
+else
+    echo "$HOME/.bash_aliases not found or is not readable."
+fi
+HOME="/home/carlc"
+projVarScript=$HOME/.projectVars
+# The ternary operation is commented out
+#[[ -r "$projVarScript" ]] && source "$projVarScript" || printf "$projVarScript not found or is not readable";
+# Test if $projVarScript is readable, then source it.
+if [ -r ${projVarScript} ]; then
+    source "${projVarScript}"
+    echo "$projVarScript has been found and is sourced"
+else
+    echo -e "$projVarScript has not been found or is not readable.\n"
 fi
 
 # Fix for lesspipe
 
-eval $(lesspipe)
+eval "$(lesspipe)"
 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+export PATH="$HOME/bin:$HOME/gems/bin:$PATH"
+# If dotfiles bin is accessible and is a directory, add to path.
+if [ -d "$HOME/.dotfiles/bin" ]; then
+    echo "Adding $HOME/.dotfiles/bin to path"
+    export PATH="$HOME/.dotfiles/bin:$PATH"
+else
+    echo "Not adding \$HOME/.dotfiles/bin to path because"
+    echo "I could not find it."
+fi
+# Add the rest to path
+
+export PATH=$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
+
 ## powerline script
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
@@ -98,8 +126,8 @@ export PATH="$HOME/gems/bin:$PATH"
 source "$BASH_IT"/bash_it.sh
 
 # gh bash completion script
-source /home/carlc/sh-files/gh_completion.sh
-source /usr/share/doc/fzf/examples/completion.bash
+. $HOME/sh-files/gh_completion.sh
+. /usr/share/doc/fzf/examples/completion.bash
 #source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # nvm installed variables and scripts
