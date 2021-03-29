@@ -15,7 +15,7 @@ export BROWSER=wslview
 export PAGER=less
 export SHELL=zsh
 # run-help fix
-unalias run-help
+#unalias run-help
 autoload -Uz run-help
 alias help=run-help
 # Set name of the theme to load --- if set to "random", it will
@@ -114,24 +114,27 @@ antigen bundle ssh-agent
 antigen bundle wd
 #antigen bundle tmux
 #antigen bundle npm
-#antigen bundle node
+antigen bundle node
 #antigen bundle npx
 antigen bundle colored-man-pages
-#antigen bundle copydir
+antigen bundle copydir
+antigen bundle cp
+#antigen bundle direnv
+antigen bundle dotenv
 antigen bundle jsontools
 antigen bundle ubuntu
 
 antigen bundle command-not-found
 antigen bundle copyfile
-#antigen bundle pipenv
-#antigen bundle pip
+antigen bundle pipenv
+antigen bundle pip
 #antigen bundle pylint
 
 #antigen bundle sudo
 
 #antigen bundle ruby
 #antigen bundle web-search
-#antigen bundle python
+antigen bundle python
 
 #antigen bundle common-aliases
 
@@ -152,7 +155,8 @@ antigen bundle zsh-users/zsh-completions
 #antigen theme mortalscumbag
 #antigen theme jispwoso
 #antigen theme duellj
-antigen theme agnoster
+#antigen theme agnoster
+antigen theme ys
 #antigen theme random
 # Tell antigen that you're done
 antigen apply
@@ -191,19 +195,20 @@ fi
  alias ohmyzsh="cd ~/.oh-my-zsh"
  alias linuxnotes="cd ~/documents/linux_notes"
  # list all files starting with a dot (dotfiles)
- alias lista='ls -d .*'
- alias antigendir='cd ~/.antigen'
+ alias listdot='ls -d .*'
+ alias gotoantigendir='cd ~/.antigen'
  alias h=history
  alias gitjour='cd ~/documents/gitstuff/git-journal'
-
 alias zhelp='cd /usr/share/zsh/help'
-#alias powerlinedoc = 'cd /usr/share/doc/powerline'
 alias listzshthemes='ls ~/.oh-my-zsh/themes'
 # Easier git status
 alias gitst='git status'
 # Added by apt's version of thefuck
 # Next time uninstall thefuck from pip3 before installing thru apt
 eval $(thefuck --alias)
-eval "$(lesspipe)"
+eval "$(lesspipe)" # This enables less to automatically view gzipped text files
+                   # without having to decompress it first.
 #export MODULE_PATH="/usr/lib/x86_64-linux-gnu/zsh/5.8/zsh" # This messed comparguments up
 export CDownloads="/mnt/c/Users/Carl/Downloads"
+# Enable direnv hook in zsh
+eval "$(direnv hook zsh)"
