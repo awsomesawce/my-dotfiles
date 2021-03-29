@@ -13,6 +13,7 @@ export CYGZSHALIASES="$CYGHOME/.zsh_aliases"
 unalias run-help
 autoload -Uz run-help
 alias help=run-help
+HISTFILE=~/.zsh_history
 ## End user input
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

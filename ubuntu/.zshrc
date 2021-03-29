@@ -2,7 +2,7 @@
 # Backup .dotfiles into $OneDrive/dotfiles_backup
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
 # Set separate history for zsh
 HISTFILE=~/.zsh_history
@@ -14,6 +14,10 @@ export TERM=xterm-256color
 export BROWSER=wslview
 export PAGER=less
 export SHELL=zsh
+# run-help fix
+unalias run-help
+autoload -Uz run-help
+alias help=run-help
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -106,24 +110,28 @@ antigen use oh-my-zsh
 antigen bundle gitfast
 antigen bundle ssh-agent
 # z readme is in plugins/z directory
-antigen bundle z
+#antigen bundle z
+antigen bundle wd
 #antigen bundle tmux
-antigen bundle npm
-antigen bundle node
-antigen bundle npx
+#antigen bundle npm
+#antigen bundle node
+#antigen bundle npx
 antigen bundle colored-man-pages
-antigen bundle copydir
+#antigen bundle copydir
 antigen bundle jsontools
 antigen bundle ubuntu
-antigen bundle colorize
 
 antigen bundle command-not-found
+antigen bundle copyfile
+#antigen bundle pipenv
+#antigen bundle pip
+#antigen bundle pylint
 
 #antigen bundle sudo
 
-antigen bundle ruby
+#antigen bundle ruby
 #antigen bundle web-search
-antigen bundle python
+#antigen bundle python
 
 #antigen bundle common-aliases
 
@@ -139,12 +147,12 @@ antigen bundle zsh-users/zsh-completions
 # Load the theme
 #antigen theme fino-time
 #antigen theme candy-kingdom
-antigen theme candy
+#antigen theme candy
 #antigen theme bira
 #antigen theme mortalscumbag
 #antigen theme jispwoso
 #antigen theme duellj
-#antigen theme agnoster
+antigen theme agnoster
 #antigen theme random
 # Tell antigen that you're done
 antigen apply
@@ -197,7 +205,5 @@ alias gitst='git status'
 # Next time uninstall thefuck from pip3 before installing thru apt
 eval $(thefuck --alias)
 eval "$(lesspipe)"
-antigen bundle copyfile
-#antigen bundle pipenv
-antigen bundle pip
-antigen bundle pylint
+#export MODULE_PATH="/usr/lib/x86_64-linux-gnu/zsh/5.8/zsh" # This messed comparguments up
+export CDownloads="/mnt/c/Users/Carl/Downloads"
