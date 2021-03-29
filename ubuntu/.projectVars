@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This is a placeholder.
+# This script will define some important variables in bash and/or zsh
+# That is why it's not named ".bashvars" or ".zshvars".
+# I want this to work in either shell.  So I will be using export most
+# of the time
+# Author: Carl C (awsomesawce@outlook.com)
