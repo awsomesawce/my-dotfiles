@@ -3,7 +3,6 @@
 export zshrcfile="$HOME/.zshrc"
 zshaliasesfile="$HOME/.zsh_aliases"; export zshaliasesfile
 
-alias powerlinedoc="cd /usr/share/doc/powerline"
 alias listzshtthemes='ls ~/.oh-my-zsh/themes'
 # Important commands
 alias rm='nocorrect rm -i'
@@ -24,3 +23,10 @@ alias wslnotes='cd /home/carlc/documents/gitstuff/wsl-notes/ubuntu'
 # External script aliases
 
 alias cpzshconf="~/.zsh_config_cp_script"
+alias aca='apt-cache'
+alias acash='apt-cache show'
+alias gclist='git config --list'
+alias exphere='explorer.exe .'
+alias aptc='apt-cache'
+alias mdbook=~/bin/mdbook
+alias acshow='apt-cache show'

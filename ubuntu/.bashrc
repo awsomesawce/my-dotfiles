@@ -106,6 +106,7 @@ export PATH="$HOME/bin:$HOME/gems/bin:$PATH"
 if [ -d "$HOME/.dotfiles/bin" ]; then
     echo "Adding $HOME/.dotfiles/bin to path"
     export PATH="$HOME/.dotfiles/bin:$PATH"
+    echo "Current value of \$PATH is $PATH"
 else
     echo "Not adding \$HOME/.dotfiles/bin to path because"
     echo "I could not find it."

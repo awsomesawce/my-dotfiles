@@ -32,3 +32,7 @@ alias vzrc="vim $HOME/.zshrc"
 alias vbrc="vim $HOME/.bashrc"
 alias vbal="vim ~/.bash_aliases"
 alias vzal="vim ~/.zsh_aliases"
+alias gclist='git config --list'
+alias exphere='explorer.exe .'
+alias ashow='apt-cache show'
+alias cp='command cp -i'
