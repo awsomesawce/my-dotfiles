@@ -30,3 +30,4 @@ alias exphere='explorer.exe .'
 alias aptc='apt-cache'
 alias mdbook=~/bin/mdbook
 alias acshow='apt-cache show'
+alias mv='nocorrect mv -i'

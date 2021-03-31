@@ -5,3 +5,6 @@
 # I want this to work in either shell.  So I will be using export most
 # of the time
 # Author: Carl C (awsomesawce@outlook.com)
+aptdir="$HOME/aptstuff"
+aptcachedir=/home/carlc/aptstuff/apt-cache-searches
+export UBUNTUDOTFILES="$HOME/.dotfiles/ubuntu"

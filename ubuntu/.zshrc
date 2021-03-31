@@ -14,10 +14,24 @@ export TERM=xterm-256color
 export BROWSER=wslview
 export PAGER=less
 export SHELL=zsh
+# Attach projectVars script to variable
+export projectVarsScript="$HOME/.projectVars"
+# Load script based on that variable
+if [ -r "$projectVarsScript" ]; then
+    . "$projectVarsScript"
+    echo "Sourced \"$projectVarsScript\""
+else
+    echo "\$projectVarsScript hasn't been found at $projectVarsScript"
+    print "Please fix this."
+    print "This script should be used to house your env vars for your various projects"
+    print "located across your filesystem."
+fi
+# This script has all your specific project variables and is a great dumping ground for
 # run-help fix
 #unalias run-help
 autoload -Uz run-help
 alias help=run-help
+autoload -Uz run-help-ip # This only works if run-help works first.
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

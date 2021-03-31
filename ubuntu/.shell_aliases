@@ -1,3 +1,4 @@
 alias aptf=apt-file
 alias aptfile=apt-file
 alias acshow='apt-cache show'
+alias mv='nocorrect mv -i'
