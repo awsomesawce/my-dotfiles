@@ -1,0 +1,1 @@
+chtsh () { curl cht.sh/$@; }
