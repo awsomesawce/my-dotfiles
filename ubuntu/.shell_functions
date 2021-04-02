@@ -2,3 +2,13 @@ chtsh () { curl cht.sh/$@; }
 whichless() { less $(which $1); }
 alias whichl=whichless
 whichfile() { file $(which $1; }
+function hexConvert() {
+local argOne=$1
+printf "$argOne" | hd
+return 0
+}
+The above function will take user input and convert it to hex without having to type the whole command out.
+function whichfile() {
+file $(which $@)
+return 0
+}
