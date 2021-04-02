@@ -1,1 +1,4 @@
 chtsh () { curl cht.sh/$@; }
+whichless() { less $(which $1); }
+alias whichl=whichless
+whichfile() { file $(which $1; }
