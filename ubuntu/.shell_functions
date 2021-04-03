@@ -1,14 +1,25 @@
-chtsh () { curl cht.sh/$@; }
-whichless() { less $(which $1); }
-alias whichl=whichless
-whichfile() { file $(which $1; }
-function hexConvert() {
+# This file contains some nice bash/zsh functions
+# Dot-source this file.
+# Author Carl C (awsomesawce at outlook dot com)
+# shellcheck disable=SC2230
+# shellcheck shell=bash
+
+chtsh () { 
+    curl cht.sh/$* 
+    return 0
+}
+whichless() {
+   less $(which $1) # disable sc2230; `which` is used to get location of executable on path.
+   return 0 
+}
+alias whichl=whichless;
+whichfile() {
+   file $(which $1) 
+   return 0 
+}
+hexConvert() {
 local argOne=$1
-printf "$argOne" | hd
+echo "$argOne" | hd
 return 0
 }
-The above function will take user input and convert it to hex without having to type the whole command out.
-function whichfile() {
-file $(which $@)
-return 0
-}
+# The above function will take user input and convert it to hex without having to type the whole command out.
