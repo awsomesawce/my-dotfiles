@@ -8,3 +8,11 @@
 aptdir="$HOME/aptstuff"
 aptcachedir=/home/carlc/aptstuff/apt-cache-searches
 export UBUNTUDOTFILES="$HOME/.dotfiles/ubuntu"
+export winhome=/mnt/c/Users/Carl
+export windownloads=$winhome/Downloads
+# The following is a bash-specific variable.  Without the braces, bash will not iterate each index of an array, only the first index.
+# Also, bash arrays start at index [0] while zsh starts at [1]. 
+# Use zsh's setopt KSH_ARRAYS or emulate ksh/sh to get zsh to act like bash in this respect.
+
+declare -a toInstFile
+toInstFile=( "$HOME/Downloads/To_Install" "Description: Path to file that is a record of pkgs i would like to install from apt." )
