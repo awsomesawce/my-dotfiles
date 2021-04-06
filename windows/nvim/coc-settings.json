@@ -1,6 +1,7 @@
 {
-"diagnostic.displayByAle": false,
-"suggest.enablePreview": true,
+    "diagnostic.displayByAle": false,
+    "suggest.enablePreview": true,
+    "list.previewSplitRight": false,
 	  "suggest.completionItemKindLabels": {
 		"keyword": "\uf1de",
 		"variable": "\ue79b",
@@ -28,5 +29,22 @@
 		"snippet": "\ue60b",
 		"typeParameter": "\uf728",
 		"default": "\uf29c"
-	}
+	},
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
 }

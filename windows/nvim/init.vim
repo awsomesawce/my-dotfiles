@@ -35,6 +35,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 ""       Location is: ~/AppData/Local/coc/extensions
 "" INFO: This might be bulk because fzf is installed elsewhere in the system!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'https://github.com/plasticboy/vim-markdown/'
 Plug 'https://github.com/pangloss/vim-javascript.git'
