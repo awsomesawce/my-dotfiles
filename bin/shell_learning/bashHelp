@@ -1,0 +1,14 @@
+#!/bin/sh
+
+bashhe() {
+    bash -c "help $*";
+    return 0
+}
+
+if [ -x /bin/bash ]; then
+    if [ $# -eq 0 ]; then
+        printf "You have bash in your bin and it is executable,\nbut you need to supply an argument"
+    else
+        bashhe "$@"
+    fi
+fi
