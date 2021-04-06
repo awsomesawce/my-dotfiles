@@ -1,19 +1,31 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Cygwin's zshrc file
+# Author: Carl C (awsomesawce@outlook.com)
+# Date: 3/27/2021
+# Original Location: /cygdrive/c/Users/Carl/
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 # Path to your home directory in Cygwin
-export CYGHOME=/home/Carl
-export CYGZSHRC="$CYGHOME/.zshrc"
-export CYGZSHALIASES="$CYGHOME/.zsh_aliases"
+export CYGWIN_HOME=/home/Carl
+export CYGWIN_ZSHRC="$HOME/.zshrc"
+export CYGWIN_ZSHALIASES="$CYGHOME/.zsh_aliases"
 # source CYGZSHALIASES at bottom
+export winhome="/cygdrive/c/Users/Carl"
+export oneDrive="/cygdrive/d/Carl/OneDrive"
+typeset -gx cygwin_dotfiles_backup="$oneDrive/dotfiles_backup/cygwin/newconfig"
+export cygwin_dotfiles_git="$winhome/gitstuff/my-dotfiles/cygwin"
+
+# Arrays representing a list of important cygwin files/directories
+# relating to zsh of course.
+typeset -agx CYGWIN_FILES=( "/home/Carl/.zshenv" "$CYGWIN_ZSHALIASES" "$CYGWIN_ZSHRC" )
+typeset -agx cygwin_dirs=( "$CYGWIN_HOME" "$cygwin_dotfiles_git" "$cygwin_dotfiles_backup" "/usr/share/zsh" )
 
 ## User input
+# This is the run-help fix.
+# Allows the user to run-help for help with commands and builtins.
 unalias run-help
 autoload -Uz run-help
 alias help=run-help
-HISTFILE=~/.zsh_history
 ## End user input
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -22,7 +34,11 @@ HISTFILE=~/.zsh_history
 #ZSH_THEME=random
 #ZSH_THEME="fino-time"
 #ZSH_THEME="amuse"
-ZSH_THEME="half-life"
+#ZSH_THEME="half-life"
+#ZSH_THEME="gnzh"
+#ZSH_THEME="crunch"
+#ZSH_THEME="risto"
+ZSH_THEME="muse"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -81,7 +97,7 @@ ZSH_THEME="half-life"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(jsontools fd colorize git node npm colored-man-pages web-search)
+plugins=(genpass jsontools fd git npm wd dotnet direnv python pip pipenv colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +124,8 @@ export LANG=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # My aliases
+#
+# TODO: Move _all_ zsh aliases to their own file
 #
 #[[ -r "$CYGHOME/.zsh_aliases_cyg" ]] && . "$CYGHOME/.zsh_aliases_cyg" || echo ".zsh_aliases_cyg does not exist.  touch $CYGHOME/.zsh_aliases_cyg to get rid of this message."
 #[[ -r "$CYGHOME/.zsh_exports" ]] && . "$CYGHOME/.zsh_exports" || echo ".zsh_exports does not exist. touch $CYGHOME/.zsh_exports to get rid of this message."
@@ -144,3 +162,4 @@ alias lsdot='ls -ld .*'
 # source zsh_aliases file
 # This is the one that is based inside cygwin's home directory.
 [[ -r "$CYGZSHALIASES" ]] && source "$CYGZSHALIASES" || echo "$CYGZSHALIASES not found. touch $CYGZSHALIASES to get rid of this message."
+fpath=(~/.zfunc $fpath)
