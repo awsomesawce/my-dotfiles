@@ -2,23 +2,33 @@
 # Author: Carl C (awsomesawce@outlook.com)
 # Date: 3/27/2021
 # Original Location: /cygdrive/c/Users/Carl/
+# Update: Changed around some variable names to make them less ambiguous.
+# TODO: over time I'd like to switch to cygwin's home directories for the location
+#       of all zsh config files.
+export WINDOWS_HOME="/cygdrive/c/Users/Carl"
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# TODO: change oh-my-zsh installation location to /home/Carl/.oh-my-zsh
+export ZSH=$WINDOWS_HOME/.oh-my-zsh
 # Path to your home directory in Cygwin
 export CYGWIN_HOME=/home/Carl
-export CYGWIN_ZSHRC="$HOME/.zshrc"
+typeset -gx CYGHOME=/home/Carl
+# main zshrc is in WINDOWS_HOME, other zsh files are located in $CYGWIN_HOME
+export CYGWIN_ZSHRC="$WINDOWS_HOME/.zshrc"
 export CYGWIN_ZSHALIASES="$CYGHOME/.zsh_aliases"
-# source CYGZSHALIASES at bottom
-export winhome="/cygdrive/c/Users/Carl"
+# source CYGWIN_ZSHALIASES at bottom
 export oneDrive="/cygdrive/d/Carl/OneDrive"
 typeset -gx cygwin_dotfiles_backup="$oneDrive/dotfiles_backup/cygwin/newconfig"
-export cygwin_dotfiles_git="$winhome/gitstuff/my-dotfiles/cygwin"
+export cygwin_dotfiles_git="$WINDOWS_HOME/gitstuff/my-dotfiles/cygwin"
 
 # Arrays representing a list of important cygwin files/directories
 # relating to zsh of course.
 typeset -agx CYGWIN_FILES=( "/home/Carl/.zshenv" "$CYGWIN_ZSHALIASES" "$CYGWIN_ZSHRC" )
 typeset -agx cygwin_dirs=( "$CYGWIN_HOME" "$cygwin_dotfiles_git" "$cygwin_dotfiles_backup" "/usr/share/zsh" )
+
+# Editor and other settings
+# For cygwin environment, use vim as EDITOR
+typeset -gx EDITOR=vim
 
 ## User input
 # This is the run-help fix.
@@ -161,5 +171,5 @@ alias lsdot='ls -ld .*'
 
 # source zsh_aliases file
 # This is the one that is based inside cygwin's home directory.
-[[ -r "$CYGZSHALIASES" ]] && source "$CYGZSHALIASES" || echo "$CYGZSHALIASES not found. touch $CYGZSHALIASES to get rid of this message."
+[[ -r "$CYGWIN_ZSHALIASES" ]] && source "$CYGWIN_ZSHALIASES" || echo "\$CYGWIN_ZSHALIASES not found. touch \$cyghome/.zsh_aliases to get rid of this message."
 fpath=(~/.zfunc $fpath)
