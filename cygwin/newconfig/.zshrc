@@ -48,7 +48,8 @@ alias help=run-help
 #ZSH_THEME="gnzh"
 #ZSH_THEME="crunch"
 #ZSH_THEME="risto"
-ZSH_THEME="muse"
+#ZSH_THEME="muse"
+ZSH_THEME="gallifrey"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -173,3 +174,4 @@ alias lsdot='ls -ld .*'
 # This is the one that is based inside cygwin's home directory.
 [[ -r "$CYGWIN_ZSHALIASES" ]] && source "$CYGWIN_ZSHALIASES" || echo "\$CYGWIN_ZSHALIASES not found. touch \$cyghome/.zsh_aliases to get rid of this message."
 fpath=(~/.zfunc $fpath)
+
