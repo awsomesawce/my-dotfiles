@@ -1,12 +1,16 @@
+# Carl C's Antigen-powered zshrc file
+# Updated: Thu 08 Apr 2021 05:16:27 PM EDT
+
 # Check zsh doc at /usr/share/doc/zsh
 # Backup .dotfiles into $OneDrive/dotfiles_backup
-
+# NOTE: This file is now symlinked to "$HOME/.zshrc".
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
 # Set separate history for zsh
 HISTFILE=~/.zsh_history
 # Path to your oh-my-zsh installation. - changed to .antigen - 11/11/2020
+# TODO: switch to a different zsh plugin system
 export ZSH="$HOME/.antigen"
 # Some extra variables
 export EDITOR=vim
@@ -32,21 +36,9 @@ fi
 autoload -Uz run-help
 alias help=run-help
 autoload -Uz run-help-ip # This only works if run-help works first.
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
+# Themse are loaded using Antigen
+# ZSH_THEME unnecessary and redundent.
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="agnoster"
-#ZSH_THEME="amuse"
-#ZSH_THEME="aussiegeek"
-#ZSH_THEME="fino-time"
-#ZSH_THEME="ys"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -77,7 +69,7 @@ autoload -Uz run-help-ip # This only works if run-help works first.
  ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
+ COMPLETION_WAITING_DOTS="false"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -95,11 +87,7 @@ autoload -Uz run-help-ip # This only works if run-help works first.
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins are loaded using Antigen
 #plugins=(git zsh-navigation-tools)
 
 
@@ -127,19 +115,19 @@ antigen bundle ssh-agent
 #antigen bundle z
 antigen bundle wd
 #antigen bundle tmux
-#antigen bundle npm
+antigen bundle npm
 antigen bundle node
 #antigen bundle npx
 antigen bundle colored-man-pages
-antigen bundle copydir
-antigen bundle cp
+#antigen bundle copydir
+#antigen bundle cp
 #antigen bundle direnv
-antigen bundle dotenv
-antigen bundle jsontools
+#antigen bundle dotenv
+#antigen bundle jsontools
 antigen bundle ubuntu
 
 antigen bundle command-not-found
-antigen bundle copyfile
+#antigen bundle copyfile
 antigen bundle pipenv
 antigen bundle pip
 #antigen bundle pylint
@@ -176,7 +164,7 @@ antigen theme ys
 antigen apply
 
 # User configuration
-
+# TODO: add more manpaths when you find one.
  export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -196,7 +184,6 @@ antigen apply
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-# . /usr/share/powerline/bindings/zsh/powerline.zsh
 
 if [ -r "$HOME/.zsh_aliases" ]; then
 	source ~/.zsh_aliases
@@ -205,12 +192,14 @@ else
 fi
 
 # Source functions script from ~/.dotfiles/ubuntu
+# Step 1, initiate dotfilesubuntu variable.
 dotfilesubuntu=$HOME/.dotfiles/ubuntu
+# initiate shellfunctionScript variable.
 shellfunctionScript="$dotfilesubuntu/shell_functions.sh"
+# if file is readable, source file, otherwise warn user.
 [[ -r "$shellfunctionScript" ]] && source "$shellfunctionScript" || echo "\$shellfunctionScript script not found at $shellfunctionScript"
 
 # Example aliases
- alias zshconf="vim ~/.zshrc"
  alias ohmyzsh="cd ~/.oh-my-zsh"
  alias linuxnotes="cd ~/documents/linux_notes"
  # list all files starting with a dot (dotfiles)
@@ -230,4 +219,4 @@ eval "$(lesspipe)" # This enables less to automatically view gzipped text files
 #export MODULE_PATH="/usr/lib/x86_64-linux-gnu/zsh/5.8/zsh" # This messed comparguments up
 export CDownloads="/mnt/c/Users/Carl/Downloads"
 # Enable direnv hook in zsh
-eval "$(direnv hook zsh)"
+#eval "$(direnv hook zsh)"
