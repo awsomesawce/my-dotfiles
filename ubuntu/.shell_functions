@@ -3,6 +3,15 @@
 # Author Carl C (awsomesawce at outlook dot com)
 # shellcheck disable=SC2230
 # shellcheck shell=bash
+#
+# Add the following code to ~/.bashrc or ~/.zshrc to source this file:
+#
+#if [[ -f ~/.shell_functions ]] && [[ -r ~/.shell_functions ]]; then
+#    . "$HOME/.shell_functions"
+#else
+#    echo "\"~/.shell_functions\" unreadable or not present."
+#fi
+# 
 
 chtsh () { 
     curl cht.sh/$* 
