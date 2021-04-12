@@ -2,5 +2,16 @@
 # This is a demonstration on how to create a shell script
 # and alias it to a command.
 
-export PATH=/usr/bin:$PATH
-[[  $# -ne 0  ]] && exec gzip -9 "$@" || echo "enter in a file to max compress as the script argument"
+#export PATH=/usr/bin:$PATH
+#[[  $# -ne 0  ]] && exec gzip -9 "$@" || echo "enter in a file to max compress as the script argument"
+usage() {
+    echo "$(basename "$0"): Enter a script to be gzipped at max level"
+    echo "Level is -9 (max level)."
+    return 0
+}
+commandname=gzip
+if [[ "$#" -eq 0 ]]; then
+    usage || exit 1
+else
+    exec "$commandname" -9 "$@" || echo "gzip didnt work"
+fi

@@ -5,6 +5,9 @@
 # Backup .dotfiles into $OneDrive/dotfiles_backup
 # NOTE: This file is now symlinked to "$HOME/.zshrc".
 # If you come from bash you might have to change your $PATH.
+
+setopt nobeep
+
 export PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
 # Set separate history for zsh
