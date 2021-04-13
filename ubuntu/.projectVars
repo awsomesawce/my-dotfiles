@@ -1,18 +1,32 @@
 #!/usr/bin/env bash
-# This is a placeholder.
 # This script will define some important variables in bash and/or zsh
-# That is why it's not named ".bashvars" or ".zshvars".
-# I want this to work in either shell.  So I will be using export most
-# of the time
+# I want this to work in either shell.
+# Both typeset -gx and export work just fine.
 # Author: Carl C (awsomesawce@outlook.com)
-aptdir="$HOME/aptstuff"
-aptcachedir=/home/carlc/aptstuff/apt-cache-searches
+
+# Common project vars
 export UBUNTUDOTFILES="$HOME/.dotfiles/ubuntu"
 export winhome=/mnt/c/Users/Carl
 export windownloads=$winhome/Downloads
+export aptstuff=~/dumps/aptstuff
+export aptcachedir="$aptstuff/apt-cache-searches"
 # The following is a bash-specific variable.  Without the braces, bash will not iterate each index of an array, only the first index.
 # Also, bash arrays start at index [0] while zsh starts at [1]. 
 # Use zsh's setopt KSH_ARRAYS or emulate ksh/sh to get zsh to act like bash in this respect.
 
+typeset -a zsh_configfiles
+zsh_configfiles=( "$HOME/.zshrc" "$HOME/.zsh_aliases" "$HOME/.shell_functions" "$HOME/.projectVars" "$HOME/.zshenv" )
+echo "type \"zshlistconfig\" to get a list of zsh config files."
+
+# Experimental stuff:
+# zshlistconfig works!
+function zshlistconfig {
+    for files in ${zsh_configfiles[*]}
+    do
+        echo "$files"
+    done
+}
+
+# To_Install file.  TODO: create function to add content to this file ala pwsh.
 declare -a toInstFile
 toInstFile=( "$HOME/Downloads/To_Install" "Description: Path to file that is a record of pkgs i would like to install from apt." )
