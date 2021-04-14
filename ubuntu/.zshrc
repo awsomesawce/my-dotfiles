@@ -5,6 +5,9 @@
 # Backup .dotfiles into $OneDrive/dotfiles_backup
 # NOTE: This file is now symlinked to "$HOME/.zshrc".
 # If you come from bash you might have to change your $PATH.
+
+setopt nobeep
+
 export PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
 # Set separate history for zsh
@@ -191,13 +194,16 @@ else
 	echo "~/.zsh_aliases not available"
 fi
 
-# Source functions script from ~/.dotfiles/ubuntu
+# Source functions script from ~/.shell_functions
 # Step 1, initiate dotfilesubuntu variable.
 dotfilesubuntu=$HOME/.dotfiles/ubuntu
-# initiate shellfunctionScript variable.
-shellfunctionScript="$dotfilesubuntu/shell_functions.sh"
-# if file is readable, source file, otherwise warn user.
-[[ -r "$shellfunctionScript" ]] && source "$shellfunctionScript" || echo "\$shellfunctionScript script not found at $shellfunctionScript"
+
+# Source main shell function script.  Symlinked from ~/.dotfiles/ubuntu.
+if [[ -f ~/.shell_functions ]]; then
+    . ~/.shell_functions
+else
+    echo "~/.shell_functions not where its supposed to be."
+fi
 
 # Example aliases
  alias ohmyzsh="cd ~/.oh-my-zsh"

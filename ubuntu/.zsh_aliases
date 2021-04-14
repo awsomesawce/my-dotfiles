@@ -1,4 +1,8 @@
 ## Ubuntu Zsh Aliases File ##
+# Author: Carl C
+# License: MIT
+# Symlinked from ~/.dotfiles/ubuntu/.zsh_aliases
+# Main shell function script located at ~/.shell_functions, symlinked from ~/.dotfiles/ubuntu
 # Export a few useful variables
 export zshrcfile="$HOME/.zshrc"
 zshaliasesfile="$HOME/.zsh_aliases"; export zshaliasesfile
@@ -16,6 +20,7 @@ alias suapi='sudo aptitude install'
 alias vzrc="vim $HOME/.zshrc"
 alias vbrc="vim ~/.bashrc"
 alias vzalias="vim $HOME/.zsh_aliases"
+alias vzshf="vim $HOME/.shell_functions"
 alias deno=/home/carlc/.deno/bin/deno
 alias afshow='apt-file show'
 alias wslnotes='cd /home/carlc/documents/gitstuff/wsl-notes/ubuntu'
