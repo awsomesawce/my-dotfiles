@@ -15,7 +15,7 @@ filetype plugin indent on
 ""set fileformat=dos
 "" disable annoying markdown auto-folding
 let g:vim_markdown_folding_disabled = 1
-set guifont=Cascadia\ Code:h18
+set guifont=Cascadia\ Code:h14
 set ignorecase
 set incsearch
 set inccommand=split " This allows you to see what you're substituting as you type
@@ -53,7 +53,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 "" TODO: Ale shouldn't be installed as-well-as Coc.nvim.  Pick one!
-"" DONE: Ale has been uninstalled by :PlugClean
+"" ALE has been reinstalled.
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree', {'branch': 'master'}
 Plug 'vim-airline/vim-airline', {'branch': 'master'}
@@ -65,7 +65,6 @@ Plug 'https://github.com/z0mbix/vim-shfmt'
 Plug 'davidhalter/jedi-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'https://github.com/vim-syntastic/syntastic'
 """" Install next plugin as an alternative to coc.nvim
 ""Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}.
 "" End Windows only plugin list.
@@ -276,3 +275,14 @@ let g:airline_filetype_overrides = {
 "     let g:syntastic_check_on_open = 1
 "     let g:syntastic_check_on_wq = 0
 " "" End Syntastic Recommended Settings
+" Start ALE Settings 
+" Turn off LSP when coc-nvim is active
+" TODO: make it so Coc-nvim turns off and only use ALE on pwsh files.
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_filetype_changed = 1
+"" Disable ALE lsp interaction when Coc-nvim is active.
+"" TODO: add if statement so it is active only on ps1 filetype.
+let g:ale_disable_lsp = 1
