@@ -4,6 +4,10 @@
 # Both typeset -gx and export work just fine.
 # Author: Carl C (awsomesawce@outlook.com)
 
+# Common env vars (XDG)
+#export XDG_CONFIG_DIR=~/.config
+
+
 # Common project vars
 export UBUNTUDOTFILES="$HOME/.dotfiles/ubuntu"
 export winhome=/mnt/c/Users/Carl
@@ -13,20 +17,24 @@ export aptcachedir="$aptstuff/apt-cache-searches"
 # The following is a bash-specific variable.  Without the braces, bash will not iterate each index of an array, only the first index.
 # Also, bash arrays start at index [0] while zsh starts at [1]. 
 # Use zsh's setopt KSH_ARRAYS or emulate ksh/sh to get zsh to act like bash in this respect.
-
-typeset -a zsh_configfiles
-zsh_configfiles=( "$HOME/.zshrc" "$HOME/.zsh_aliases" "$HOME/.shell_functions" "$HOME/.projectVars" "$HOME/.zshenv" )
-echo "type \"zshlistconfig\" to get a list of zsh config files."
-
-# Experimental stuff:
-# zshlistconfig works!
-function zshlistconfig {
-    for files in ${zsh_configfiles[*]}
-    do
-        echo "$files"
-    done
-}
-
+# Do not set KSH_ARRAYS if using zsh-syntax-highlighting
+if test -n "$ZSH_VERSION"; then
+    typeset -a zsh_configfiles
+    zsh_configfiles=( "$HOME/.zshrc" "$HOME/.zsh_aliases" "$HOME/.shell_functions" "$HOME/.projectVars" "$HOME/.zshenv" )
+    echo "type \"zshlistconfig\" to get a list of zsh config files."
+    # Experimental stuff:
+    # zshlistconfig works!
+    function zshlistconfig {
+        for files in ${zsh_configfiles[*]}
+        do
+            echo "$files"
+        done
+    }
+    puts() {
+        print -r -- "$*"
+    }
+fi
 # To_Install file.  TODO: create function to add content to this file ala pwsh.
 declare -a toInstFile
 toInstFile=( "$HOME/Downloads/To_Install" "Description: Path to file that is a record of pkgs i would like to install from apt." )
+export ubunotes=~/Documents/gitstuff/wsl-notes/ubuntu
