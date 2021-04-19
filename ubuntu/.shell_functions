@@ -13,6 +13,19 @@
 #fi
 # 
 
+argsOne="$1"
+argsTwo="$2"
+argsAll="$*"
+argsArray="$@"
+
+
+## Invoke-Item command from pwsh.exe
+# Only works if pwsh.exe is in path, otherwise use powershell.exe
+pwshInvoke() {
+    local pwshCommand="pwsh.exe -nop -c"
+    eval "$pwshCommand" "Invoke-Item $*"
+}
+
 chtsh () { 
     curl cht.sh/$* 
     return 0

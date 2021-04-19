@@ -111,11 +111,20 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Add shellfunctions script
+# Source ~/.shell_functions script
 if [[ -f ~/.shell_functions ]] && [[ -r ~/.shell_functions ]]; then
+    echo "loading ~/.shell_functions"
     . "$HOME/.shell_functions"
 else
     echo "\"~/.shell_functions\" unreadable or not present."
+fi
+
+# Source ~/.projectVars
+if [[ -f ~/.projectVars ]] && [[ -r ~/.projectVars ]]; then
+    echo "Loaded ~/.projectVars"
+    source "$HOME/.projectVars"
+else
+    echo "\"~/.projectVars\" script not found or is not readable"
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -155,3 +164,4 @@ export NVM_DIR="$HOME/.nvm"
 #[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 #	    . /usr/share/bash-completion/bash_completion
 source ~/.dotfiles/completion/node.bash_completion
+# This is the bottom of the file.  Thanks for reading!

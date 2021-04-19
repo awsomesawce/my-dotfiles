@@ -112,7 +112,7 @@ antigen use oh-my-zsh
 
 # antigen bundle <<EOBUNDLES
     # Bundles from the default repo (robbyrussell's oh-my-zsh)
-antigen bundle gitfast
+#antigen bundle gitfast
 antigen bundle ssh-agent
 # z readme is in plugins/z directory
 #antigen bundle z
@@ -126,20 +126,20 @@ antigen bundle colored-man-pages
 #antigen bundle cp
 #antigen bundle direnv
 #antigen bundle dotenv
-#antigen bundle jsontools
+antigen bundle jsontools
 antigen bundle ubuntu
 
 antigen bundle command-not-found
 #antigen bundle copyfile
-antigen bundle pipenv
-antigen bundle pip
+#antigen bundle pipenv
+#antigen bundle pip
 #antigen bundle pylint
 
 #antigen bundle sudo
 
 #antigen bundle ruby
 #antigen bundle web-search
-antigen bundle python
+#antigen bundle python
 
 #antigen bundle common-aliases
 
@@ -154,14 +154,14 @@ antigen bundle zsh-users/zsh-completions
 
 # Load the theme
 #antigen theme fino-time
-#antigen theme candy-kingdom
+antigen theme candy-kingdom
 #antigen theme candy
 #antigen theme bira
 #antigen theme mortalscumbag
 #antigen theme jispwoso
 #antigen theme duellj
 #antigen theme agnoster
-antigen theme ys
+#antigen theme ys
 #antigen theme random
 # Tell antigen that you're done
 antigen apply
@@ -222,7 +222,5 @@ alias gitst='git status'
 eval $(thefuck --alias)
 eval "$(lesspipe)" # This enables less to automatically view gzipped text files
                    # without having to decompress it first.
-#export MODULE_PATH="/usr/lib/x86_64-linux-gnu/zsh/5.8/zsh" # This messed comparguments up
-export CDownloads="/mnt/c/Users/Carl/Downloads"
 # Enable direnv hook in zsh
 #eval "$(direnv hook zsh)"
