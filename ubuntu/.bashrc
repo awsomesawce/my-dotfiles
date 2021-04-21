@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-export EDITOR=micro
+export EDITOR=vim
 export SHELL=bash
 export TERM=xterm-256color
 export BROWSER=wslview
@@ -19,6 +19,9 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# Make glob patterns adhere to dotfiles too
+shopt -s dotglob
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1500
@@ -111,6 +114,15 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Source ~/.shell_aliases file, which are compatible with both bash and zsh
+
+if [[ -f ~/.shell_aliases ]] && [[ -r ~/.shell_aliases ]]; then
+    echo "Sourcing ~/.shell_aliases"
+    . ~/.shell_aliases
+else
+    echo "~/.shell_aliases file not found or unreadable"
+fi
+
 # Source ~/.shell_functions script
 if [[ -f ~/.shell_functions ]] && [[ -r ~/.shell_functions ]]; then
     echo "loading ~/.shell_functions"
@@ -126,6 +138,8 @@ if [[ -f ~/.projectVars ]] && [[ -r ~/.projectVars ]]; then
 else
     echo "\"~/.projectVars\" script not found or is not readable"
 fi
+
+# TODO: Create array filled with all sourced files
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
