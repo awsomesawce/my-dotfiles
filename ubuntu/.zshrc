@@ -144,7 +144,8 @@ antigen bundle command-not-found
 #antigen bundle common-aliases
 
     # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+    # Turn this off when cpu power is needed
+#antigen bundle zsh-users/zsh-syntax-highlighting
 
     # Fish-like auto suggestions
 antigen bundle zsh-users/zsh-autosuggestions
