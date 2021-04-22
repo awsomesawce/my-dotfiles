@@ -30,6 +30,11 @@ chtsh () {
     curl cht.sh/$* 
     return 0
 }
+
+pygcat() {
+    cat "$1" | pygmentize | less
+}
+
 whichless() {
    less $(which $1) # disable sc2230; `which` is used to get location of executable on path.
    return 0 
@@ -59,3 +64,6 @@ readmeDir() {
     fi
     return 0
 }
+chromaless() { cat "$1" | chroma | less; }
+alias less=chromaless
+The above function will pipe a file into the chroma highlighter, then pipe itinto less
