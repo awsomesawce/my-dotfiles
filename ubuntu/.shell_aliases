@@ -1,4 +1,21 @@
 alias aptf=apt-file
 alias aptfile=apt-file
 alias acshow='apt-cache show'
-alias mv='nocorrect mv -i'
+
+# If zsh, use the nocorrect builtin.
+if [[ -n "$ZSH_VERSION" ]]; then
+    echo "Setting mv to \"nocorrect mv -i\""
+    alias mv='nocorrect mv -i'
+else
+    alias mv='command mv -i'
+fi
+
+alias aptcsch='apt-cache search'
+alias aptcsh='apt-cache show'
+alias acashow='apt-cache show'
+alias acache='apt-cache'
+alias gcma="type -a"
+alias aptshow='aptitude show'
+alias dhc='dochelp cat'
+alias aptfile=apt-file
+alias gz=gzip
