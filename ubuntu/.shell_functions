@@ -64,6 +64,6 @@ readmeDir() {
     fi
     return 0
 }
+# The above function will pipe a file into the chroma highlighter, then pipe itinto less
 chromaless() { cat "$1" | chroma | less; }
 alias less=chromaless
-The above function will pipe a file into the chroma highlighter, then pipe itinto less
