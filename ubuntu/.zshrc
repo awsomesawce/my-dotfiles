@@ -1,28 +1,32 @@
 # Carl C's Antigen-powered zshrc file
-# Updated: Thu 08 Apr 2021 05:16:27 PM EDT
+# Updated: Sat 24 Apr 2021 02:45:24 AM EDT
+# Changes: Changed `export` to `typeset -gx` which essentially means the same thing.
 
 # Check zsh doc at /usr/share/doc/zsh
 # Backup .dotfiles into $OneDrive/dotfiles_backup
 # NOTE: This file is now symlinked to "$HOME/.zshrc".
 # If you come from bash you might have to change your $PATH.
 
-setopt nobeep
+setopt nobeep # Keep zsh quiet
 
-export PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
+typeset -gx PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
+# TODO: move path allocations to .zshenv or .zprofile
+typeset -gx PATH="$PATH:$HOME/.deno/bin" # Add deno's bin dir to `$PATH`.
 # Set separate history for zsh
 HISTFILE=~/.zsh_history
 # Path to your oh-my-zsh installation. - changed to .antigen - 11/11/2020
 # TODO: switch to a different zsh plugin system
-export ZSH="$HOME/.antigen"
+typeset -gx ZSH="$HOME/.antigen"
 # Some extra variables
-export EDITOR=vim
-export TERM=xterm-256color
-export BROWSER=wslview
-export PAGER=less
-export SHELL=zsh
+typeset -gx EDITOR=vim
+typeset -gx TERM=xterm-256color
+typeset -gx BROWSER=wslview
+typeset -gx PAGER=less
+typeset -gx SHELL=zsh
+
 # Attach projectVars script to variable
-export projectVarsScript="$HOME/.projectVars"
+typeset -gx projectVarsScript="$HOME/.projectVars"
 # Load script based on that variable
 if [ -r "$projectVarsScript" ]; then
     . "$projectVarsScript"
@@ -91,20 +95,15 @@ autoload -Uz run-help-ip # This only works if run-help works first.
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Plugins are loaded using Antigen
+# This array is used for oh-my-zsh, not antigen.
 #plugins=(git zsh-navigation-tools)
 
 
  # Don't load oh-my-zsh.  Instead, let antigen source oh-my-zsh
  # Use `antigen theme <theme>` to change themes
-#source ~/.oh-my-zsh/oh-my-zsh.sh
-## Still not working right.  Check docs for help on sourcing a separate alias file.
-#For now, all aliases are to be at the end of this file.
-#if [ -f ~/.zsh_aliases ]; then
-#    . ~/.zsh_aliases
-#fi
 
-# 
 # TODO: use a different plugin manager!
+# Source main antigen script
 source $HOME/bin/antigen.zsh
 
 # Load the oh-my-zsh's library
@@ -112,21 +111,26 @@ antigen use oh-my-zsh
 
 # antigen bundle <<EOBUNDLES
     # Bundles from the default repo (robbyrussell's oh-my-zsh)
+antigen bundle git
+antigen bundle git-extras
 #antigen bundle gitfast
 antigen bundle ssh-agent
 # z readme is in plugins/z directory
 #antigen bundle z
+#antigen bundle autojump
 antigen bundle wd
 #antigen bundle tmux
-antigen bundle npm
-antigen bundle node
+#antigen bundle npm
+#antigen bundle node
+antigen bundle yarn
 #antigen bundle npx
 antigen bundle colored-man-pages
 #antigen bundle copydir
-#antigen bundle cp
+antigen bundle cp
 #antigen bundle direnv
-#antigen bundle dotenv
+antigen bundle dotenv
 antigen bundle jsontools
+antigen bundle urltools
 antigen bundle ubuntu
 
 antigen bundle command-not-found
@@ -136,27 +140,29 @@ antigen bundle command-not-found
 #antigen bundle pylint
 
 #antigen bundle sudo
+antigen bundle dotnet
 
-#antigen bundle ruby
+antigen bundle ruby
+antigen bundle bundler
 #antigen bundle web-search
 #antigen bundle python
 
-#antigen bundle common-aliases
+antigen bundle common-aliases
 
     # Syntax highlighting bundle.
     # Turn this off when cpu power is needed
-#antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
 
     # Fish-like auto suggestions
-antigen bundle zsh-users/zsh-autosuggestions
+#antigen bundle zsh-users/zsh-autosuggestions
 
     # Extra zsh completions
 antigen bundle zsh-users/zsh-completions
 
 # Load the theme
 #antigen theme fino-time
-antigen theme candy-kingdom
-#antigen theme candy
+#antigen theme candy-kingdom
+antigen theme candy
 #antigen theme bira
 #antigen theme mortalscumbag
 #antigen theme jispwoso
@@ -215,12 +221,13 @@ fi
  alias h=history
  alias gitjour='cd ~/documents/gitstuff/git-journal'
 alias zhelp='cd /usr/share/zsh/help'
-alias listzshthemes='ls ~/.oh-my-zsh/themes'
+alias listzshthemes='ls ~/.oh-my-zsh/themes' # This might be better off as a function
 # Easier git status
 alias gitst='git status'
+alias gs='git status'
 # Added by apt's version of thefuck
 # Next time uninstall thefuck from pip3 before installing thru apt
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 eval "$(lesspipe)" # This enables less to automatically view gzipped text files
                    # without having to decompress it first.
 # Enable direnv hook in zsh

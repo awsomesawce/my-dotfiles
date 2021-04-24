@@ -153,7 +153,8 @@ if ! shopt -oq posix; then
 fi
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+export PATH="$PATH:$HOME/gems/bin"
+# NOTE: check ~/.profile for other PATH additions.
 # Enable next line for x11 setup for x410
 [ -z $DISPLAY ] && export DISPLAY=127.0.0.1:0.0
 # powerline script

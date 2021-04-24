@@ -35,6 +35,17 @@ pygcat() {
     cat "$1" | pygmentize | less
 }
 
+# This function allows you to convert a manpage-formatted manpage into
+# a document readable by humans.
+groffman() 
+{ 
+    if [ $# -eq 0 ]; then
+        echo "Usage: groffman file.1";
+    else
+        groff -man -T utf8 "$*";
+    fi
+return 0
+}
 whichless() {
    less $(which $1) # disable sc2230; `which` is used to get location of executable on path.
    return 0 
@@ -66,4 +77,23 @@ readmeDir() {
 }
 # The above function will pipe a file into the chroma highlighter, then pipe itinto less
 chromaless() { cat "$1" | chroma | less; }
-alias less=chromaless
+alias chless=chromaless
+
+# This is a fix for the catimg oh-my-zsh plugin
+# NOTE: when sourced from antigen, is has wrong plugin location.
+catimg() {
+    if [[ -x $(which convert) ]]; then
+        zsh /home/carlc/.oh-my-zsh/plugins/catimg/catimg.sh "$@"
+    else
+        echo "catimg need convert (ImageMagick) to work)"
+    fi
+}
+
+nodeprocessconf() {
+    if [[ -x $(which node) ]]; then
+        node -p 'console.log(process.config)'
+    else
+        echo "node executable not found"
+    fi
+}
+cdfile() { if [[ $# -eq 0 ]]; then echo "Write an argument to cd to that file"; else cd $(dirname $(which $*)); fi; }
