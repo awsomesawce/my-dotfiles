@@ -1,3 +1,6 @@
+# Carl's home inputrc file
+# Author: Carl C. (awsomesawce at outlook dot com)
+
 set completion-ignore-case on
 set show-all-if-ambiguous on
 set bell-style none
