@@ -1,0 +1,28 @@
+# MSYS2's Main Bash Env
+# OriginalLocation: ~/gitstuff/my-dotfiles/msys2/.msysenv (Windows cmd: %USERPROFILE%\gitstuff\my-dotfiles\msys2\.msysenv)
+# CopyLocations: $OneDrive\dotfiles_backup\msys2\.msysenv $OneDrive\snippets\bash\EnvScripts\.msysenv
+# Description: This file is meant to be sourced from /c/Users/Carl/.msysEntry
+# Author: Carl C
+# License: MIT/X11
+
+# Update PATH to include scoop shims and other executables and scripts
+export PATH="$PATH:$HOME/bin:$HOME/.deno/bin:$HOME/scoop/shims"
+export MSYSENVFILESOURCED=1
+# unset gem stuff because we will be using MSYS2's ruby
+unset GEM_HOME
+unset GEM_PATH
+typeset -gxA bashfilearr
+if [[ -x /usr/bin/bash ]] && [[ -n MSYSENVFILESOURCED ]]; then
+    echo "MSYS2 env is set up properly"
+else
+    echo "Something is wrong"
+fi
+bashfilearr=([shellname]="bash" [description]="MSYS2 main shell" [envfile]=~/gitstuff/my-dotfiles/msys2/.msysenv [ismsys]=yes [issetup]=yes )
+typeset -Agx bakdirs
+bakdirs=([description]="List of backup directories to copy to" [1]="$OneDrive/dotfiles_backup/msys2" [2]="$OneDrive/snippets/bash/EnvScripts")
+
+#cpthisfile() {
+#if [[ -f "${bashfilearr[envfile]}" ]]; then
+#printf '%s\n' "Copying ${bashfilearr[envfile]} to backup directories"
+    
+
