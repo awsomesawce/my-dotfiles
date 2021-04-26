@@ -1,5 +1,15 @@
+# Carl's kickass Powershell Profile!
+# It's a little messy but it gets the job done.
+# Author: Carl C. (awsomesawce at outlook dot com)
+# Date: 4/26/2021
+# License: MIT
+# GitRepo: https://github.com/awsomesawce/scripts-pwsh/config
+
 # Disable Telemetry
 $env:POWERSHELL_TELEMETRY_OPTOUT = 1
+
+# Check if codepage is set to 65001, and set it if it is not
+($(chcp) -like "*65001*") ? "Code page is already set to utf8!  Yay!" : (chcp 65001)
 # Import current modules.
 Import-Module posh-git
 Import-Module oh-my-posh
@@ -163,3 +173,11 @@ Set-Variable pwshsnippets -Value "D:\Carl\OneDrive\snippets\pwsh\powershell_snip
 # refer to the script file for ease of access
 # This expression is necessary for python's fuck module to work.
 #Invoke-Expression "$(thefuck --alias)"
+# This is a test
+# PowerShell parameter completion shim for the dotnet CLI
+Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
+     param($commandName, $wordToComplete, $cursorPosition)
+         dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+         }
+ }
