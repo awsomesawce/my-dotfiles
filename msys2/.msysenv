@@ -40,3 +40,12 @@ else
     return 1
 fi
 }
+typeset -agx commandsExtra=("cpMSYSconfigfrommydotfiles")
+# See ./msysfuncs.sh for listmycommands function. TODO
+
+typeset -gx msysfuncs=~/gitstuff/my-dotfiles/msys2/msysfuncs.sh
+if [[ -r "$msysfuncs" ]]; then
+    . "$msysfuncs"
+else
+    echo "Something wrong: $msysfuncs not readable"
+fi
