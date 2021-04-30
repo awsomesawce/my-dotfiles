@@ -32,9 +32,22 @@ weirdlister() {
     # fi
 }
 
+chtsh() { 
+    if [ $# -eq 0 ]; then 
+	echo "Usage: $0 term"
+	echo "term is any term you want to look up on chtsh"
+    else
+	if [[ -x /usr/bin/curl ]] || [[ -x /bin/curl ]]; then
+	    curl "https://cht.sh/$1" || exit 1
+	else 
+	    echo "Curl is not installed" 
+	fi
+    fi 
+}
+
 listmycommands() {
     for comm in ${commandsExtra[@]}; do
         printf '%s\n' "$comm"
     done
 }
-commandsExtra+=("listmycommands" "weirdlister")
+commandsExtra+=("listmycommands" "weirdlister" "chtsh")
