@@ -1,0 +1,9 @@
+# Carl's MSYS2 InputRC File
+# The INPUTRC variable in Bashrc has been set to this file
+# TODO: I might have to export INPUTRC in ~/.profile instead.
+
+set bell-style none
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+# Look in /etc/skel/.inputrc for a more complete list of options.
