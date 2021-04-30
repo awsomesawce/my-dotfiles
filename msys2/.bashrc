@@ -5,9 +5,24 @@
 # with this software. 
 # If not, see <https://creativecommons.org/publicdomain/zero/1.0/>. 
 
-# /etc/bash.bashrc: executed by bash(1) for interactive shells.
+# Copied over from /etc/bash.bashrc: executed by bash(1) for interactive shells.
+# Meant to be sourced at startup but starting MSYS2's Bash from windows cmd.exe
+# does not have the correct env in place.
+# Thats why some extra config is needed
+
+# Description: Keep the necessary stuff, and out-source functions and aliases.
+# Most important is to set PATH correctly
 
 # System-wide bashrc file
+
+export SHELL=bash
+export PAGER=less
+
+typeset -agx bash_files_arr=( "$HOME/.bashrc" "$HOME/.profile" "/home/Carl/.bash_list" "/home/Carl/.bash_aliases" "$HOME/.bash_aliases" )
+typeset -gx whichbash=msys
+
+# Set a variable indicating to other scripts that the ~/.bashrc has been sourced
+msys_bashrc_sourced=1
 
 # Check that we haven't already been sourced.
 ([[ -z ${CYG_SYS_BASHRC} ]] && CYG_SYS_BASHRC="1") || return
@@ -61,5 +76,23 @@ unset _ps1_symbol
 # Uncomment to use the terminal colours set in DIR_COLORS
 eval "$(dircolors -b /etc/DIR_COLORS)"
 
-# Set a variable indicating to other scripts that the ~/.bashrc has been sourced
-msys_bashrc_sourced=1
+# Some simple aliases to get you started:
+
+alias l='ls -lhF'
+alias ll='ls -alhF'
+alias ls='ls --color=auto'
+alias rm='rm -i'
+alias cp='cp -i'
+
+# Source msysenv file from dotfiles repo
+
+sourcemsysenv() {
+if [[ -r ~/.msysEntry ]]; then
+    source ~/.msysEntry
+    echo "~/.msysEntry sourced"
+else
+    echo "~/.msysEntry not readable"
+fi
+}
+sourcemsysenv
+## End bashrc
