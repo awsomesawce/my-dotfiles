@@ -9,7 +9,8 @@
 # TODO: NOTE: label each rendition of env variables with either "CYGWIN" or "MSYS2" as name prefix
 
 setopt nobeep
-PATH="$PATH:/c/Users/Carl/scoop/shims"
+# PATH is set in .msysenv file
+#PATH="$PATH:/c/Users/Carl/scoop/shims"
 
 # Source msysenv file automatically from startup
 
@@ -42,6 +43,13 @@ if [[ -d "${msys_dirs[2]}" ]] && [[ -r "${msys_dirs[2]}/.zsh_aliases" ]]; then
     source "${msys_dirs[2]}/.zsh_aliases"
 else
     echo ".zsh_aliases file not found.  Type \`vzrc' to edit the ~/.zshrc file"
+fi
+
+if [[ -r ~/.msysEntry ]]; then
+    echo "Sourcing msysEntry file"
+    source ~/.msysEntry
+else
+    echo "Something is wrong: ~/.msysEntry file not found"
 fi
 
 # Editor and other settings
