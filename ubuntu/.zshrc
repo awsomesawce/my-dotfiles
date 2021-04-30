@@ -39,9 +39,9 @@ else
 fi
 # This script has all your specific project variables and is a great dumping ground for
 # run-help fix
-#unalias run-help
+unalias run-help
 autoload -Uz run-help
-alias help=run-help
+alias help=run-help # This still isn't working for some reason TODO
 autoload -Uz run-help-ip # This only works if run-help works first.
 # Themse are loaded using Antigen
 # ZSH_THEME unnecessary and redundent.
@@ -76,12 +76,12 @@ autoload -Uz run-help-ip # This only works if run-help works first.
  ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="false"
+# COMPLETION_WAITING_DOTS="false"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -200,6 +200,9 @@ if [ -r "$HOME/.zsh_aliases" ]; then
 else
 	echo "~/.zsh_aliases not available"
 fi
+
+# Also load ~/.shell_aliases
+[[ -r "$HOME/.shell_aliases" ]] && . ~/.shell_aliases || echo "Could not source ~/.shell_aliases"
 
 # Source functions script from ~/.shell_functions
 # Step 1, initiate dotfilesubuntu variable.
