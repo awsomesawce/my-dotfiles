@@ -3,42 +3,36 @@
 # Date: 4/19/2021
 # Original Location: /cygdrive/c/Users/Carl/
 # Update: Changed around some variable names to make them less ambiguous.
+# Update2: Apr 30, 2021 - Deleted redundant variables, commented out cygwin-based variables
 #       of all zsh config files.
 # TODO: Make msys2 version with msys2 paths (in progress)
 # TODO: NOTE: label each rendition of env variables with either "CYGWIN" or "MSYS2" as name prefix
 
 setopt nobeep
+PATH="$PATH:/c/Users/Carl/scoop/shims"
 
+# Source msysenv file automatically from startup
 
-export WINDOWS_HOME="/cygdrive/c/Users/Carl"
-export MSYS_WINDOWS_HOME=/c/Users/Carl
-export cyghome=/home/Carl
-
-# winhome array, $winhome_array[1] is cygwin's, $winhome_array[2] is msys
-typeset -agx winhome_array=( "/cygdrive/c/Users/Carl" "/c/Users/Carl" )
+#export WINDOWS_HOME="/cygdrive/c/Users/Carl"
+export WINDOWS_HOME=/c/Users/Carl
+#export cyghome=/home/Carl
 
 # Path to your oh-my-zsh installation.
 # TODO: change oh-my-zsh installation location to /home/Carl/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 # Path to your home directory in Cygwin/MSYS
 export MSYS_HOME=/home/Carl
-typeset -gx MSYS2_HOME=/home/Carl
-export MSYS_CYGWIN_DIR=/d/Cygwin
 # main zshrc is in WINDOWS_HOME, other zsh files are located in $CYGWIN_HOME
 # TODO: combine some of these variables into an array
-export CYGWIN_ZSHRC="$WINDOWS_HOME/.zshrc"
-export CYGWIN_ZSHALIASES="$CYGHOME/.zsh_aliases"
+#export CYGWIN_ZSHRC="$WINDOWS_HOME/.zshrc"
+#export CYGWIN_ZSHALIASES="$CYGHOME/.zsh_aliases"
 # source CYGWIN_ZSHALIASES at bottom
-#export oneDrive="/cygdrive/d/Carl/OneDrive"
-export msysOneDrive="/d/Carl/OneDrive"
-typeset -gx cygwin_dotfiles_backup="$oneDrive/dotfiles_backup/cygwin/newconfig"
 typeset -gx msys_dotfiles_backup="$msysOneDrive/dotfiles_backup/msys2"
-export cygwin_dotfiles_git="$WINDOWS_HOME/gitstuff/my-dotfiles/cygwin"
 
 # Arrays representing a list of important cygwin files/directories
 # relating to zsh of course.
-typeset -agx CYGWIN_FILES=( "/home/Carl/.zshenv" "$CYGWIN_ZSHALIASES" "$CYGWIN_ZSHRC" )
-typeset -agx cygwin_dirs=( "$CYGWIN_HOME" "$cygwin_dotfiles_git" "$cygwin_dotfiles_backup" "/usr/share/zsh" )
+#typeset -agx CYGWIN_FILES=( "/home/Carl/.zshenv" "$CYGWIN_ZSHALIASES" "$CYGWIN_ZSHRC" )
+#typeset -agx cygwin_dirs=( "$CYGWIN_HOME" "$cygwin_dotfiles_git" "$cygwin_dotfiles_backup" "/usr/share/zsh" )
 
 # Set array that points to the msys2 config directories
 typeset -agx msys_dirs=( "$msys_dotfiles_backup" "$HOME/gitstuff/my-dotfiles/msys2" )
@@ -47,11 +41,10 @@ if [[ -d "${msys_dirs[2]}" ]] && [[ -r "${msys_dirs[2]}/.zsh_aliases" ]]; then
     echo "Loading ${msys_dirs[2]}/.zsh_aliases."
     source "${msys_dirs[2]}/.zsh_aliases"
 else
-    echo ".zsh_aliases file not found.  Type \`vzrc\' to edit the ~/.zshrc file"
+    echo ".zsh_aliases file not found.  Type \`vzrc' to edit the ~/.zshrc file"
 fi
 
 # Editor and other settings
-# For cygwin environment, use vim as EDITOR
 typeset -gx EDITOR=vim
 
 ## User input
@@ -68,11 +61,11 @@ alias help=run-help
 #ZSH_THEME=random
 #ZSH_THEME="fino-time"
 #ZSH_THEME="amuse"
-#ZSH_THEME="half-life"
+ZSH_THEME="half-life"
 #ZSH_THEME="gnzh"
 #ZSH_THEME="crunch"
 #ZSH_THEME="risto"
-ZSH_THEME="muse"
+#ZSH_THEME="muse"
 #ZSH_THEME="gallifrey"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -132,7 +125,7 @@ ZSH_THEME="muse"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tig universalarchive gitignore sfffe catimg urltools jsontools fd mosh ssh-agent gpg-agent git npm wd pip pipenv colored-man-pages web-search)
+plugins=(tig universalarchive gitignore catimg urltools jsontools fd mosh ssh-agent git npm wd colored-man-pages web-search)
 # NOTE: Try these plugins: 
 # singlechar: sets a few interesting _one-character_ aliases.
 # sfffe: sets some nice aliases for front-end web development
@@ -204,6 +197,6 @@ alias lsdot='ls -ld .*'
 
 # source zsh_aliases file
 # This is the one that is based inside cygwin's home directory.
-[[ -r "$CYGWIN_ZSHALIASES" ]] && source "$CYGWIN_ZSHALIASES" || echo "\$CYGWIN_ZSHALIASES not found. touch \$cyghome/.zsh_aliases to get rid of this message."
+#[[ -r "$CYGWIN_ZSHALIASES" ]] && source "$CYGWIN_ZSHALIASES" || echo "\$CYGWIN_ZSHALIASES not found. touch \$cyghome/.zsh_aliases to get rid of this message."
 fpath=(~/.zfunc $fpath)
 
