@@ -114,13 +114,22 @@ if [[ -n "$ZSH_VERSION" ]]; then
             fi
         fi
     }
-    zhelpfix () {
-            if [[ $# -eq 0 ]]; then
-                    print "Usage: $(basename $0) term"
-            elif [[ "$*" == "list" ]]; then
-                    ls /usr/share/zsh/help
-            else
-                    cat "/usr/share/zsh/help/$1"
+
+    zhelpfix() {
+        local zshhelpdir=/usr/share/zsh/help
+        local usage="
+        Usage: $(basename $0) term"
+        if [[ $# -eq 0 ]]
+        then
+            print "$usage"
+        else
+            if [[ -d "$zshhelpdir" ]]; then
+                if [[ "$*" == "list" ]]; then
+                    ls "$zshhelpdir"
+                else
+                    cat "$zshhelpdir/$*"
+                fi
             fi
-    }
+        fi
+}
 fi
