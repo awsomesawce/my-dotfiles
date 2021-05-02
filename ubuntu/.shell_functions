@@ -100,18 +100,27 @@ cdfile() { if [[ $# -eq 0 ]]; then echo "Write an argument to cd to that file"; 
 
 
 if [[ -n "$ZSH_VERSION" ]]; then
-cheatsheet() {
-if [[ $# -eq 0 ]]; then
-print -r -- "Usage: cheatsheet \`term\`"
-return 1
-else
-if [[ -x /usr/bin/curl ]] || [[ -x /bin/curl ]]; then
-command curl "https://cht.sh/$1" || echo "There was an error"
-return 0
-else
-print "$(basename $0): ERROR: Cannot find curl executable."
-return 1
-fi
-fi
-}
+    cheatsheet() {
+        if [[ $# -eq 0 ]]; then
+            print -r -- "Usage: cheatsheet \`term\`"
+            return 1
+        else
+            if [[ -x /usr/bin/curl ]] || [[ -x /bin/curl ]]; then
+                command curl "https://cht.sh/$1" || echo "There was an error"
+                return 0
+            else
+                print "$(basename $0): ERROR: Cannot find curl executable."
+                return 1
+            fi
+        fi
+    }
+    zhelpfix () {
+            if [[ $# -eq 0 ]]; then
+                    print "Usage: $(basename $0) term"
+            elif [[ "$*" == "list" ]]; then
+                    ls /usr/share/zsh/help
+            else
+                    cat "/usr/share/zsh/help/$1"
+            fi
+    }
 fi
