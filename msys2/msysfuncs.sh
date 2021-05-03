@@ -5,8 +5,15 @@
 # Ideas for functions: 
 # One that conditionally loads an env file depending on whether I'm in zsh or bash.
 
-# This one just lists all files in a directory
+# Let the user know that these functions are ready to go!
 
+tellUser() {
+echo "MSYS funcs loaded from msys dotfile git repo
+Try commandsExtra to see what commands are available"
+}
+tellUser
+
+# This one just lists all files in a directory
 
 weirdlister() {
     local weirdlist=($(ls -F ~/bin/))

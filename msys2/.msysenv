@@ -12,7 +12,7 @@ msys_onedrive="$dotfiles_onedrive/msys2"
 msys2_dotfiles_git=~/gitstuff/my-dotfiles/msys2/
 
 # Update PATH to include scoop shims and other executables and scripts
-export PATH="$PATH:$HOME/bin:$HOME/.deno/bin:$HOME/scoop/shims:$HOME/go/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.deno/bin:$HOME/scoop/shims:$HOME/go/bin:/d/Carl/AppData/npm:/c/Program Files/nodejs"
 # unset gem stuff because we will be using MSYS2's ruby
 unset GEM_HOME
 unset GEM_PATH
@@ -31,15 +31,15 @@ echo "Array \$bakdirs is set."
 #printf '%s\n' "Copying ${bashfilearr[envfile]} to backup directories"
 DOTFILESGIT_MSYS=~/gitstuff/my-dotfiles/msys2
 cpMSYSconfigfrommydotfiles() {
-if [ -d "$DOTFILESGIT_MSYS" ] && [ -d "$OneDrive/dotfiles_backup/msys2" ]; then
-    echo "dotfilesgit msys2 repo found"
-    echo "dotfiles_backup folder on onedrive found"
-    cp -Ri "$DOTFILESGIT_MSYS/*" "$OneDrive/dotfiles_backup/msys2" || return 1
-    return 0
-else
-    echo "Cannot find msys2 dotfiles git repo"
-    return 1
-fi
+	if [ -d "$DOTFILESGIT_MSYS" ] && [ -d "$OneDrive/dotfiles_backup/msys2" ]; then
+	    echo "dotfilesgit msys2 repo found"
+	    echo "dotfiles_backup folder on onedrive found"
+	    cp -Ri "$DOTFILESGIT_MSYS/*" "$OneDrive/dotfiles_backup/msys2" || return 1
+	    return 0
+	else
+	    echo "Cannot find msys2 dotfiles git repo"
+	    return 1
+	fi
 }
 typeset -agx commandsExtra=("cpMSYSconfigfrommydotfiles")
 # See ./msysfuncs.sh for listmycommands function. TODO
