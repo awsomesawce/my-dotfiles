@@ -3,3 +3,8 @@
 *.swp
 *.log
 .codelite
+*ignore*
+ignore/*
+
+# tarfile msys backups
+msys_backups/

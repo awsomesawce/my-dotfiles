@@ -1,0 +1,11 @@
+*               text=auto
+*.txt           text
+*.vcproj        text eol=crlf
+*.sh            text eol=lf
+*.bash		text eol=lf
+*.zsh		text eol=lf
+.zsh*		text eol=lf
+.bash*		text eol=lf
+*.json		text eol=lf
+*.jpg           -text
+*.git*    text eol=lf
