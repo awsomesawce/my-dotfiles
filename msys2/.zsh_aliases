@@ -1,0 +1,19 @@
+# Carl's ~/.zsh_aliases file
+# OriginalLocation: "$HOME/.zsh_aliases"
+# TODO: write a function which copies this file to the backup directories
+#
+#
+alias chtsh=cheatsheet
+gitDir=/cygdrive/d/Carl/Documents/GitHub
+local nodeSchoolDir=$gitDir/node-school
+alias vim='/usr/bin/vim -u ~/.vimrc.cygwin'
+alias nodeschool="cd $nodeSchoolDir"
+function cheatsheet-new { 
+    local CURLEXE=$(which curl)
+    if [[ -x "$CURLEXE" ]]; then
+	curl "cht.sh/$*"
+    else
+	echo "Curl is not installed"
+    fi
+}
+

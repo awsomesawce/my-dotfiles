@@ -58,7 +58,7 @@ listmycommands() {
     done
 }
 
-commandsExtra+=("listmycommands" "weirdlister" "chtsh")
+commandsExtra+=("listmycommands" "weirdlister" "chtsh" "cheatsheet-new")
 
 # End of msysfuncs.sh
 
