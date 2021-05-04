@@ -9,7 +9,7 @@
 
 tellUser() {
 echo "MSYS funcs loaded from msys dotfile git repo
-Try commandsExtra to see what commands are available"
+Try \"listmycommands\" to see what commands are available"
 }
 tellUser
 
@@ -56,5 +56,9 @@ listmycommands() {
     for comm in ${commandsExtra[@]}; do
         printf '%s\n' "$comm"
     done
+}
+
+cp-msys-dotfiles-to-onedrive() {
+# placeholder
 }
 commandsExtra+=("listmycommands" "weirdlister" "chtsh")
