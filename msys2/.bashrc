@@ -1,22 +1,44 @@
-# To the extent possible under law, the author(s) have dedicated all 
-# copyright and related and neighboring rights to this software to the 
-# public domain worldwide. This software is distributed without any warranty. 
-# You should have received a copy of the CC0 Public Domain Dedication along 
-# with this software. 
-# If not, see <https://creativecommons.org/publicdomain/zero/1.0/>. 
+# Carl's msys2 bashrc
 
 # ~/.bashrc: executed by bash(1) for interactive shells.
 
-# The copy in your home directory (~/.bashrc) is yours, please
-# feel free to customise it to create a shell
-# environment to your liking.  If you feel a change
-# would be benifitial to all, please feel free to send
-# a patch to the msys2 mailing list.
 
-# User dependent .bashrc file
+# Copied over from /etc/skel
+# This is a redo from the original $HOME/.bashrc because it was copied from the wrong file.
 
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
+
+# Common exports
+
+export SHELL=bash
+export PAGER=less
+export EDITOR=vim
+export FFF_FAV1=~/gitstuff/my-dotfiles/msys2
+export INPUTRC=~/gitstuff/my-dotfiles/msys2/.inputrc
+
+# Source the .msysEntry file
+# TODO: change this so that ~/.bashrc does all the work ~/.msysEntry does.
+sourcemsysenv() {
+if [[ -r ~/.msysEntry ]]; then
+    source ~/.msysEntry
+    echo "~/.msysEntry sourced"
+else
+    echo "~/.msysEntry not readable"
+fi
+}
+sourcemsysenv
+
+# Function for copying this file to dotfiles git repo
+
+function copy-bashrc-to-dotfiles {
+    mydotfilesmsys=~/gitstuff/my-dotfiles/msys2
+    if [ -d "$mydotfilesmsys" ] && [ -r ~/.bashrc  ]; then
+	cp -i ~/.bashrc "$mydotfilesmsys"
+    else
+	echo "Something is wrong.  Check and make sure the ~/.bashrc and $mydotfilesmsys exist and are readable"
+    fi
+}
 
 # Shell Options
 #

@@ -2,7 +2,7 @@
 # This file sits in $HOME and points to the _real_ env file that sits in a git repo
 # Make changes to _that_ file
 # Commented out path declaration because it is already done in $MSYSENVFILE
-# TODO: fix this
+# TODO: Let ~/.bashrc do all this work instead.
 # Use ~/gitstuff/my-dotfiles/msys2/.msysenv which is located in the $MSYSENVFILE env variable
 if [[ -z "$MSYSENVFILE" ]]; then
     export MSYSENVFILE=~/gitstuff/my-dotfiles/msys2/.msysenv
