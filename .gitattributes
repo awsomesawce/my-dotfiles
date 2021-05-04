@@ -9,3 +9,4 @@
 *.json		text eol=lf
 *.jpg           -text
 *.git*    text eol=lf
+.vimrc    text eol=lf
