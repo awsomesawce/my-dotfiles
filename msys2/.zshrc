@@ -8,11 +8,19 @@
 # TODO: Make msys2 version with msys2 paths (in progress)
 # TODO: NOTE: label each rendition of env variables with either "CYGWIN" or "MSYS2" as name prefix
 
+# turn off those nasty beeps
 setopt nobeep
+
+# Have glob statements find dotfiles too.
+setopt dotglob
+
 # PATH is set in .msysenv file
 #PATH="$PATH:/c/Users/Carl/scoop/shims"
 
-# Source msysenv file automatically from startup
+typeset -gx EDITOR=vim
+typeset -gx SHELL=zsh
+
+# Source msysenv file automatically from startup.  This is done lower in the file
 
 #export WINDOWS_HOME="/cygdrive/c/Users/Carl"
 export WINDOWS_HOME=/c/Users/Carl
@@ -26,9 +34,10 @@ export MSYS_HOME=/home/Carl
 # main zshrc is in WINDOWS_HOME, other zsh files are located in $CYGWIN_HOME
 # TODO: combine some of these variables into an array
 #export CYGWIN_ZSHRC="$WINDOWS_HOME/.zshrc"
+export MSYS_ZSHRC="$WINDOWS_HOME/.zshrc"
 #export CYGWIN_ZSHALIASES="$CYGHOME/.zsh_aliases"
 # source CYGWIN_ZSHALIASES at bottom
-typeset -gx msys_dotfiles_backup="$msysOneDrive/dotfiles_backup/msys2"
+typeset -gx msys_dotfiles_backup="/d/Carl/OneDrive/dotfiles_backup/msys2"
 
 # Arrays representing a list of important cygwin files/directories
 # relating to zsh of course.
@@ -38,12 +47,12 @@ typeset -gx msys_dotfiles_backup="$msysOneDrive/dotfiles_backup/msys2"
 # Set array that points to the msys2 config directories
 typeset -agx msys_dirs=( "$msys_dotfiles_backup" "$HOME/gitstuff/my-dotfiles/msys2" )
 # Source files from dotfiles git repo (TODO)
-if [[ -d "${msys_dirs[2]}" ]] && [[ -r "${msys_dirs[2]}/.zsh_aliases" ]]; then
-    echo "Loading ${msys_dirs[2]}/.zsh_aliases."
-    source "${msys_dirs[2]}/.zsh_aliases"
-else
-    echo ".zsh_aliases file not found.  Type \`vzrc' to edit the ~/.zshrc file"
-fi
+#if [[ -d "${msys_dirs[2]}" ]] && [[ -r "${msys_dirs[2]}/.zsh_aliases" ]]; then
+#    echo "Loading ${msys_dirs[2]}/.zsh_aliases."
+#    source "${msys_dirs[2]}/.zsh_aliases"
+#else
+#    echo ".zsh_aliases file not found.  Type \`vzrc' to edit the ~/.zshrc file"
+#fi
 
 if [[ -r ~/.msysEntry ]]; then
     echo "Sourcing msysEntry file"
@@ -53,12 +62,11 @@ else
 fi
 
 # Editor and other settings
-typeset -gx EDITOR=vim
 
 ## User input
 # This is the run-help fix.
 # Allows the user to run-help for help with commands and builtins.
-unalias run-help
+#unalias run-help
 autoload -Uz run-help
 alias help=run-help
 ## End user input
@@ -204,7 +212,20 @@ alias lsd='ls -ld *(-/DN)'
 alias lsdot='ls -ld .*'
 
 # source zsh_aliases file
+# TODO: This will be sourced directly from the git repo just like Ubuntu's ~/.dotfiles
+
+msysZshAliases=~/.zsh_aliases
+zshAliasesHome=~/.zsh_aliases
+if [[ -r ~/.zsh_aliases ]]; then
+    echo "Sourcing ~/.zsh_aliases"
+    . ~/.zsh_aliases
+else
+    echo "Did not find ~/.zsh_aliases"
+fi
+
 # This is the one that is based inside cygwin's home directory.
 #[[ -r "$CYGWIN_ZSHALIASES" ]] && source "$CYGWIN_ZSHALIASES" || echo "\$CYGWIN_ZSHALIASES not found. touch \$cyghome/.zsh_aliases to get rid of this message."
 fpath=(~/.zfunc $fpath)
 
+autoload -U compinit # Trying this out to enable gh completion from startup
+compinit

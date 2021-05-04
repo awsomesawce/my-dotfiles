@@ -58,7 +58,7 @@ listmycommands() {
     done
 }
 
-cp-msys-dotfiles-to-onedrive() {
-# placeholder
-}
 commandsExtra+=("listmycommands" "weirdlister" "chtsh")
+
+# End of msysfuncs.sh
+
