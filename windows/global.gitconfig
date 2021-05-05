@@ -1,0 +1,39 @@
+[core]
+	longpaths = true
+	editor = vim
+	autocrlf = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Carl C
+	email = awsomesawce@outlook.com
+[gui]
+	recentrepo = D:/Carl/OneDrive/webdev/carlsawesomesite
+	recentrepo = C:/Users/Carl/Documents/hugo_test/quickstart
+	editor = nvim
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+[merge]
+	guitool = vscode
+[mergetool "vscode"]
+	cmd = \"\" --wait \"$MERGED\"
+[cola]
+	spellcheck = false
+	fontdiff = SauceCodePro NF,12,-1,5,50,0,0,0,0,0
+	theme = flat-dark-grey
+	icontheme = dark
+	linebreak = true
+[diff]
+	tool = xxdiff
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !C:\\Users\\Carl\\scoop\\apps\\gh\\current\\bin\\gh.exe auth git-credential
