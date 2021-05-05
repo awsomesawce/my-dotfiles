@@ -29,6 +29,9 @@ In the future I plan on just symlinking each file to where it is read from (usua
 - `./.vimrc`, `~/.vimrc`: **MSYS2**'s vimrc file.  This can be put in a few places, but usually I will 
   just keep it in `~/` and copy it to this repo dir when done editing.
 - `./.profile`, `./.inputrc`: Backup files copied from the `$HOME` directory.
+- `./msysbash.bat`: This is how I separate my MSYS2 environment from every other Unix-type environment installed on my Windows system.
+  I use this file to start up my MSYS2 bash env.
+  I keep it in my "$HOME\bin" folder.  Check out [./notes/Windows_Terminal_Setup.md](./notes/Windows_Terminal_Setup.md) for info on how I set up **Windows Terminal** to work with MSYS2.
 
 ## Directories
 
