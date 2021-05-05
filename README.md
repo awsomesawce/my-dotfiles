@@ -1,5 +1,9 @@
 # All My Dotfiles
 
+## Update Wed, May  5, 2021  3:14:53 PM
+Switched from __git-credential-core__ for __Windows__ to straight up __ssh__.
+I did this because I wanted to use `gh` from MSYS2's `zsh` and I screwed it up so that doing `git push` on windows Powershell didn't work anymore.
+
 This is my central repository for all the dotfiles I have in my machine.  
 It contains most, if not _all_, my text-based configuration files for various WSL distros, editors, shells.
 
