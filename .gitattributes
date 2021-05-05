@@ -13,3 +13,4 @@
 *.jpg           -text
 *.git*    	text eol=lf
 *vim*    	text eol=lf
+.editorconfig  text eol=lf
