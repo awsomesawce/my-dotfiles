@@ -285,4 +285,4 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_filetype_changed = 1
 "" Disable ALE lsp interaction when Coc-nvim is active.
 "" TODO: add if statement so it is active only on ps1 filetype.
-let g:ale_disable_lsp = 1
+let g:ale_disable_lsp = 0

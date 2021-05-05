@@ -1,5 +1,5 @@
 {
-    "diagnostic.displayByAle": false,
+    "diagnostic.displayByAle": true,
     "suggest.enablePreview": true,
     "list.previewSplitRight": false,
 	  "suggest.completionItemKindLabels": {
@@ -43,7 +43,7 @@
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
-      "filetypes": ["sh"],
+      "filetypes": ["sh", "bash"],
       "ignoredRootPaths": ["~"]
     }
   }

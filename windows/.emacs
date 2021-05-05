@@ -21,8 +21,8 @@
 (require 'powerline)
 (require 'powerline-evil)
 (powerline-evil-center-color-theme)
-(add-to-list 'load-path
-             "~/path-to-yasnippet")
+;;(add-to-list 'load-path
+;;             "~/path-to-yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
 ;;(powerline-default-theme)
@@ -45,6 +45,7 @@
  '(desktop-after-read-hook '(list-buffers))
  '(epg-gpg-home-directory nil)
  '(epg-gpg-program "gpg")
+ '(evil-undo-system 'undo-redo)
  '(fci-rule-color "#37474f")
  '(hl-sexp-background-color "#1c1f26")
  '(hl-todo-keyword-faces
@@ -66,7 +67,7 @@
  '(inhibit-startup-screen t)
  '(ivy-mode t)
  '(org-agenda-files
-   '("d:/Carl/OneDrive/org_dir/current.org" "d:/Carl/OneDrive/TODO/TODO.org" "~/CFA_test/my-addon-list.org" "d:/Carl/OneDrive/org_dir/emacs_problems.org"))
+   '("d:/Carl/OneDrive/Desktop/List_Of_Libraries.org" "d:/Carl/OneDrive/TODO/TODO.org" "~/CFA_test/my-addon-list.org" "d:/Carl/OneDrive/org_dir/emacs_problems.org"))
  '(package-check-signature allow-unsigned)
  '(package-gnupghome-dir nil)
  '(package-selected-packages
