@@ -58,7 +58,19 @@ listmycommands() {
     done
 }
 
-commandsExtra+=("listmycommands" "weirdlister" "chtsh" "cheatsheet-new")
+commandsExtra=("listmycommands" "weirdlister" "chtsh" "cheatsheet-new" "duks")
+
+duks() {
+    if [ $# -eq 0 ]; then
+	echo "Usage ${0} term_to_search"
+    else
+	if [[ -x /usr/bin/start ]]; then
+	    start "https://www.duckduckgo.com/?q=$*"
+	else
+	    echo "Something went wrong" 2>&1
+	fi
+    fi
+}
 
 # End of msysfuncs.sh
 

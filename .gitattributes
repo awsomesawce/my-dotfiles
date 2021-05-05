@@ -1,12 +1,15 @@
-*               text=auto
-*.txt           text
+*               text=lf
+*.txt           text eol=crlf
 *.vcproj        text eol=crlf
+*.bat		text eol=crlf
+*.cmd		text eol=crlf
 *.sh            text eol=lf
 *.bash		text eol=lf
 *.zsh		text eol=lf
-.zsh*		text eol=lf
-.bash*		text eol=lf
+*zsh*		text eol=lf
+*bash*		text eol=lf
+*.profile*	text eol=lf
 *.json		text eol=lf
 *.jpg           -text
-*.git*    text eol=lf
-.vimrc    text eol=lf
+*.git*    	text eol=lf
+*vim*    	text eol=lf
