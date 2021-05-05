@@ -17,3 +17,8 @@ function cheatsheet-new {
     fi
 }
 
+
+# Temporary vim alias so it recognizes ~/.vimrc
+alias vim=vim -u /c/Users/Carl/.vimrc
+
+alias gotogs='cd ~/gitstuff'
