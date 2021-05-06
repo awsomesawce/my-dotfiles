@@ -74,3 +74,5 @@ duks() {
 
 # End of msysfuncs.sh
 
+expr1="curl $csURI"
+# This works the same as if using expr before it
