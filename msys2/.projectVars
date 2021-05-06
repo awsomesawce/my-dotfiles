@@ -1,0 +1,24 @@
+# Carl's Project Variables for MSYS/Cygwin
+
+export DOTFILESGIT=~/gitstuff/my-dotfiles
+
+export FFF_FAV2=~/.emacs.d/
+
+function bestVars {
+    echo "Writing shell scripts in Emacs is so great."
+    if [[ -n "$BASH_VERSION" ]]; then
+	echo "You are in $BASH right now"
+    fi
+}
+
+function TodoSetForMSYS {
+    echo "Here is what I want to do with Bash"
+    echo "I want to master how to do \"case\" things in the shell"
+}
+
+function undocumented {
+    for i in {1..10};{ echo "$i";}
+}
+
+# Check out this git repo for more examples:
+# https://github.com/dylanaraps/pure-bash-bible#run-a-command-in-the-background
