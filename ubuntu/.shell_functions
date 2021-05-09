@@ -26,10 +26,11 @@ pwshInvoke() {
     eval "$pwshCommand" "Invoke-Item $*"
 }
 
-chtsh () { 
-    curl cht.sh/$* 
-    return 0
-}
+# This is a bad version of chtsh
+#chtsh() { 
+#    curl cht.sh/$* 
+#    return 0
+#}
 
 pygcat() {
     cat "$1" | pygmentize | less
@@ -96,7 +97,7 @@ nodeprocessconf() {
         echo "node executable not found"
     fi
 }
-cdfile() { if [[ $# -eq 0 ]]; then echo "Write an argument to cd to that file"; else cd $(dirname $(which $*)); fi; }
+cdfile() { if [[ $# -eq 0 ]]; then echo "Write an argument to cd to that file"; else cd $(dirname "$(which "$@")") || {echo "Did not work"; exit 1;} fi; }
 
 
 if [[ -n "$ZSH_VERSION" ]]; then
@@ -106,14 +107,15 @@ if [[ -n "$ZSH_VERSION" ]]; then
             return 1
         else
             if [[ -x /usr/bin/curl ]] || [[ -x /bin/curl ]]; then
-                command curl "https://cht.sh/$1" || echo "There was an error"
+                command curl "https://cht.sh/$1" || { echo "There was an error"; exit 1; }
                 return 0
             else
-                print "$(basename $0): ERROR: Cannot find curl executable."
+                print "$(basename "$0"): ERROR: Cannot find curl executable."
                 return 1
             fi
         fi
     }
+alias chtsh=cheatsheet
 
     zhelpfix() {
         local zshhelpdir=/usr/share/zsh/help
@@ -133,3 +135,5 @@ if [[ -n "$ZSH_VERSION" ]]; then
         fi
 }
 fi
+
+# vim:filetype=sh
