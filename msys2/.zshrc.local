@@ -217,6 +217,8 @@ alias lsdot='ls -ld .*'
 
 msysZshAliases=~/.zsh_aliases
 zshAliasesHome=~/.zsh_aliases
+zal=~/.zsh_aliases
+zalgit="$msys2_dotfiles_git/.zsh_aliases"
 if [[ -r ~/.zsh_aliases ]]; then
     echo "Sourcing ~/.zsh_aliases"
     . ~/.zsh_aliases
@@ -224,11 +226,23 @@ else
     echo "Did not find ~/.zsh_aliases"
 fi
 
+do_both_exist() {
+    if [[ -r ~/.zsh_aliases ]] && [[ -r "$zalgit" ]]; then
+	echo "Both ~/.zsh_aliases and $zalgit exist, would you like to diff them?"
+	read -r answer
+	if [[ "$answer" = "y" ]]; then
+	    diff "$zal" "$zalgit"
+	else
+	    echo "Ok"
+	fi
+    else
+	#if [[ -r ~/.zsh_aliases ]] && 
+	echo "One or both files do not exist or are not readable"
+	return 1
+    fi
+}
 
-
-
-# This is the one that is based inside cygwin's home directory.
-#[[ -r "$CYGWIN_ZSHALIASES" ]] && source "$CYGWIN_ZSHALIASES" || echo "\$CYGWIN_ZSHALIASES not found. touch \$cyghome/.zsh_aliases to get rid of this message."
+# Add ~/.zfunc dir to fpath
 fpath=(~/.zfunc $fpath)
 
 autoload -Uz compinit # Trying this out to enable gh completion from startup

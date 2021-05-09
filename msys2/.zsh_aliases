@@ -2,8 +2,13 @@
 # OriginalLocation: "$HOME/.zsh_aliases"
 # TODO: write a function which copies this file to the backup directories
 #
-#
-alias chtsh=cheatsheet
+
+# Common aliases
+alias rm='nocorrect rm -i'
+alias cp='nocorrect cp -i'
+alias mv='nocorrect mv -i'
+
+alias chtsh=cheatsheet-new
 gitDir=/cygdrive/d/Carl/Documents/GitHub
 local nodeSchoolDir=$gitDir/node-school
 alias vim='/usr/bin/vim -u ~/.vimrc.cygwin'
@@ -21,4 +26,10 @@ function cheatsheet-new {
 # Temporary vim alias so it recognizes ~/.vimrc
 alias vim=vim -u /c/Users/Carl/.vimrc
 
+# Some project related aliases
 alias gotogs='cd ~/gitstuff'
+
+# Pacman aliases
+alias pminst='pacman -S'
+alias pms='pacman -Ss'
+alias pmii='pacman -Sii'
