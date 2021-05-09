@@ -1,8 +1,21 @@
 # Carl's Project Variables for MSYS/Cygwin
+# TODO: Get rid of experimental code.
 
 export DOTFILESGIT=~/gitstuff/my-dotfiles
-
+scriptspwsh=~/gitstuff/scripts-pwsh
 export FFF_FAV2=~/.emacs.d/
+
+# More project variables
+gitHubD=/d/Carl/Documents/GitHub
+absExamples=/d/Carl/OneDrive/snippets/bash/abs-examples
+gitstuff=~/gitstuff
+# Dotfiles backup dirs
+msys_dotfiles_git=~/gitstuff/my-dotfiles
+msys_onedrive=$OneDrive/dotfiles_backup/msys2
+bkupDirs=("$msys_dotfiles_git" "$msys_onedrive")
+
+#function cpToBkup {
+#}
 
 function bestVars {
     echo "Writing shell scripts in Emacs is so great."
@@ -20,5 +33,12 @@ function undocumented {
     for i in {1..10};{ echo "$i";}
 }
 
+
+# TODO/NOTE: There has to be a way to keep a record/tags of important Symbols in bash/zsh env scripts.
+# If I want to use an env var exported from a different file, I want to have a record of it.
+# Maybe try msys2/global
+
 # Check out this git repo for more examples:
 # https://github.com/dylanaraps/pure-bash-bible#run-a-command-in-the-background
+# END OF FILE
+# vim: filetype=sh expandtab shiftwidth=4 autoindent

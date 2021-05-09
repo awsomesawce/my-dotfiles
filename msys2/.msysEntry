@@ -18,17 +18,19 @@ fi
 # Some simple aliases to get you started
 
 # Fri, Apr 30, 2021  3:09:32 AM # Moved these aliases to ~/.bashrc
-#alias l='ls -lhF'
-#alias ll='ls -alhF'
-#alias ls='ls --color=auto'
-#alias rm='rm -i'
-#alias cp='cp -i'
 
 cp_msys_entry() {
-local mydotfilesmsys=~/gitstuff/my-dotfiles/msys2
-if [ -d "$mydotfilesmsys" ] && [ -r ~/.msysEntry ]; then
-cp -i ~/.msysEntry "$mydotfilesmsys"
-else
-echo "Something is wrong.  Check and make sure the source and destination exist and are readable"
-fi
+    local msysDotfilesGit=~/gitstuff/my-dotfiles/msys2
+    local onedrvDotfiles=$OneDrive/dotfiles_backup
+    local dirsList=("$msysDotfilesGit" "$onedrvDotfiles")
+    # TODO: finish for loop
+    #for dir in ${dirsList[@]}; do
+    if [ -d "$mydotfilesmsys" ] && [ -r ~/.msysEntry ]; then
+        echo "Copying ~/.msysEntry to dotfiles"
+        cp -i ~/.msysEntry "$mydotfilesmsys"
+    else
+        echo "Something is wrong.  Check and make sure the source and destination exist and are readable"
+    fi
 }
+##### END OF FILE
+# vim:filetype=bash foldmethod=marker autoindent expandtab shiftwidth=4
