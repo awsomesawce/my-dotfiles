@@ -65,6 +65,8 @@
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
  '(inhibit-startup-screen t)
+ '(initial-buffer-choice 'remember-notes)
+ '(initial-major-mode 'shell-script-mode)
  '(ivy-mode t)
  '(org-agenda-files
    '("d:/Carl/OneDrive/Desktop/List_Of_Libraries.org" "d:/Carl/OneDrive/TODO/TODO.org" "~/CFA_test/my-addon-list.org" "d:/Carl/OneDrive/org_dir/emacs_problems.org"))
@@ -73,6 +75,7 @@
  '(package-selected-packages
    '(helpful powershell clang-format auctex editorconfig-generate darkokai-theme deadgrep writeroom-mode ag editorconfig elisp-def elscreen-tab eshell-prompt-extras eshell-syntax-highlighting buttons flymake counsel-jq counsel-notmuch counsel-web ctrlf dired-posframe dired-rsync dired-sidebar eshell-toggle evil-nerd-commenter evil-owl evil-tex fzf kakoune key-assist key-chord lsp-ivy lsp-java lsp-mode lsp-ui lua-mode markdown-toc material-theme mmm-mode monokai-theme mustache nord-theme org-evil pandoc-mode pass pomidor xonsh-mode helm-slime airline-themes bash-completion company-fuzzy company-posframe company-quickhelp ox-gfm web-server yaml-mode yasnippet yasnippet-snippets ivy-posframe magit-todos notmuch treemacs-magit treemacs-projectile helm-ag paper-theme posix-manual powerline powerline-evil prettier prism pydoc tldr treemacs-evil websocket dracula-theme evil-collection evil-test-helpers helm-emmet which-key flycheck evil-traces company-shell evil-org ac-emoji ac-helm ac-html evil-goggles evil-mc evil-tabs evil-tutor spacemacs-theme terminal-here toc-org vdiff company-nginx company-org-roam company-web counsel-css counsel-projectile css-autoprefixer dashboard didyoumean dired-recent evil helm-org helm-projectile coffee-mode auto-complete emmet-mode helm magit markdown-mode ox-jekyll-md python-mode speed-type stylus-mode sublime-themes vs-dark-theme w3m web-mode-edit-element wgrep org-index org-journal counsel ivy docbook gnu-elpa-keyring-update))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
+ '(shell-completion-fignore '("*.dll"))
  '(texinfo-mode-hook '(flyspell-mode))
  '(tool-bar-style 'both-horiz nil nil "This will display both text and icon in the above toolbar")
  '(user-full-name "Carl C")

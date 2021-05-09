@@ -34,6 +34,3 @@
 	tool = xxdiff
 [init]
 	defaultBranch = main
-[credential "https://github.com"]
-	helper = 
-	helper = !C:\\Users\\Carl\\scoop\\apps\\gh\\current\\bin\\gh.exe auth git-credential
