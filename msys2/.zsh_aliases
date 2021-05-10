@@ -33,3 +33,6 @@ alias gotogs='cd ~/gitstuff'
 alias pminst='pacman -S'
 alias pms='pacman -Ss'
 alias pmii='pacman -Sii'
+alias pb=pacboy
+alias pm=pacman
+alias gz=gzip
