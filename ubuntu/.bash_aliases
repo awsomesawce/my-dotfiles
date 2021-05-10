@@ -20,8 +20,8 @@ alias gitst='git status'
 alias node-school="cd \$gitstuffdir/node-school"
 alias gitstuff="cd \$gitstuffdir"
 alias dotfiles='cd ~/.dotfiles/'
-ubudot=~/.dotfiles/ubuntu
-alias ubudot="cd \$ubudot"
+export ubudotfiles=~/.dotfiles/ubuntu
+alias ubudot="cd \$ubudotfiles"
 alias gaddc='~/bin/gaddc.sh'
 # TODO: Adjust position of variables
 export npmDir=/home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm
@@ -33,7 +33,8 @@ alias absguide='cd /usr/share/doc/abs-guide/'
 alias aptinst='sudo aptitude install'
 alias pip='pip3'
 alias wslnotes="cd \$gitstuffdir/wsl-notes/ubuntu"
-alias deno="\$HOME/.deno/bin/deno"
+# This next alias is not needed anymore since deno was added to PATH
+#alias deno="\$HOME/.deno/bin/deno"
 alias bat='bat.exe'
 alias fd='fdfind'
 
@@ -51,3 +52,4 @@ alias aptshow='aptitude show'
 alias rm="rm -i"
 alias gz=gzip
 alias r='fc -s'
+alias exp=explorer.exe

@@ -97,7 +97,15 @@ nodeprocessconf() {
         echo "node executable not found"
     fi
 }
-cdfile() { if [[ $# -eq 0 ]]; then echo "Write an argument to cd to that file"; else cd $(dirname "$(which "$@")") || {echo "Did not work"; exit 1;} fi; }
+cdfile() {
+    if [[ $# -eq 0 ]]; then
+        echo "$0 Error: Write an argument to cd to that file" 2>&1
+    else
+        cd $(dirname "$(which "$@")") || {
+            echo "Did not work" && return 1
+                } 
+            fi
+        }
 
 
 if [[ -n "$ZSH_VERSION" ]]; then
@@ -135,5 +143,7 @@ alias chtsh=cheatsheet
         fi
 }
 fi
+
+echo "~/.shell_functions loaded"
 
 # vim:filetype=sh
