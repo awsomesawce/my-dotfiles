@@ -1,6 +1,7 @@
 # This file contains some nice bash/zsh functions
 # Dot-source this file.
 # Author Carl C (awsomesawce at outlook dot com)
+# vim filetype=sh
 # shellcheck disable=SC2230
 # shellcheck shell=bash
 #
@@ -17,7 +18,6 @@ argsOne="$1"
 argsTwo="$2"
 argsAll="$*"
 argsArray="$@"
-
 
 ## Invoke-Item command from pwsh.exe
 # Only works if pwsh.exe is in path, otherwise use powershell.exe
@@ -97,17 +97,33 @@ nodeprocessconf() {
         echo "node executable not found"
     fi
 }
+
+# This next function will cd to the argument file, even if it is a variable.
 cdfile() {
     if [[ $# -eq 0 ]]; then
         echo "$0 Error: Write an argument to cd to that file" 2>&1
     else
+        # TODO: Add [[ -f "$@" ]] statement
         cd $(dirname "$(which "$@")") || {
             echo "Did not work" && return 1
                 } 
             fi
         }
 
+# Array of function names in this file.
+export myCommands=("pwshInvoke" "groffman" "pygcat" "whichless" "whichfile" "hexConvert" "whichl" "gitaddandcommit" "readmeDir" "chromaless" "chless" "catimg" "nodeprocessconf")
 
+list_my_funcs() {
+    echo "------------ List of commands ------------"
+    for comm in ${myCommands[@]}; do
+        echo "$comm"
+    done
+    echo "------------ End of commands ------------"
+    echo "Type \`type <command_name>\` for more information."
+    echo "These are commands located in ~/.shell_functions"
+}
+
+# Load functions that are zsh-specific
 if [[ -n "$ZSH_VERSION" ]]; then
     cheatsheet() {
         if [[ $# -eq 0 ]]; then
