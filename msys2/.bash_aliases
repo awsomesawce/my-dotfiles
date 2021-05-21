@@ -7,6 +7,9 @@
 msys_dotfiles_git=~/gitstuff/my-dotfiles/msys2
 export BASH_ALIASES_FILE="$HOME/.bash_aliases"
 bal="$BASH_ALIASES_FILE"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias l='ls -lhF'
 alias gotomydotfiles="cd $msys_dotfiles_git"
 alias goto-dotfilesbackup="cd $OneDrive/dotfiles_backup"

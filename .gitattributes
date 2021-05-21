@@ -3,6 +3,7 @@
 *.vcproj        text eol=crlf
 *.bat		text eol=crlf
 *.cmd		text eol=crlf
+*.ps1		text eol=lf
 *.sh            text eol=lf
 *.bash		text eol=lf
 *.zsh		text eol=lf

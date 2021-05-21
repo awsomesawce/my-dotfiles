@@ -8,26 +8,21 @@ alias rm='nocorrect rm -i'
 alias cp='nocorrect cp -i'
 alias mv='nocorrect mv -i'
 
-alias chtsh=cheatsheet-new
-gitDir=/cygdrive/d/Carl/Documents/GitHub
+gitDir=/d/Carl/Documents/GitHub
+alias gotogitDir="cd $gitDir"
 local nodeSchoolDir=$gitDir/node-school
 alias vim='/usr/bin/vim -u ~/.vimrc.cygwin'
 alias nodeschool="cd $nodeSchoolDir"
-function cheatsheet-new { 
-    local CURLEXE=$(which curl)
-    if [[ -x "$CURLEXE" ]]; then
-	curl "cht.sh/$*"
-    else
-	echo "Curl is not installed"
-    fi
-}
-
 
 # Temporary vim alias so it recognizes ~/.vimrc
 alias vim=vim -u /c/Users/Carl/.vimrc
 
 # Some project related aliases
 alias gotogs='cd ~/gitstuff'
+gotoBashSnips() {
+    local bashSnipsDir="$OneDrive/snippets/bash"
+    cd $bashSnipsDir
+}
 
 # Pacman aliases
 alias pminst='pacman -S'
@@ -36,3 +31,4 @@ alias pmii='pacman -Sii'
 alias pb=pacboy
 alias pm=pacman
 alias gz=gzip
+alias gcm=type
