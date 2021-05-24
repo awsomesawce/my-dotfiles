@@ -19,6 +19,8 @@ HISTFILE=~/.zsh_history
 # TODO: switch to a different zsh plugin system
 typeset -gx ZSH="$HOME/.antigen"
 # Some extra variables
+# `typeset -gx` is literally the same as `export`, so it is up to
+#+ the programmer as to what style they want.
 typeset -gx EDITOR=vim
 typeset -gx TERM=xterm-256color
 typeset -gx BROWSER=wslview
@@ -118,16 +120,16 @@ antigen bundle ssh-agent
 # z readme is in plugins/z directory
 #antigen bundle z
 #antigen bundle autojump
-antigen bundle wd
+#antigen bundle wd
 #antigen bundle tmux
 #antigen bundle npm
 #antigen bundle node
-antigen bundle yarn
+#antigen bundle yarn
 #antigen bundle npx
 antigen bundle colored-man-pages
 #antigen bundle copydir
 antigen bundle cp
-#antigen bundle direnv
+antigen bundle direnv
 antigen bundle dotenv
 antigen bundle jsontools
 antigen bundle urltools
@@ -140,10 +142,10 @@ antigen bundle command-not-found
 #antigen bundle pylint
 
 #antigen bundle sudo
-antigen bundle dotnet
+#antigen bundle dotnet
 
-antigen bundle ruby
-antigen bundle bundler
+#antigen bundle ruby
+#antigen bundle bundler
 #antigen bundle web-search
 #antigen bundle python
 
@@ -162,8 +164,8 @@ antigen bundle zsh-users/zsh-completions
 # Load the theme
 #antigen theme fino-time
 #antigen theme candy-kingdom
-antigen theme candy
-#antigen theme bira
+#antigen theme candy
+antigen theme bira
 #antigen theme mortalscumbag
 #antigen theme jispwoso
 #antigen theme duellj
