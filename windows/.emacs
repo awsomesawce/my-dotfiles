@@ -45,7 +45,7 @@
  '(desktop-after-read-hook '(list-buffers))
  '(epg-gpg-home-directory nil)
  '(epg-gpg-program "gpg")
- '(evil-undo-system 'undo-redo)
+ '(evil-undo-system 'undo-tree)
  '(face-font-family-alternatives
    '(("FuraCode NF" "courier" "fixed")
      ("Monospace Serif" "Courier 10 Pitch" "Consolas" "Courier Std" "FreeMono" "Nimbus Mono L" "courier" "fixed")
@@ -76,6 +76,7 @@
  '(ivy-mode t)
  '(org-agenda-files
    '("d:/Carl/OneDrive/Desktop/List_Of_Libraries.org" "d:/Carl/OneDrive/TODO/TODO.org" "~/CFA_test/my-addon-list.org" "d:/Carl/OneDrive/org_dir/emacs_problems.org"))
+ '(org-indent-mode-turns-off-org-adapt-indentation nil)
  '(package-check-signature allow-unsigned)
  '(package-gnupghome-dir nil)
  '(package-selected-packages
