@@ -1,0 +1,7 @@
+{
+  "keyOne": "valOne",
+  "keyTwo": {
+    "nestedKeyOne": "nestedValOne",
+    "nestedKeyTwo": "nestedValTwo"
+  }
+}

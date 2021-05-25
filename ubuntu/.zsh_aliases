@@ -23,7 +23,14 @@ alias vzalias="vim $HOME/.zsh_aliases"
 alias vzshf="vim $HOME/.shell_functions"
 alias deno=/home/carlc/.deno/bin/deno
 alias afshow='apt-file show'
-alias wslnotes='cd /home/carlc/documents/gitstuff/wsl-notes/ubuntu'
+
+# Make sure the directory is there
+if [[ -d ~/Documents/gitstuff/wsl-notes/ubuntu ]]; then
+    wslNotesDir=~/Documents/gitstuff/wsl-notes/ubuntu
+    alias wslnotes="cd $wslNotesDir"
+else
+    print -r -- "$wslNotesDir did not show up." 2&>1
+fi
 
 # External script aliases
 
