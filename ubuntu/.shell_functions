@@ -14,11 +14,6 @@
 #fi
 # 
 
-argsOne="$1"
-argsTwo="$2"
-argsAll="$*"
-argsArray="$@"
-
 ## Invoke-Item command from pwsh.exe
 # Only works if pwsh.exe is in path, otherwise use powershell.exe
 pwshInvoke() {
@@ -31,6 +26,25 @@ pwshInvoke() {
 #    curl cht.sh/$* 
 #    return 0
 #}
+
+if [[ -n "$BASH_VERSION" ]]; then
+    chtsh() {
+        local Usage="Usage: $(basename $0) TERM
+                Type the term you want to lookup after $0"
+        if [[ -x /usr/bin/curl ]] || [[ -x /bin/curl ]]; then
+            if [[ $# -eq 0 ]]; then
+                echo "$Usage" && return 1
+            elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+                echo "$Usage"; return 1
+            else
+                command curl "https://cht.sh/$*"
+                return 0
+            fi
+        else
+            echo "$0 Error: you need to have curl installed in \"/usr/bin\" or \"/bin\""
+        fi
+    }
+fi
 
 pygcat() {
     cat "$1" | pygmentize | less
@@ -57,7 +71,6 @@ whichfile() {
    return 0 
 }
 hexConvert() {
-local argOne=$1
 echo "$argOne" | hd
 return 0
 }
@@ -122,6 +135,8 @@ list_my_funcs() {
     echo "Type \`type <command_name>\` for more information."
     echo "These are commands located in ~/.shell_functions"
 }
+# Let the people know when loading the shell that you have this command available.
+echo "---- Try \"list_my_funcs\" to list functions available to you ----"
 
 # Load functions that are zsh-specific
 if [[ -n "$ZSH_VERSION" ]]; then
