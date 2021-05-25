@@ -1,7 +1,8 @@
 ##### Other PS Functions #####
 # Please add functions to this file instead of the main powershell profile.
 # Author: Carl C. (awsomesawce@github.com)
-# Updated: Friday, April 9, 2021 12:37:35 AM
+# Updated: Monday, May 24, 2021 6:30:53 AM
+# Note: Added `param()` to multiple functions.
 
 
 ## Aliases for common Cmdlets
@@ -33,11 +34,6 @@ Function Open-Node-Docs { Start-Process https://nodejs.org/dist/latest-v14.x/doc
 Set-Alias -Name nodedocs -Value Open-Node-Docs -Description "Open NodeJS docs in a browser"
 
 ## Other useful functions
-
-## WSL-specific functions
-Function start-ubuntu-bash { wsl -u carlc } # Make functions like this more advanced.
-Set-Alias -Name wslubu -Value start-ubuntu-bash -Description "Shorter wsl ubuntu command"
-#
 
 # Next up is editor functions!
 # Neovim config shortcut # remember to use backslashes.
@@ -117,64 +113,59 @@ Write-Output "other_functions file has been loaded from here: $otherFunctionsScr
 # This function allows for searching apt-cache database from powershell
 # TODO: separate the wsl-specific functions into its own file.
 #       Modules are easier to maintain.
-function aptcshow { wsl apt-cache show $args }
-function aptcsearch { wsl -u carlc apt-cache search $args }
-function wslUserLogin { wsl -u carlc }
-set-alias wslu -Value wslUserLogin -Description "Shorter access to wsl -u carlc"
+#### Source WSL-Functions Script
+$scrps = "~/gitstuff/scripts-pwsh"
+$wslFuncs = "$scrps\config\wslFunctions.ps1"
+
+if (Test-Path $wslFuncs) {
+    Write-Verbose "Sourcing wslFunctions.ps1 script"
+    . $wslFuncs
+} else {
+    Write-Error "$wslFuncs file not found"
+}
+
+# TODO: reorganize variables
+
+# BEGIN File-System functions {{{
+
 # Some nice functions for listing items and sorting them
 function list-bigfiles {
-  get-childitem | where-object -Property length -gt 10000 | sort-object -property Length -Ascending
+    param([int]$Len)
+    # if user enters length, show files greater than that length.
+    if ($Len) {
+	get-childitem | where-object -Property length -gt $Len | sort-object -property Length -Ascending
+    } else {
+	get-childitem | where-object -Property length -gt 10000 | sort-object -property Length -Ascending
+    }
 }
 set-alias lsbig list-bigfiles -description "Shorter way to list big files"
 function list-hugefiles {
   get-childitem | where-object -Property length -gt 100000 | Sort-Object -Property Length -Descending | write-output
 }
 Set-Alias lshuge -Value list-hugefiles -Description "Shorter way to list huge files"
+
+# END File System Functions }}}
+
 # TODO: fix the following two functions
 #set-alias -Name hjson -Value "$PWD\hjson.cmd" -Description "Set hjson alias so that it references the npm binary instead of the scoop binary, which itself i believe is based on Python"
 #set-alias -Name hjson-js -Value "$PWD\hjson.cmd" -Description "Alias for npms hjson which makes it more clear which binary it links to"
-set-alias find -Value "D:\Cygwin\bin\find.exe" -Description "Use a better find than the windows version"
-function Committo-Git { 
-    if (Get-Command git -CommandType Application -ErrorAction Ignore) {
-        # If git command is found, continue.
-        if ($args) {
-            # If there are args, put them into a string as the commit message.
-            git commit -m "$args"
-        } else {
-            # If no args, just do git commit.
-            git commit
-        }
-    } else {
-        # If git executable is not found, write an error.
-        return Write-Error "Did not find git executable"
-    }
-}
-set-alias gcomm -Value Committo-Git -Description "Git commit shortening"
-function git-addcommit {
-  git add . && git commit -m "$args" }
-set-alias gaddcom -Value git-addcommit -Description "Shorter git add and commit.  Use arg as git commit message"
-
+set-alias cygfind -Value "D:\Cygwin\bin\find.exe" -Description "Use a better find than the windows version, Cygwin version."
+# Committo-Git already in different file.
 # This function goes to the parent directory of the named file.
 # Useful for going to the directory of a variable pointing to a file.
 # Try `cdto-filelocation $PROFILE`
-function cdto-filelocation {
-  if (Test-Path $args) {
-    set-location (Split-Path -parent "$args")
+function Set-filelocation {
+    param([string]$Path)
+  if (Test-Path $Path) {
+    set-location (Split-Path -parent "$Path")
   }
   else {
-    write-output "That is not a valid file name"
+    write-Error "That particular file name has not been found."
   }
 }
 
-# Standard git shortcuts.  These are usually aliases in bash, but Powershell does not
-# allow setting aliases with arguments. Set-Alias won't work.
-# The proper way is to create a function with a very specific name, then set an alias to it.
-# Like this:
-function GitPush { git push }
-Set-Alias -Name gpush -Value GitPush -Description "An alias for git push.  Has to be a function first, then point the alias to the function"
-function gpull { git pull }
-
 # This function is the same as the one above, but shorter and with no else statement.
+# It also uses `$args` as opposed to the `$Path` positional parameter.
 function cdfile { 
     # Added if statement for handling args
     if ($args) {
@@ -186,7 +177,12 @@ function cdfile {
 # cdfile function allows cding to the parent directory of the named file
 # The above function works just like chtsh function in bash.
 function pschtsh {
-  Invoke-webrequest -Uri https://cht.sh/$args | select-object -expandProperty content
+    param([string]$SearchTerm)
+    if ($SearchTerm) {
+      Invoke-webrequest -Uri "https://cht.sh/$SearchTerm" | select-object -expandProperty content
+    } else {
+      Write-Error "Need search term"
+    }
 }
 # To invoke, type "pschtsh term_to_lookup"
 # Pipe to a file using `Out-File`
@@ -219,48 +215,29 @@ function start-msys-bash {
   }
 }
 
-
-# Use aptitude from powershell with this function
-# It says to not use invoke-expression, but I say use it when it is needed.
-function wsl-aptitude-show {
-  $Local:wslCommand = "wsl -u carlc"
-  if (test-path $(Get-Command wsl).Source) {
-    write-output "wsl exists!"
-    invoke-expression "$wslCommand aptitude show $args"
-  }
-  else {
-    write-error "Wsl binary doesnt exist"
-  }
-}
+# Wsl-functions moved to .\wslFunctions.ps1
 
 # This function starts windows terminal in Admin mode
 function start-wtAdmin {
-  if (Get-Command wt) {
+  if (Get-Command wt -errorAction Ignore) {
     Start-Process wt -Verb runAs
   }
   else {
-    write-output "wt exe not found"
+    write-error "Windows Terminal executable not found"
   }
 }
 function gotofile {
   # This function allows cding to the location of a file
-  if ($args) {
-    Set-Location $(split-path -Parent "$args")
+  # TODO: Add help message
+  param([string]$File)
+  if ($File) {
+    Set-Location $(split-path -Parent "$File")
   }
   else {
     Write-Output "Usage: gotofile FILE"
   }
 }
-function gitaddcommit {
-  # This function is a crude way of mixing these two commands together
-  if ($args) {
-    git add . && git commit -m "$args"
-  }
-  else {
-    write-output "Usage: gitaddcommit `"COMMITMSG`""
-  }
-}
-set-alias -Name gadc -Value gitaddcommit -Description "gitaddcommit alias"
+
 set-alias -Name nvim-qt -Value nvim-qt.ps1 -Description "Always point to nvim-qt.ps1, so the console is not hung up"
 # Source choco_functions script
 # TODO: Put this function inside the actual $PROFILE rather than source from here.
@@ -269,12 +246,12 @@ set-alias -Name nvim-qt -Value nvim-qt.ps1 -Description "Always point to nvim-qt
 # Use this instead of cheatsheet for better functionality like error-handling aka argument handling
 # TODO: more testing required
 function better-chtsh {
-if ($args) {
-Invoke-WebRequest -Uri "https://cheat.sh/$args" | Select-Object -ExpandProperty Content | out-host
-} else {
-write-error "This function requires an argument to look up a term on cht.sh"
-return 1
-}
+    param([string]$SearchTerm)
+    if ($SearchTerm) {
+	Invoke-RestMethod -Uri "https://cheat.sh/$SearchTerm"
+    } else {
+	write-error "This function requires an argument to look up a term on cht.sh"
+    }
 }
 function pschtshPage {
     if ($args) {
