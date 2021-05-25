@@ -9,3 +9,11 @@ ignore/*
 
 # tarfile msys backups
 msys_backups/
+# Ignore archives
+*.zip
+*.7z
+*.gz
+*.xz
+*.lz
+*.lz4
+*.tar
