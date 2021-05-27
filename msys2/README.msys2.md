@@ -72,3 +72,5 @@ There are a _ton_ of zsh plugins and frameworks out there and `oh-my-zsh` is jus
 
 - [x] Create a `bashposixenv` file for setting up the shell to work in `--posix` mode.
   - [ ] Edit said file down
+
+- [ ] Figure out why `~/.projectVars` is not being sourced.

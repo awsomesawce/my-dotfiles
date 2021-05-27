@@ -1,4 +1,5 @@
-# Carl's Project Variables for MSYS/Cygwin
+# Carl's Project Variables for MSYS
+# The Cygwin version of this file is in the works.
 # TODO: Get rid of experimental code.
 
 export DOTFILESGIT=~/gitstuff/my-dotfiles
@@ -9,6 +10,8 @@ export FFF_FAV2=~/.emacs.d/
 gitHubD=/d/Carl/Documents/GitHub
 absExamples=/d/Carl/OneDrive/snippets/bash/abs-examples
 gitstuff=~/gitstuff
+export oneDrive=/d/Carl/OneDrive
+export snippets="$oneDrive/snippets"
 # Dotfiles backup dirs
 msys_dotfiles_git=~/gitstuff/my-dotfiles
 msys_onedrive=$OneDrive/dotfiles_backup/msys2
