@@ -47,7 +47,7 @@ In the future I plan on just symlinking each file to where it is read from (usua
 
 ## What Changed
 
-Tue, May  4, 2021  2:05:32 AM\
+Tue, May  4, 2021  2:05:32 AM
 
 ### TLDR
 
@@ -70,12 +70,7 @@ There are a _ton_ of zsh plugins and frameworks out there and `oh-my-zsh` is jus
 
 ## TODOS
 
-Fri, Apr 30, 2021 12:09:44 PM
+- [x] Create a `bashposixenv` file for setting up the shell to work in `--posix` mode.
+  - [ ] Edit said file down
 
-- [ ] .bashrc and .profile need to be refactored because they were copied over from the _SYSTEM_ config.
-  - [ ] Copy over /etc/skel/{.bashrc,.profile,.inputrc} and add your own config from the current ones.
-> Best way to do this is to rename all the rc files with a .bak extension.
-
-Wed, May  5, 2021 12:32:10 PM
-
-- [ ] Rebuild ~/.zshrc for when running **Cygwin**'s `zsh`.
+- [ ] Figure out why `~/.projectVars` is not being sourced.

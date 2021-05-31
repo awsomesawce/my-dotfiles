@@ -3,13 +3,13 @@
 # Put all msys-specific functions in this file
 
 # Ideas for functions: 
-# One that conditionally loads an env file depending on whether I'm in zsh or bash.
+# - [x] One that conditionally loads an env file depending on whether I'm in zsh or bash.
 
 # Let the user know that these functions are ready to go!
 
 tellUser() {
-echo "MSYS funcs loaded from msys dotfile git repo
-Try \"listmycommands\" to see what commands are available"
+    echo "MSYS funcs loaded from msys dotfile git repo
+    Try \"listmycommands\" to see what commands are available"
 }
 tellUser
 
@@ -17,8 +17,7 @@ tellUser
 
 weirdlister() {
     local weirdlist=($(ls -F ~/bin/))
-    local yesans="y"
-    local noans="n"
+    local possibleAnswers=("y" "n")
     for i in ${weirdlist[@]}; do
         echo "File is $i"
     done
@@ -28,7 +27,8 @@ weirdlister() {
     if [[ $REPLY -eq "y" ]]; then
         echo "Here it is: ${weirdlist[@]}"
     else
-        echo "Ok"
+        echo "Returning..."
+	return 1
     fi
     # echo "Would you like that array to be exported globally?  y or n"
     # read -r
@@ -45,7 +45,7 @@ chtsh() {
 	echo "term is any term you want to look up on chtsh"
     else
 	if [[ -x /usr/bin/curl ]] || [[ -x /bin/curl ]]; then
-	    curl "https://cht.sh/$1" || exit 1
+	    command curl "https://cht.sh/$1" || exit 1
 	else 
 	    echo "Curl is not installed" 
 	fi

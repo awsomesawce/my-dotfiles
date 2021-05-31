@@ -1,15 +1,23 @@
+#!/bin/bash
 ####### MSYS2 setup!! ########
 # This file sits in $HOME and points to the _real_ env file that sits in a git repo
 # Make changes to _that_ file
 # Commented out path declaration because it is already done in $MSYSENVFILE
 # TODO: Let ~/.bashrc do all this work instead.
 # Use ~/gitstuff/my-dotfiles/msys2/.msysenv which is located in the $MSYSENVFILE env variable
-if [[ -z "$MSYSENVFILE" ]]; then
-    export MSYSENVFILE=~/gitstuff/my-dotfiles/msys2/.msysenv
-    #. "$MSYSENVFILE"
-else
-    echo "\$MSYSENVFILE variable is already set to $MSYSENVFILE"
-fi
+
+export OneDrive=/d/Carl/OneDrive
+
+echo "Beginning sourcing ~/.msysEntry"
+
+# Change if statement to test statement.
+[[ -z "$MSYSENVFILE" ]] && MSYSENVFILE=~/gitstuff/my-dotfiles/msys2/.msysenv || echo "\$MSYSENVFILE already set"
+#if [[ -z "$MSYSENVFILE" ]]; then
+    #export MSYSENVFILE=~/gitstuff/my-dotfiles/msys2/.msysenv
+    ##. "$MSYSENVFILE"
+#else
+    #echo "\$MSYSENVFILE variable is already set to $MSYSENVFILE"
+#fi
 
 # Source the file!
 [[ -r "$MSYSENVFILE" ]] && . "$MSYSENVFILE" \
@@ -21,16 +29,19 @@ fi
 
 cp_msys_entry() {
     local msysDotfilesGit=~/gitstuff/my-dotfiles/msys2
-    local onedrvDotfiles=$OneDrive/dotfiles_backup
-    local dirsList=("$msysDotfilesGit" "$onedrvDotfiles")
+    #local onedrvDotfiles=$OneDrive/dotfiles_backup # Unused right now
+    #local dirsList=("$msysDotfilesGit" "$onedrvDotfiles") # Unused right now
     # TODO: finish for loop
     #for dir in ${dirsList[@]}; do
-    if [ -d "$mydotfilesmsys" ] && [ -r ~/.msysEntry ]; then
+    if [ -d "$msysDotfilesGit" ] && [ -r ~/.msysEntry ]; then
         echo "Copying ~/.msysEntry to dotfiles"
-        cp -i ~/.msysEntry "$mydotfilesmsys"
+        cp -i ~/.msysEntry "$msysDotfilesGit"
     else
         echo "Something is wrong.  Check and make sure the source and destination exist and are readable"
     fi
 }
+
+echo "End of ~/.msysEntry script"
+
 ##### END OF FILE
 # vim:filetype=bash foldmethod=marker autoindent expandtab shiftwidth=4

@@ -1,7 +1,11 @@
-# Carl's Project Variables for MSYS/Cygwin
+# Carl's Project Variables for MSYS
+# The Cygwin version of this file is in the works.
 # TODO: Get rid of experimental code.
 
-export DOTFILESGIT=~/gitstuff/my-dotfiles
+[[ -z "$DOTFILESGIT" ]] && export DOTFILESGIT="$HOME/gitstuff/my-dotfiles" || echo "\$DOTFILESGIT already set to $DOTFILESGIT" >&2
+[[ -z "$UBUNTUDOTFILES" ]] && export UBUNTUDOTFILES="$DOTFILESGIT/ubuntu" || echo "\$UBUNTUDOTFILES var already set to $UBUNTUDOTFILES" >&2
+export msys_config="${XDG_CONFIG_DIR:-~/.config}/msys2"
+export MSYSHOME=/home/Carl
 scriptspwsh=~/gitstuff/scripts-pwsh
 export FFF_FAV2=~/.emacs.d/
 
@@ -9,6 +13,8 @@ export FFF_FAV2=~/.emacs.d/
 gitHubD=/d/Carl/Documents/GitHub
 absExamples=/d/Carl/OneDrive/snippets/bash/abs-examples
 gitstuff=~/gitstuff
+export oneDrive=/d/Carl/OneDrive
+export snippets="$oneDrive/snippets"
 # Dotfiles backup dirs
 msys_dotfiles_git=~/gitstuff/my-dotfiles
 msys_onedrive=$OneDrive/dotfiles_backup/msys2
@@ -17,7 +23,16 @@ bkupDirs=("$msys_dotfiles_git" "$msys_onedrive")
 #function cpToBkup {
 #}
 
+declare -A hash_of_config
+hash_of_config=(\
+    ["msys_config"]="${XDG_CONFIG_DIR:="~/.config/msys2"}" \
+    ["bashrc"]="$HOME/.bashrc" \
+    ["msysEntry"]="$HOME/.msysEntry" \
+    ["msys_dotfiles_git"]="$HOME/gitstuff/my-dotfiles/msys2" \
+)
+
 function bestVars {
+    # TODO
     echo "Writing shell scripts in Emacs is so great."
     if [[ -n "$BASH_VERSION" ]]; then
 	echo "You are in $BASH right now"
@@ -25,6 +40,7 @@ function bestVars {
 }
 
 function TodoSetForMSYS {
+    # TODO
     echo "Here is what I want to do with Bash"
     echo "I want to master how to do \"case\" things in the shell"
 }
