@@ -7,7 +7,33 @@
 # NOTE: This file is now symlinked to "$HOME/.zshrc".
 # If you come from bash you might have to change your $PATH.
 
-setopt nobeep # Keep zsh quiet
+# BEGIN SHELL OPTIONS
+
+setopt NOBEEP # Keep zsh quiet
+
+setopt GLOB_DOTS # Same as DOTGLOB or `-4'
+
+# Set this option to shorten patterns like `**/*.sh' to `**.sh'
+#setopt GLOB_STAR_SHORT
+
+# Set this option for completion to work like Powershell's
+setopt MENU_COMPLETE # `-Y', overrides AUTO_MENU
+
+# Set this option to produce an error on a badly formed pattern for 
+#+ filename generation.
+#setopt BAD_PATTERN # (+2) Default for zsh mode
+
+# Set this option to treat `#', `~' and `^' characters as part of patterns
+#+ for filename generation, etc.
+#setopt EXTENDED_GLOB
+
+# Set this option to cd into a directory when just writing the relative dir name.
+#setopt AUTO_CD # (-J)
+
+# Set this option to make cd push the old dir onto the dirstack.
+#setopt AUTO_PUSHD # (-N)
+
+# END SHELL OPTIONS
 
 typeset -gx PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
