@@ -156,7 +156,7 @@ export GEM_HOME="$HOME/gems"
 export PATH="$PATH:$HOME/gems/bin"
 # NOTE: check ~/.profile for other PATH additions.
 # Enable next line for x11 setup for x410
-[ -z $DISPLAY ] && export DISPLAY=127.0.0.1:0.0
+[ -z "$DISPLAY" ] && export DISPLAY=127.0.0.1:0.0
 # powerline script
 # NOTE: TURNED OFF POWERLINE
 #powerline-daemon -q
@@ -171,9 +171,9 @@ source /home/carlc/sh-files/gh_completion.sh
 #source /usr/share/doc/fzf/examples/completion.bash
 #source /usr/share/doc/fzf/examples/key-bindings.bash
 # nvm installed variables and scripts
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ### Deactivated this because it's already sourced from earlier
 ## Use bash-completion, if available - from bash-completion docs
 #[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \

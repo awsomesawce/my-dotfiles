@@ -26,6 +26,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.deno/bin" ]; then
+    PATH="$PATH:$HOME/.deno/bin"
+fi
+
 # The rest of PATH is set inside ~/.bashrc
 
 # Enable next line for x11 setup for x410
@@ -33,3 +37,4 @@ fi
 
 # completion evals and execignore
 export EXECIGNORE="*.dll"
+PATH="$PATH:/home/carlc/.npm-packages/bin"

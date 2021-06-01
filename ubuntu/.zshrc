@@ -11,7 +11,7 @@
 
 setopt NOBEEP # Keep zsh quiet
 
-setopt GLOB_DOTS # Same as DOTGLOB or `-4'
+#setopt GLOB_DOTS # Same as DOTGLOB or `-4'
 
 # Set this option to shorten patterns like `**/*.sh' to `**.sh'
 #setopt GLOB_STAR_SHORT
