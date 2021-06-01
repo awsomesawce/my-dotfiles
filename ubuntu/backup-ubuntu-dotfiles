@@ -1,0 +1,10 @@
+backup-ubuntu-dotfiles () {
+	if [[ -d ~/.dotfiles/ubuntu ]]
+	then
+		cd ~/.dotfiles || return 1
+		tar -acvf ubuntu-dotfiles-backup.tar.gz ubuntu/*
+		command mv -iv ./ubuntu-dotfiles-backup.tar.gz ~/archives
+	else
+		echo "Dotfiles dir is not there" >&2 && return 1
+	fi
+}
