@@ -7,7 +7,7 @@
 # NOTE: This file is now symlinked to "$HOME/.zshrc".
 # If you come from bash you might have to change your $PATH.
 
-# BEGIN SHELL OPTIONS
+# BEGIN SHELL OPTIONS {{{
 
 setopt NOBEEP # Keep zsh quiet
 
@@ -17,7 +17,7 @@ setopt NOBEEP # Keep zsh quiet
 #setopt GLOB_STAR_SHORT
 
 # Set this option for completion to work like Powershell's
-setopt MENU_COMPLETE # `-Y', overrides AUTO_MENU
+#setopt MENU_COMPLETE # `-Y', overrides AUTO_MENU
 
 # Set this option to produce an error on a badly formed pattern for 
 #+ filename generation.
@@ -33,7 +33,22 @@ setopt MENU_COMPLETE # `-Y', overrides AUTO_MENU
 # Set this option to make cd push the old dir onto the dirstack.
 #setopt AUTO_PUSHD # (-N)
 
-# END SHELL OPTIONS
+# Setting this option allows for short-forms of for, repeat, select, if, and function constructs.
+#setopt SHORT_LOOPS # Default for zsh and csh modes.
+
+# This performs a path search even on commands with slashes in them.
+# Ex.: if /usr/local/bin is in PATH and user types "X11/xinit", the shell will execute /usr/local/bin/X11/xinit
+#+ assuming it exists.  Commands beginning with `/', `./', or `../' are not subject to this option.
+# This also applies for `source` and `.` builtins.
+#setopt PATH_DIRS # (-Q)
+
+# This option prints the exit value of the last command
+#setopt PRINT_EXIT_VALUE # (-1)
+
+# This option ignores all dups in history
+#setopt HIST_IGNORE_DUPS # (-h)
+
+# END SHELL OPTIONS }}}
 
 typeset -gx PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/carlc/go/bin:$PATH
 
