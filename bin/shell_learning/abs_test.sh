@@ -6,9 +6,10 @@
 #+ For example:
 #             sh shft.sh a b c def 83 barndoor
 
-until [ -z "$1" ]  # Until all parameters used up . . .
+while [ -n "$1" ]  # Until all parameters used up . . .
+#until [ -z "$1" ] # Alternate form
 do
-  echo -n "$1 "
+  echo -n "The param is $1 "
   shift
 done
 

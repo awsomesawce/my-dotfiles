@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/zsh -f
 # This is a demonstration on how local variables only exist inside their current scope.
 
 variable=outside
