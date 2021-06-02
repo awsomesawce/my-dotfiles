@@ -4,14 +4,33 @@
 #
 
 # Common aliases
-alias rm='nocorrect rm -i'
-alias cp='nocorrect cp -i'
-alias mv='nocorrect mv -i'
+# BEGIN Added from ~/.zshrc.local
+
+alias mv='nocorrect command mv -i'       # no spelling correction on mv
+alias cp='nocorrect command cp -i'       # no spelling correction on cp
+alias mkdir='nocorrect command mkdir' # no spelling correction on mkdir
+alias j=jobs
+alias pu=pushd
+alias po=popd
+alias d='dirs -v'
+alias h=history
+#alias grep # TODO: get a good grep alias going.
+alias ll='ls -l'
+alias la='ls -aF'
+alias l='ls -lhF'
+
+# List only directories and symbolic
+# links that point to directories
+alias lsd='ls -ld *(-/DN)'
+
+# List only file beginning with "."
+alias lsdot='ls -ld .*'
+# END from ~/.zshrc.local
 
 gitDir=/d/Carl/Documents/GitHub
 alias gotogitDir="cd $gitDir"
-local nodeSchoolDir=$gitDir/node-school
-alias vim='/usr/bin/vim -u ~/.vimrc.cygwin'
+nodeSchoolDir=$gitDir/node-school
+#alias vim='/usr/bin/vim -u ~/.vimrc.cygwin'
 alias nodeschool="cd $nodeSchoolDir"
 
 # Temporary vim alias so it recognizes ~/.vimrc
@@ -23,12 +42,18 @@ gotoBashSnips() {
     local bashSnipsDir="$OneDrive/snippets/bash"
     cd $bashSnipsDir
 }
+alias gotobs=gotoBashSnips
 
 # Pacman aliases
 alias pminst='pacman -S'
 alias pms='pacman -Ss'
 alias pmii='pacman -Sii'
+alias pmfl='pacman -Fl'
 alias pb=pacboy
 alias pm=pacman
+
+# gzip and tar aliases
 alias gz=gzip
+alias mytar=/usr/bin/bsdtar
 alias gcm=type
+alias exp=explorer.exe

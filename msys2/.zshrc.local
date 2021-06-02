@@ -191,26 +191,8 @@ alias gitst='git status'
 alias gst='git status'
 
 # More aliases (from /usr/share/doc/zsh-5.8 in Cygwin)
+# NOTE: Moved aliases to ~/.zsh_aliases
 
-alias mv='nocorrect command mv -i'       # no spelling correction on mv
-alias cp='nocorrect command cp -i'       # no spelling correction on cp
-alias mkdir='nocorrect command mkdir' # no spelling correction on mkdir
-alias j=jobs
-alias pu=pushd
-alias po=popd
-alias d='dirs -v'
-alias h=history
-alias grep=egrep
-alias ll='ls -l'
-alias la='ls -aF'
-alias l='ls -lhF'
-
-# List only directories and symbolic
-# links that point to directories
-alias lsd='ls -ld *(-/DN)'
-
-# List only file beginning with "."
-alias lsdot='ls -ld .*'
 
 # source zsh_aliases file
 # TODO: This will be sourced directly from the git repo just like Ubuntu's ~/.dotfiles
@@ -247,6 +229,12 @@ fpath=(~/.zfunc $fpath)
 
 autoload -Uz compinit # Trying this out to enable gh completion from startup
 compinit
+
+# Go ahead and source node completion script
+autoload -Uz bashcompinit # node comp script is a bash completion script.
+bashcompinit
+nodeschool=/d/Carl/Documents/GitHub/node-school
+. "$nodeschool/node_comp" # Node completion script
 
 
 fpath=("~/gitstuff/zsh-completions/src" $fpath)
