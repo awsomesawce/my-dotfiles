@@ -21,3 +21,4 @@ cp_and_mv_msys2_stuff() {
 	echo "\$msys2_dotfiles_git directory is not there.  Try again"
     fi
 }
+cp_and_mv_msys2_stuff

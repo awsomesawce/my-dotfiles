@@ -58,3 +58,6 @@ function undocumented {
 # https://github.com/dylanaraps/pure-bash-bible#run-a-command-in-the-background
 # END OF FILE
 # vim: filetype=sh expandtab shiftwidth=4 autoindent
+tarfiles="/d/Carl/OneDrive/tarfiles"
+notes=/d/Carl/OneDrive/Notable/notes
+mw="mingw-w64-x86_64"

@@ -4,6 +4,6 @@ set PAGER=less
 set EDITOR=vim
 set MSYSENVDir=%USERPROFILE%\gitstuff\my-dotfiles\msys2
 set msysbin=D:\MSYS2\usr\bin
-%msysbin%\bash.exe -l -i
+%msysbin%\bash.exe -l -i %1 %2 %3
 exit /B %ERRORLEVEL%
 @rem And that is it!
