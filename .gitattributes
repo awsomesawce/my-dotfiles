@@ -1,4 +1,4 @@
-*               text=lf
+*               text=auto
 *.txt           text eol=crlf
 *.vcproj        text eol=crlf
 *.bat		text eol=crlf
