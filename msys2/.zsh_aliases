@@ -57,3 +57,5 @@ alias gz=gzip
 alias mytar=/usr/bin/bsdtar
 alias gcm=type
 alias exp=explorer.exe
+alias pmqii='pacman -Qii'
+alias pmql='pacman -Ql'

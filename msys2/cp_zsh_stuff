@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Copies zsh stuff into directory
+
+msys2_dotfiles_git=~/gitstuff/my-dotfiles/msys2
+
+[[ $# -gt 0 ]] || [[ "$1" == "--help" ]] && {
+    echo "Usage: $0
+copies all files starting with "~/.zsh" to dotfiles dir"
+} && exit 1
+
+[ -d "$msys2_dotfiles_git" ] && {
+    for file in $(ls ~/.zsh*); do
+	cp --verbose "$file" "$msys2_dotfiles_git"
+    done
+} || echo "\$msys2_dotfiles_git not there."

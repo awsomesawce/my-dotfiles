@@ -12,3 +12,4 @@ export ZSHENV_SOURCED=1 # This allows us to source this file from ~/.zshrc but o
 # If you come from bash you might have to change your $PATH.
 export EXECIGNORE="*.dll"
 export PATH="$PATH:/usr/local/bin:$HOME/scoop/shims:$HOME/bin:/home/Carl/bin:$HOME/.deno/bin"
+FIGNORE="*.dll"

@@ -1,0 +1,13 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zshhistory
+HISTSIZE=1500
+SAVEHIST=1500
+setopt autocd beep nomatch notify
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/cygdrive/c/Users/Carl/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
