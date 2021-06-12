@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+rdme () {
+	i="./node_modules/$1/README.md" 
+	if [[ -r "$i" ]]
+	then
+		bat "$i"
+	else
+		echo "it did not work"
+	fi
+}
+rdnm () {
+	i="./node_modules/$1"
+	[[ -d "$i" ]] && command ls --color=auto "$i" || {
+		echo "the directory does not exist"
+		return 1
+		}
+		return 0
+}
+# If it is crlf, use dos2unix

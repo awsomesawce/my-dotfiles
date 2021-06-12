@@ -1,0 +1,38 @@
+#!/bin/bash
+# Get_Full_Filenames aka ./gff
+# Author: Carl C.
+########## USAGE ##########
+# ./gff /path/to/dir
+# Outputs full pathname to each member of the directory separated by
+#+newlines.
+#### USAGE WITH ARRAYS ####
+# typeset -a myArr
+# myArr=($(./gff ~/testdir)) # myArr will then contain an indexed array with fullnames of
+#+each file.  This is similar to the powershell command `(Get-ChildItem .\directory\).FullName` or
+#+ gci | select FullName
+
+myDir=$1
+typeset -a arr
+
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+    echo "Using $PWD"
+else
+    if [ -d "$myDir" ]; then
+	arr=($(ls "$myDir"))
+    elif [[ "$1" == "." ]] || [[ -z "$1" ]]; then
+	arr=($(ls "$(pwd)"))
+    else
+	echo "I dunno what happened"
+    fi
+	if [[ $# -eq 0 ]]; then
+	    for file in "${arr[@]}"; do
+		printf '%s/%s\n' "$PWD" "$file"
+	    done
+	else
+	    for file in "${arr[@]}"; do
+		printf '%s/%s\n' "$myDir" "$file"
+	    done
+	fi
+fi
+exit 0
+# Git is converting this script to wrong line endings (crlf)
