@@ -14,7 +14,7 @@ setopt NOBEEP # Keep zsh quiet
 #setopt GLOB_DOTS # Same as DOTGLOB or `-4'
 
 # Set this option to shorten patterns like `**/*.sh' to `**.sh'
-#setopt GLOB_STAR_SHORT
+setopt GLOB_STAR_SHORT
 
 # Set this option for completion to work like Powershell's
 #setopt MENU_COMPLETE # `-Y', overrides AUTO_MENU
@@ -25,10 +25,10 @@ setopt NOBEEP # Keep zsh quiet
 
 # Set this option to treat `#', `~' and `^' characters as part of patterns
 #+ for filename generation, etc.
-#setopt EXTENDED_GLOB
+setopt EXTENDED_GLOB
 
 # Set this option to cd into a directory when just writing the relative dir name.
-#setopt AUTO_CD # (-J)
+setopt AUTO_CD # (-J)
 
 # Set this option to make cd push the old dir onto the dirstack.
 #setopt AUTO_PUSHD # (-N)
@@ -67,6 +67,7 @@ typeset -gx TERM=xterm-256color
 typeset -gx BROWSER=wslview
 typeset -gx PAGER=less
 typeset -gx SHELL=zsh
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Attach projectVars script to variable
 typeset -gx projectVarsScript="$HOME/.projectVars"
@@ -278,3 +279,9 @@ eval "$(lesspipe)" # This enables less to automatically view gzipped text files
                    # without having to decompress it first.
 # Enable direnv hook in zsh
 #eval "$(direnv hook zsh)"
+# More shell options
+# 
+#setopt GLOBAL_EXPORT # Default for zsh mode
+# This option will automatically export globally when using the -x flag for
+#+ typeset, declare, float, integer, and readonly (not local).  So the -g flag is not needed
+typeset -gx LESS='-R -Q'
