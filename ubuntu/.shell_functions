@@ -160,17 +160,18 @@ if [[ -n "$ZSH_VERSION" ]]; then
         local zshhelpdir=/usr/share/zsh/help
         local usage
         usage="
-        Usage: $(basename "$0") term"
-        if [[ $# -eq 0 ]]
+        Usage: $(basename "$0") [-p] term"
+        if [ $# -eq 0 ]
         then
             print "$usage"
         else
             if [[ -d "$zshhelpdir" ]]; then
                 if [[ "$*" == "list" ]]; then
                     ls "$zshhelpdir"
+                elif [[ "$1" == "-p" ]]; then
+                    cat "$zshhelpdir/$2" | less
                 else
-                    
-                    cat "$zshhelpdir/$*"
+                    cat "$zshhelpdir/$@"
                 fi
             fi
         fi
