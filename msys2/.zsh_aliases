@@ -7,6 +7,7 @@
 # BEGIN Added from ~/.zshrc.local
 
 alias mv='nocorrect command mv -i'       # no spelling correction on mv
+alias rm='nocorrect command rm -i' 	 # no spelling correction on rm
 alias cp='nocorrect command cp -i'       # no spelling correction on cp
 alias mkdir='nocorrect command mkdir' # no spelling correction on mkdir
 alias j=jobs
