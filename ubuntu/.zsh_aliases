@@ -44,3 +44,4 @@ alias mdbook=~/bin/mdbook
 alias acshow='apt-cache show'
 alias mv='nocorrect mv -i'
 alias aptt=aptitude
+alias chtsh=cheatsheet
