@@ -128,3 +128,9 @@ function copy-bashrc-to-dotfiles {
  alias la='ls -A'                              # all but . and ..
  alias l='ls -CF'                              #
 
+# npm completion source
+if [[ -d ~/.bash_completion.d/ ]]; then
+source ~/.bash_completion.d/_npm
+else
+echo "npm completion failed"
+fi

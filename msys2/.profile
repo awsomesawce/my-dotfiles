@@ -18,6 +18,10 @@
 # Set user-defined locale
 export LANG=$(locale -uU)
 
+# Set execignore and fignore
+export EXECIGNORE="*.dll"
+export FIGNORE="*.dll" # Hope this works
+
 # This file is not read by bash(1) if ~/.bash_profile or ~/.bash_login
 # exists.
 #

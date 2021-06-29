@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# Utility functions to read node_modules readmes quickly
+# OriginalEnv: MSYS2 Bash
+# OriginalLocation: /home/Carl/sources/new_proj_npm
+
+# Tell the environment that this file is sourced:
+
+export NDMODULEFUNCTIONS_SOURCED=1
 
 rdme () {
 	i="./node_modules/$1/README.md" 
@@ -17,4 +24,15 @@ rdnm () {
 		}
 		return 0
 }
-# If it is crlf, use dos2unix
+
+# This function copies this file verbosely to the javascript snippets 
+#+OneDrive folder.
+cp_ndFunctions () { 
+    [[ -r ./ndmodulesFunctions ]] && { 
+        echo "Copying ./ndmodulesFunctions to \$snippets/javascript";
+        cp -i -i ./ndmodulesFunctions $snippets/javascript;
+        return 0
+    } || { 
+        echo "./ndmodulesFunctions is not there" 2>&1 && return 1
+    }
+}

@@ -35,3 +35,4 @@ function backup_bash_aliases {
 	return 1
     fi
 }
+alias pcmn=pacman

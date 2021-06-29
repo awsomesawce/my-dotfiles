@@ -6,6 +6,7 @@
 [[ -z "$UBUNTUDOTFILES" ]] && export UBUNTUDOTFILES="$DOTFILESGIT/ubuntu" || echo "\$UBUNTUDOTFILES var already set to $UBUNTUDOTFILES" >&2
 export msys_config="${XDG_CONFIG_DIR:-~/.config}/msys2"
 export MSYSHOME=/home/Carl
+export msyshome=$MSYSHOME
 scriptspwsh=~/gitstuff/scripts-pwsh
 export FFF_FAV2=~/.emacs.d/
 
@@ -29,7 +30,11 @@ hash_of_config=(\
     ["bashrc"]="$HOME/.bashrc" \
     ["msysEntry"]="$HOME/.msysEntry" \
     ["msys_dotfiles_git"]="$HOME/gitstuff/my-dotfiles/msys2" \
+    ["msysfuncs"]="$msys_dotfiles_git/msys2/msysfuncs.sh" \
 )
+
+declare -a msys_config_arr
+msys_config_arr=("$HOME/.bashrc" "$HOME/.bash_aliases" "$HOME/.msysEntry" "~/.projectVars")
 
 function bestVars {
     # TODO
@@ -49,6 +54,10 @@ function undocumented {
     for i in {1..10};{ echo "$i";}
 }
 
+tarfiles="/d/Carl/OneDrive/tarfiles"
+notes=/d/Carl/OneDrive/Notable/notes
+mw="mingw-w64-x86_64"
+FAV1="${FFF_FAV1}"
 
 # TODO/NOTE: There has to be a way to keep a record/tags of important Symbols in bash/zsh env scripts.
 # If I want to use an env var exported from a different file, I want to have a record of it.
@@ -57,7 +66,5 @@ function undocumented {
 # Check out this git repo for more examples:
 # https://github.com/dylanaraps/pure-bash-bible#run-a-command-in-the-background
 # END OF FILE
-# vim: filetype=sh expandtab shiftwidth=4 autoindent
-tarfiles="/d/Carl/OneDrive/tarfiles"
-notes=/d/Carl/OneDrive/Notable/notes
-mw="mingw-w64-x86_64"
+# vim: filetype=bash expandtab shiftwidth=4 autoindent
+alias ndir="cd $notes"

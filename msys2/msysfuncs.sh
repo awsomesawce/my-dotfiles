@@ -72,6 +72,15 @@ duks() {
     fi
 }
 
+pyhelp() {
+    [ $# -eq 0 ] && {
+        echo "Usage $0 help_term"
+        return 1
+    } || {
+        python -c "help($*)"
+    }
+}
+
 # End of msysfuncs.sh
 
 expr1="curl $csURI"
