@@ -90,3 +90,15 @@ expr1="curl $csURI"
 mywhich () { 
     ( alias; declare -f ) | which --tty-only --read-alias --read-functions --show-tilde --show-dot "$@"
 }
+pyhelpmore () {
+	if [ $# -eq 0 ]
+	then
+		cat <<_EOF && return 1
+Usage: pyhelpmore name_of_module
+_EOF
+	else
+		echo "looking up $*"
+		python -c "import $*; help ($*)"
+	fi
+	return 0
+}
