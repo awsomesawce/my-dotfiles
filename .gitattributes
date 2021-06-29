@@ -1,4 +1,4 @@
-*               text
+*               text=auto
 *.txt           text eol=crlf
 *.vcproj        text eol=crlf
 *.bat		text eol=crlf
@@ -18,3 +18,5 @@ msys2/*.bat 	text eol=crlf
 .editorconfig  text eol=lf
 .projectVars	text eol=lf
 ndmodules* 	text eol=lf
+msys2/* 	text eol=lf
+msys2/.* 	text eol=lf

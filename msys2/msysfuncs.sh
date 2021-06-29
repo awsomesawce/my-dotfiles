@@ -85,3 +85,8 @@ pyhelp() {
 
 expr1="curl $csURI"
 # This works the same as if using expr before it
+
+# This is the recommended function for which as recommended by which(1)
+mywhich () { 
+    ( alias; declare -f ) | which --tty-only --read-alias --read-functions --show-tilde --show-dot "$@"
+}
