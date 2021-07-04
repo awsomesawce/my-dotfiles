@@ -29,20 +29,19 @@ pwshInvoke() {
 
 if [[ -n "$BASH_VERSION" ]]; then
     chtshBash() {
-        local Usage
-        Usage="Usage: $(basename "$0") TERM
-                Type the term you want to lookup after $0"
-        if [[ -x /usr/bin/curl ]] || [[ -x /bin/curl ]]; then
-            if [[ $# -eq 0 ]]; then
-                echo "$Usage" && return 1
-            elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
-                echo "$Usage"; return 1
-            else
-                command curl "https://cht.sh/$*"
-                return 0
-            fi
+        if [[ $# -eq 0 ]]; then
+            echo "Usage: $(basename "$0")"
+            return 1
+        elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+            echo "Usage: $(basename "$0")"
+            return 1
         else
-            echo "$0 Error: you need to have curl installed in \"/usr/bin\" or \"/bin\""
+            echo "Looking up $* on cht.sh"
+            [[ -x /usr/bin/curl ]] && command curl "https://cht.sh/$*" || {
+                echo "curl not found in \$PATH" 2>&1
+                return 1
+            }
+            return 0
         fi
     }
 fi
@@ -55,20 +54,24 @@ pygcat() {
 # a document readable by humans.
 groffman() 
 { 
-    if [ $# -eq 0 ]; then
-        echo "Usage: groffman file.1";
+    if [[ $# -eq 0 ]] || [[ "${1}" =~ ^(-h|--help)$ ]]; then
+        echo "Usage: groffman manpage.1";
     else
-        groff -man -T utf8 "$*";
+        command groff -man -T utf8 "$*";
     fi
 return 0
 }
 whichless() {
-   less $(which $1) # disable sc2230; `which` is used to get location of executable on path.
-   return 0 
+    if [ $# -eq 0 ]; then
+        echo "Usage: whichless executable"
+    else
+        less $(which $1) # disable sc2230; `which` is used to get location of executable on path.
+        return 0 
+    fi
 }
 alias whichl=whichless;
 whichfile() {
-   file "$(which "$1")" || return 1
+   command file "$(which "$1")" || return 1
    return 0 
 }
 hexConvert() {
@@ -97,10 +100,10 @@ alias chless=chromaless
 # This is a fix for the catimg oh-my-zsh plugin
 # NOTE: when sourced from antigen, is has wrong plugin location.
 catimg() {
-    if [[ -x $(which convert) ]]; then
+    if command -v convert > /dev/null; then
         zsh /home/carlc/.oh-my-zsh/plugins/catimg/catimg.sh "$@"
     else
-        echo "catimg need convert (ImageMagick) to work)"
+        echo "catimg need convert (ImageMagick) to work"
     fi
 }
 
@@ -129,7 +132,7 @@ export myCommands=("pwshInvoke" "groffman" "pygcat" "whichless" "whichfile" "hex
 
 list_my_funcs() {
     echo "------------ List of commands ------------"
-    for comm in ${myCommands[@]}; do
+    for comm in "${myCommands[@]}"; do
         echo "$comm"
     done
     echo "------------ End of commands ------------"
@@ -161,7 +164,7 @@ if [[ -n "$ZSH_VERSION" ]]; then
         local usage
         usage="
         Usage: $(basename "$0") [-p] term"
-        if [ $# -eq 0 ]
+        if [[ $# -eq 0 ]] || [[ "${1}" =~ ^(-h|--help)$ ]]; # Add regex for if "-h" or "--help" arg.
         then
             print "$usage"
         else
@@ -169,9 +172,9 @@ if [[ -n "$ZSH_VERSION" ]]; then
                 if [[ "$*" == "list" ]]; then
                     ls "$zshhelpdir"
                 elif [[ "$1" == "-p" ]]; then
-                    cat "$zshhelpdir/$2" | less
+                    less "$zshhelpdir/$2"
                 else
-                    cat "$zshhelpdir/$@"
+                    cat "$zshhelpdir/$*"
                 fi
             fi
         fi
@@ -183,3 +186,13 @@ fi
 echo "~/.shell_functions loaded"
 
 # vim:filetype=sh
+duks () {
+	[[ $# -eq 0 ]] && {
+		echo "need args to this func" 2>&1
+		return 1
+	}
+	(( 1 )) && {
+		wslview "https://duckduckgo.com/q?$1"
+		return 0
+	}
+}
