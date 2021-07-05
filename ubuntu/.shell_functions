@@ -187,12 +187,25 @@ echo "~/.shell_functions loaded"
 
 # vim:filetype=sh
 duks () {
-	[[ $# -eq 0 ]] && {
-		echo "need args to this func" 2>&1
-		return 1
-	}
-	(( 1 )) && {
-		wslview "https://duckduckgo.com/q?$1"
-		return 0
-	}
+    #                                 This regex stuff is only available in bash, not posix shell.
+    local usage="Usage: duks [-h|--help] search_term
+    Description: duks will look up the \"search_term\" at duckduckgo.com in a browser window."
+    if [[ $# -eq 0 ]] || [[ "${1}" =~ ^(-h|--help)$ ]]; then
+        echo "need args to this func" 2>&1
+        echo "$usage" 2>&1
+        return 1
+    fi
+#	(( 1 )) && {
+    if command -v wslview > /dev/null; then
+        [[ $# -eq 1 ]] && {
+            echo "Looking up ${1}"
+            wslview "https://duckduckgo.com/q?$1"
+            return 0
+        } || {
+            echo "$usage" 2>&1 && return 1
+        }
+    else
+        echo "wslview executable not found" 2>&1 && return 1
+    fi
+	#}
 }
