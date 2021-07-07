@@ -68,3 +68,4 @@ FAV1="${FFF_FAV1}"
 # END OF FILE
 # vim: filetype=bash expandtab shiftwidth=4 autoindent
 alias ndir="cd $notes"
+to_install_choco="$PWD/to_install_choco.md"

@@ -55,7 +55,7 @@ fi
 # Function to create tarfile backup of my-dotfiles/msys2/
 
 create_msys2_tarfile() {
-    local filename=msys2-dfs.tar.xz
+    local filename="msys2-$(date -I).tar.xz"
     if [ $# -gt 0 ]; then
         echo "create_msys2_tarfile function does not need args" 2>&1
     else

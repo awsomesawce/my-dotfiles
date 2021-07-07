@@ -36,3 +36,5 @@ function backup_bash_aliases {
     fi
 }
 alias pcmn=pacman
+alias pipx=~/.local/bin/pipx.exe
+alias gcm=type
