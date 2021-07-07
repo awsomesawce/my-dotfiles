@@ -53,3 +53,6 @@ alias rm="rm -i"
 alias gz=gzip
 alias r='fc -s'
 alias exp=explorer.exe
+alias shfmt=shfmt.exe
+alias pydoc=/usr/bin/pydoc3 # make pydoc point to pydoc3, otherwise it points to msys2 bin
+alias pd=pydoc3
