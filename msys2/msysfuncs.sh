@@ -32,11 +32,23 @@ if [[ "$BASH_ARGV0" =~ "bash" ]]; then # This will for sure detect whether bash 
         fi;
         return 0
     }
-bashCommandsExtra=("mywhich" "loadmingw")
+# This function goes back into msys mode unless it is already in msys mode.
+# Among other things, MSYS mode outputs LF instead of CRLF, has /usr/bin at front of PATH, etc.
+    loadmsys ()
+    {
+        if [[ "$MSYSTEM" != "MSYS" ]] && [[ -x /usr/bin/shell ]]; then
+            source shell msys
+        else
+            echo "You are already in msys mode" 1>&2 # Does this output to error stream? NOTE
+            return 2
+        fi
+    }
+bashCommandsExtra=("mywhich" "loadmingw" "loadmsys")
 typeset -A myCommandsDescriptions
 myCommandsDescriptions=(["mywhich"]="This is the recommended way to use which by looking at the manpage"\
     ["loadmingw"]="This function simply does \"source shell mingw64\" for me.  I could make it into a short alias"\
-)
+    ["loadmsys"]="This function simply does \"source shell msys\" to go back into msys mode.")
+
 #commandsExtra=("mywhich")
 fi
 
@@ -160,3 +172,4 @@ cp_projvars ()
         echo "ProjectVars or destination dir is missing" 2>&1;
     fi
 }
+

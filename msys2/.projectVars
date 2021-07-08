@@ -9,17 +9,27 @@ export MSYSHOME=/home/Carl
 export msyshome=$MSYSHOME
 scriptspwsh=~/gitstuff/scripts-pwsh
 export FFF_FAV2=~/.emacs.d/
+export FFF_FAV3=~/gitstuff/my-dotfiles/msys2
 
 # More project variables
-gitHubD=/d/Carl/Documents/GitHub
 absExamples=/d/Carl/OneDrive/snippets/bash/abs-examples
-gitstuff=~/gitstuff
+gitstuff=~/gitstuff # Probably don't need this variable since it's just as easy to type as ~/gitstuff
 export oneDrive=/d/Carl/OneDrive
 export snippets="$oneDrive/snippets"
 # Dotfiles backup dirs
-msys_dotfiles_git=~/gitstuff/my-dotfiles
+msys_dotfiles_git=~/gitstuff/my-dotfiles/msys2
 msys_onedrive=$OneDrive/dotfiles_backup/msys2
 bkupDirs=("$msys_dotfiles_git" "$msys_onedrive")
+
+# Git repos
+gitHubD=/d/Carl/Documents/GitHub
+[[ -d "$gitHubD/node-school" ]] && {
+    export nodeschool="$gitHubD/node-school"
+    export -A nodeschdesc=(['desc']="nodeschool is $nodeschool" ['why']="not sure why i did this")
+    echo "\$nodeschool assigned to $nodeschool"
+} || {
+    echo "nodeschool dir not found"
+}
 
 #function cpToBkup {
 #}
@@ -29,7 +39,7 @@ hash_of_config=(\
     ["msys_config"]="${XDG_CONFIG_DIR:="~/.config/msys2"}" \
     ["bashrc"]="$HOME/.bashrc" \
     ["msysEntry"]="$HOME/.msysEntry" \
-    ["msys_dotfiles_git"]="$HOME/gitstuff/my-dotfiles/msys2" \
+    ["msys_dotfiles_git"]="$msys_dotfiles_git" \
     ["msysfuncs"]="$msys_dotfiles_git/msys2/msysfuncs.sh" \
 )
 
@@ -41,6 +51,8 @@ function bestVars {
     echo "Writing shell scripts in Emacs is so great."
     if [[ -n "$BASH_VERSION" ]]; then
 	echo "You are in $BASH right now"
+    else
+        echo "You are not in Bash right now"
     fi
 }
 
@@ -57,7 +69,7 @@ function undocumented {
 tarfiles="/d/Carl/OneDrive/tarfiles"
 notes=/d/Carl/OneDrive/Notable/notes
 mw="mingw-w64-x86_64"
-FAV1="${FFF_FAV1}"
+[[ -n "${FFF_FAV1}" ]] && FAV1="${FFF_FAV1}"
 
 # TODO/NOTE: There has to be a way to keep a record/tags of important Symbols in bash/zsh env scripts.
 # If I want to use an env var exported from a different file, I want to have a record of it.
@@ -69,3 +81,4 @@ FAV1="${FFF_FAV1}"
 # vim: filetype=bash expandtab shiftwidth=4 autoindent
 alias ndir="cd $notes"
 to_install_choco="$PWD/to_install_choco.md"
+Desktop=/d/Carl/OneDrive/Desktop
