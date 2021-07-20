@@ -1,53 +1,48 @@
+#!/bin/bash
 # This file contains some nice bash/zsh functions
-# Dot-source this file.
+# Dot-source this file from bashrc or zshrc
 # Author Carl C (awsomesawce at outlook dot com)
 # vim filetype=sh
-# shellcheck disable=SC2230
-# shellcheck shell=bash
-#
-# Add the following code to ~/.bashrc or ~/.zshrc to source this file:
-#
-#if [[ -f ~/.shell_functions ]] && [[ -r ~/.shell_functions ]]; then
-#    . "$HOME/.shell_functions"
-#else
-#    echo "\"~/.shell_functions\" unreadable or not present."
-#fi
-# 
 
-## Invoke-Item command from pwsh.exe
-# Only works if pwsh.exe is in path, otherwise use powershell.exe
-pwshInvoke() {
-    local pwshCommand="pwsh.exe -nop -c"
-    eval "$pwshCommand" "Invoke-Item $*"
+# Add die function
+die() {
+    printf '%s\n' "$*" >&2 && return 1
 }
 
-# This is a bad version of chtsh
-#chtsh() { 
-#    curl cht.sh/$* 
-#    return 0
-#}
+pwshInvoke() {
+    local usage="Usage: pwshInvoke \"command\""
+    if [ "$#" -eq 0 ]; then
+        die "$usage" && return 1
+    else # BUG: Without the else statement, the function continues even with the return statement above.
+        if command -v pwsh.exe > /dev/null; then
+            command pwsh.exe -nop -c "$@"
+        else
+            echo "Powershell executable not found" >&2 && return 1
+        fi
+    fi
+    return 0
+}
 
 if [[ -n "$BASH_VERSION" ]]; then
     chtshBash() {
-        if [[ $# -eq 0 ]]; then
-            echo "Usage: $(basename "$0")"
+        if ! command -v curl > /dev/null; then echo "curl executable not found" >&2 && return 1; fi
+        if [ "$#" -eq 0 ]; then
+            echo "Usage: chtsh term_to_lookup"
             return 1
         elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
-            echo "Usage: $(basename "$0")"
+            echo "Usage: chtsh term_to_lookup"
             return 1
         else
             echo "Looking up $* on cht.sh"
-            [[ -x /usr/bin/curl ]] && command curl "https://cht.sh/$*" || {
-                echo "curl not found in \$PATH" 2>&1
-                return 1
-            }
+            command -v curl > /dev/null && command curl "https://cht.sh/$*"
             return 0
         fi
     }
+alias chtsh=chtshBash
 fi
 
 pygcat() {
-    cat "$1" | pygmentize | less
+    pygmentize <("$1") | less
 }
 
 # This function allows you to convert a manpage-formatted manpage into
@@ -63,7 +58,7 @@ return 0
 }
 whichless() {
     if [ $# -eq 0 ]; then
-        echo "Usage: whichless executable"
+        echo "Usage: whichless program_name"
     else
         less $(which $1) # disable sc2230; `which` is used to get location of executable on path.
         return 0 
@@ -71,8 +66,11 @@ whichless() {
 }
 alias whichl=whichless;
 whichfile() {
-   command file "$(which "$1")" || return 1
-   return 0 
+    [[ "$#" -eq 0 ]] && {
+        echo "Usage: whichfile command_name" 2>&1 && return 1
+    }
+    command file "$(which "$1")" || return 1
+    return 0 
 }
 hexConvert() {
     echo "$*" | hd || return 1
@@ -80,8 +78,8 @@ hexConvert() {
 }
 # The above function will take user input and convert it to hex without having to type the whole command out.
 gitaddandcommit() {
- git add . && git commit -m "$@" 
-return 0 
+    git add . && git commit -m "$@" 
+    return 0 
 }
 
 readmeDir() {
@@ -109,7 +107,8 @@ catimg() {
 
 nodeprocessconf() {
     if [[ -x $(which node) ]]; then
-        node -p 'console.log(process.config)'
+        #node -p 'console.log(process.config)'
+        node -p "process.config" # console.log not needed if invoked from console.
     else
         echo "node executable not found"
     fi
@@ -191,7 +190,7 @@ duks () {
     local usage="Usage: duks [-h|--help] search_term
     Description: duks will look up the \"search_term\" at duckduckgo.com in a browser window."
     if [[ $# -eq 0 ]] || [[ "${1}" =~ ^(-h|--help)$ ]]; then
-        echo "need args to this func" 2>&1
+        echo "need args to this func" >&2
         echo "$usage" 2>&1
         return 1
     fi
@@ -199,13 +198,34 @@ duks () {
     if command -v wslview > /dev/null; then
         [[ $# -eq 1 ]] && {
             echo "Looking up ${1}"
-            wslview "https://duckduckgo.com/q?$1"
+            wslview "https://duckduckgo.com/?q=$1"
             return 0
-        } || {
-            echo "$usage" 2>&1 && return 1
         }
     else
         echo "wslview executable not found" 2>&1 && return 1
     fi
 	#}
+}
+
+pyhelp () {
+    # This is a pydoc implemented in shell scripting.
+    local usage="This is a simple pydoc-like function to get python documentation."
+	if [[ "$#" -eq 0 ]]
+	then
+		echo "Usage: pyhelp term"
+        printf '%s\n' "$usage"
+		return 1
+	fi
+	if [[ "$#" -eq 1 ]]
+	then
+		if command -v python3 > /dev/null
+		then
+			python3 -c "import ${1}; help($1)"
+		else
+			echo "python not detected" 2>&1
+			return 1
+		fi
+	else
+		echo "Too many args" 2>&1 && return 1
+	fi
 }
