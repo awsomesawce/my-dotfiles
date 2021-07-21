@@ -38,3 +38,14 @@ fi
 declare -a toInstFile
 toInstFile=( "$HOME/Downloads/To_Install" "Description: Path to file that is a record of pkgs i would like to install from apt." )
 export ubunotes=~/Documents/gitstuff/wsl-notes/ubuntu
+rememberFile="$ubunotes/remember.md"
+export rememberFile
+zshcompdir=/usr/share/zsh/functions/Completion
+export snippets=/home/carlc/onedrivemnt/snippets/
+perlLearningScript=/home/carlc/bin/perl_examples/perl_learning.pl
+nodeschooldir=/home/carlc/ubucode/node-school
+nodeschool() {
+    [ -d "$nodeschooldir" ] && cd "$nodeschooldir" || echo "Something is wrong" >&2
+    return 0
+}
+current_node_repo=/home/carlc/ubucode/node_cli_package
