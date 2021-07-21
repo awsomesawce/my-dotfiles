@@ -83,7 +83,7 @@ else
 fi
 # This script has all your specific project variables and is a great dumping ground for
 # run-help fix
-unalias run-help
+#unalias run-help
 autoload -Uz run-help
 alias help=run-help # This still isn't working for some reason TODO
 autoload -Uz run-help-ip # This only works if run-help works first.
@@ -164,32 +164,38 @@ antigen bundle ssh-agent
 #antigen bundle autojump
 #antigen bundle wd
 #antigen bundle tmux
-#antigen bundle npm
-#antigen bundle node
+#antigen bundle npm # Unnecessary too. Use `npm completion`
+#antigen bundle node # Unnecessary: adds a "node-docs" function for opening an outdated node doc website
 #antigen bundle yarn
-#antigen bundle npx
+antigen bundle npx
 antigen bundle colored-man-pages
 #antigen bundle copydir
 antigen bundle cp
-antigen bundle direnv
+#antigen bundle direnv
 antigen bundle dotenv
-antigen bundle jsontools
-antigen bundle urltools
+#antigen bundle jsontools
+antigen bundle jake-node
+#antigen bundle urltools
 antigen bundle ubuntu
 
 antigen bundle command-not-found
 #antigen bundle copyfile
-#antigen bundle pipenv
-#antigen bundle pip
-#antigen bundle pylint
+antigen bundle pipenv
+antigen bundle pip
+antigen bundle python
+antigen bundle pylint
+antigen bundle perl
+
+antigen bundle ripgrep
+
+antigen bundle systemadmin # Adds a bunch of different functions for system admin
 
 #antigen bundle sudo
-#antigen bundle dotnet
+antigen bundle dotnet
 
 #antigen bundle ruby
 #antigen bundle bundler
 #antigen bundle web-search
-#antigen bundle python
 
 antigen bundle common-aliases
 
