@@ -229,3 +229,19 @@ pyhelp () {
 		echo "Too many args" 2>&1 && return 1
 	fi
 }
+
+# Github rest api basic using curl
+ghrestapi () 
+{ 
+    if [ $# -eq 0 ]; then
+        echo "ghrestapi needs args";
+        return 1;
+    else
+        if command -v curl > /dev/null; then
+            curl "https://api.github.com/repos/$1/$2";
+            return 0;
+        else
+            echo "Curl not install in PATH";
+        fi;
+    fi
+}
