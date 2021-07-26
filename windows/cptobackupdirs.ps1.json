@@ -1,0 +1,60 @@
+{
+  "HelpUri": "",
+  "Path": "C:\\Users\\Carl\\gitstuff\\my-dotfiles\\windows\\cptobackupdirs.ps1",
+  "Definition": "C:\\Users\\Carl\\gitstuff\\my-dotfiles\\windows\\cptobackupdirs.ps1",
+  "Source": "C:\\Users\\Carl\\gitstuff\\my-dotfiles\\windows\\cptobackupdirs.ps1",
+  "Visibility": 0,
+  "ScriptBlock": {
+    "Attributes": "System.Management.Automation.CmdletBindingAttribute",
+    "File": "C:\\Users\\Carl\\gitstuff\\my-dotfiles\\windows\\cptobackupdirs.ps1",
+    "IsFilter": false,
+    "IsConfiguration": false,
+    "Module": null,
+    "StartPosition": "System.Management.Automation.PSToken",
+    "DebuggerHidden": false,
+    "Id": "4f70dc9d-2ae8-4c5d-a23a-8bdc48f9549b",
+    "Ast": "\r\n<#PSScriptInfo\r\n\r\n.VERSION 0.0.1\r\n\r\n.GUID 8ceaebe6-407e-4c75-ba5d-ce5847cc4dbb\r\n\r\n.AUTHOR Carl C\r\n\r\n.COMPANYNAME None\r\n\r\n.COPYRIGHT Carl Capodice\r\n\r\n.TAGS copy, backup, simple\r\n\r\n.LICENSEURI\r\n\r\n.PROJECTURI\r\n\r\n.ICONURI\r\n\r\n.EXTERNALMODULEDEPENDENCIES \r\n\r\n.REQUIREDSCRIPTS\r\n\r\n.EXTERNALSCRIPTDEPENDENCIES\r\n\r\n.RELEASENOTES\r\n\r\n.PRIVATEDATA\r\n#>\n\n<# \n.DESCRIPTION\n copy file to backup dirs\n\n#>\n\n[CmdletBinding()]\nparam([string]$FilePath)\n$dirs = @(\"D:\\Carl\\OneDrive\\dotfiles_backup\\windows\\\", \"C:\\Users\\Carl\\gitstuff\\my-dotfiles\\windows\\\")\nif ($FilePath) {\n    foreach ($d in $dirs) {\n        Write-Verbose \"Copying $FilePath to $d\"\n        Copy-Item -Path $FilePath -Destination $d -Confirm\n    }\n    Write-Verbose \"Done\"\n}\nelse {\n    Write-Error \"Need `$FilePath parameter\"\n}\n\n"
+  },
+  "OutputType": [],
+  "ScriptContents": "\r\n<#PSScriptInfo\r\n\r\n.VERSION 0.0.1\r\n\r\n.GUID 8ceaebe6-407e-4c75-ba5d-ce5847cc4dbb\r\n\r\n.AUTHOR Carl C\r\n\r\n.COMPANYNAME None\r\n\r\n.COPYRIGHT Carl Capodice\r\n\r\n.TAGS copy, backup, simple\r\n\r\n.LICENSEURI\r\n\r\n.PROJECTURI\r\n\r\n.ICONURI\r\n\r\n.EXTERNALMODULEDEPENDENCIES \r\n\r\n.REQUIREDSCRIPTS\r\n\r\n.EXTERNALSCRIPTDEPENDENCIES\r\n\r\n.RELEASENOTES\r\n\r\n.PRIVATEDATA\r\n#>\n\n<# \n.DESCRIPTION\n copy file to backup dirs\n\n#>\n\n[CmdletBinding()]\nparam([string]$FilePath)\n$dirs = @(\"D:\\Carl\\OneDrive\\dotfiles_backup\\windows\\\", \"C:\\Users\\Carl\\gitstuff\\my-dotfiles\\windows\\\")\nif ($FilePath) {\n    foreach ($d in $dirs) {\n        Write-Verbose \"Copying $FilePath to $d\"\n        Copy-Item -Path $FilePath -Destination $d -Confirm\n    }\n    Write-Verbose \"Done\"\n}\nelse {\n    Write-Error \"Need `$FilePath parameter\"\n}\n\n",
+  "OriginalEncoding": {
+    "Preamble": null,
+    "BodyName": "utf-8",
+    "EncodingName": "Unicode (UTF-8)",
+    "HeaderName": "utf-8",
+    "WebName": "utf-8",
+    "WindowsCodePage": 1200,
+    "IsBrowserDisplay": true,
+    "IsBrowserSave": true,
+    "IsMailNewsDisplay": true,
+    "IsMailNewsSave": true,
+    "IsSingleByte": false,
+    "EncoderFallback": "System.Text.EncoderReplacementFallback",
+    "DecoderFallback": "System.Text.DecoderReplacementFallback",
+    "IsReadOnly": true,
+    "CodePage": 65001
+  },
+  "Name": "cptobackupdirs.ps1",
+  "CommandType": 16,
+  "Version": null,
+  "ModuleName": "",
+  "Module": null,
+  "RemotingCapability": 1,
+  "Parameters": {
+    "FilePath": "System.Management.Automation.ParameterMetadata",
+    "Verbose": "System.Management.Automation.ParameterMetadata",
+    "Debug": "System.Management.Automation.ParameterMetadata",
+    "ErrorAction": "System.Management.Automation.ParameterMetadata",
+    "WarningAction": "System.Management.Automation.ParameterMetadata",
+    "InformationAction": "System.Management.Automation.ParameterMetadata",
+    "ErrorVariable": "System.Management.Automation.ParameterMetadata",
+    "WarningVariable": "System.Management.Automation.ParameterMetadata",
+    "InformationVariable": "System.Management.Automation.ParameterMetadata",
+    "OutVariable": "System.Management.Automation.ParameterMetadata",
+    "OutBuffer": "System.Management.Automation.ParameterMetadata",
+    "PipelineVariable": "System.Management.Automation.ParameterMetadata"
+  },
+  "ParameterSets": [
+    "[[-FilePath] <string>] [<CommonParameters>]"
+  ]
+}

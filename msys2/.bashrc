@@ -132,10 +132,14 @@ function copy-bashrc-to-dotfiles {
 if [[ -d ~/.bash_completion.d/ ]]; then
     #source ~/.bash_completion.d/_npm
     for compfile in ~/.bash_completion.d/*; do
-	echo "sourcing $compfile"
 	source "$compfile"
     done
+    echo "Sourced $(ls ~/.bash_completion.d)"
 else
     echo "bash_completion dir not found" >&2
+fi
+if [ -r ~/.projectVars ]; then
+    . ~/.projectVars
+    echo "~/.projectVars loaded"
 fi
 echo "Bashrc file loaded"
