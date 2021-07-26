@@ -291,3 +291,7 @@ eval "$(lesspipe)" # This enables less to automatically view gzipped text files
 # This option will automatically export globally when using the -x flag for
 #+ typeset, declare, float, integer, and readonly (not local).  So the -g flag is not needed
 typeset -gx LESS='-R -Q'
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
