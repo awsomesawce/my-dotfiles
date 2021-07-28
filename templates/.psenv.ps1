@@ -38,3 +38,13 @@ else {
     Write-Error "Page-Readme needs an argument for it to page readmes.  Try again :)"
 }
 }
+$pkgjson = if (Get-ChildItem .psenv.ps1 -ErrorAction SilentlyContinue) {
+	    Get-Content package.json | convertfrom-json -AsHashtable
+}
+Write-Host -ForegroundColor "Cyan" "package.json info available in the variable `$pkgjson"
+Write-Output "Loaded psenv.ps1 file from $($PSScriptRoot)"
+
+# initialize and source
+$nfile = "$scrps/ScriptsAndFunctions/npm-functions.ps1"
+$npmfuncs = (test-path $nfile) ? ($nfile) : (return Write-Error "npm-funcs file not found")
+. "$npmfuncs"
