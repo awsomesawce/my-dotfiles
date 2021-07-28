@@ -181,3 +181,7 @@ source /home/carlc/sh-files/gh_completion.sh
 #	    . /usr/share/bash-completion/bash_completion
 source ~/.dotfiles/completion/node.bash_completion
 # This is the bottom of the file.  Thanks for reading!
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
