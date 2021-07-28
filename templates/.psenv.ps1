@@ -15,7 +15,9 @@ Works like a pydoc for local nodejs projects
 Can be rewritten as a `foreach` loop.
 #>
 param([string[]]$dir)
-$x = "./node_modules/$dir/README.md"
+$x = if (test-path "./node_modules/$dir/README.md") {$(Get-Item "./node_modules/$dir/README.md").FullName}
+    else {Write-Error "Could not find README.md"}
+
 if ($dir) {
     if (Test-Path $x) {
         if (Get-Command bat -ErrorAction ignore) {
@@ -24,7 +26,7 @@ if ($dir) {
 	} elseif (Get-Command less -ErrorAction ignore) {
 	    less "$x"
 	} else {
-	    Write-Host -ForegroundColor Yellow "Compatible pager program not found on PATH.  Using Powershell pager.
+	    Write-Host -ForegroundColor Yellow "Compatible pager program not found on PATH.  Using Powershell pager."
 	    Get-Content "$x" | out-host -Paging
 	}
     }
