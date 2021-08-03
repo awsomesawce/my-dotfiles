@@ -14,6 +14,7 @@ msys2_dotfiles_git=~/gitstuff/my-dotfiles/msys2/
 # unset gem stuff because we will be using MSYS2's ruby
 unset GEM_HOME
 unset GEM_PATH
+unset PYENV
 
 # Update PATH to include scoop shims and other executables and scripts
 export PATH="$PATH:$HOME/bin:$HOME/.deno/bin:$HOME/scoop/shims:$HOME/go/bin:/d/Carl/AppData/npm:/c/Program Files/nodejs:/home/Carl/bin:/c/Program Files/Powershell/7/"
