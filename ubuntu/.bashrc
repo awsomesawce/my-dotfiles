@@ -154,7 +154,10 @@ if ! shopt -oq posix; then
 fi
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
-export PATH="$PATH:$HOME/gems/bin"
+
+# Adjust path so these are first in line.
+# ~/.npm-packages is where global packages are installed.
+export PATH="$HOME/gems/bin:$HOME/.npm-packages/bin:$PATH"
 # NOTE: check ~/.profile for other PATH additions.
 # Enable next line for x11 setup for x410
 [ -z "$DISPLAY" ] && export DISPLAY=127.0.0.1:0.0
@@ -185,3 +188,4 @@ source ~/.dotfiles/completion/node.bash_completion
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+bashdoc=/usr/share/doc/bash
