@@ -304,26 +304,9 @@ function Sort-ByWriteTime {
 }
 set-alias -Name wh -Value Write-Host
 set-alias -Name cvfm -Value ConvertFrom-Markdown -Description "Easier to type convertfrom-markdown"
-# TODO Add this to separate script file:
-# pythondirs {{{
-$PythonDirListHash = @{
-Python38 = @{
-InLocalAppData = "C:\Users\Carl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\Scripts"
-InProgramFiles = "C:\Program Files\Python38\Scripts"
-InAppData = "D:\Carl\AppData\Python\Python38\Scripts"
-InProgramFilesTools = "C:\Program Files\Python38\Tools"
-Win32Api = "C:\Users\Carl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\win32"
-}
-Python39 = @{
-Exes = @{
-Idle39 = "C:\Users\Carl\AppData\Local\Microsoft\WindowsApps\idle3.9.exe"
-Python39 = "C:\Users\Carl\AppData\Local\Microsoft\WindowsApps\python3.9.exe"
-Pip39 = "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.1520.0_x64__qbz5n2kfra8p0\pip3.9.exe"
-}
-InProgramFiles = "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.1520.0_x64__qbz5n2kfra8p0\python3.9.exe"
-}
-}
-# }}}
+
+#### Separator ####
+
 # Very simple way to get-childitem format-wide without using color
 # The powershell module Get-ChildItemColor has some issues regarding showing
 # info about symbolic links (for python3.8.exe specifically) and others.
@@ -337,7 +320,19 @@ function get-childitemwide {
 }
 set-alias -Name lsw -Value get-childitemwide -Description "New ls format-wide" -Option AllScope
 # TODO: Fix this stuff below.
-set-alias -Name pydocwin -Value "C:\Program Files\Python38\Tools\scripts\pydoc3.py" -Description "Location of pydoc3 script installed by python38.  It is not installed to path by default!"
+
+function pydoc {
+    <#
+    .Description
+    Pydoc shortcut for windows where pydoc binary is not on path
+    #>
+    param([string]$myArg)
+    if (get-command py -erroraction ignore) {
+	py -m pydoc "$myArgs"
+    }
+    else {write-error "py.exe not available or not on path"}
+}
+
 if ($scrps) {
     Write-Host -ForegroundColor Yellow "psWhich script located here: 
     $scrps\ScriptsAndFunctions\stdaloneScripts\psWhich.ps1"
@@ -347,3 +342,20 @@ if ($scrps) {
     # set-alias -name psWhich -value "$PSScriptRoot/ScriptsAndFunctions/stdaloneScripts/psWhich.ps1" `
     # -Description:"Alternate which using only powershell"
 }
+
+function source-writecolors {
+<#
+.Description
+function that will source the writecolors dependency into the current session
+#>
+$scrps = "C:\Users\Carl\gitstuff\scripts-pwsh"
+$writecolors = "$scrps\ScriptsAndFunctions\dependencies\WriteColors.ps1"
+if (Test-Path $writecolors) {
+    . $writecolors && echoYellow "Writecolors loaded"
+    set-variable WCLoaded -Value $true -Description "Tells external scripts whether or not writecolors.ps1 is loaded" -Option AllScope
+}
+else {
+    Write-Host -ForegroundColor DarkMagenta "Writecolors cannot be found"
+}
+}
+set-alias psformat -Value invoke-formatter
