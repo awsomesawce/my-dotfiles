@@ -26,8 +26,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Adjust path so this dir is first in line
 if [ -d "$HOME/.deno/bin" ]; then
-    PATH="$PATH:$HOME/.deno/bin"
+    PATH="$HOME/.deno/bin:$PATH"
 fi
 
 # The rest of PATH is set inside ~/.bashrc
@@ -37,4 +38,3 @@ fi
 
 # completion evals and execignore
 export EXECIGNORE="*.dll"
-PATH="$PATH:/home/carlc/.npm-packages/bin"
