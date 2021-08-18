@@ -1,7 +1,8 @@
 #!/usr/bin/env -S pwsh -noprofile
+#Requires -PSEdition Core
 # PSenv file for Nodejs projects
 # OriginalLocation: https://github.com/awsomesawce/my-dotfiles/templates/.psenv.ps1
-# Canonical location of this file is https://github.com/awsomesawce/my-dotfiles/templates/.psenv.ps1.
+# CanonicalLocation: https://github.com/awsomesawce/my-dotfiles/templates/.psenv.ps1.
 
 # Functions relating to npm dev workflow
 
@@ -66,6 +67,7 @@ $pkgjson = if (test-path package.json) {
     Write-Host -ForegroundColor darkcyan "`$pkgjson not initialized")
 
 # initialize and source npm-functions
+if (!($scrps)) {$scrps = "~/gitstuff/scripts-pwsh"}
 $nfile = "$scrps/ScriptsAndFunctions/npm-functions.ps1"
 $npmfuncs = (test-path $nfile) ? ($nfile) : (return Write-Error "npm-funcs file not found")
 . "$npmfuncs"
@@ -75,4 +77,12 @@ if (test-path .\scripts\getNodeInfo.ps1) {
 set-alias -Name getNodeInfo -Value ".\scripts\getNodeInfo.ps1" -Description `
 "Node info returned as a hashtable" -Option None
 }
-Write-Output "Loaded psenv.ps1 file from $($PSScriptRoot)"
+function Write-Cyan {
+    param([string]$msg)
+    if($msg){
+    return Write-Host -ForegroundColor "Cyan" "$msg"
+    } else {
+        return Write-Host -ForegroundColor "Cyan"
+    }
+}
+Write-Cyan "Loaded psenv.ps1 file from $($PSScriptRoot)"
