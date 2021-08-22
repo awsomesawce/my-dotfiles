@@ -167,14 +167,14 @@ antigen bundle ssh-agent
 #antigen bundle npm # Unnecessary too. Use `npm completion`
 #antigen bundle node # Unnecessary: adds a "node-docs" function for opening an outdated node doc website
 #antigen bundle yarn
-antigen bundle npx
+#antigen bundle npx
 antigen bundle colored-man-pages
 #antigen bundle copydir
 antigen bundle cp
 #antigen bundle direnv
 antigen bundle dotenv
 #antigen bundle jsontools
-antigen bundle jake-node
+#antigen bundle jake-node
 #antigen bundle urltools
 antigen bundle ubuntu
 
@@ -185,6 +185,8 @@ antigen bundle pip
 antigen bundle python
 antigen bundle pylint
 antigen bundle perl
+
+antigen bundle httpie
 
 antigen bundle ripgrep
 
