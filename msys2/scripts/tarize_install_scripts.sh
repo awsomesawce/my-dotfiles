@@ -5,10 +5,14 @@ tarize_install_scripts ()
 { 
     if [[ $PWD == "$HOME" ]]; then
         pat=(Downloads/InstallScripts/* bin/installscripts/*)
-        bsdtar -acvf CInstScripts_$(date -I).tar.zst ${pat[@]} || return 1
+        if command -v bsdtar; then
+            bsdtar -acvf "InstScripts_$(date -I).tar.zst" "${pat[@]}" || return 1
+        else
+            echo "bsdtar not found in PATH"
+        fi
     else
         echo "Must be in home directory, try again" 1>&2
-	return 1
+        return 1
     fi
     return 0
 }

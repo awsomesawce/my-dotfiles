@@ -1,0 +1,1287 @@
+aide - Advanced Intrusion Detection Environment - static binary
+aide-common - Advanced Intrusion Detection Environment - Common files
+avahi-autoipd - Avahi IPv4LL network address configuration daemon
+avahi-daemon - Avahi mDNS/DNS-SD daemon
+avahi-utils - Avahi browsing, publishing and discovery utilities
+awstats - powerful and featureful web server log analyzer
+bsdmainutils - collection of more utilities from FreeBSD
+busybox-initramfs - Standalone shell setup for initramfs
+busybox-static - Standalone rescue shell with tons of builtin utilities
+debian-goodies - Small toolbox-style utilities for Debian systems
+devscripts - scripts to make the life of a Debian Package maintainer easier
+dselect - Debian package management front-end
+eatmydata - Library and utilities designed to disable fsync and friends
+exim4 - metapackage to ease Exim MTA (v4) installation
+exim4-base - support files for all Exim MTA (v4) packages
+exim4-config - configuration for the Exim MTA (v4)
+exim4-daemon-heavy - Exim MTA (v4) daemon with extended features, including exiscan-acl
+exim4-daemon-light - lightweight Exim MTA (v4) daemon
+exim4-dev - header files for the Exim MTA (v4) packages
+exim4-doc-html - documentation for the Exim MTA (v4) in html format
+findutils - utilities for finding files--find, xargs
+flex - fast lexical analyzer generator
+flex-doc - Documentation for flex (a fast lexical analyzer generator)
+gir1.2-geocodeglib-1.0 - introspection data for geocode-glib library
+gnome-characters - character map application
+gnome-mahjongg - classic Eastern tile game for GNOME
+irda-utils - IrDA management and handling utilities
+john - active password cracking tool
+john-data - active password cracking tool - character sets
+lbdb - Little Brother's DataBase for the mutt mail reader
+lib32asan5 - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan6 - AddressSanitizer -- a fast memory error detector (32bit)
+libalgorithm-diff-perl - module to find differences between files
+libalgorithm-diff-xs-perl - module to find differences between files (XS accelerated)
+libasan5 - AddressSanitizer -- a fast memory error detector
+libasan5-arm64-cross - AddressSanitizer -- a fast memory error detector
+libasan5-armhf-cross - AddressSanitizer -- a fast memory error detector
+libasan5-ppc64el-cross - AddressSanitizer -- a fast memory error detector
+libasan5-s390x-cross - AddressSanitizer -- a fast memory error detector
+libasan6 - AddressSanitizer -- a fast memory error detector
+libavahi-client-dev - Development files for the Avahi client library
+libavahi-client3 - Avahi client library
+libavahi-common-data - Avahi common data files
+libavahi-common-dev - Development files for the Avahi common library
+libavahi-common3 - Avahi common library
+libavahi-compat-libdnssd-dev - Development headers for the Avahi Apple Bonjour compatibility library
+libavahi-compat-libdnssd1 - Avahi Apple Bonjour compatibility library
+libavahi-core-dev - Development files for Avahi's embeddable mDNS/DNS-SD library
+libavahi-core7 - Avahi's embeddable mDNS/DNS-SD library
+libavahi-glib-dev - Development headers for the Avahi GLib integration library
+libavahi-glib1 - Avahi GLib integration library
+libavahi-gobject-dev - Development headers for the Avahi GObject library
+libavahi-gobject0 - Avahi GObject library
+libavahi-ui-gtk3-0 - Avahi GTK+ User interface library for GTK3
+libavahi-ui-gtk3-dev - Development headers for the Avahi GTK+ User interface library
+libblkid-dev - block device ID library - headers and static libraries
+libblkid1 - block device ID library
+libbsd-dev - utility functions from BSD systems - development files
+libbtf1 - permutation to block triangular form library for sparse matrices
+libcairo-perl - Perl interface to the Cairo graphics library
+libdevel-size-perl - Perl extension for finding the memory usage of Perl variables
+libexpat1 - XML parsing C library - runtime library
+libfile-basedir-perl - Perl module to use the freedesktop basedir specification
+libfile-find-rule-perl - module to search for files based on rules
+libfile-homedir-perl - Perl module for finding user directories across platforms
+libfl-dev - static library for flex (a fast lexical analyzer generator)
+libfl2 - SHARED library for flex (a fast lexical analyzer generator)
+libgeocode-glib-dev - development files for geocode-glib library
+libgeocode-glib-doc - gtk-doc documentation for geocode-glib library
+libgeocode-glib0 - geocoding and reverse geocoding GLib library using Nominatim
+libjson-maybexs-perl - interface to the best available JSON module
+libneon27-gnutls - HTTP and WebDAV client library (GnuTLS enabled)
+libpath-iterator-rule-perl - iterative, recursive file finder
+libpmem1 - Persistent Memory low level support library
+libpod-constants-perl - module for including constants from POD
+libsane - API library for scanners
+libstemmer-dev - Snowball stemming algorithms, development kit
+libstemmer0d - Snowball stemming algorithms for use in Information Retrieval
+libtest-refcount-perl - Perl module to assert reference counts
+libtommath-dev - multiple-precision integer library [development files]
+libtommath-doc - multiple-precision integer library [documentation]
+libtommath1 - multiple-precision integer library [runtime]
+libx32asan5 - AddressSanitizer -- a fast memory error detector (x32)
+libx32asan6 - AddressSanitizer -- a fast memory error detector (x32)
+libxml-libxml-perl - Perl interface to the libxml2 library
+logtail - Print log file lines that have not been read
+lupin-casper - Add support for loop-mount installations to casper
+mlocate - quickly find files on the filesystem based on their name
+oath-dbg - OATH Toolkit debugging symbols
+printer-driver-gutenprint - printer drivers for CUPS
+python-os-client-config-doc - OpenStack client configuration library - doc
+python-pastedeploy-tpl - load, configure, and compose WSGI applications and servers - templates
+python-pbr-doc - inject useful and sensible default behaviors into setuptools - doc
+python3-django-pyscss - makes it easier to use PySCSS in Django - Python 3.x
+python3-entrypoints - Discover and load entry points from installed packages (Python 3)
+python3-launchpadlib - Launchpad web services client library (Python 3)
+python3-os-client-config - OpenStack client configuration library - Python 3.x
+python3-pastedeploy - load, configure, and compose WSGI applications and servers - Python 3.x
+python3-pbr - inject useful and sensible default behaviors into setuptools - Python 3.x
+python3-requestsexceptions - import exceptions from bundled packages in requests. - Python 3.x
+sane-utils - API library for scanners -- utilities
+ubuntu-advantage-tools - management tools for Ubuntu Advantage
+ubuntu-drivers-common - Detect and install additional Ubuntu driver packages
+wdiff - Compares two files word by word
+xdg-user-dirs - tool to manage well known user directories
+zerofree - zero free blocks from ext2, ext3 and ext4 file-systems
+4pane - four-pane detailed-list file manager
+abacas - close gaps in genomic alignments from short reads
+abisip-find - Command line utility to find ip.access compatible BTS
+acidrip - ripping and encoding DVD tool using mplayer and mencoder
+adapta-kde - Port of the popular Gtk theme Adapta for Plasma 5 desktop
+aephea - text-based authoring tool for HTML
+aesfix - tool for correcting bit errors in an AES key schedule
+aeskeyfind - tool for locating AES keys in a captured memory image
+afflib-tools - Advanced Forensics Format Library (utilities)
+aide-dynamic - Advanced Intrusion Detection Environment - dynamic binary
+aide-xen - Advanced Intrusion Detection Environment - static binary for XEN
+amanda-client - Advanced Maryland Automatic Network Disk Archiver (Client)
+amanda-server - Advanced Maryland Automatic Network Disk Archiver (Server)
+anagramarama - fast paced anagram puzzle game using SDL
+anagramarama-data - fast paced anagram puzzle game using SDL (data files)
+anorack - specialized spell-checker that finds incorrect indefinite articles
+aoflagger - Find RFI in radio astronomical observations
+aoflagger-dev - Find RFI in radio astronomical observations (development files)
+asis-programs - Ada Semantic Interface Specification (ASIS) example programs
+asp - Discovers present ip-address of dynamically connected hosts
+asylum - surreal platform shooting game
+atlc - Arbitrary Transmission Line Calculator
+augustus - gene prediction in eukaryotic genomes
+augustus-data - data files for AUGUSTUS
+aumix - Simple text-based mixer control program
+avahi-discover - Service discover user interface for avahi
+avahi-dnsconfd - Avahi DNS configuration tool
+avahi-ui-utils - Avahi GTK+ utilities
+ax25mail-utils - hamradio packet utilities for fbb
+bacula - network backup service - metapackage
+bandit - Security oriented static analyzer for Python code - Metapackage
+bedtools - suite of utilities for comparing genomic features
+berusky2 - logic game Bugs Escape 3D
+berusky2-data - logic game Bugs Escape 3D -- data files
+bfs - Breadth-first version of find(1)
+big-cursor - larger mouse cursors for X
+binstats - Statistics tool for installed programs
+bittwist - libpcap based Ethernet packet generator
+black-box - Find the crystals
+bless - A full featured hexadecimal editor
+blosxom - light, feature-packed weblog app with plugin extensibility
+boinc-app-seti - SETI@home application for the BOINC client
+boinc-app-seti-graphics - SETI@home application for the BOINC client (with graphics)
+boinc-client-nvidia-cuda - metapackage for CUDA-savvy BOINC client and manager
+boinc-client-opencl - metapackage for AMD/ATI OpenCL-savvy BOINC client and manager
+bootparamd - Boot parameter server
+bruteforce-luks - Try to find a password of a LUKS encrypted volume
+bruteforce-salted-openssl - try to find the passphrase for files encrypted with OpenSSL
+brutespray - Python bruteforce tool
+budgie-app-launcher-applet - Applet to provide an alternative means to launch applications
+budgie-applications-menu-applet - Stylish Applications Menu for Budgie-Desktop
+budgie-quickchar - GUI to find and choose locale characters
+budgie-workspace-stopwatch-applet - Workspace usage tracker for the budgie desktop
+bumps-private-libs - data fitting and Bayesian uncertainty modeling for inverse problems (libraries)
+busybox - Tiny utilities for small and embedded systems
+cairo-dock-weather-plug-in - Weather plug-in for Cairo-dock
+casacore-tools - Tools built with CASA
+cavezofphear - ASCII Boulder Dash clone
+cdde - CD Detect & Execute utility
+ceferino - action game similar to Super Pang
+ceferino-data - action game similar to Super Pang
+cgvg - command-line source browsing tool
+check-all-the-things - check all of the things!
+chipmunk-dev - Fast and lightweight 2D rigid body physics library - devel
+chktex - Finds typographic errors in LaTeX
+cl-pgloader - extract, transform and load data into PostgreSQL
+cl-sensor-msgs - Messages relating to Robot OS sensor, LISP interface
+claws-mail-litehtml-viewer - HTML viewer plugin using litehtml library
+cmake-vala - CMake utility modules needed for building Vala Panel (and related projects)
+codeblocks-contrib - contrib plugins for Code::Blocks IDE
+codelite - Powerful and lightweight IDE
+codelite-plugins - Powerful and lightweight IDE - plugins
+codespell - Find and fix common misspellings in text files
+coinor-clp - Coin-or linear programming solver
+coinor-libclp-dev - Coin-or linear programming solver (developer files)
+coinor-libclp-doc - Coin-or linear programming solver (documentation)
+coinor-libclp1 - Coin-or linear programming solver (shared libraries)
+coinor-libdylp-dev - Linear programming solver using of the dynamic simplex algorithm
+coinor-libdylp-doc - Linear programming solver using of the dynamic simplex algorithm
+coinor-libdylp1 - Linear programming solver using the dynamic simplex algorithm
+collectd - statistics collection and monitoring daemon
+collectd-core - statistics collection and monitoring daemon (core system)
+colobot - educational programming strategy game
+colobot-common - educational programming strategy game - data
+colobot-common-sounds - educational programming strategy game - sounds and music
+colobot-common-textures - educational programming strategy game - textures
+colobot-dev-doc - educational programming strategy game - source doc
+conjugar - text only program to conjugate Brazilian verbs
+coz-profiler - Finding Code that Counts with Causal Profiling
+cpufreqd - fully configurable daemon for dynamic frequency and voltage scaling
+crashmail - JAM and *.MSG capable Fidonet tosser
+cricket - Program for collection and display of time-series data
+crossfire-client - Client for the multiplayer roguelike Crossfire
+crossfire-common - Architecture independent common files for Crossfire server
+crossfire-server - Server for Crossfire Games
+cruft - program that finds any cruft built up on your system
+cruft-ng - program that finds any cruft built up on your system
+cutadapt - Clean biological sequences from high-throughput sequencing reads
+daligner - local alignment discovery between long nucleotide sequencing reads
+ddrutility - set of data recovery utilities for use with GNU ddrescue
+debdry - Semi-assisted automatic Debian packaging
+debget - download/compile source and binary Debian packages
+debian-faq - Debian Frequently Asked Questions
+debian-faq-de - Debian Frequently Asked Questions, in German
+debian-faq-fr - Debian Frequently Asked Questions, in French
+debian-faq-it - Debian Frequently Asked Questions, in Italian
+debian-faq-ja - Debian Frequently Asked Questions, in Japanese
+debian-faq-nl - Debian Frequently Asked Questions, in Dutch
+debian-faq-ru - Debian Frequently Asked Questions, in Russian
+debian-faq-zh-cn - Debian Frequently Asked Questions, in Simplified Chinese
+deborphan - program that can find unused packages, e.g. libraries
+debram - ramified catalog of available commands
+deheader - Find and remove unnecessary includes in C or C++ source files
+desktop-autoloader - Accelerate Diskless Workstation systems by pre-loading a dummy Desktop Session
+devilspie - find windows and perform actions on them
+dh-buildinfo - Debhelper addon to track package versions used to build a package
+dhcping - DHCP Daemon Ping Program
+dieharder - Random-number generator test front-end
+diskscan - scan storage media for bad or near failure sectors
+disulfinder - cysteines disulfide bonding state and connectivity predictor
+disulfinder-data - data files for predictor of disulfide bonds in proteins
+dlint - Checks dns zone information using nameserver lookups
+dlocate - fast alternative to dpkg -L and dpkg -S
+dlume - simple and easy to use addressbook (GTK+)
+dmitry - Deepmagic Information Gathering Tool
+dnsmap - DNS domain name brute forcing tool
+doc-debian - Debian Project documentation and other documents
+dose-extra - Extra QA tools from the Dose3-library
+dotter - detailed comparison of two genomic sequences
+dpkg-www - Debian package management web interface
+duff - Duplicate file finder
+duperemove - extent-based deduplicator for file systems
+dustmite - Tool for minimizing D source code
+dwarves - set of advanced DWARF utilities
+edlib-aligner - edlib sequence alignment tool using edit distance
+einstein - Puzzle game inspired on Einstein's puzzle
+elpa-browse-kill-ring - interactively insert items from kill-ring
+elpa-bug-hunter - automatically debug and bisect your init.el or .emacs file
+elpa-deft - Emacs mode to browse, filter, and edit plain text notes
+elpa-elisp-refs - find callers of elisp functions or macros
+elpa-elisp-slime-nav - Emacs extension that provide Emacs Lisp code navigation
+elpa-find-file-in-project - quick access to project files in Emacs
+elpa-ghub+ - thick GitHub API client built on ghub
+elpa-jedi - Python auto-completion for Emacs
+elpa-jedi-core - common code of jedi.el and company-jedi.el
+elpa-writegood-mode - minor mode for Emacs to improve English writing
+elpa-xr - convert string regexp to rx notation
+elph - DNA/protein sequence motif finder
+endless-sky - space exploration and combat game
+endless-sky-data - data files for Endless Sky
+epic4 - epic irc client, version 4
+epic5 - epic irc client, version 5
+erlang-ranch-doc - Documentation of erlang-ranch
+esnacc - ASN.1 to C or C++ or IDL compiler
+espeak - Multi-lingual software speech synthesizer
+espeak-ng - Multi-lingual software speech synthesizer
+ettercap-common - Multipurpose sniffer/interceptor/logger for switched LAN
+ettercap-graphical - Ettercap GUI-enabled executable
+ettercap-text-only - Ettercap console-mode executable
+euler - interactive mathematical programming environment
+exim4-doc-info - documentation for the Exim MTA (v4) in info format
+ext3grep - tool to help recover deleted files on ext3 filesystems
+extra-cmake-modules - Extra modules and scripts for CMake
+famfamfam-silk - smooth, free icon set, with over 700 16x16 pixel icons
+fastjet-doc - Documentation of FastJet
+fastjet-examples - Example source files of FastJet
+fastlink - faster version of pedigree programs of Linkage
+fastlink-doc - Some papers about fastlink
+fatrace - report system wide file access events
+fd-find - Simple, fast and user-friendly alternative to find
+fdpowermon - simple battery power monitor for laptops with ACPI
+fdupes - identifies duplicate files within given directories
+fetch-crl - Downloads Certificate Revocation Lists
+ffindex - simple index/database for huge amounts of small files
+fillets-ng - puzzle game about witty fish saving the world sokoban-style
+fillets-ng-data - docs, graphics, music and international sounds for fillets-ng
+fillets-ng-data-cs - add-on sounds for Czech language spoken dialogs for fillets-ng
+fillets-ng-data-nl - add-on sounds for Dutch language spoken dialogs for fillets-ng
+findbugs - Static java code analyzer to find bugs
+findent - indents/converts Fortran sources
+findimagedupes - Finds visually similar or duplicate images
+fitsh - Software package for astronomical image processing
+flatnuke - flat-file based CMS
+flawfinder - examines source code and looks for security weaknesses
+flight-of-the-amazon-queen - classic 2D point and click fantasy adventure game
+flintqs - Program using quadratic sieve to factor integers
+fontforge-extras - font editor - extra programs
+fonts-b612 - legible font designed to be used on aircraft cockpit screens
+fonts-compagnon - typeface family composed of five distinctive styles
+fonts-ricty-diminished - font based on Inconsolata and Circle M+ 1m for programming
+fonts-terminus - Terminus monospace font
+forensics-all - Debian Forensics Environment - essential components (metapackage)
+forensics-extra - Forensics Environment - extra console components (metapackage)
+fortran-language-server - Fortran Language Server for the Language Server Protocol
+fortunes-debian-hints - Debian Hints for fortune
+foxtrotgps - GTK+ mapping and GPS application
+freebayes - Bayesian haplotype-based polymorphism discovery and genotyping
+freesweep - text-based minesweeper
+frotz - interpreter of Z-code story-files
+ftnchek - Semantic checker for Fortran 77 programs
+ftpwatch - Notifies you of changes on remote ftp servers
+fwlogwatch - Firewall log analyzer
+fzf - general-purpose command-line fuzzy finder
+gajim-urlimagepreview - displays images inside Gajim chat window
+gameconqueror - locate and modify a variable in a running process (GUI)
+gammaray - Tool for examining the internals of Qt application
+gammaray-dev - GammaRay plugin development files
+garli - phylogenetic analysis of molecular sequence data using maximum-likelihood
+garli-examples - phylogenetic analysis of molecular sequence data (examples)
+garli-mpi - phylogenetic analysis of molecular sequence data using maximum-likelihood (MPI)
+gbrowse - GMOD Generic Genome Browser
+gcal-common - gcal architecture independent files
+gconjugue - GTK+ program to conjugate Brazilian verbs
+gcx - astronomical image processing and photometry gtk+ application
+geany-plugin-pairtaghighlighter - tag pair highlighter plugin for Geany
+gedit-plugin-find-in-files - Find in Files plugin for gedit
+gem-plugin-jpeg - Graphics Environment for Multimedia - JPEG support
+gem-plugin-sgi - Graphics Environment for Multimedia - SGI support
+gem-plugin-tiff - Graphics Environment for Multimedia - TIFF support
+gendarme - extensible rule-based checker for CLI assemblies
+geocode-glib-tests - installed tests for the geocode-glib library
+geoip-bin - IP lookup command line tools that use the GeoIP library
+geoip-database - IP lookup command line tools that use the GeoIP library (country database)
+geophar - Swiss army knife for the math teacher
+gimp - GNU Image Manipulation Program
+gimp-plugin-registry - repository of optional extensions for GIMP
+ginkgocadx - Medical Imaging Software and complete DICOM Viewer
+gip - IP calculator for GNOME desktop environment
+git-repair - repair various forms of damage to git repositories
+git-restore-mtime - set timestamps to the date of a file's last commit
+glabels - label, business card and media cover creation program for GNOME
+glam2 - gapped protein motifs from unaligned sequences
+glimpse - search quickly through entire file systems
+gmp-ecm - Factor integers using the Elliptic Curve Method
+gnome-applets - Various applets for the GNOME panel - binary files
+gnome-documents - Document manager for GNOME
+gnome-shell-extension-hide-veth - hides veth devices typically used by docker and lxc
+gnome-shell-timer - GNOME Shell extension providing a countdown timer in the top panel
+gnuift - GNU Image Finding Tool - index and search images by content
+gnuift-doc - Documentation for gnuift
+gnuift-perl - GNU Image Finding Tool - perl modules
+golang-github-apparentlymart-go-dump-dev - utility for formatting Go values in a pretty-printed way
+golang-github-bmatcuk-doublestar-dev - support for double star matches in golang's path.Match and filepath.Glob
+golang-github-bugsnag-panicwrap-dev - Go library for catching and handling panics in Go applications
+golang-github-cenkalti-backoff-dev - exponential backoff algorithm in Go
+golang-github-evilsocket-ftrace-dev - trace Linux syscalls using the FTRACE kernel framework
+golang-github-facebookgo-freeport-dev - Go library to find a free TCP port for binding
+golang-github-hashicorp-go-gcp-common-dev - common code shared by GCP-maintained plugins
+golang-github-jinzhu-gorm-dev - ORM library for Golang
+golang-github-kardianos-osext-dev - Extend "os" package with Executable and ExecutableFolder
+golang-github-mitchellh-go-ps-dev - Find, list, and inspect processes from Go (golang)
+golang-github-mitchellh-panicwrap-dev - library for catching and handling panics in Go applications
+golang-github-muesli-crunchy-dev - finds common flaws in passwords
+golang-github-muesli-smartcrop-dev - smartcrop finds good image crops for arbitrary crop sizes
+golang-github-nrdcg-goinwx-dev - INWX Go API client
+golang-github-ostreedev-ostree-go-dev - Golang bindings for httt://github.com/ostreedev/ostree
+golang-github-robfig-config-dev - Configuration file parser for INI format
+golang-github-sjoerdsimons-ostree-go-dev - Golang bindings for OSTree
+golang-github-unknwon-goconfig-dev - configuration file (.ini) parser
+golang-github-vbatts-tar-split-dev - tar archive assembly/disassembly (source)
+golang-gopkg-errgo.v1-dev - Dependable Go errors with tracebacks, version 1
+golang-gopkg-neurosnap-sentences.v1-dev - Sentence tokenizer for Go
+goldencheetah - set of analysis tools for cycling performance
+govendor - Go vendor tool that works with the standard vendor file
+gpart - Guess PC disk partition table, find lost partitions
+grabc - simple program to determine the color string in hex by clicking on a pixel
+gradm2 - Administration program for the grsecurity2 RBAC based ACL system
+graphviz - rich set of graph drawing tools
+gucharmap - Unicode character picker and font browser
+gup - let a remote site change their newsgroups subscription
+happycoders-libdbg - C++ utilities to facilitate modern debugging idioms
+happycoders-libdbg-dev - C++ utilities to facilitate modern debugging idioms
+headache - Tool to manage license notes of source files
+hearse - exchange Nethack bones files with other players
+hexcompare - utility to compare and identify binary files
+hmmer - profile hidden Markov models for protein sequence analysis
+hmmer-doc - profile hidden Markov models for protein sequence analysis (docs)
+hmmer-examples - profile hidden Markov models for protein sequence analysis (examples)
+hmmer2 - profile hidden Markov models for protein sequence analysis
+hmmer2-doc - profile hidden Markov models for protein sequence analysis (docs)
+hmmer2-pvm - HMMER programs with PVM (Parallel Virtual Machine) support
+holes - find runs of zero bytes
+hspec-discover - Automatically discover and run Hspec tests
+ht - Viewer/editor/analyser (mostly) for executables
+hugin-tools - panorama photo stitcher - commandline tools
+hyphen-show - Show hyphenations in DVI-files
+igdiscover - analyzes antibody repertoires to find new V genes
+igdiscover-doc - analyzes antibody repertoires to find new V genes - doc
+imediff - interactive full screen 2/3-way merge tool
+ipcalc - parameter calculator for IPv4 addresses
+iprange - optimizing ipsets for iptables
+iqtree - efficient phylogenetic software by maximum likelihood
+iraf-rvsao - IRAF package to obtain radial velocities from spectra
+irssi-scripts - collection of scripts for irssi
+iwyu - Analyze #includes in C and C++ source files
+j4-dmenu-desktop - faster replacement for i3-dmenu-desktop
+jargoninformatique - French dictionary of computer vocabulary
+javahelper - Helper scripts for packaging Java programs
+jdupes - identify and delete or link duplicate files
+jmtpfs - FUSE based filesystem for accessing MTP devices
+joint-state-publisher - ROS joint_state_publisher
+joint-state-publisher-gui - ROS joint_state_publisher_gui
+juffed-plugins - Lightweight yet powerful Qt text editor - plugins
+junior-internet - Debian Jr. Internet tools
+k3b - Sophisticated CD/DVD burning application
+k3b-data - Sophisticated CD/DVD burning application - data files
+k3b-extrathemes - Sophisticated CD/DVD burning application - extra themes
+k3b-i18n - Sophisticated CD/DVD burning application - localizations files
+kcharselect - special character utility
+kdevelop-pg-qt - LL(1) parser generator based on Qt
+kfind - file search utility
+kickpass - simple password safe
+kmines - minesweeper game
+kmplot - mathematical function plotter for KDE
+kmymoney-common - KMyMoney architecture independent files
+kronometer - simple stopwatch application
+ksudoku - Sudoku puzzle game and solver
+ktorrent-data - KTorrent data and other architecture independent files
+kubuntu-debug-installer - Debug package installer for Kubuntu
+kubuntu-debug-installer-dbg - Debug package installer for Kubuntu - debug symbols
+kubuntu-web-shortcuts - web shortcuts for Kubuntu, Ubuntu, Launchpad
+lacheck - Simple syntax checker for LaTeX
+last-align - genome-scale comparison of biological sequences
+lebiniou-data - datafiles for Le Biniou
+leptonica-progs - sample programs for Leptonica image processing library
+letterize - phone digits to letter-mnemonics
+lib32asan4 - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan5-amd64-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan5-ppc64-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan5-s390x-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan5-sparc64-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan5-x32-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan6-amd64-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan6-ppc64-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan6-s390x-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan6-sparc64-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib32asan6-x32-cross - AddressSanitizer -- a fast memory error detector (32bit)
+lib64asan5-i386-cross - AddressSanitizer -- a fast memory error detector (64bit)
+lib64asan5-powerpc-cross - AddressSanitizer -- a fast memory error detector (64bit)
+lib64asan5-x32-cross - AddressSanitizer -- a fast memory error detector (64bit)
+lib64asan6-i386-cross - AddressSanitizer -- a fast memory error detector (64bit)
+lib64asan6-powerpc-cross - AddressSanitizer -- a fast memory error detector (64bit)
+lib64asan6-x32-cross - AddressSanitizer -- a fast memory error detector (64bit)
+libaccessodf-java - library for checking accessibility in ODF/ODT documents using Libreoffice
+libalias-perl - module for accessing perl variables through aliases
+libalien-gnuplot-perl - module to find and validate the gnuplot executable
+libaoflagger0 - Find RFI in radio astronomical observations (shared lib)
+libapache2-mod-geoip - GeoIP support for apache2
+libarray-diff-perl - Perl module to find the differences between two arrays
+libasan4 - AddressSanitizer -- a fast memory error detector
+libasan5-amd64-cross - AddressSanitizer -- a fast memory error detector
+libasan5-armel-cross - AddressSanitizer -- a fast memory error detector
+libasan5-i386-cross - AddressSanitizer -- a fast memory error detector
+libasan5-powerpc-cross - AddressSanitizer -- a fast memory error detector
+libasan5-ppc64-cross - AddressSanitizer -- a fast memory error detector
+libasan5-sparc64-cross - AddressSanitizer -- a fast memory error detector
+libasan5-x32-cross - AddressSanitizer -- a fast memory error detector
+libasan6-amd64-cross - AddressSanitizer -- a fast memory error detector
+libasan6-arm64-cross - AddressSanitizer -- a fast memory error detector
+libasan6-armel-cross - AddressSanitizer -- a fast memory error detector
+libasan6-armhf-cross - AddressSanitizer -- a fast memory error detector
+libasan6-i386-cross - AddressSanitizer -- a fast memory error detector
+libasan6-powerpc-cross - AddressSanitizer -- a fast memory error detector
+libasan6-ppc64-cross - AddressSanitizer -- a fast memory error detector
+libasan6-ppc64el-cross - AddressSanitizer -- a fast memory error detector
+libasan6-s390x-cross - AddressSanitizer -- a fast memory error detector
+libasan6-sparc64-cross - AddressSanitizer -- a fast memory error detector
+libasan6-x32-cross - AddressSanitizer -- a fast memory error detector
+libast2 - Library of Assorted Spiffy Things
+libast2-dev - libast2 development files
+libaudio-moosic-perl - Moosic client library for Perl
+libbio-db-gff-perl - Storage and retrieval of sequence annotation data
+libbrahe-1.3-3 - heterogeneous C library of numeric functions
+libbrahe-dev - heterogeneous C library of numeric functions
+libbultitude-clojure - Clojure library for finding namespaces on the classpath
+libcache-fastmmap-perl - Perl module providing a mmap'ed cache
+libcatalyst-plugin-configloader-perl - Catalyst plugin for loading configuration files
+libcatalystx-leakchecker-perl - module for detecting memory leaks in Catalyst applications
+libcdd-dev - Library for finding vertices of convex polytopes, development
+libchipmunk0d3 - fast and lightweight 2D rigid body physics library in C
+libchipmunk0d3-dbg - Fast and lightweight 2D rigid body physics library - debug
+libclass-accessor-perl - Perl module that automatically generates accessors
+libclass-dbi-pg-perl - Class::DBI extension for Postgres
+libclass-multimethods-perl - Support multimethods and subroutine overloading in Perl
+libclass-prototyped-perl - module for fast prototype-based OO programming in Perl
+libclassycle-java - Analysing tool for Java dependencies
+libclassycle-java-doc - Analysing tool for Java dependencies - documentation
+libclippoly-dev - polygon clipping routines, development library
+libclippoly0 - polygon clipping routines, runtime library
+libcliquer1 - clique searching library
+libcneartree-dev - Library and headers for solving the Nearest Neighbor Problem
+libcneartree7 - Library for solving the Nearest Neighbor Problem
+libcommons-discovery-java - locates classes that implement a given Java interface
+libcommons-discovery-java-doc - locates classes that implement a given Java interface (documentation)
+libcommons-math-java - Java lightweight mathematics and statistics components
+libcommons-math-java-doc - Java lightweight mathematics and statistics components - documentation
+libcommons-math3-java - Java lightweight mathematics and statistics components
+libcommons-math3-java-doc - Java lightweight mathematics and statistics components - documentation
+libconfig-find-perl - module to search configuration files using OS dependent heuristics
+libdata-clone-perl - Perl module for polymorphic data cloning
+libdata-random-perl - Perl module to generate random data
+libdata-stream-bulk-perl - N at a time iteration API
+libdata-walk-perl - module to traverse Perl data structures
+libdatetime-format-dbi-perl - abstraction layer for DateTime over some database vendors
+libddogleg-java - library for non-linear optimization, clustering, robust model fitting and more
+libdevel-cycle-perl - Perl module to detect memory cycles in Perl objects
+libdevel-findperl-perl - Perl module to find the path to the currently running perl
+libdieharder-dev - Random-number generator test library -- development package
+libdieharder3 - Random-number generator test library
+libdir-self-perl - module providing a __DIR__ constant for the directory of the source file
+libdist-metadata-perl - module for getting information about a perl module distribution
+libdist-zilla-plugin-test-compile-perl - common tests to check syntax of your modules, using only core modules
+libdist-zilla-plugin-test-eol-perl - Dist::Zilla plugin to make sure that correct line endings are used
+libdist-zilla-plugin-test-notabs-perl - Dist::Zilla plugin to make sure hard tabs are not used
+libdogleg-dev - Powell's dog-leg nonlinear least squares solver for sparse matrices
+libdogleg-doc - Powell's dog-leg nonlinear least squares solver for sparse matrices
+libdogleg2 - Powell's dog-leg nonlinear least squares solver for sparse matrices
+libeclipse-jdt-annotation-java - Eclipse JDT Annotations for Enhanced Null Analysis
+libeclipse-jdt-apt-core-java - Eclipse Java Annotation Processing Core
+libeclipse-jdt-apt-pluggable-core-java - Eclipse Java Compiler Apt IDE
+libeclipse-jdt-astview-java - Eclipse AST View Plug-in
+libeclipse-jdt-compiler-apt-java - Eclipse Java Compiler Apt
+libeclipse-jdt-compiler-tool-java - Eclipse Java Compiler Tool Support
+libeclipse-jdt-core-java - Eclipse Java Development Tools Core
+libeclipse-jdt-core-manipulation-java - Eclipse Java Code Manipulation Functionality
+libeclipse-jdt-junit-core-java - Eclipse Java Development Tools JUnit core support
+libeclipse-jdt-junit-runtime-java - Eclipse Java Development Tools JUnit Runtime Support
+libeclipse-jdt-junit4-runtime-java - Eclipse Java Development Tools JUnit4 Runtime Support
+libeclipse-jdt-ui-java - Eclipse Java Development Tools UI
+libeclipse-ltk-core-refactoring-java - Eclipse Refactoring Core
+libeclipse-ltk-ui-refactoring-java - Eclipse Refactoring UI
+libecm1 - factor integers using the Elliptic Curve Method -- lib
+libecm1-dev - factor integers using the Elliptic Curve Method -- libdev
+libecm1-dev-common - factor integers using the Elliptic Curve Method -- header
+libedlib-dev - library for sequence alignment using edit distance (devel)
+libedlib0 - library for sequence alignment using edit distance
+libelixirfm-perl - perl implementation for Functional Arabic Morphology
+libemail-date-perl - Perl module for correct formatting of dates in emails
+libemail-find-perl - module to find RFC 822 email addresses in plain text
+libencode-eucjpms-perl - Perl library for Microsoft Compatible Japanese Encodings
+libepc-1.0-3 - Easy Publish and Consume library - shared libraries
+libepc-common - Easy Publish and Consume library - data files
+libepc-dev - Easy Publish and Consume library - development files
+libepc-doc - Easy Publish and Consume library - documentation
+libepc-ui-1.0-3 - Easy Publish and Consume library - shared widget libraries
+libepc-ui-dev - Easy Publish and Consume library - widget development files
+libex-monkeypatched-perl - experimental API for safe monkey-patching
+libfastjet-dev - Development files of FastJet
+libfastjet-fortran-dev - Fortran bindings of FastJet - development files
+libfastjet-fortran0 - Fortran bindings of FastJet
+libfastjet0v5 - Fast C++ code for the kt and other jet algorithms
+libfastjetplugins-dev - FastJet plugins - development files
+libfastjetplugins0 - FastJet plugins
+libfastjettools-dev - Tools for FastJet - development files
+libfastjettools0 - Tools for FastJet
+libfec-dev - forward error correction (FEC) algorithms - header files
+libfec0 - forward error correction (FEC) algorithms
+libfeed-find-perl - Syndication feed auto-discovery
+libffi-checklib-perl - module to check availability of a library for FFI
+libffindex0 - library for simple index/database for huge amounts of small files
+libffindex0-dev - library for simple index/database for huge amounts of small files (development)
+libfile-configdir-perl - get directories of configuration files
+libfile-find-object-perl - object oriented File::Find replacement
+libfile-find-object-rule-perl - alternative interface to File::Find::Object
+libfile-find-rule-filesys-virtual-perl - File::Find::Rule adapted to Filesys::Virtual
+libfile-find-rule-perl-perl - Perl module for searching Perl things
+libfile-find-rule-vcs-perl - Perl module to exclude files/directories for Version Control Systems
+libfile-find-wanted-perl - more obvious wrapper around File::Find
+libfile-finder-perl - wrapper for File::Find à la find(1)
+libfile-monitor-lite-perl - module for monitoring file creation, deletion, and modification
+libfile-next-perl - file-finding iterator
+libfile-wildcard-perl - Enhanced glob processing
+libfilesys-notify-simple-perl - simple file system monitor
+libfind-lib-perl - Perl module to intelligently find libraries
+libfindbin-libs-perl - Perl module to use a relative path for lib directories
+libfindbugs-annotations-java - Static java code analyzer to find bugs (Annotations)
+libfindbugs-ant-java - Static java code analyzer to find bugs (Ant tasks)
+libfindbugs-java - Static java code analyzer to find bugs (Library)
+libfindlib-ocaml - library for managing OCaml libraries (runtime)
+libfindlib-ocaml-dev - library for managing OCaml libraries (development files)
+libfuzzy-dev - recursive piecewise hashing tool (development headers)
+libfuzzy2 - recursive piecewise hashing tool (library)
+libgenome-model-tools-music-perl - module for finding mutations of significance in cancer
+libgeo-distance-perl - calculate distances and closest locations
+libgeo-distance-xs-perl - calculate distances and closest locations (XS version)
+libgeo-ip-perl - Perl interface to GeoIP library
+libgeo-postcode-perl - UK Postcode validation and location
+libgeoip-dev - Development files for the GeoIP library
+libgeoip1 - non-DNS IP-to-country resolver library
+libghc-diagrams-solve-dev - pure Haskell solver routines used by diagrams
+libghc-diagrams-solve-doc - pure Haskell solver routines used by diagrams; documentation
+libghc-diagrams-solve-prof - pure Haskell solver routines used by diagrams; profiling libraries
+libghc-equivalence-dev - maintaining an equivalence relation
+libghc-equivalence-doc - maintaining an equivalence relation; documentation
+libghc-equivalence-prof - maintaining an equivalence relation; profiling libraries
+libghc-filemanip-dev - expressive file and directory manipulation for Haskell
+libghc-filemanip-doc - expressive file and directory manipulation for Haskell; documentation
+libghc-filemanip-prof - expressive file and directory manipulation for Haskell; profiling libraries
+libghc-hakyll-dev - static website compiler library
+libghc-hakyll-doc - static website compiler library; documentation
+libghc-hakyll-prof - static website compiler library; profiling libraries
+libghc-hsopenssl-x509-system-dev - use system's native CA certificate store with HsOpenSSL
+libghc-hsopenssl-x509-system-doc - use system's native CA certificate store with HsOpenSSL; documentation
+libghc-hsopenssl-x509-system-prof - use system's native CA certificate store with HsOpenSSL; profiling libraries
+libghc-ixset-dev - Haskell implementation of queryable sets - GHC libraries
+libghc-ixset-doc - Haskell implementation of queryable sets - documentation; documentation
+libghc-ixset-prof - Haskell implementation of queryable sets - GHC profiling libraries; profiling libraries
+libghc-ixset-typed-dev - efficient relational queries on Haskell sets
+libghc-ixset-typed-doc - efficient relational queries on Haskell sets; documentation
+libghc-ixset-typed-prof - efficient relational queries on Haskell sets; profiling libraries
+libghc-lambdabot-haskell-plugins-dev - Lambdabot Haskell plugins
+libghc-lambdabot-haskell-plugins-doc - Lambdabot Haskell plugins; documentation
+libghc-lambdabot-haskell-plugins-prof - Lambdabot Haskell plugins; profiling libraries
+libghc-openglraw-dev - Raw binding for the OpenGL graphics system
+libghc-openglraw-doc - Raw binding for the OpenGL graphics system; documentation
+libghc-openglraw-prof - Raw binding for the OpenGL graphics system; profiling libraries
+libghc-psqueues-dev - Pure priority search queues
+libghc-psqueues-doc - Pure priority search queues; documentation
+libghc-psqueues-prof - Pure priority search queues; profiling libraries
+libghc-tabular-dev - two-dimensional data tables with rendering functions
+libghc-tabular-doc - two-dimensional data tables with rendering functions; documentation
+libghc-tabular-prof - two-dimensional data tables with rendering functions; profiling libraries
+libghc-unixutils-dev - interface between Haskell and Unix-like operating systems
+libghc-unixutils-doc - interface between Haskell and Unix-like operating systems; documentation
+libghc-unixutils-prof - interface between Haskell and Unix-like operating systems; profiling libraries
+libghc-x509-system-dev - per-operating-system X.509 accessors and storage
+libghc-x509-system-doc - per-operating-system X.509 accessors and storage; documentation
+libghc-x509-system-prof - per-operating-system X.509 accessors and storage; profiling libraries
+libgnuift0-dev - libgnuift development files
+libgnuift0v5 - GNU Image Finding Tool - libraries
+libgraph-perl - Perl module for graph data structures and algorithms
+libgroovefingerprinter-dev - acoustid fingerprinter sink for libgroove (development files)
+libgroovefingerprinter4 - acoustid fingerprinter for libgroove
+libgsl23 - GNU Scientific Library (GSL) -- library package
+libgslcblas0 - GNU Scientific Library (GSL) -- blas library package
+libgtk2-perl - Perl interface to the 2.x series of the Gimp Toolkit library
+libgtk2-perl-doc - Perl interface to the Gtk 2.x series (documentation files)
+libhfasan5-armel-cross - AddressSanitizer -- a fast memory error detector (hard float ABI)
+libhfasan6-armel-cross - AddressSanitizer -- a fast memory error detector (hard float ABI)
+libhmmer2-dev - profile hidden Markov models for protein sequence analysis (devel)
+libhtml-display-perl - module for displaying HTML locally in a browser
+libhtml-simpleparse-perl - bare-bones HTML parser
+libident - simple RFC1413 client library - runtime
+libignition-cmake-dev - Ignition Robotics CMake Library - Development files
+libignition-cmake2-dev - Ignition Robotics CMake Library - Development files
+libilmbase24 - several utility libraries from ILM used by OpenEXR
+libimage-seek-perl - Perl module to find similar pictures in a library
+libio-interface-perl - socket methods to get/set interface characteristics
+libitsol-dev - ITerative SOLvers - devel
+libitsol1 - ITerative SOLvers - runtime
+libjline-java - Java library for handling console input
+libjline-java-doc - Java library for handling console input - documentation
+libjline2-java - console input handling in Java
+libjs-jquery-simpletreemenu - visually-simple menu inspired by the Mac OS X Finder tree
+libjs-jstimezonedetect - Finds the zone info key representing the timezone setting
+libjs-jsxc - JavaScript XMPP Client
+libjsoup-java - Java HTML parser that makes sense of real-world HTML soup
+libjsoup-java-doc - Documentation for jsoup HTML Parser
+libk3b-dev - KDE CD/DVD burning application library - development files
+libk3b7 - KDE CD/DVD burning application library - runtime files
+libk3b7-extracodecs - KDE CD/DVD burning application library - extra decoders
+libkdtree++-dev - C++ template container implementation of kd-tree sorting
+libkf5idletime-doc - library to provide information about idle time (documentation)
+libkf5idletime5 - library to provide information about idle time
+liblatex-tom-perl - module for parsing, analyzing and manipulating LaTeX documents
+liblbfgs-dev - L-BFGS solver for unconstrained nonlinear optimization problems
+liblbfgs0 - L-BFGS solver for unconstrained nonlinear optimization problems
+liblbfgs0-dbg - L-BFGS solver for unconstrained nonlinear optimization problems
+liblept5 - image processing library
+libleptonica-dev - image processing library
+liblingua-en-findnumber-perl - module for locating (written) numbers in English text
+liblingua-en-number-isordinal-perl - module for detecting English ordinal numbers
+liblip-dev - reliable interpolation of multivariate scattered data
+liblip2 - reliable interpolation of multivariate scattered data
+liblo-dev - Lightweight OSC library -- development files
+liblo-tools - Lightweight OSC library (command-line tools)
+liblo7 - Lightweight OSC library
+liblog-dispatchouli-perl - simple wrapper around Log::Dispatch
+liblrs-dev - package to enumerate vertices and extreme rays (development file)
+liblrs0 - package to enumerate vertices and extreme rays (shared libraries)
+liblwt-log-ocaml - optimised functions to read and write int16/32/64 (runtime)
+liblwt-log-ocaml-dev - Lwt-friendly logging library (development)
+libmail-imaptalk-perl - IMAP client interface with lots of features
+libmath-convexhull-perl - Perl module to calculate convex hulls using Graham's scan (n*log(n))
+libmath-vector-real-kdtree-perl - kd-Tree implementation for Perl on top of Math::Vector::Real
+libmeep-dev - development library for using meep
+libmeep-mpi-default-dev - development library for using parallel (OpenMPI) version of meep
+libmeep-mpi-default17 - library for using parallel (OpenMPI) version of meep
+libmeep-openmpi-dev - development library for using parallel (OpenMPI) version of meep
+libmeep-openmpi17 - library for using parallel (OpenMPI) version of meep
+libmeep17 - library for using meep
+libmime-lite-html-perl - Transform HTML page into MIME email
+libmimetic-dev - C++ MIME library (development)
+libmimetic-doc - C++ MIME library (documentation)
+libmimetic0v5 - C++ MIME library (runtime)
+libminimap-dev - development headers for libminimap
+libminimap0 - library for approximate mapping of long biosequences
+libminion-perl - job queue for Mojolicious
+libmodule-extract-use-perl - Perl module to extract which modules some code uses
+libmodule-extractuse-perl - Perl module to find out modules used by the specified Perl source
+libmodule-find-perl - module to find and use installed Perl modules
+libmodule-install-rdf-perl - advanced metadata for your Perl packaging
+libmodule-path-perl - module to get the full path to a locally installed Perl module
+libmodule-reader-perl - module to find and read perl modules like perl does
+libmono-profiler-gui-thread-check - Mono profiler library to debug GUI threading issues
+libmoox-file-configdir-perl - Moo extension for File::ConfigDir
+libmrml1-dev - libmrml development files
+libmrml1v5 - Multimedia Retrieval Markup Language
+libmxml-dev - small XML parsing library (development)
+libmxml1 - small XML parsing library (runtime)
+libneon27 - HTTP and WebDAV client library
+libnet-amazon-s3-perl - Amazon S3 Perl API - Simple Storage Service
+libnet-frame-simple-perl - module to make crafting network frames easier
+libnet-mac-perl - module for representing and manipulating MAC addresses
+libnet-netmask-perl - module to parse, manipulate and lookup IP network blocks
+libnet-openssh-parallel-perl - run SSH jobs in parallel
+libnet-smtp-tls-butmaintained-perl - Perl module for providing SMTP client supporting TLS and AUTH
+libnet-smtp-tls-perl - Perl SMTP client library supporting TLS and AUTH
+libnginx-mod-http-dav-ext - WebDAV missing commands support for Nginx
+libnginx-mod-http-echo - Bring echo and more shell style goodies to Nginx
+libnss-docker - nss module for finding Docker containers
+liboasis-ocaml - Build-system generation for OCaml projects -- runtime
+liboasis-ocaml-dev - Build-system generation for OCaml projects -- development files
+liboasis-ocaml-doc - Architecture for building OCaml libraries and applications
+libpackage-locator-perl - module to find a package among CPAN-like repositories
+libpam-poldi - PAM module allowing authentication using a OpenPGP smartcard
+libpath-finddev-perl - Perl module to find a development source tree somewhere in an upper hierarchy
+libperlio-utf8-strict-perl - fast and correct UTF-8 Perl IO module
+libphobos2-ldc-shared-dev - LLVM D Compiler - Standard and runtime libraries, imports
+libpmem1-debug - Persistent Memory low level support library — debug build
+libpmemblk1 - Persistent Memory block array support library
+libpmemblk1-debug - Persistent Memory block array support library — debug build
+libpmemlog1 - Persistent Memory log file support library
+libpmemlog1-debug - Persistent Memory log file support library — debug build
+libpoco-dev - C++ Portable Components (POCO) Development files
+libpococrypto62 - C++ Portable Components (POCO) Crypto library
+libpocodata62 - C++ Portable Components (POCO) Data library
+libpocodatamysql62 - C++ Portable Components (POCO) Data MySQL library
+libpocodataodbc62 - C++ Portable Components (POCO) ODBC library
+libpocodatasqlite62 - C++ Portable Components (POCO) Data SQLite library
+libpocoencodings62 - C++ Portable Components (POCO) Encodings library
+libpocofoundation62 - C++ Portable Components (POCO) Foundation library
+libpocojson62 - C++ Portable Components (POCO) JSON library
+libpocomongodb62 - C++ Portable Components (POCO) Data MongoDB library
+libpoconet62 - C++ Portable Components (POCO) Network library
+libpoconetssl62 - C++ Portable Components (POCO) Network library with SSL
+libpocoredis62 - C++ Portable Components (POCO) Redis library
+libpocoutil62 - C++ Portable Components (POCO) Util library
+libpocoxml62 - C++ Portable Components (POCO) XML library
+libpocozip62 - C++ Portable Components (POCO) Zip library
+libpod-coverage-perl - checker for comprehensiveness of perl module documentation
+libpod-eventual-perl - module to read a POD as a series of trivial events
+libppix-quotelike-perl - module to parse Perl string literals and string-literal-like things
+libproc-invokeeditor-perl - Perl extension for starting a text editor
+libpuzzle-bin - quick similar image finder - runtime tool
+libpuzzle-dev - quick similar image finder - development files
+libpuzzle1 - quick similar image finder - shared library
+libqpx-dev - CD/DVD quality checker (development files)
+libqpx0 - CD/DVD quality checker (shared libraries)
+libquantum-entanglement-perl - Quantum Mechanic entanglement of variables in perl
+libratpoints-2.1.3 - library for finding rational points on hyperelliptic curves
+libratpoints-dev - development files for libratpoints
+libroutino-dev - Routino library development headers
+libroutino-slim0 - Routino slim routing library
+libroutino0 - Routino routing library
+librss-ocaml - RSS 2.0 parser and printer for OCaml (runtime)
+librss-ocaml-dev - RSS 2.0 parser and printer for OCaml (development)
+librsyntaxtextarea-java - Java library for syntax highlighting text component
+librsyntaxtextarea-java-doc - Java library for syntax highlighting text component (documentation)
+librust-backtrace+findshlibs-dev - Acquire a stack trace (backtrace) at runtime - feature "findshlibs"
+librust-ena+congruence-closure-dev - Rust implementation of union-find - feature "congruence-closure" and 1 more
+librust-ena+dogged-dev - Rust implementation of union-find - feature "dogged" and 1 more
+librust-ena-dev - Rust implementation of union-find - Rust source code
+librust-findshlibs-dev - Find shared libraries loaded in the current process - Rust source code
+librust-openssl-probe-dev - Helping to find SSL certificate locations on the system for OpenSSL - Rust source code
+librust-serde-ignored-dev - Find out about keys that are ignored when deserializing data - Rust source code
+librust-vcpkg-dev - Find native dependencies in a vcpkg tree at build time - Rust source code
+libscalar-properties-perl - perl module to add run-time properties on scalar variables
+libscannotation-java - Java annotation scanner
+libschedule-cron-events-perl - module to find out the times at which a cron entry would run
+libsensor-msgs-dev - Messages relating to Robot OS sensor, C/C++ interface
+libsequence-library-java - Textual Diff and Merge Library
+libsfasan5-armhf-cross - AddressSanitizer -- a fast memory error detector (soft float ABI)
+libsfasan6-armhf-cross - AddressSanitizer -- a fast memory error detector (soft float ABI)
+libshape-msgs-dev - Messages relating to Robot OS shape, C/C++ interface
+libsidplay1v5 - SID (MOS 6581) emulation library
+libsidplay2 - SID (MOS 6581) emulation library
+libsidplay2-dev - SID (MOS 6581) emulation library
+libsigscan-utils - binary signature scanning library -- Utilities
+libsiscone-dev - Seedless Infrared Safe Cone jet finder - development files
+libsiscone-spherical-dev - Spherical version of SISCone - development files
+libsiscone-spherical0v5 - Spherical version of SISCone
+libsiscone0v5 - Seedless Infrared Safe Cone jet finder
+libsisu-maven-plugin-java - Manage Sisu components and applications
+libsnp-sites1 - Shared libraries of the package snp-sites
+libsnp-sites1-dev - Static libraries and header files for the package snp-sites
+libstatistics-basic-perl - collection of very basic statistics modules
+libstatistics-normality-perl - module for testing normal distribution of data
+libstemmer-tools - Simple word stemming utility using Snowball
+libswingx-java - extensions to the Swing GUI toolkit
+libswingx-java-doc - extensions to the Swing GUI toolkit - documentation
+libsymbol-global-name-perl - module to find name and type of a global variable
+libsymspg-dev - C library for crystal symmetry determination (development files)
+libsymspg1 - C library for crystal symmetry determination
+libtaningia-dev - Development files for lib taningia
+libtaningia0 - Taningia is a generic communication library based on XMPP
+libtemplate-provider-encoding-perl - Template plugin to specify encoding
+libterm-readline-gnu-perl - Perl extension for the GNU ReadLine/History Library
+libterm-twiddle-perl - Perl module to twiddle a thingy while-u wait
+libtest-needsdisplay-perl - module to ensure that tests needing a display have one
+libtest-synopsis-perl - Perl module to test SYNOPSIS code in PODs
+libtest-useallmodules-perl - test module to do use_ok() for all the MANIFESTed modules
+libtext-diff-perl - Perl module to find differences in files and record sets
+libtext-findindent-perl - module to heuristically determine indentation style
+libtfbs-perl - scanning DNA sequence with a position weight matrix
+libtie-hash-expire-perl - Perl module providing hashes with keys that expire after a user-set period
+libtree-simple-visitorfactory-perl - collection of dispensing visitor objects for Tree::Simple
+liburi-find-delimited-perl - Find URIs which may be wrapped in enclosing delimiters
+liburi-find-perl - module to find URIs in arbitrary text
+liburi-find-simple-perl - simple interface to URI::Find
+libv-perl - module for printing the version of specified perl module(s)
+libvideo-fourcc-info-perl - Perl module to find information about codecs from its FourCC
+libweasel-widgets-dojo-perl - Dojo Widgets for Weasel
+libwebservice-validator-css-w3c-perl - interface to the W3C CSS Validator
+libx32asan4 - AddressSanitizer -- a fast memory error detector (x32)
+libx32asan5-amd64-cross - AddressSanitizer -- a fast memory error detector (x32)
+libx32asan5-i386-cross - AddressSanitizer -- a fast memory error detector (x32)
+libx32asan6-amd64-cross - AddressSanitizer -- a fast memory error detector (x32)
+libx32asan6-i386-cross - AddressSanitizer -- a fast memory error detector (x32)
+libxalan-c-doc - XSLT processor library for C++ [development docs]
+libxfdashboard-dev - GNOME shell like dashboard for Xfce - development files
+libxfdashboard0 - GNOME shell like dashboard for Xfce - shared library
+libxine2-misc-plugins - Input, audio output and post plugins for libxine2
+libxml-atom-microformats-perl - parse microformats in Atom content
+libxml-feed-perl - syndication feed parser and auto-discovery Perl module
+libxmlgraphics-commons-java - Reusable components used by Batik and FOP
+libxmlgraphics-commons-java-doc - Reusable components used by Batik and FOP (documentation)
+libzvbi-common - Vertical Blanking Interval decoder (VBI) - common files
+libzvbi-dev - Vertical Blanking Interval decoder (VBI) - development files
+libzvbi-doc - Vertical Blanking Interval decoder (VBI) - documentation files
+libzvbi0 - Vertical Blanking Interval decoder (VBI) - runtime files
+lighttpd-mod-webdav - WebDAV module for lighttpd
+lout - Typesetting system, an alternative to (La)TeX
+lptools - Tools for working with Launchpad
+lr - list files, recursively
+lrslib - package to enumerate vertices and extreme rays of a convex polyhedron
+lua-geoip - GeoIP library bindings for the Lua language
+lua-lpeg - LPeg library for the Lua language
+lua-moses - Utility library for functional programming in Lua
+lugaru - third person ninja rabbit fighting game
+magicmaze - rescue the maiden while avoiding the monsters
+magicrescue - recover files by looking for magic bytes
+magnus - Very simple screen magnifier
+maildir-utils - Set of utilities to deal with Maildirs (upstream name mu)
+maria - reachability analyzer for Algebraic System Nets
+mate-desktop - Library with common API for various MATE modules
+mate-hud - Run menubar commands, much like the Unity 7 HUD
+mate-utils - MATE desktop utilities
+mate-utils-common - MATE desktop utilities (common files)
+mathomatic-primes - prime number tools for mathomatic
+mazeofgalious - The Maze of Galious
+mblaze - UNIX utilities to deal with Maildir
+mdfinder.app - GNUstep Finder and system-wide search system
+mdm - Utilities for single-host parallel shell scripting
+meep - software package for FDTD simulation
+meep-mpi-default - software package for FDTD simulation, parallel (OpenMPI) version
+meep-openmpi - software package for FDTD simulation, parallel (OpenMPI) version
+meritous - action-adventure dungeon crawl game
+meritous-data - action-adventure dungeon crawl game (datafiles)
+metar - utility to download/decode METAR reports
+mimefilter - Strips some unwanted MIME parts out of a MIME message.
+minetest-mod-infinite-chest - Minetest module to get chests with an infinite number of slots
+minimap - tool for approximate mapping of long biosequences such as DNA reads
+minimap2 - versatile pairwise aligner for genomic and spliced nucleotide sequences
+misery - Simple accounting package for groups, clubs, holidays
+missidentify - find win32 applications
+mlv-smile - Find statistically significant patterns in sequences
+moria - Rogue-like game with an infinite dungeon, also known as umoria
+mp3check - tool to check mp3 files for consistency
+mp3val - program for MPEG audio stream validation
+msort - utility for sorting records in complex ways
+msort-gui - tcl/tk gui for msort utility
+mummer - Efficient sequence alignment of full genomes
+mummer-doc - Documentation for MUMmer
+mysqltuner - high-performance MySQL tuning script
+mz - versatile packet creation and network traffic generation tool
+nast - packet sniffer and lan analyzer
+nautilus-filename-repairer - Nautilus extension for filename encoding repair
+ncbi-tools-bin - NCBI libraries for biology applications (text-based utilities)
+netdiag - Net-Diagnostics (trafshow,netwatch,statnet,tcpspray,tcpblast)
+netdiscover - active/passive network address scanner using ARP requests
+netris - free, networked version of T*tris
+netwox - networking utilities
+netwox-doc - documentation for netwox toolbox
+ninvaders - A space invaders-like game using ncurses
+node-array-find-index - ES2015 Array#findIndex() ponyfill
+node-cosmiconfig - Find and load configuration from different locations
+node-deep-eql - Improved deep equality testing for Node.js and the browser
+node-delve - delve recursively into a value to retrieve a property
+node-detective - find all require() calls by walking the AST
+node-eslint-plugin-flowtype - flow type linting rules for ESLint
+node-find-cache-dir - finds the common standard cache directory
+node-find-up - Find a file by walking up parent directories
+node-findit2 - walk a directory tree recursively with events
+node-findup-sync - Node.js module to find the first matching file
+node-fined - Find a file given a declaration of locations
+node-flow-remove-types - Removes Flow type annotations from JavaScript files
+node-get-caller-file - inspects the v8 stack trace
+node-globule - Easy-to-use wildcard globbing library for Node.js
+node-irregular-plurals - Map of nouns to their irregular plural form
+node-jstimezonedetect - Finds the zone info key representing timezone setting in node
+node-liftoff - command line tool launcher
+node-locate-character - Helper to find the line and column of a character in a string
+node-p-locate - async version of Array#find
+node-parents - Node.js module returning all the parent directories
+node-pkg-dir - find the root directory of a npm package
+node-pkg-up - Find the closest package.json file
+node-postcss-minify-font-values - Minify font declarations with PostCSS
+node-rc - find, load, flatten json or ini application configuration
+node-read-pkg-up - Read the closest package.json file
+node-sshpk - library for finding and using SSH public keys
+node-ultron - event emitter enhancement for node.js
+node-which - Cross-platform 'which' module for Node.js
+node-which-module - Find the module object for something that was require()d
+norsp - predictor of non-regular secondary structure
+npm - package manager for Node.js
+num-utils - programs for dealing with numbers from the command line
+nutsqlite - Dietary nutrition analysis software
+oasis - Build-system generation for OCaml projects -- binaries
+ocaml-findlib - management tool for OCaml libraries
+octave-doctest - documentation tests for Octave
+octave-missing-functions - finds functions that are in Matlab but not in Octave
+onak - OpenPGP Key Server
+openguides - web application for managing a collaboratively-written city guide
+openuniverse - 3D Universe Simulator
+osmo-bsc-ipaccess-utils - Command line utilities for ip.access nanoBTS
+osmocom-ipaccess-utils - Command line utilities for ip.access nanoBTS
+pacvim - pacman game concept with vim command
+pagure-loadjson - git-centered forge using pygit2 - JSON load server
+paraclu - Parametric clustering of genomic and transcriptomic features
+parallel - build and execute command lines from standard input in parallel
+pbdagcon - sequence consensus using directed acyclic graphs
+pd-mrpeach - bag of tricks for Pure Data (Pd)
+peco - Simplistic interactive filtering tool
+pekka-kana-2 - 2D Oldschool platform game where you control a rooster
+pekka-kana-2-data - 2D Oldschool platform game where you control a rooster (data file)
+percona-toolkit - Command-line tools for MySQL and system tasks
+perforate - Utilities to save disk space
+pgloader - extract, transform and load data into PostgreSQL
+php-composer-ca-bundle - utility library to find a path to the system CA bundle
+php-finder-facade - convenience wrapper for Symfony's Finder component
+php-finder-facade-doc - convenience wrapper for Symfony's Finder component - documentation
+php-geoip - GeoIP module for PHP
+php-geshi - Generic Syntax Highlighter
+php-psr-simple-cache - Common interfaces for simple caching
+php-symfony-finder - find files and directories
+php-tideways - Tideways PHP Profiler Extension
+phpliteadmin - web-based SQLite database admin tool
+pilercr - software for finding CRISPR repeats
+pilon - automated genome assembly improvement and variant detection tool
+plait - command-line jukebox
+plasma-browser-integration - Chromium, Google Chrome, Firefox integration for Plasma
+plasma-discover - Discover software management suite
+plasma-discover-backend-flatpak - Discover software management suite - Flatpak backend
+plasma-discover-backend-fwupd - Discover software management suite - fwupd backend
+plasma-discover-backend-snap - Discover software management suite - Snap backend
+plink - whole-genome association analysis toolset
+plink1.9 - whole-genome association analysis toolset
+plink2 - whole-genome association analysis toolset
+pmdk-tools - Persistent Memory management tools
+pompem - Exploit and Vulnerability Finder
+porechop - adapter trimmer for Oxford Nanopore reads
+postgresql-12-prefix - Prefix Range module for PostgreSQL
+postgresql-12-rational - Precise fractional arithmetic for PostgreSQL
+powertop-1.13 - Linux tool to find out what is using power on a laptop
+pps-tools - LinuxPPS support tools and headers
+ppxfind - tool combining ocamlfind and ppx
+printer-driver-cups-pdf - printer driver for PDF writing via CUPS
+prodigal - Microbial (bacterial and archaeal) gene finding program
+progress - Coreutils Progress Viewer (formerly known as 'cv')
+prolix - tool to interactively filter chatty command output
+prottest - selection of best-fit models of protein evolution
+pscan-tfbs - search for transcription factor binding sites
+pxfw - Plextor firmware updater
+pypy-setuptools-scm - blessed package to manage your versions by scm tags for PyPy
+pyqt5-dev-tools - Development tools for PyQt5
+python-avahi - Python utility package for Avahi
+python-bleach-doc - whitelist-based HTML-sanitizing library (common documentation)
+python-bumps-doc - data fitting and Bayesian uncertainty modeling for inverse problems (docs)
+python-entrypoints - Discover and load entry points from installed packages (Python 2)
+python-git-doc - Python library to interact with Git repositories - docs
+python-jieba-doc - Jieba Chinese text segmenter (common documentation)
+python-mpmath-doc - library for arbitrary-precision floating-point arithmetic - Documentation
+python-objgraph-doc - Module for exploring Python object reference graphs (Documentation)
+python-pbr - inject useful and sensible default behaviors into setuptools - Python 2.x
+python-pdfrw-doc - PDF file manipulation library (documentation)
+python-plaster-doc - Python multi-format configuration file loader interface - Documentation
+python-pyluach-doc - Hebrew dates and Hebrew-Gregorian conversions (Documentation)
+python-setuptools-scm - blessed package to manage your versions by scm tags for Python 2
+python-sqlalchemy - SQL toolkit and Object Relational Mapper for Python
+python-stemmer - Python bindings for libstemmer - snowball stemming algorithms
+python-trie-doc - Pure Python implementation of the trie data structure (doc)
+python3-asttokens - annotate Python asbtract syntax trees with code references (Python 3)
+python3-bandit - Security oriented static analyzer for Python code - Python 3.x
+python3-biotools - Python3 bioinformatics utilities for high-throughput genomic sequencing
+python3-bitarray - Python3 module for efficient boolean array handling
+python3-bleach - whitelist-based HTML-sanitizing library (Python 3)
+python3-bumps - data fitting and Bayesian uncertainty modeling for inverse problems (Python 3)
+python3-cssselect - cssselect parses CSS3 Selectors and translates them to XPath 1.0
+python3-cutadapt - Clean biological sequences from high-throughput sequencing reads (Python 3)
+python3-datrie - Super-fast, efficiently stored Trie for Python 3
+python3-dcos - DCOS Common Modules - Python 3.x
+python3-dialog - Python module for making simple terminal-based user interfaces
+python3-diff-match-patch - robust algorithms for synchronizing plain text (Python 3 module)
+python3-django-housekeeping - Pluggable housekeeping framework for Django sites in Python 3
+python3-edlib - library for sequence alignment using edit distance (Python3 module)
+python3-envparse - environment variable parsing (Python 3)
+python3-espeak - Python bindings for eSpeak
+python3-geneimpacts - wraps command line tools to assess variants in gene sequences
+python3-geoip - Python3 bindings for the GeoIP IP-to-country resolver library
+python3-git - Python library to interact with Git repositories - Python 3.x
+python3-git-os-job - Show the OpenStack job logs for a commit - Python 3.x
+python3-guizero - module to allow quick and easy GUI creation (Python 3)
+python3-guizero-doc - module to allow quick and easy GUI creation (documentation)
+python3-ifaddr - Pure Python implementation for detecting IP addresses
+python3-importmagic - automagically add, remove and manage Python 3 imports
+python3-jieba - Jieba Chinese text segmenter (Python 3)
+python3-kdtree - container for kd-tree sorting for Python 3
+python3-kdtree-dbg - container for kd-tree sorting for Python 3 (debug extension)
+python3-meep - software package for FDTD simulation with Python
+python3-meep-mpi-default - software package for FDTD simulation with Python
+python3-meep-openmpi - software package for FDTD simulation with Python
+python3-mpmath - library for arbitrary-precision floating-point arithmetic (Python3)
+python3-multi-key-dict - Multi key dictionary implementation - Python 3.x
+python3-objgraph - Module for exploring Python object reference graphs
+python3-ofxparse - parser for Open Financial Exchange (.ofx) format files
+python3-parse - Parse provides the reverse function for format(), Python3 package
+python3-pdfrw - PDF file manipulation library (Python 3)
+python3-peakutils - utilities for detecting peaks in 1D data
+python3-pipdeptree - display dependency tree of the installed Python 3 packages
+python3-plaster - Python multi-format configuration file loader interface - Python 3.x module
+python3-port-for - local TCP ports management for Python
+python3-portpicker - Python 3 module to find unused network ports to bind to
+python3-pygeoip - Python API for Maxmind's binary GeoIP databases
+python3-pyicloud - wrapper to access iPhone and Calendar data in the iCloud
+python3-pyluach - Hebrew dates and Hebrew-Gregorian conversions (Python3 version)
+python3-pysal - Python Spatial Analysis Library - Python 3
+python3-pyvo - Python 3 library for data services of the Virtual observatory (VO)
+python3-reentry - plugin manager based on setuptools entry points (Python 3)
+python3-reproject - Reproject astronomical images with Python 3
+python3-requirements-detector - finds and lists the requirements of a Python project
+python3-restructuredtext-lint - reStructuredText linter - Python 3.x
+python3-roswtf - Tool for diagnosing issues with a running Robot OS system - Python 3
+python3-sensor-msgs - Messages relating to Robot OS sensor, Python 3 interface
+python3-setuptools-scm - blessed package to manage your versions by scm tags for Python 3
+python3-spglib - C library for crystal symmetry determination - Python3 bindings
+python3-stemmer - Python 3 bindings for libstemmer - snowball stemming algorithms
+python3-subliminal - Python library to search and download subtitles (python3 version)
+python3-textile - Python 3 parser for the Textile markup
+python3-translation-finder - Translation file finder for Weblate
+python3-trie - Pure Python implementation of the trie data structure (Python 3)
+python3-vtkplotter - python module for 3D scientific visualization with VTK
+python3-zope.testrunner - Flexible test runner with layer support for Python 3
+qlogo - Language using turtle graphics famous for teaching kids
+qpxtool - CD/DVD quality checker
+qtxdg-dev-tools - Tools for QtXdg
+r-bioc-dnacopy - R package: DNA copy number data analysis
+r-bioc-lpsymphony - Symphony integer linear programming solver in GNU R
+r-cran-broom - convert statistical analysis objects into tidy data frames with GNU R
+r-cran-dosefinding - Planning and Analyzing Dose Finding experiments
+r-cran-genabel - GNU R package for genome-wide SNP association analysis
+r-cran-genabel.data - data package for genome-wide SNP association analysis
+r-cran-httpcode - GNU R HTTP Status Code Helper
+r-cran-insight - GNU R easy access to model information for various model objects
+r-cran-irace - GNU R iterated racing for automatic algorithm configuration
+r-cran-matching - multivariate and propensity score matching with balance optimization
+r-cran-phytools - GNU R phylogenetic tools for comparative biology
+r-cran-pkgbuild - find tools needed to build GNU R packages
+r-cran-rann - Fast Nearest Neighbour Search Using L2 Metric
+r-cran-rcppgsl - GNU R package for integration with the GNU GSL
+r-cran-rprojroot - GNU R finding files in project subdirectories
+r-cran-rversions - query GNU R versions, including 'r-release' and 'r-oldrel'
+r-cran-systemfonts - system native font finding for GNU R
+r-cran-webgestaltr - find over-represented properties in gene lists
+randomplay - command-line based shuffle music player that remembers songs between sessions
+ranger - Console File Manager with VI Key Bindings
+ratpoints - find rational points on hyperelliptic curves
+rdfind - find duplicate files utility
+recoverdm - recover files on disks with damaged sectors
+redfishtool - redfish command-line client
+refind - boot manager for EFI-based computers
+remembrance-agent - Emacs mode to help find relevant texts
+repeatmasker-recon - finds repeat families from biological sequences
+resfinder - identify acquired antimicrobial resistance genes
+resfinder-db - ResFinder database is a curated database of acquired resistance genes
+resfinder-example - identify acquired antimicrobial resistance genes (example data)
+ries - find algebraic equations, given their solution
+rmlint - Extremely fast tool to remove filesystem lint
+rmlint-doc - HTML documentation for rmlint
+rmlint-gui - GTK+ frontend to rmlint
+rnahybrid - Fast and effective prediction of microRNA/target duplexes
+robotfindskitten - Zen Simulation of robot finding kitten
+ros-cmake-modules - Robot OS CMake Modules
+ros-sensor-msgs - Messages relating to Robot OS sensor, definitions
+ros-shape-msgs - Messages relating to Robot OS shape, definitions
+roslang - Common metapackage for all Robot OS client libraries
+routino - Set of tools to find a path between two points
+routino-common - Routino data
+routino-www - Web frontend for routino
+rpl - replace strings in files
+rsakeyfind - locates BER-encoded RSA private keys in memory images
+rt4-extension-calendar - Calendar view for Request Tracker 4
+rtags - C/C++ client/server indexer with integration for Emacs
+rubiks - Small collection of Rubik's cube solvers
+ruby-appraisal - Find out what your Ruby gems are worth
+ruby-crb-blast - Run conditional reciprocal best blast
+ruby-data-uri - URI::Data class for parsing RFC2397 data URIs
+ruby-fastimage - Ruby library for finding the size or type of image with minimal dependency
+ruby-filepath - small library to manipulate paths
+ruby-geocoder - Complete Ruby geocoding solution
+ruby-get-process-mem - get memory usage of a process in Ruby
+ruby-getspg - C library for crystal symmetry determination - Ruby bindings
+ruby-gettext-i18n-rails-js - make your .po files available to client side javascript as JSON
+ruby-hike - Ruby library to find files in a set of paths
+ruby-http-accept-language - Ruby library that finds out which locale the user prefers
+ruby-librarian - framework for writing bundlers
+ruby-naught - Naught is a toolkit for building Null Objects
+ruby-rspec-profiling - Profile RSpec test suites
+safecopy - data recovery tool for problematic or damaged media
+samhain - Data integrity and host intrusion alert system
+samplv1 - polyphonic sampler synthesizer - standalone
+samplv1-common - polyphonic sampler synthesizer - common files
+samplv1-lv2 - polyphonic sampler synthesizer - LV2 plugin
+scanmem - locate and modify a variable in a running process
+scim - smart common input method platform
+searchmonkey - search files using regular expressions aiming to replace find/grep tools
+segemehl - short read mapping with gaps
+sendmail-doc - powerful, efficient, and scalable Mail Transport Agent (documentation)
+sensible-mda - Mail Delivery Agent wrapper
+sepia - Simple Emacs-Perl InterAction
+sga - de novo genome assembler that uses string graphs
+sgt-puzzles - Simon Tatham's Portable Puzzle Collection - 1-player puzzle games
+shatag - tool to store file checksums in extended attributes, and work with them
+shellia - shell interactive library
+sigil - multi-platform ebook editor
+sigil-data - multi-platform ebook editor - data files
+signify-openbsd - Lightweight cryptographic signing and verifying tool
+silkaj - command-line client for Duniter Ğ1 currency
+simhash - generate similarity hashes to find nearly duplicate files
+similarity-tester - Find lexical similarities between files
+simstring-bin - approximate string matching/retrieval utility
+simstring-dev - fast and simple algorithm for approximate string matching/retrieval
+singularity - game where one becomes the singularity
+siscone-doc-html - Developer's reference manual of SISCone (HTML)
+siscone-doc-pdf - Developer's reference manual of SISCone (PDF)
+siscone-examples - Seedless Infrared Safe Cone jet finder - example files
+sixer - add Python 3 support to Python 2 applications using six - Python 3.x
+skrooge-common - Skrooge architecture independent files
+slowmovideo - create slow-motion videos from your footage
+smbc - samba-commander - curses based samba network browser
+snacc - ASN.1 to C or C++ or IDL compiler
+snap - location of genes from DNA sequence with hidden markov model
+snoopy - execve() wrapper and logger
+snp-sites - Binary code for the package snp-sites
+source-extractor - Source extractor for astronomical images
+speechd-up - Interface between Speech Dispatcher and SpeakUp
+spew - I/O performance measurement and load generation tool
+ssdeep - recursive piecewise hashing tool
+staden - DNA sequence assembly (Gap4/Gap5), editing and analysis tools
+staden-common - Architecture independent files for Staden
+stda - simple tools for data analysis (stda)
+stealth - stealthy File Integrity Checker
+stealth-doc - stealthy File Integrity Checker documentation
+stegsnow - steganography using ASCII files
+stumpwm - tiling, keyboard driven Common Lisp window manager
+subliminal - Command-line tool to search and download subtitles
+subliminal-nautilus - Nautilus extension to search and download subtitles
+subversion-tools - Assorted tools related to Apache Subversion
+supertransball2 - Thrust type of game
+supertransball2-data - data files for supertransball2
+surfraw-extra - extra surfraw search tools with heavy dependencies
+swish-e - Simple Web Indexing System for Humans - Enhanced
+synapse - semantic file launcher
+syncthing-discosrv - decentralized file synchronization - discovery server
+tanglet - single player word finding game based on Boggle
+tanglet-data - single player word finding game based on Boggle - data files
+taptempo - command line tap tempo
+texlive-extra-utils - TeX Live: TeX auxiliary programs
+texlive-lang-english - TeX Live: US and UK English
+texlive-lang-german - TeX Live: German
+texlive-latex-extra - TeX Live: LaTeX additional packages
+texlive-xetex - TeX Live: XeTeX and packages
+theseus - superimpose macromolecules using maximum likelihood
+theseus-examples - superimpose macromolecules using maximum likelihood (examples)
+tigr-glimmer - Gene detection in archea and bacteria
+tint - Tetris clone for text based terminal
+tintin++ - classic text-based MUD client
+tipp10 - free open source touch typing software
+tkdesk - Tk/tcl based X11 Desktop/File manager
+todotxt-cli - simple and extensible shell script for managing todo.txt file
+toppler - clone of the "Nebulus" game on old 8 and 16 bit machines
+transdecoder - find coding regions within RNA transcript sequences
+transdecoder-doc - find coding regions within transcripts
+transtermhp - find rho-independent transcription terminators in bacterial genomes
+trovacap - tool to find Italian ZIP codes
+trovacap-data - tool to find Italian ZIP codes - ZIP codes database
+tuxtype - Educational Typing Tutor Game Starring Tux
+tvtime - analog television display application
+ubuntu-dev-tools - useful tools for Ubuntu developers
+uhd-host - universal hardware driver for Ettus Research products - host apps
+unburden-home-dir-doc - HTML documentation for unburden-home-dir
+unhide - Forensic tool to find hidden processes and ports
+unhide.rb - Forensics tool to find processes hidden by rootkits
+uniutils - Tools for finding out what is in a Unicode file
+vbrfix - corrects MP3 files that have incorrect VBR information
+vim-ctrlp - fuzzy file, buffer, mru, tag, etc. finder for Vim
+vim-scripts - plugins for vim, adding bells and whistles
+vim-syntastic - Syntax checking hacks for vim
+virulencefinder - identify virulence genes in total or partial sequenced isolates of bacteria
+virulencefinder-examples - example data for virulencefinder
+vizigrep - graphical file contents search tool using regular expressions
+voronota - Voronoi diagram-based tool to find atom contacts
+vulture - scans for unused ("dead") code in a Python program
+webext-dav4tbsync - Provide CalDAV & CardDAV for TbSync
+webext-form-history-control - extension to manage form history
+websploit - Web exploitation framework
+wesnoth-1.14-ei - "The Eastern Invasion" official campaign for Wesnoth (branch 1.14)
+wesnoth-1.14-tools - tools for campaign developers for Wesnoth (branch 1.14)
+wesnoth-1.14-utbs - "Under the Burning Suns" official campaign for Wesnoth (branch 1.14)
+wfuzz - Web application bruteforcer
+whatmaps - tool to find processes mapping shared objects
+whichman - Fault tolerant search utilities: whichman, ftff, ftwhich
+whichwayisup - 2D platform game with a slight rotational twist
+whiff - helper to find the first executable of a series of alternatives
+whohas - query multiple distributions' package archives
+wiggle - apply patches with conflicting changes
+winff - graphical video and audio batch converter using ffmpeg or avconv
+xautomation - Control X from the command line, and find things on the screen
+xbomb - 'minesweeper' game with squares, hexagons or triangles
+xdemineur - Yet another minesweeper for X
+xfce4-appfinder - Application finder for the Xfce4 desktop environment
+xfce4-goodies - enhancements for the Xfce4 Desktop Environment
+xfce4-panel-dev - Xfce4 panel development files
+xfdashboard - GNOME shell like dashboard for Xfce
+xfdashboard-plugins - GNOME shell like dashboard for Xfce - plugins
+xfonts-bolkhov-75dpi - 75 dpi Unicode Cyrillic fonts for X (Cyr-RFX collection)
+xfonts-bolkhov-cp1251-75dpi - 75 dpi CP1251 encoded Cyrillic fonts for X (Cyr-RFX collection)
+xfonts-bolkhov-isocyr-75dpi - 75 dpi ISO 8859-5 encoded Cyrillic fonts for X (Cyr-RFX collection)
+xfonts-bolkhov-koi8r-75dpi - 75 dpi KOI8-R encoded Cyrillic fonts for X (Cyr-RFX collection)
+xfonts-bolkhov-koi8u-75dpi - 75 dpi KOI8-U encoded Cyrillic fonts for X (Cyr-RFX collection)
+xfonts-terminus - Fixed-width fonts for fast reading
+xmms2-scrobbler - Audioscrobbler/Last.FM client for XMMS2
+xotcl-doc - Extended Object Tcl (XOTcl): Object orientation for Tcl - manual
+xwrits - reminds you to take a break from typing
+yaha - find split-read mappings on single-end queries
+yakuake - Quake-style terminal emulator based on KDE Konsole technology
+yforth - small freeware Forth environment in ANSI C
+yokadi - commandline todo system
+astromenace - hardcore 3D space shooter with spaceship upgrade possibilities
+astromenace-data-src - data files for AstroMenace game
+boinc-virtualbox - metapackage for virtualbox-savvy projects
+cytadela - old-school first person shooter game
+divxenc - shell script to encode DVDs to FMP4/DivX
+fasta3 - tools for searching collections of biological sequences
+fasta3-doc - user guide for FASTA tools
+gfaim - A small utility that allows you to find quickly a lot of recipes
+gfaim-data - A utility that allows you to find lots of recipes written in French
+hwb - Hardware Book
+mp3diags - find issues in MP3 files and help to solve them
+mpglen - scan through a MPEG file and count the number of GOPs and frames
+out-of-order - comedy science fiction adventure game
+pgmfindclip - automatically find a clipping border for a sequence of pgm images
+python3-pynliner - CSS-to-inline-styles conversion tool for HTML - Python 3.x
+runescape - Multiplayer online game set in a fantasy world
+svtools - Utilities for daemontools and multilog
+uqm - The Ur-Quan Masters - An inter-galactic adventure game
+uqm-content - The Ur-Quan Masters - Game data files
+uqm-music - The Ur-Quan Masters - Game music files
+uqm-russian - Russian addon for 'The Ur-Quan Masters' game
+uqm-voice - The Ur-Quan Masters - Voice files
+lazygit - simple terminal UI for git commands
