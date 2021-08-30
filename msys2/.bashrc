@@ -142,4 +142,11 @@ if [ -r ~/.projectVars ]; then
     . ~/.projectVars
     echo "~/.projectVars loaded"
 fi
+
 echo "Bashrc file loaded"
+
+export JAVA_CMD='/c/Program Files/Eclipse Foundation/jdk-11.0.12.7-hotspot/bin/java'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/Carl/sdkman"
+[[ -s "/home/Carl/sdkman/bin/sdkman-init.sh" ]] && source "/home/Carl/sdkman/bin/sdkman-init.sh"
