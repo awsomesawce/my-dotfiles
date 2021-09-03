@@ -1,0 +1,13 @@
+{
+    "files": [
+        {
+            "name": "handle.sh",
+            "location": "lib/handle.sh"
+        },
+        {
+            "name": "handleArgs.sh",
+            "location": "lib/handleArgs.sh"
+        }
+    ],
+    "description": "Attempt to build a shell-script library"
+}
