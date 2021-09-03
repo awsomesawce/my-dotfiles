@@ -17,4 +17,4 @@ export PATH=$HOME/.dotfiles/bin:$HOME/gems/bin:$HOME/bin:/usr/local/bin:/home/ca
 
 # github cli completion for zsh
 eval $(gh completion -s zsh)
-PATH="$PATH:/home/carlc/.npm-packages/bin"
+export PATH="/home/carlc/.npm-packages/bin:$PATH" # .npm-packages must come first!
