@@ -46,3 +46,4 @@ alias mv='nocorrect mv -i'
 alias aptt=aptitude
 alias chtsh=cheatsheet
 alias pydoc=/usr/bin/pydoc3 # make pydoc point to pydoc3, otherwise it points to msys2 bin
+alias pipx='python3 -m pipx'

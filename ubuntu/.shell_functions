@@ -78,14 +78,21 @@ hexConvert() {
 }
 # The above function will take user input and convert it to hex without having to type the whole command out.
 gitaddandcommit() {
-    git add . && git commit -m "$@" 
+    if [ "$#" -eq 0 ]; then
+        git add . && git commit
+    else
+        git add . && git commit -m "$*"
+    fi
     return 0 
 }
 
 readmeDir() {
+    # This function is mainly for reading readmes that reside in oh-my-zsh plugin dirs
     local pagecommand=bat.exe
-    if [ -f "$*/README.md" ]; then
-        eval $pagecommand "$*/README.md"
+    local myreadme="$*/README.md"
+    if [ -f "$myreadme" ]; then
+        echo "Opening $myreadme"
+        eval $pagecommand "$myreadme"
     else
         echo "README.md not found in that directory."
     fi
