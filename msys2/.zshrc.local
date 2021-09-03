@@ -234,7 +234,7 @@ compinit
 autoload -Uz bashcompinit # node comp script is a bash completion script.
 bashcompinit
 nodeschool=/d/Carl/Documents/GitHub/node-school
-. "$nodeschool/node_comp" # Node completion script
+. ~/.zfunc/_node # Node completion script
 
 
 fpath=("~/gitstuff/zsh-completions/src" $fpath)
