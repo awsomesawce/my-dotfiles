@@ -1,9 +1,10 @@
 # Carl's kickass Powershell Profile!
-# It's a little messy but it gets the job done.
+# Description: Powershell Profile that is sourced at every invocation of Powershell.
+# 	Use `pwsh -nop` for cli scripting from another shell.
 # Author: Carl C. (awsomesawce at outlook dot com)
-# Date: 4/26/2021
+# Date: 6/22/2021
 # License: MIT
-# GitRepo: https://github.com/awsomesawce/scripts-pwsh/config
+# GitRepo: https://github.com/awsomesawce/scripts-pwsh/
 # OriginalLocation: D:\Carl\Documents\Powershell
 # Notes: Adding params to used functions.
 # 	> All small functions are not indented the same way as fleshed-out functions.
@@ -12,75 +13,86 @@
 
 # Disable Microsoft Telemetry
 $env:POWERSHELL_TELEMETRY_OPTOUT = 1
+$env:DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT = 1
 
-# Add requires statements because I'm using ternary operators.
-#Requires -Version 6.2
-#Requires -PSEdition Core
-
-### IMPORTANT ENV VARIABLES ###
-# Set `$env:PAGER` if it is null or empty, otherwise leave it alone.
-#([string]::IsNullOrWhiteSpace($env:PAGER)) ? ($env:PAGER = "less" && Write-Output "Set `$env:PAGER to $env:PAGER.") : (Write-Output "`$env:PAGER already set to $env:PAGER")
-# Set `$env:EDITOR` if it is null or empty, otherwise leave it alone and report back.
-#([string]::IsNullOrWhitespace($env:EDITOR)) ? ($env:EDITOR = "vim" && Write-Output "Set `$env:EDITOR to $env:EDITOR.") : (Write-Output "`$env:EDITOR already set to $env:EDITOR")
-$env:PAGER = "less" # TODO: add if statements for env var declaration.
-$env:EDITOR = "vim" # TODO: Use `Set-Item Env:\VAR` syntax instead.
-
-$codepage = $(chcp)
-# Check if codepage is set to 65001, and set it if it is not
-($codepage -like "*65001*") ? ("Code page is already set to utf8!  Yay!") : (chcp 65001 > $null)
-# Import current modules.
 Import-Module posh-git
-Import-Module oh-my-posh
+#Import-Module oh-my-posh # temp disable
 #Import-Module z
 # Set prompt
-Set-PoshPrompt -Theme fish && Write-Verbose "Set posh prompt to fish"
+#Set-PoshPrompt -Theme zash && Write-Verbose "Set posh prompt to zash"
+
+# Adjust Python Path.
+#${env:Python PATH} = "${env:Python PATH};C:\Users\Carl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts"
+
+# TODO: Create a profile version for use with Powershell 5
+
+# This little block of code tests whether Env:\PAGER has the correct
+# value, then it acts accordingly .
+#### TODO ####: Create sourcable script that sets env vars in a more thorough way using type literals like above.
+# That way it doesn't muck up the profile.
+$env:PAGER = if (Get-Command less -ErrorAction ignore) {"less"} else {"more"}
+# TODO: add if statements for env var declaration.
+$env:EDITOR = "vim"
+# Sets the windows code page to UTF8 if it is not set, and reports back if it is correctly set.
+$codepage = $(chcp)
+if ($codepage.EndsWith("65001")) {
+    Write-Output "codepage is correctly set"
+} else {
+    Write-Output "Setting codepage"
+    chcp 65001
+    $codepage = $(chcp)
+    Write-Output "Codepage is now set to 65001"
+}
+
 # Source other_functions script and projectvars script.
-$PSDirectory = (Split-path -Parent $PROFILE)
+$PSDirectory = 'D:/Carl/Documents/Powershell'
 
 # BEGIN Source Scripts {{{
-# TODO: Clean this up a bit.
-if ([string]::IsNullOrWhitespace($scrps)) {
-    $scrps = "$env:USERPROFILE\gitstuff\scripts-pwsh"} else {Write-Error "`$scrps var empty"
-    }
+
+# Set this value to wherever you have the git repo installed
+$scrps = if ([string]::IsNullOrWhitespace($scrps)) {
+    "$env:USERPROFILE\gitstuff\scripts-pwsh"}
 $Script:scriptspwsh = "$scrps\config"
-$otherFunctionsScript = "$Script:scriptspwsh\other_functions.ps1"
+$otherFunctionsScript = "$scriptspwsh\other_functions.ps1"
+$projectvarsScript = "$scriptspwsh\projectvars.ps1"
+$newProjVarsScript = "$scriptspwsh\newProjVars.ps1"
 
 # Try ternary operation.
 # TODO: Add a failsafe so it works with Windows Powershell too.
 if (Test-Path "$otherFunctionsScript") {
     . "$otherFunctionsScript"
-    Write-Verbose "`$otherFunctionsScript has been loaded.  Its path = $otherFunctionsScript"
+    Write-Output "`$otherFunctionsScript has been loaded.  Its path = $otherFunctionsScript"
 } else {
     Write-Error "$otherFunctionsScript file not found."
 }
 
-$projectvarsScript = "$Script:scriptspwsh\projectvars.ps1"
-if ($PSVersionTable.PSVersion.Major -gt 5) {
-    # Use ternary operator
-    (Test-Path $projectvarsScript) ? (. $projectvarsScript) : (Write-Output "projectvars.ps1 not found")
+# ProjectvarsScript not working, use newProjVars.ps1 instead
+if (test-path $projectvarsScript) {
+    Write-Host -Fore yellow "Loading projectvars script"
+    . $projectvarsScript
 } else {
-    if (Test-Path "$projectvarsScript") {
-	. "$projectvarsScript"
-    } else {
-	Write-Error "Could not find $projectvarsScript"
-    }
+    Write-Host -Fore red "`$projectvarsScript not found!"
 }
+
+if (test-path $newProjVarsScript) {
+    . $newProjVarsScript
+    write-host -fore cyan "Loaded $newProjVarsScript"
+} else { Write-Error "$newProjVarsScript not found" }
+
 # BEGIN set psdir variable to local powershell directory, and set other variables.
 $gitDir="D:/Carl/Documents/GitHub"
 $oneDrive="$env:OneDrive"
-$localAppData="C:/Users/Carl/AppData/Local"
-$globalAppData="D:/Carl/Appdata"
+$localAppData="$env:LOCALAPPDATA"
+$globalAppData="$env:APPDATA"
 # END set psdir variable to local powershell directory, and set other variables.
-# The environment variable below sets XDG_CONFIG_HOME, which then tells nvim to look for it's
-# init file in that directory instead of AppData/local/nvim
-# That is bad, we have no configuration in ~/.config.
-# If you want to start nvim without having any config, set the $env:XDG_CONFIG_HOME variable.
-#$env:XDG_CONFIG_HOME="C:\Users\Carl\.config"
+
+### TODO: Make this a sourcable module for easy maintainability.
+
+$pwshconfig = (Get-Item "C:\Users\Carl\gitstuff\scripts-pwsh\config")
+$pwshconfigstr = if ($pwshconfig) {$pwshconfig.FullName}
 
 # Source PATH_mods.ps1
-$Script:pwshconfig = (Get-Item "C:\Users\Carl\gitstuff\scripts-pwsh\config")
-$Script:pwshconfigstr = "C:\Users\Carl\gitstuff\scripts-pwsh\config"
-$Script:pathModsScript = "$pwshconfigstr\PATH_mods.ps1"
+$pathModsScript = "$pwshconfigstr\PATH_mods.ps1"
 if (Test-Path $pathModsScript) {
     Write-Verbose "Sourcing $pathModsScript"
     . "$pathModsScript"
@@ -88,19 +100,8 @@ if (Test-Path $pathModsScript) {
     Write-Error "PATH_mods.ps1 file not existing"
 }
 
-# Source choco_functions.ps1
-function Source-Chocofuncs {
-    if (Test-Path "$pwshconfigstr\choco_functions.ps1") {
-	Write-Verbose "Sourcing $pwshconfigstr\choco_functions.ps1"
-	. "$pwshconfigstr\choco_functions.ps1"
-    } else {
-	Write-Error "choco_functions script is not where its supposed to be"
-    }
-}
-Source-Chocofuncs
-
 function Source-UsefulNavFunctions {
-    $usefulNavFunctions = "C:\Users\Carl\gitstuff\scripts-pwsh\Scripts\useful-nav-functions.ps1"
+    $usefulNavFunctions = "C:\Users\Carl\gitstuff\scripts-pwsh\ScriptsAndFunctions\useful-nav-functions.ps1"
     if (Test-Path "$usefulNavFunctions") {
 	Write-Information "Dot-Sourcing $usefulNavFunctions"
 	. "$usefulNavFunctions"
@@ -110,83 +111,45 @@ function Source-UsefulNavFunctions {
 }
 Source-UsefulNavFunctions
 
+$Script:textFunctions = if ($scrps) {"$scrps\ScriptsAndFunctions\textFunctions.ps1"}
+if (Test-Path $Script:textFunctions) {
+    . "$Script:textFunctions"
+} else {
+    Write-Error "$Script:textFunctions not found"
+}
+
+# NOTE: Array that lists every script file that is sourced upon pwsh init.
+# TODO: Implement modules for each file that involves base functions that don't require other files. INCOMPLETE
+# 	NOTE on projectvarsscript: Temporarily using $newProjVarsScript instead.
+$mainConfigScripts = @("$projectvarsScript", "$PROFILE", "$otherFunctionsScript")
+$Script:sourcedPwshFiles = @( $mainConfigScripts,
+"$pathModsScript", 
+"$scrps\ScriptsAndFunctions\useful-nav-functions.ps1", 
+"$Script:textFunctions", 
+"$scrps\config\other_functions.ps1"
+"$newProjVarsScript")
+
+foreach ($i in $Script:sourcedPwshFiles) {
+    Write-Output "Sourced $i"
+}
 # END Source Scripts }}}
 
 $DOTFILESGIT = "$env:USERPROFILE\gitstuff\my-dotfiles"
-# Fixing functions
-# DONE: Get rid of unnecessary functions in $PROFILE
-# Aliases
-# use single-quotes for strings with spaces
 # TODO: In progress: Moving Set-Alias declarations to separate
 # file. other_functions.ps1 in config dir.
-Function lsWide {Get-ChildItem | Format-Wide}
-Set-Alias -Name lsw -Value lsWide -Description 'ls but format-wide'
-Set-Alias -Name list -Value Get-ChildItemColorFormatWide
-Set-Alias -Name lsc -Value Get-ChildItemColorFormatWide -Description "A better color ls"
+Set-Alias -Name lscolor -Value Get-ChildItemColorFormatWide -Description "A better color ls"
 
-# This one sets an alias for the ri command in ruby
-set-alias -name rubyri -value D:\Ruby27-x64\bin\ri.cmd -Description "A workaround for ruby's ri, cuz in pwsh ri is remove-item"
-Set-Alias -Name exp -Value explorer.exe
-Set-Alias -Name man -Value D:\Cygwin\bin\man.exe -Description "Show info file from cygwin which includes a lot more documentation than the windows emacs info"
-#Set-Alias -Name lsc -Value Get-ChildItemColorFormatWide -Description "Better alias for color ls"
-## TODO: Move Aliases and Functions into their own respective files and source each file.
-## Functions
+## Source Profile_Extra.ps1
+## Profile_Extra.ps1 contains a bunch of aliases and quick functions that may or may not still be necessary, but we're
+## Keeping it for now.
 
-# Next is a function that allows me to change to my powershell directory where my profile is.
-Function GotoPSDir {Set-Location -Path $PSDirectory}
-Set-Alias -Name psdir -Value GotoPSDir
-
-# This is just a function to cd to my notes dir
-Set-Variable -Name notesdir -Value D:\Carl\OneDrive\Notable\notes\ -Description "Notable notes directory"
-Function GotoNotesDir {Set-Location -Path $notesdir}
-# Set-Alias to make notes dir even more easily accessible
-Set-Alias -Name ndir -Value GotoNotesDir
-# Function for invoking ubuntu wsl with carlc user and zsh shell
-# Function to get to standard parent git directory
-Function gitdir {Set-Location -Path $gitDir}
-Function nodeschool {Set-Location -Path "D:\Carl\Documents\GitHub\node-school"}
-# get to emacs org directory located in OneDrive quickly.
-# This is a function for git status, not Get-GitStatus, which is a posh-git cmdlet.
-Function gpgmee {gpg -se -r Carl}
-Function gcift {Get-ChildItem | Format-Table}
-Function npmDoc {Set-Location -Path 'C:\Program Files\nodejs\node_modules\npm\docs'}
-# Backup folder for dotfiles in both Windows and Ubuntu
-# Easily page thru long ls lists
-Function lspage {Get-ChildItem | less}
-Set-Alias -Name lsl -Value lspage
-Set-Alias -Name gitbash -Value 'D:\Program Files\Git\git-bash.exe'
-# TODO: Instead of creating external scripts, you can create a function for each.
-Set-Alias -Name ... -Value D:\Carl\Documents\PowerShell\Scripts\backwards_cd.ps1 -Description "go up two directories."
-Set-Alias -Name .. -Value D:\Carl\Documents\PowerShell\Scripts\backwards_cd1.ps1 -Description "go up a directory"
-Set-Alias -name ipinfo -Value D:\Carl\Documents\PowerShell\Scripts\getipinfo.ps1
-# Alias for Get-GitStatus function provided by posh-git
-set-alias -Name gitstat -Value Get-GitStatus
-# ren is also an alias for rename-item
-Set-Alias -Name ghlp -Value Get-Help -Description "A shorter gethelp."
-# Reset rememberfile variable to quicktodo instead
-Set-Variable -Name quicktodo -Value D:\Carl\OneDrive\TODO\quicktodo.md
-Set-Variable -Name rememberfile -Value D:\Carl\OneDrive\TODO\quicktodo.md
-Set-Variable -Name remember -Value $oneDrive/remember.md
-Set-Variable -Name DESKTOP -Value D:\Carl\OneDrive\Desktop\ -Description "Shortcut to the Desktop folder"
-Write-Output "Welcome Carl!"
-Set-Alias -Name shmd -Value Show-Markdown -Description "Alias for Show-Markdown"
-# TODO: Organize aliases and functions.
-# TODO: Put all aliases in separate script and source the script.
-# Hello from embedded nvim!
-# Use `K' to see a docstring for the cmdlet at point in `nvim'
-Set-Variable -Name NVIMINITVIM -Value C:\Users\Carl\AppData\Local\nvim\init.vim -Description "Main config file for neovim"
-# Save this and other weird variables to a sourcable pwsh script:
-Set-Variable -Name randomnotes -Value D:\Carl\OneDrive\TODO\randomoutput.md
-Set-Variable pwshsnippets -Value "D:\Carl\OneDrive\snippets\pwsh\powershell_snippets.txt" -Description "out-file for writing quick powershell snippets from the command line"
+$ProfileExtra = if (test-path "$scrps\config\Profile_Extra.ps1") {"$scrps\config\Profile_Extra.ps1"} else {return Write-Error "ProfileExtra not found"}
+. "$ProfileExtra"
 
 ## Sourcing Scripts
+# TODO: Put all sourced scripts in the same place.
 . D:\Carl\Documents\PowerShell\Scripts\_rg.ps1 # source rg completion script
 
-# DONE: Copy the above two lines to .\Scripts\other_functions.ps1 scriptfile, and set a variable to 
-# refer to the script file for ease of access
-# This expression is necessary for python's fuck module to work.
-#Invoke-Expression "$(thefuck --alias)"
-# This is a test
 # PowerShell parameter completion shim for the dotnet CLI
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
      param($commandName, $wordToComplete, $cursorPosition)
@@ -194,3 +157,28 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
          }
  }
+
+
+# TODO: Adjust profile to source all scripts at the end.
+$psenv = if (test-path "C:\Users\Carl\gitstuff\my-dotfiles\templates\.psenv.ps1") {
+    "C:\Users\Carl\gitstuff\my-dotfiles\templates\.psenv.ps1" }
+    else { return Write-Error ".psenv.ps1 not found in my-dotfiles repo"}
+# If .psenv.ps1 is in current directory, dotsource, else write error
+# TODO: Write alternate non-ternary version
+#(get-item .psenv.ps1 -ErrorAction Ignore) ? ( . ./.psenv.ps1) : (Write-error ".psenv.ps1 is not there")
+
+$pyFileSys = (Test-Path "$scrps\utils\pyFileSysLocations.ps1") ? ("$scrps\utils\pyFileSysLocations.ps1") : (Write-Error "pyfilesys script not found")
+$choice = read-host -Prompt "Load psFileSysLocations variables? y or n "
+if ($choice -eq "y") {
+    . $pyFileSys
+} else { Write-Error "Not loading $pyFileSys"}
+# Adjust path to accept deno bin dir
+# TODO: Do this in the Windows GUI
+$env:Path = "C:\Users\Carl\.deno\bin;$env:Path"
+# Source wslFunctions.ps1 script
+(test-path $wslFuncs) ? (. $wslFuncs) : (Write-error "$wslFuncs not found")
+# Source hugo completion script TODO: needs work
+$script:hugocomp = (get-item "$scrps/completion/_hugo.ps1").fullname
+(test-path "$hugocomp") ? (. "$hugocomp") : (Write-error "hugo completion not found")
+# Source completions in completion folder
+# TODO
