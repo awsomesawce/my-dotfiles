@@ -24,7 +24,7 @@ export ubudotfiles=~/.dotfiles/ubuntu
 alias ubudot="cd \$ubudotfiles"
 alias gaddc='~/bin/gaddc.sh'
 # TODO: Adjust position of variables
-export npmDir=/home/carlc/.nvm/versions/node/v14.15.1/lib/node_modules/npm
+export npmDir=/home/carlc/.npm-packages
 alias npm_loc="cd \"\$npmDir\""
 alias abs-guide='cd /usr/share/doc/abs-guide/'
 alias absguide='cd /usr/share/doc/abs-guide/'
@@ -56,3 +56,4 @@ alias exp=explorer.exe
 alias shfmt=shfmt.exe
 alias pydoc=/usr/bin/pydoc3 # make pydoc point to pydoc3, otherwise it points to msys2 bin
 alias pd=pydoc3
+alias pypass="python3 -m pypass.command"
