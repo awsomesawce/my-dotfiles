@@ -7,17 +7,15 @@
 # Functions relating to npm dev workflow
 
 function findmoduledocs {
-
     <#
     .Description
     If a docs folder exists in a node module, list
     the contents of it.
 #>
     switch (Test-Path ".\node_modules\$args\docs") {
-	$true { ls ".\node_modules\$args/docs" }
+	$true { Get-ChildItem ".\node_modules\$args/docs" }
 	$false { "It is not there" }
     }
-
 }
 
 function Page-Readme {
@@ -68,12 +66,13 @@ $pkgjson = if (test-path package.json) {
 
 # initialize and source npm-functions
 if (!($scrps)) {$scrps = "~/gitstuff/scripts-pwsh"}
-$nfile = "$scrps/ScriptsAndFunctions/npm-functions.ps1"
-$npmfuncs = (test-path $nfile) ? ($nfile) : (return Write-Error "npm-funcs file not found")
-. "$npmfuncs"
+$nfile = "$scrps/ScriptsAndFunctions/npm-functions.psm1"
+$npmfuncs = (test-path $nfile) ? ($nfile) : (Write-Error "npm-funcs file not found")
+write-verbose "Importing $npmfuncs"
+Import-Module "$npmfuncs" -Verbose
 
 # If getNodeInfo exists, set alias to it rather than including as a function.
-if (test-path .\scripts\getNodeInfo.ps1) {
+if (test-path .\scripts\getNodeInfo.ps1) { # FIXME: Where is this file??
 set-alias -Name getNodeInfo -Value ".\scripts\getNodeInfo.ps1" -Description `
 "Node info returned as a hashtable" -Option None
 }
