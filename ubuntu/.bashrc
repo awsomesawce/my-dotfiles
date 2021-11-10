@@ -8,6 +8,8 @@ export TERM=xterm-256color
 export BROWSER=wslview
 export DWWW_BROWSER=lynx
 export PAGER=less
+export DOTFILES=~/.dotfiles/ubuntu
+export UBULIB="$DOTFILES/lib"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -142,6 +144,14 @@ else
     echo "\"~/.projectVars\" script not found or is not readable"
 fi
 
+# Source common vars
+if [ -r "$UBULIB/.env.common" ]; then
+    echo "Sourcing \$UBULIB/.env.common"
+    . "$UBULIB/.env.common"
+else
+    echo "\$UBULIB/.env.common not found" >&2
+fi
+
 # TODO: Create array filled with all sourced files
 
 # enable programmable completion features (you don't need to enable
@@ -155,14 +165,15 @@ if ! shopt -oq posix; then
   fi
 fi
 # Install Ruby Gems to ~/gems
+# NOTE: This was only necessary when the GEM_HOME env var was set in windows.
 export GEM_HOME="$HOME/gems"
 
 # Adjust path so these are first in line.
 # ~/.npm-packages is where global packages are installed.
 export PATH="$HOME/gems/bin:$HOME/.npm-packages/bin:$PATH"
 # NOTE: check ~/.profile for other PATH additions.
-# Enable next line for x11 setup for x410
-[ -z "$DISPLAY" ] && export DISPLAY=127.0.0.1:0.0
+# Enable next line for x11 setup for x410.
+[ -z "$DISPLAY" ] && export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 # powerline script
 # NOTE: TURNED OFF POWERLINE
 #powerline-daemon -q
