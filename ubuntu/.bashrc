@@ -222,6 +222,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias bat=bat.exe
+alias tclsh=/usr/bin/tclsh
+export DENO_INSTALL="/home/carlc/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
