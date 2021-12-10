@@ -18,4 +18,9 @@ alias gcma="type -a"
 alias aptshow='aptitude show'
 alias dhc='dochelp cat'
 alias aptfile=apt-file
-alias gz=gzip
+if command -v pigz > /dev/null; then
+    alias gz=pigz
+else
+    alias gz=gzip
+fi
+alias syspython=/usr/bin/python3

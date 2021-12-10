@@ -10,6 +10,8 @@ export DWWW_BROWSER=lynx
 export PAGER=less
 export DOTFILES=~/.dotfiles/ubuntu
 export UBULIB="$DOTFILES/lib"
+export ONEDRIVE="/mnt/c/Users/Carl/OneDrive"
+export usrdocs=/usr/share/doc
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -102,6 +104,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lsd='ls -d'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -220,6 +223,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+echo "Setting conda env to sci"
+conda activate sci
 
 alias bat=bat.exe
 alias tclsh=/usr/bin/tclsh
