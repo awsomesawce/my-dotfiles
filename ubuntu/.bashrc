@@ -8,6 +8,8 @@ export TERM=xterm-256color
 export BROWSER=wslview
 export DWWW_BROWSER=lynx
 export PAGER=less
+export DOTFILES=~/.dotfiles/ubuntu
+export UBULIB="$DOTFILES/lib"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -113,6 +115,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+else
+    echo ".bash_aliases file not found" >&2
 fi
 
 # Source ~/.shell_aliases file, which are compatible with both bash and zsh
@@ -140,6 +144,14 @@ else
     echo "\"~/.projectVars\" script not found or is not readable"
 fi
 
+# Source common vars
+if [ -r "$UBULIB/.env.common" ]; then
+    echo "Sourcing \$UBULIB/.env.common"
+    . "$UBULIB/.env.common"
+else
+    echo "\$UBULIB/.env.common not found" >&2
+fi
+
 # TODO: Create array filled with all sourced files
 
 # enable programmable completion features (you don't need to enable
@@ -153,14 +165,15 @@ if ! shopt -oq posix; then
   fi
 fi
 # Install Ruby Gems to ~/gems
+# NOTE: This was only necessary when the GEM_HOME env var was set in windows.
 export GEM_HOME="$HOME/gems"
 
 # Adjust path so these are first in line.
 # ~/.npm-packages is where global packages are installed.
 export PATH="$HOME/gems/bin:$HOME/.npm-packages/bin:$PATH"
 # NOTE: check ~/.profile for other PATH additions.
-# Enable next line for x11 setup for x410
-[ -z "$DISPLAY" ] && export DISPLAY=127.0.0.1:0.0
+# Enable next line for x11 setup for x410.
+[ -z "$DISPLAY" ] && export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 # powerline script
 # NOTE: TURNED OFF POWERLINE
 #powerline-daemon -q
@@ -168,10 +181,10 @@ export PATH="$HOME/gems/bin:$HOME/.npm-packages/bin:$PATH"
 #POWERLINE_BASH_SELECT=1
 #. /usr/share/powerline/bindings/bash/powerline.sh
 # tmux bash completion script
-source /home/carlc/sh-files/tmux_bash_completion.sh 
+[ -e ~/sh-files/tmux_bash_completion.sh ] && source /home/carlc/sh-files/tmux_bash_completion.sh 
 
 # gh bash completion script
-source /home/carlc/sh-files/gh_completion.sh
+[ -f ~/sh-files/gh_completion.sh ] && source /home/carlc/sh-files/gh_completion.sh
 #source /usr/share/doc/fzf/examples/completion.bash
 #source /usr/share/doc/fzf/examples/key-bindings.bash
 # nvm installed variables and scripts
@@ -182,10 +195,37 @@ source /home/carlc/sh-files/gh_completion.sh
 ## Use bash-completion, if available - from bash-completion docs
 #[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 #	    . /usr/share/bash-completion/bash_completion
-source ~/.dotfiles/completion/node.bash_completion
+[ -f ~/.dotfiles/completion/node.bash_completion ] && source ~/.dotfiles/completion/node.bash_completion
 # This is the bottom of the file.  Thanks for reading!
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 bashdoc=/usr/share/doc/bash
+PATH="/home/carlc/.local/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/carlc/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/carlc/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/carlc/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/carlc/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+alias bat=bat.exe
+alias tclsh=/usr/bin/tclsh
+export DENO_INSTALL="/home/carlc/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

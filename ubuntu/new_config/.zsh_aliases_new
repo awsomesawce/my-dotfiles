@@ -1,0 +1,12 @@
+alias bat=bat.exe
+alias ls='ls --color'
+alias ll="ls -lhF"
+alias gitst='git status'
+
+chtsh() {
+    local url="https://cht.sh"
+    echo "Searching $* on cht.sh"
+    command curl "$url/$*"
+}
+
+alias chs='chtsh'
