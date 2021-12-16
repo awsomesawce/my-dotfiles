@@ -20,3 +20,6 @@ if ($env:PAGER -eq "less") {
 
 Write-Host -ForegroundColor Yellow "Welcome to Powershell Core on Ubuntu/WSL!"
 $VimAddons = "/var/lib/vim/addons"
+set-alias bat bat.exe -Description "Bat.exe is a pager"
+$ubuprofile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.Powershell_profile.ps1"
+$MyProfileFile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.PowerShell_profile.ps1"
