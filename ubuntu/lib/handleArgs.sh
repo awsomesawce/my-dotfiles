@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Handle args
+usage="This is the usage message
+"
 
 die() {
     printf '%s\n' "$*"
