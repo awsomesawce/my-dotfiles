@@ -12,6 +12,7 @@ export DOTFILES=~/.dotfiles/ubuntu
 export UBULIB="$DOTFILES/lib"
 export ONEDRIVE="/mnt/c/Users/Carl/OneDrive"
 export usrdocs=/usr/share/doc
+export winhome=/mnt/c/Users/Carl # Shortcut to windows home
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

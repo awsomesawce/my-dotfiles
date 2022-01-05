@@ -24,3 +24,4 @@ else
     alias gz=gzip
 fi
 alias syspython=/usr/bin/python3
+export OneDrive=/mnt/c/Users/Carl/OneDrive
