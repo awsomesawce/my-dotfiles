@@ -37,8 +37,10 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export PAGER=$(which less)
-export EDITOR=$(which vim)
+export PAGER="less"
+export EDITOR="/usr/bin/vim"
+export HELPDIR=/usr/share/zsh/help # For use with the `run-help' command
+
 export UBUNTU_DOTFILES=~/.dotfiles/ubuntu
 export common_env="$UBUNTU_DOTFILES/lib/.env.common"
 
@@ -90,8 +92,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+conda activate sci
+# switch to sci env
+PATH=/home/carlc/.cargo/bin:"$PATH"
+source "/home/carlc/.config/zsh/plugins/pz/pz.zsh"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-conda activate sci
-# switch to sci env
