@@ -5,6 +5,6 @@
 chtsh() {
     local url="https://cht.sh" 
     if command -v curl > /dev/null; then
-	curl "$url/$*"
+	curl -sS "$url/$*"
     fi
 }
