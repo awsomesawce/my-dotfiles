@@ -233,6 +233,15 @@ alias tclsh=/usr/bin/tclsh
 export DENO_INSTALL="/home/carlc/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+. "$HOME/.cargo/env"
+
+# To install latest version of ruby
+# TODO: Write script for installing latest rbenv with if statements!
+export PATH=/home/carlc/.cargo/bin:"$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH" # Added 4-2-2022
+source ~/.rbenv/completions/rbenv.bash # Added 4-2-2022
+eval "$(rbenv init - bash)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

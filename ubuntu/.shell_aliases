@@ -25,3 +25,4 @@ else
 fi
 alias syspython=/usr/bin/python3
 export OneDrive=/mnt/c/Users/Carl/OneDrive
+alias gcm=type

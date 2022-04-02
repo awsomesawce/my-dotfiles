@@ -12,7 +12,7 @@ die() {
 pwshInvoke() {
     local usage="Usage: pwshInvoke \"command\""
     if [ "$#" -eq 0 ]; then
-        die "$usage" && return 1
+        die "$usage"
     else # BUG: Without the else statement, the function continues even with the return statement above.
         if command -v pwsh.exe > /dev/null; then
             command pwsh.exe -nop -c "$@"
@@ -251,4 +251,29 @@ ghrestapi ()
             echo "Curl not install in PATH";
         fi;
     fi
+}
+
+# list_trash lists the items in the trash folder `~/.trash'
+list_trash () 
+{ 
+    if [ -d ~/.trash ]; then
+        echo -e "=== Listing trash ===\n" 1>&2;
+        ls --color=auto ~/.trash;
+    else
+        echo "Trash not found" 1>&2;
+    fi
+}
+
+# Emptys the trash but asks first
+# If user supplies the `-f' flag, force remove all trash items.
+empty_trash () 
+{ 
+    if [[ $# -eq 0 ]]; then
+        rm -iv ~/.trash/*;
+        return 0;
+    fi;
+    if [[ "$1" == "-f" ]]; then
+        rm -f ~/.trash/*;
+    fi;
+    return 0
 }
