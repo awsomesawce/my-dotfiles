@@ -1,5 +1,14 @@
 # shell\_learning dir
 
+## Important Scripts
+
+```json
+{
+    "passtoscoop.sh": "pass these args to scoop info",
+    "passtonpm.sh": "pass to npm info"
+}
+```
+
 This is where I shall keep all my learning bash/sh scripts.
 
 > Currently working on lesson 16 (I think)
