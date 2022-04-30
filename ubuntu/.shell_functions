@@ -4,7 +4,6 @@
 # Author Carl C (awsomesawce at outlook dot com)
 # vim filetype=sh
 
-# Add die function
 die() {
     printf '%s\n' "$*" >&2 && return 1
 }
@@ -134,7 +133,12 @@ cdfile() {
         }
 
 # Array of function names in this file.
-export myCommands=("pwshInvoke" "groffman" "pygcat" "whichless" "whichfile" "hexConvert" "whichl" "gitaddandcommit" "readmeDir" "chromaless" "chless" "catimg" "nodeprocessconf")
+typeset -a myCommands
+export myCommands=("pwshInvoke" "groffman" "pygcat" "whichless" \ 
+    "whichfile" "hexConvert" "whichl" "gitaddandcommit" "readmeDir" \ 
+    "chromaless" "chless" "catimg" "nodeprocessconf" "nvimconfig" \ 
+    "zhelpfix (zsh only)" "list_trash" "empty_trash" "pyhelp" \ 
+    "ghrestapi" "duks")
 
 list_my_funcs() {
     echo "------------ List of commands ------------"
@@ -276,4 +280,34 @@ empty_trash ()
         rm -f ~/.trash/*;
     fi;
     return 0
+}
+
+nvimconfig() {
+    local NVIMCONFIGDIR=~/.config/nvim/
+    if [[ -d "$NVIMCONFIGDIR" ]]; then
+        nvim $NVIMCONFIGDIR
+        return 0
+    else
+        echo "$NVIMCONFIGDIR not found buddy" >&2
+        return 1
+    fi
+}
+
+# Sinfo is a simple way to look up multiple programs using `scoop info'
+sinfo () 
+{ 
+    if [ $# -eq 0 ]; then
+        echo "
+sinfo gives scoop info for multiple args
+";
+        return 1;
+    fi;
+    if [[ "$1" == "-h" ]]; then
+        echo "scoop info for multiple args";
+        return 1;
+    fi;
+    for i in "${@}";
+    do
+        scoop info "$i";
+    done
 }
