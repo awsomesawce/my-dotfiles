@@ -138,7 +138,7 @@ export myCommands=("pwshInvoke" "groffman" "pygcat" "whichless" \
     "whichfile" "hexConvert" "whichl" "gitaddandcommit" "readmeDir" \ 
     "chromaless" "chless" "catimg" "nodeprocessconf" "nvimconfig" \ 
     "zhelpfix (zsh only)" "list_trash" "empty_trash" "pyhelp" \ 
-    "ghrestapi" "duks")
+    "ghrestapi" "duks" "sinfo")
 
 list_my_funcs() {
     echo "------------ List of commands ------------"

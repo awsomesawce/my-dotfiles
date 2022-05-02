@@ -1,3 +1,13 @@
+#!/usr/bin/env bash
+# Shell aliases for both bash and zsh.
+# 5/2/2022
+
+# If `fdfind` is installed, alias it to `fd` which is the real name of the
+#+executable.
+if command -v fdfind > /dev/null; then
+    alias fd=fdfind
+fi
+
 alias aptf=apt-file
 alias aptfile=apt-file
 alias acshow='apt-cache show'
@@ -14,6 +24,7 @@ alias aptcsch='apt-cache search'
 alias aptcsh='apt-cache show'
 alias acashow='apt-cache show'
 alias acache='apt-cache'
+alias gcm=type
 alias gcma="type -a"
 alias aptshow='aptitude show'
 alias dhc='dochelp cat'
@@ -25,4 +36,4 @@ else
 fi
 alias syspython=/usr/bin/python3
 export OneDrive=/mnt/c/Users/Carl/OneDrive
-alias gcm=type
+alias luarepl=rep.lua # luarocks install luarepl linenoise
