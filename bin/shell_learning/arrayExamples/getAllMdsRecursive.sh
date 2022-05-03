@@ -1,4 +1,4 @@
-#!/usr/bin/zsh -f
+#!/usr/bin/env bash
 # Author: Carl C.
 # Date: Thu 27 May 2021 08:27:03 PM EDT
 # OriginalLocation: ~/.dotfiles/bin/shell_learning/arrayExamples/getAllMdsRecursive.sh
