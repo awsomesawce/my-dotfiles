@@ -37,3 +37,9 @@ fi
 alias syspython=/usr/bin/python3
 export OneDrive=/mnt/c/Users/Carl/OneDrive
 alias luarepl=rep.lua # luarocks install luarepl linenoise
+# **Basic**
+# All `cp -i` does is copy an item from one location to another, but create a prompt if the file
+# is _already there!_  Because that's important IMHO!
+# You don't want to copy something into a destination if the destination file is _there already_!
+# You might want to `diff` the dest file and the source file and see if they are truly different!
+alias cp="cp -i"
