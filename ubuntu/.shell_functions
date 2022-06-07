@@ -173,7 +173,8 @@ if [[ -n "$ZSH_VERSION" ]]; then
         local zshhelpdir=/usr/share/zsh/help
         local usage
         usage="
-        Usage: $(basename "$0") [-p] term"
+        Usage: $(basename "$0") [-p] term
+        "
         if [[ $# -eq 0 ]] || [[ "${1}" =~ ^(-h|--help)$ ]]; # Add regex for if "-h" or "--help" arg.
         then
             print "$usage"
@@ -245,15 +246,15 @@ pyhelp () {
 ghrestapi () 
 { 
     if [ $# -eq 0 ]; then
-        echo "ghrestapi needs args";
-        return 1;
+        echo "ghrestapi needs args"
+        return 1
     else
         if command -v curl > /dev/null; then
-            curl "https://api.github.com/repos/$1/$2";
-            return 0;
+            curl "https://api.github.com/repos/$1/$2"
+            return 0
         else
-            echo "Curl not install in PATH";
-        fi;
+            echo "Curl not install in PATH"
+        fi
     fi
 }
 
@@ -261,10 +262,10 @@ ghrestapi ()
 list_trash () 
 { 
     if [ -d ~/.trash ]; then
-        echo -e "=== Listing trash ===\n" 1>&2;
-        ls --color=auto ~/.trash;
+        echo -e "=== Listing trash ===\n" 1>&2
+        ls --color=auto ~/.trash
     else
-        echo "Trash not found" 1>&2;
+        echo "Trash not found" 1>&2
     fi
 }
 
@@ -273,12 +274,12 @@ list_trash ()
 empty_trash () 
 { 
     if [[ $# -eq 0 ]]; then
-        rm -iv ~/.trash/*;
-        return 0;
-    fi;
+        rm -iv ~/.trash/*
+        return 0
+    fi
     if [[ "$1" == "-f" ]]; then
-        rm -f ~/.trash/*;
-    fi;
+        rm -f ~/.trash/*
+    fi
     return 0
 }
 
@@ -297,17 +298,15 @@ nvimconfig() {
 sinfo () 
 { 
     if [ $# -eq 0 ]; then
-        echo "
-sinfo gives scoop info for multiple args
-";
-        return 1;
-    fi;
+        echo "sinfo gives scoop info for multiple args"
+        return 1
+    fi
     if [[ "$1" == "-h" ]]; then
-        echo "scoop info for multiple args";
-        return 1;
-    fi;
-    for i in "${@}";
+        echo "scoop info for multiple args"
+        return 1
+    fi
+    for i in "${@}"
     do
-        scoop info "$i";
+        scoop info "$i"
     done
 }
