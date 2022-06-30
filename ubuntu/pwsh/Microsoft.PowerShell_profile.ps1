@@ -9,6 +9,7 @@ $PwshDotfilesLocation = (Get-Item ~/.dotfiles/ubuntu/pwsh).FullName
 
 # Import necessary modules
 Import-Module posh-git # This works on pwsh core on linux.  Yay!
+Import-Module Terminal-Icons
 Import-Module "$PwshDotfilesLocation/CommonUbuntu.psm1"
 
 if ($env:PAGER -eq "less") {

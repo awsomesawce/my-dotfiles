@@ -31,7 +31,7 @@ if ($Path) {
     return $x
 }
 else {
-    $local:x = Get-ChildItem && Get-ChildItem -Hidden
+    $local:x = (Get-ChildItem), (Get-ChildItem -Hidden)
     return $x
 }
 }
