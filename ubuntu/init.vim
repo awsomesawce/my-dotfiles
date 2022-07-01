@@ -1,5 +1,6 @@
 "" Carl's Ubuntu Neovim Config
 "" DATE: 11/9/2021
+set nocompatible
 filetype plugin indent on
 set shiftwidth=4 expandtab
 set wildmenu
@@ -20,7 +21,21 @@ Plug 'tpope/vim-surround'
 Plug 'https://github.com/PProvost/vim-ps1'
 Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'https://github.com/plasticboy/vim-markdown/'
+"" BEGIN Clojure
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
+""Plug 'Olical/conjure' Conjure requires at least neovim 0.5 to work.
+Plug 'clojure-vim/clojure.vim'
+"" END Clojure
+Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 ""Plug 'dense-analysis/ale'
+"" BEGIN Added 7/1/2022
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+"" END Added 7/1/2022
 " My additions end
 
 " Make sure you use single quotes
@@ -36,7 +51,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using a non-default branch
 ""Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -53,3 +67,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Initialize plugin system
 call plug#end()
 
+"" BEGIN coc-config Ubuntu Linux 7/1/2022
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+"" END coc-config Ubuntu Linux 7/1/2022
