@@ -68,6 +68,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
 "" BEGIN coc-config Ubuntu Linux 7/1/2022
+"" Coc extensions installed:
+"" 
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
