@@ -5,16 +5,11 @@ $CommonUbuntuLoaded = $true
 
 function gitst {
     <#
-    .Description
+    .SYNOPSIS
     Git status
     #>
-    if (Get-Command git -ErrorAction ignore) {
-        git status
-    }
-    else {
-        throw "Git not installed"
-    }
-
+    if (!(Get-Command git)) { throw "Git not installed" }
+    return git status
 }
 
 function Get-AllChildItem {
@@ -37,3 +32,5 @@ else {
 }
 New-Alias -Name "gcia" -Value "Get-AllChildItem" -Description "Gets all files including dotfiles"
 New-Alias -Name "sel" -Value "Select-Object" -Description "Even shorter than select"
+
+Export-ModuleMember -Function @("Get-AllChildItem", "gitst") -Alias @("gcia", "sel")

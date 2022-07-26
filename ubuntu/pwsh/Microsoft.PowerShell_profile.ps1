@@ -26,6 +26,6 @@ $VimAddons = "/var/lib/vim/addons"
 new-alias bat bat.exe -Description "Bat.exe is a pager"
 $ubuprofile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.Powershell_profile.ps1"
 $MyProfileFile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.PowerShell_profile.ps1"
-New-alias gcic -Value Get-ChildItemColor -Description "shorterg get-childitemcolor"
+New-alias gcic -Value Get-ChildItemColor -Description "shorter get-childitemcolor"
 $ubuprofile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.PowerShell_profile.ps1"
 new-alias ll get-childitem
