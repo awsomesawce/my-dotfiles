@@ -35,5 +35,5 @@ else {
     return $x
 }
 }
-Set-Alias -Name "gcia" -Value "Get-AllChildItem" -Description "Gets all files including dotfiles"
-set-alias -Name "sel" -Value "Select-Object" -Description "Even shorter than select"
+New-Alias -Name "gcia" -Value "Get-AllChildItem" -Description "Gets all files including dotfiles"
+New-Alias -Name "sel" -Value "Select-Object" -Description "Even shorter than select"

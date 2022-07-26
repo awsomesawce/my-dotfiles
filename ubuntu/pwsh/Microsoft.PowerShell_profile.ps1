@@ -2,6 +2,8 @@
 <#
 .Description
 Linux Pwsh Profile
+.NOTES
+Use `New-Alias` instead of `Set-Alias`
 #>
 # This is my first attempt at writing a proper Powershell profile (ppp) in __Linux__.
 
@@ -21,8 +23,9 @@ if ($env:PAGER -eq "less") {
 
 Write-Host -ForegroundColor Yellow "Welcome to Powershell Core on Ubuntu/WSL!"
 $VimAddons = "/var/lib/vim/addons"
-set-alias bat bat.exe -Description "Bat.exe is a pager"
+new-alias bat bat.exe -Description "Bat.exe is a pager"
 $ubuprofile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.Powershell_profile.ps1"
 $MyProfileFile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.PowerShell_profile.ps1"
-set-alias gcic -Value Get-ChildItemColor -Description "shorterg get-childitemcolor"
+New-alias gcic -Value Get-ChildItemColor -Description "shorterg get-childitemcolor"
 $ubuprofile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.PowerShell_profile.ps1"
+new-alias ll get-childitem
