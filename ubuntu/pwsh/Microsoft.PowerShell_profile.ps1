@@ -11,7 +11,7 @@ $PwshDotfilesLocation = (Get-Item ~/.dotfiles/ubuntu/pwsh).FullName
 
 # Import necessary modules
 Import-Module posh-git # This works on pwsh core on linux.  Yay!
-Import-Module Terminal-Icons
+#Import-Module Terminal-Icons
 Import-Module "$PwshDotfilesLocation/CommonUbuntu.psm1"
 
 if ($env:PAGER -eq "less") {
@@ -26,6 +26,6 @@ $VimAddons = "/var/lib/vim/addons"
 new-alias bat bat.exe -Description "Bat.exe is a pager"
 $ubuprofile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.Powershell_profile.ps1"
 $MyProfileFile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.PowerShell_profile.ps1"
-New-alias gcic -Value Get-ChildItemColor -Description "shorter get-childitemcolor"
+New-alias gcic -Value Get-ChildItemColor -Description "shorterg get-childitemcolor"
 $ubuprofile = "/home/carlc/.dotfiles/ubuntu/pwsh/Microsoft.PowerShell_profile.ps1"
 new-alias ll get-childitem
