@@ -14,7 +14,7 @@ TODO: Add extension detection and raise True if extension is .bash or .sh
     param(
         [string]$File
     )
-    if ($File -and (Test-Path $File)) {
+    if ($File -and (Test-Path $File -PathType Leaf)) {
         return (Get-Content -TotalCount 1 -Path $File).Contains("bash")
     }
     else {
